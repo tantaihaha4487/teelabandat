@@ -1,5 +1,7 @@
 # การเพิ่มเนื้อหา
 
+ทุก agent ต้องทำตาม [คู่มือเพิ่มบทเรียน](docs/HOW_TO_ADD_LESSONS.md) ซึ่งกำหนดระบบไอคอน การตรวจต้นฉบับ และขั้น Humanizer 3.1.0 ก่อน commit ข้อความสำหรับผู้เรียน
+
 เพิ่มหมวดใน `src/content/sections/<id>.json` แล้วเพิ่มบทความ MDX ใน `src/content/lessons/<id>/` เมนูและหน้ารวมสร้างจากข้อมูลอัตโนมัติ ไม่ต้องแก้ layout
 
 ข้อมูลหมวด: `id`, `title`, `summary`, `order`, `kind` (`course` หรือ `practice`), `label`, `icon` (`code`, `branch`, `practice`, `book`) หมวด practice ระบุ `bank` ให้ตรงกับรหัสคลังโจทย์ ข้อมูลบท: `section`, `title`, `description`, `order`, `source`, `draft` (ค่าเริ่มต้น false)
