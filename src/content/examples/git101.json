@@ -1,0 +1,362 @@
+{
+  "git101-basics-01": {
+    "id": "git101-basics-01",
+    "language": "bash",
+    "code": "git status\ngit add README.md\ngit commit -m \"Add project notes\"",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git status แสดงสถานะของไฟล์ในโฟลเดอร์ปัจจุบัน บอกว่าไฟล์ไหนถูกแก้ไข ไฟล์ไหนยังไม่ได้ติดตาม และกำลังอยู่บน branch ไหน รวมถึงไฟล์ที่อยู่ใน staging area แล้ว"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git add README.md นำไฟล์ README.md เข้าสู่ staging area เพื่อเตรียมบันทึกการเปลี่ยนแปลง โดยเลือกเฉพาะไฟล์นี้ ไม่กระทบไฟล์อื่น"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git commit -m \"Add project notes\" บันทึกการเปลี่ยนแปลงที่อยู่ใน staging area พร้อมข้อความอธิบายว่า Add project notes"
+      }
+    ],
+    "status": "working",
+    "title": "คำสั่งพื้นฐานของ Git"
+  },
+  "git101-branching-01": {
+    "id": "git101-branching-01",
+    "language": "bash",
+    "code": "git branch\ngit switch -c feature-login\ngit switch main",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git branch แสดงรายชื่อ branch ในเครื่อง (local) เท่านั้น ไม่รวม branch บน remote และทำเครื่องหมาย branch ที่ใช้งานอยู่ตอนนี้"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git switch -c feature-login สร้าง branch ใหม่ชื่อ feature-login จากจุดที่อยู่ตอนนี้ แล้วสลับไปทำงานในสาขานั้นทันที"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git switch main สลับกลับไปทำงานที่ branch main"
+      }
+    ],
+    "status": "working",
+    "title": "การสร้างและสลับสาขา"
+  },
+  "git101-collaboration-01": {
+    "id": "git101-collaboration-01",
+    "language": "bash",
+    "code": "git switch -c feature-notes\ngit add notes.md\ngit commit -m \"Update study notes\"\ngit push -u origin feature-notes",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git switch -c feature-notes สร้าง branch ใหม่ชื่อ feature-notes สำหรับงานนี้ แล้วสลับไปทำงานในสาขานั้น"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git add notes.md เลือกไฟล์ notes.md ที่แก้แล้วเข้า staging area เพื่อเตรียม commit"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git commit -m \"Update study notes\" บันทึกการเปลี่ยนแปลงเป็น commit ที่มีข้อความบอกเจตนา ให้คนอื่นในทีมอ่านแล้วเข้าใจว่าทำอะไร"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "git push -u origin feature-notes ส่ง branch feature-notes ขึ้นไปยัง remote ชื่อ origin และตั้งความสัมพันธ์ tracking กับ branch นั้นบน origin ทำให้ push หรือ pull ครั้งต่อไปพิมพ์สั้นลงโดยไม่ต้องระบุ remote กับชื่อ branch อีก"
+      }
+    ],
+    "status": "working",
+    "title": "ทำงานร่วมกันผ่านสาขาและ push"
+  },
+  "git101-history-01": {
+    "id": "git101-history-01",
+    "language": "bash",
+    "code": "git log\ngit show <commit>\ngit diff",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git log แสดงประวัติ commit ที่ไปถึงได้จาก HEAD หรือ branch ปัจจุบัน ไม่ใช่ทุก branch ในโปรเจกต์ ถ้าต้องการดูทุก branch ต้องใส่ตัวเลือก --all"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git show <commit> แสดงรายละเอียดของ commit ที่ระบุ ต้องแทน <commit> ด้วย hash หรือชื่ออ้างอิงจริงของ commit นั้น"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git diff แสดงความแตกต่างระหว่างไฟล์ใน working tree กับสิ่งที่อยู่ใน staging area (index) เมื่อไม่ใส่ตัวเลือกเพิ่มเติม ถ้าต้องการเทียบ staging area กับ commit ล่าสุดให้ใช้ git diff --staged"
+      }
+    ],
+    "status": "working",
+    "title": "ดูประวัติและความเปลี่ยนแปลงของโค้ด"
+  },
+  "git101-merging-01": {
+    "id": "git101-merging-01",
+    "language": "bash",
+    "code": "git merge feature-notes",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git merge feature-notes นำประวัติของ branch feature-notes มารวมเข้ากับ branch ที่กำลัง checkout อยู่ตอนนี้ เช่น main"
+      }
+    ],
+    "status": "working",
+    "title": "การรวมสาขาเข้าด้วยกัน"
+  },
+  "git101-projects-01": {
+    "id": "git101-projects-01",
+    "language": "bash",
+    "code": "git init\ngit add README.md\ngit commit -m \"Start notes project\"",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git init เริ่ม repository ใหม่ในโฟลเดอร์ปัจจุบัน สำหรับโปรเจกต์โน้ตนี้"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git add README.md เลือกไฟล์แนะนำโปรเจกต์เข้า staging area"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git commit -m \"Start notes project\" บันทึกจุดเริ่มต้นของโปรเจกต์เป็น commit แรก"
+      }
+    ],
+    "status": "working",
+    "title": "เริ่มต้นโปรเจกต์ใหม่ด้วย Git"
+  },
+  "git101-remote-01": {
+    "id": "git101-remote-01",
+    "language": "bash",
+    "code": "git remote -v\ngit push origin main\ngit pull origin main\ngit fetch origin",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git remote -v แสดง URL ของ remote ที่ repository นี้รู้จักทั้งหมด ทั้ง URL ตอนรับข้อมูล (fetch) และตอนส่งข้อมูล (push)"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git push origin main ส่ง commit จาก branch main ในเครื่องไปยัง remote ชื่อ origin"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git pull origin main ดึงการเปลี่ยนแปลงของ main จาก origin มารวมเข้ากับ branch ที่กำลัง checkout อยู่ในเครื่อง ไม่ใช่ branch อื่น"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "git fetch origin ดึงข้อมูลล่าสุดจาก origin เข้ามาเก็บไว้ แต่ยังไม่รวมเข้ากับ branch ปัจจุบัน และยังไม่เปลี่ยนไฟล์งานทันที"
+      }
+    ],
+    "status": "working",
+    "title": "ติดต่อกับ remote repository"
+  },
+  "git101-repository-01": {
+    "id": "git101-repository-01",
+    "language": "bash",
+    "code": "git init\ngit clone https://github.com/user/repo.git\ngit status",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git init สร้างโฟลเดอร์ข้อมูล Git (.git) ในโฟลเดอร์ปัจจุบัน เพื่อเริ่มเก็บประวัติของโปรเจกต์ใหม่"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git clone https://github.com/user/repo.git คัดลอก repository จาก URL ที่ระบุมาเก็บไว้ในเครื่อง พร้อมประวัติทั้งหมดและตั้ง remote ชื่อ origin ให้อัตโนมัติ หลัง clone ต้อง cd เข้าไปในโฟลเดอร์ repo ที่ได้มาก่อนจึงจะใช้คำสั่ง git ต่อได้"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git status ตรวจสอบสถานะไฟล์ของ repository ที่กำลังเปิดอยู่ ต้องอยู่ในโฟลเดอร์ repo นั้นก่อน ไม่ว่าจะมาจาก git init หรือ git clone"
+      }
+    ],
+    "status": "working",
+    "title": "สร้างและคัดลอก repository"
+  },
+  "git101-roadmap-01": {
+    "id": "git101-roadmap-01",
+    "language": "bash",
+    "code": "git status\ngit log --oneline --decorate --graph --all\ngit branch --show-current",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git status แสดงสถานะของไฟล์ในโฟลเดอร์ปัจจุบัน ใช้ตรวจงานที่ยังไม่ commit ก่อนเริ่มหรือจบการฝึกแต่ละสัปดาห์"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git log --oneline --decorate --graph --all แสดงประวัติ commit ของทุก branch แบบย่อบรรทัดเดียว พร้อมภาพกราฟแสดงความสัมพันธ์ของสาขา การใส่ --all ทำให้เห็นทุก branch ไม่ใช่แค่ branch ปัจจุบัน โดย --decorate แสดงชื่ออ้างอิง เช่น ชื่อ branch และ tag ที่ชี้มายัง commit"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git branch --show-current แสดงชื่อ branch ที่กำลังใช้งานอยู่ตอนนี้ เพื่อยืนยันว่ากำลังฝึกอยู่บน branch ที่ตั้งใจ"
+      }
+    ],
+    "status": "working",
+    "title": "ดูภาพรวมสถานะและประวัติของสาขา"
+  },
+  "git101-setup-01": {
+    "id": "git101-setup-01",
+    "language": "bash",
+    "code": "git --version\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\"",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git --version แสดงเวอร์ชันของ Git ที่ติดตั้งอยู่ในเครื่อง"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git config --global user.name \"Your Name\" ตั้งชื่อผู้ใช้ที่จะแสดงในทุก commit ใหม่ของ repository ทั้งหมดบนเครื่องนี้ สำหรับผู้ใช้ OS คนนี้ ยกเว้น repository ใดมีการตั้งค่าเฉพาะที่ override ไว้ ค่านี้ไม่กระทบ commit ที่มีอยู่แล้ว"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git config --global user.email \"you@example.com\" ตั้งอีเมลที่จะแสดงในทุก commit ใหม่เช่นเดียวกับ user.name เปลี่ยนค่าตัวอย่างเป็นอีเมลของคุณเอง"
+      }
+    ],
+    "status": "working",
+    "title": "ตั้งค่า Git ครั้งแรก"
+  },
+  "git101-staging-commits-01": {
+    "id": "git101-staging-commits-01",
+    "language": "bash",
+    "code": "git add file.txt\ngit add .\ngit commit -m \"Write first draft\"",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git add file.txt นำไฟล์ file.txt เข้าสู่ staging area"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git add . นำการเปลี่ยนแปลงทั้งหมดใต้โฟลเดอร์ปัจจุบันเข้าสู่ staging area รวมถึงไฟล์ใหม่ที่ยังไม่ถูกติดตาม (untracked) แต่ไม่รวมไฟล์ที่ถูก ignore ไว้ ควรตรวจด้วย git status ก่อน commit"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git commit -m \"Write first draft\" บันทึกสิ่งที่ staged เป็น commit ใหม่ พร้อมข้อความว่าเป็นร่างแรก"
+      }
+    ],
+    "status": "working",
+    "title": "การนำไฟล์เข้า staging แล้ว commit"
+  },
+  "git101-undo-01": {
+    "id": "git101-undo-01",
+    "language": "bash",
+    "code": "git restore file.txt\ngit reset --soft HEAD~1\ngit revert <commit>",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "git restore file.txt คืนไฟล์ file.txt ให้ตรงกับสถานะที่ถูก stage ล่าสุด ไม่ใช่กลับไปที่ commit ล่าสุดเสมอ การแก้ไขที่ยังไม่ stage ของไฟล์นั้นจะหายไป และอาจกู้คืนไม่ได้"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "git reset --soft HEAD~1 เลื่อน branch กลับไปหนึ่ง commit โดยคงเนื้อหาของ commit นั้นไว้ใน staging area รวมกับสิ่งที่ staged อยู่ก่อนแล้วถ้ามี เหมาะกับ commit ที่ยังไม่ push และยังไม่มีใครใช้ประวัตินั้นร่วมกัน"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "git revert <commit> สร้าง commit ใหม่ที่ยกเลิกผลของ commit ที่ระบุ โดยไม่ลบ commit เดิมออกจากประวัติ ต้องแทน <commit> ด้วย hash จริง"
+      }
+    ],
+    "status": "working",
+    "title": "ย้อนการเปลี่ยนแปลงที่ทำไปแล้ว"
+  }
+}

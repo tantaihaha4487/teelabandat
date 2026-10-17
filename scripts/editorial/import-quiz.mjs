@@ -1,0 +1,28 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import crypto from 'node:crypto';
+const resultFile=process.argv[2] || '/tmp/dssi-claude-quiz.json';
+const result=JSON.parse(fs.readFileSync(resultFile,'utf8'));
+if(result.type!=='result'||result.is_error) throw new Error('Claude result was not successful');
+const match=result.result.match(/```json\s*([\s\S]*?)```/);
+if(!match)throw new Error('Missing Claude JSON artifact');
+const rewritten=JSON.parse(match[1]).questions;
+const ctx={window:{}};
+vm.runInNewContext(fs.readFileSync('/home/mashiro/repo/wayo-final/questions.js','utf8'),ctx,{timeout:1000});
+vm.runInNewContext(fs.readFileSync('/home/mashiro/repo/wayo-final/answer-key.js','utf8'),ctx,{timeout:1000});
+const original=ctx.window.QUIZ_QUESTIONS;
+const topics=[{id:'calculation',title:'การคำนวณและหน่วย'},{id:'loops',title:'ลูปและโครงสร้างข้อมูล'},{id:'functions',title:'ฟังก์ชัน'},{id:'exceptions',title:'ข้อผิดพลาดและข้อยกเว้น'},{id:'performance',title:'ประสิทธิภาพของโปรแกรม'},{id:'debugging',title:'หาจุดผิดในโค้ด'}];
+const questions=original.map(q=>{
+ const prose=rewritten[String(q.id)];
+ if(!prose||!prose.title||!prose.hint||prose.reasoningSteps?.length!==3)throw new Error('Incomplete rewritten question '+q.id);
+ const topic=q.id<=6?0:q.id<=26?1:q.id<=43?2:q.id<=50?3:q.id<=58?4:5;
+ const output={sourceId:q.id,bank:'python',topic:topics[topic].id,prompt:prose.title,code:q.code,options:q.options,correctIndex:ctx.window.QUIZ_LEARNING[q.id].answer,hint:prose.hint,reasoningSteps:prose.reasoningSteps};
+ if(prose.context) output.context=prose.context;
+ if(q.context&&!output.context?.includes('twenty'))throw new Error('Missing protected input context for '+q.id);
+ return output;
+});
+if(questions.length!==73||Object.keys(rewritten).length!==73)throw new Error('Question count mismatch');
+const bank={id:'python',title:'แบบฝึก Python',description:'ฝึกอ่านโค้ดและเลือกคำตอบ ดูคำใบ้ได้เมื่อยังไม่แน่ใจ หลังตรวจคำตอบจะมีเหตุผลให้ทบทวนทีละขั้น',topics,questions};
+fs.writeFileSync('src/data/python-bank.json',JSON.stringify(bank,null,2)+'\n');
+fs.writeFileSync('docs/editorial/provenance/quiz-rewrite.json',JSON.stringify({provider:'Claude remote',humanizer:'remote installed skill supplied as instructions',status:'imported-and-protected-data-compared',resultSHA256:crypto.createHash('sha256').update(fs.readFileSync(resultFile)).digest('hex'),questions:questions.length,hints:73,reasoningSteps:219,protected:['sourceId','code','options','correctIndex'],clarifications:[44,47,53,54,55,57]},null,2)+'\n');
+console.log('Imported 73 Claude-rewritten questions with frozen source code/options/answer mappings.');

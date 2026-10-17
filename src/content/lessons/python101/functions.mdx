@@ -1,0 +1,104 @@
+---
+section: python101
+title: "ฟังก์ชันใน Python"
+description: "เรียนการสร้าง function ใน Python การส่ง parameter การคืนค่าด้วย return scope และการแบ่งโค้ดให้อ่านง่าย"
+order: 7
+source: python101/functions.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/python101.json';
+
+Function คือชุดคำสั่งที่ตั้งชื่อไว้ ใช้เรียกซ้ำได้หลายครั้ง และช่วยแยกงานแต่ละส่วนให้โค้ดอ่านง่ายขึ้น
+
+## สร้าง function
+
+<CodeExample example={examples['python101-functions-01']} />
+ผลลัพธ์:
+
+## พารามิเตอร์ (Parameters)
+
+Parameters คือค่าที่ส่งเข้าไปใน function เพื่อให้ function ทำงานกับข้อมูลต่างกันได้
+
+<CodeExample example={examples['python101-functions-03']} />
+ผลลัพธ์: `สวัสดี Mali`
+
+## ค่าที่ส่งกลับ (Return value)
+
+`return` ใช้ส่งค่ากลับออกมาจาก function เพื่อเอาไปเก็บ ใช้ต่อ หรือคำนวณต่อได้
+
+<CodeExample example={examples['python101-functions-04']} />
+ใช้ `return` เมื่อ function ควรส่งค่ากลับไปให้ส่วนอื่นใช้ต่อ
+
+ถ้า function ใช้ `return` เราสามารถเก็บผลลัพธ์ไว้ในตัวแปร เช่น `result` แล้วนำไป `print()` หรือคำนวณต่อได้
+
+## ค่าเริ่มต้นของพารามิเตอร์ (Default arguments)
+
+Default arguments คือค่าตั้งต้นที่ function ใช้เมื่อเราไม่ส่งค่าเข้ามา
+
+<CodeExample example={examples['python101-functions-05']} />
+ผลลัพธ์:
+
+## ขอบเขตของตัวแปร (Scope)
+
+ตัวแปรที่สร้างใน function จะใช้ได้ใน function นั้นเท่านั้น
+
+ถ้าเรียกใช้ตัวแปรนั้นนอก function จะเกิด error เพราะตัวแปรอยู่นอกขอบเขตที่เข้าถึงได้
+
+<CodeExample example={examples['python101-functions-07']} />
+ผลลัพธ์: `16`
+
+## ข้อผิดพลาดที่พบบ่อย
+
+- ลืมเรียก function หลังสร้าง
+- ใช้ `print()` แทน `return` ในงานที่ต้องนำค่าไปคำนวณต่อ
+- ตั้งชื่อ function ไม่ชัดเจน
+
+## แบบฝึกหัด
+
+1. สร้าง function `celsius_to_fahrenheit(celsius)` ที่รับองศา Celsius แล้ว `return` ค่า Fahrenheit จากนั้นทดสอบด้วย `0`
+2. สร้าง function `rectangle_area(width, height)` ที่รับความกว้างและความสูง แล้ว `return` พื้นที่ จากนั้นทดสอบด้วย 4 และ 5
+3. สร้าง function `is_even(number)` ที่รับเลข 1 ตัว แล้ว `return` `True` ถ้าเลขเป็นคู่ และ `False` ถ้าเลขเป็นคี่ จากนั้นทดสอบด้วย 2 และ 3 เพื่อดูผลลัพธ์ `True` และ `False`
+
+<details class="answer-reveal">
+<summary>ดูเฉลยแบบฝึกหัด</summary>
+
+### เฉลยข้อ 1
+
+สร้าง function ที่รับค่า Celsius แล้ว `return` ค่า Fahrenheit เพื่อเอาผลลัพธ์ไปใช้ต่อได้
+
+<CodeExample example={examples['python101-functions-08']} />
+ผลลัพธ์: `32.0`
+
+### เฉลยข้อ 2
+
+พื้นที่สี่เหลี่ยมคือความกว้างคูณความสูง
+
+<CodeExample example={examples['python101-functions-09']} />
+ผลลัพธ์: `20`
+
+### เฉลยข้อ 3
+
+เลขคู่คือเลขที่หาร 2 แล้วเศษเป็น 0
+
+<CodeExample example={examples['python101-functions-10']} />
+ผลลัพธ์:
+
+</details>
+
+## โจทย์ท้าทาย
+
+เขียน calculator ที่รับเลข 2 ตัวและเครื่องหมาย `+`, `-`, `*`, `/` โดยแยกแต่ละ operation เป็น function `add`, `subtract`, `multiply`, `divide`; ถ้าหารด้วยศูนย์ให้แสดงข้อความเตือน และถ้าใส่เครื่องหมายอื่นให้แสดงว่าไม่รู้จักเครื่องหมายนั้น
+
+<details class="answer-reveal">
+<summary>ดูเฉลยโจทย์ท้าทาย</summary>
+
+แยกแต่ละเครื่องหมายเป็น function แล้วใช้ `if/elif/else` เพื่อครอบคลุม `+`, `-`, `*`, `/`, การหารด้วยศูนย์ และเครื่องหมายที่ไม่รู้จัก
+
+<CodeExample example={examples['python101-functions-12']} />
+</details>
+
+## สรุป
+
+Function ช่วยให้โค้ดเป็นระเบียบและลดการเขียนซ้ำ และเป็นทักษะที่ต้องใช้ต่อเมื่อเขียนโปรแกรมที่ใหญ่ขึ้น

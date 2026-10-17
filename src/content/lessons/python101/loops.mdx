@@ -1,0 +1,108 @@
+---
+section: python101
+title: "วนซ้ำใน Python ด้วย for และ while"
+description: "เรียนการทำงานซ้ำใน Python ด้วย for loop, while loop, range, break และ continue พร้อมตัวอย่างและแบบฝึกหัด"
+order: 5
+source: python101/loops.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/python101.json';
+
+Loop ใช้ทำงานซ้ำ เช่น แสดงตัวเลข 1-100 ตรวจรายการสินค้า หรือถามข้อมูลจนกว่าผู้ใช้จะพิมพ์ถูก
+
+## for loop
+
+ใช้เมื่อรู้จำนวนรอบหรือวนผ่านรายการ
+
+<CodeExample example={examples['python101-loops-01']} />
+ผลลัพธ์:
+
+`range(1, 6)` ได้เลข 1 ถึง 5 เพราะค่าสุดท้ายไม่รวม
+
+## ภาพรวม for loop
+
+<figure class="diagram">
+  <img src="/diagrams/python101-loops-1.svg" alt="แผนภาพลำดับการทำงานของ for loop" />
+  <figcaption>แผนภาพ for loop: เริ่มจากหยิบค่าถัดไปจาก range หรือ list ถ้ามีค่าให้ทำงานใน block ของ loop แล้ววนกลับไปหยิบค่าถัดไป ถ้าไม่มีค่าเหลือให้ออกจาก loop</figcaption>
+</figure>
+ไดอะแกรมนี้แสดงว่า `for` หยิบค่าทีละตัว ทำงานหนึ่งรอบ แล้ววนกลับไปหยิบค่าถัดไปจนกว่าจะหมด
+
+## while loop
+
+ใช้เมื่อยังไม่รู้จำนวนรอบ แต่มีเงื่อนไขให้ทำต่อ
+
+<CodeExample example={examples['python101-loops-04']} />
+ตัวอย่างการรัน:
+
+โปรแกรมถามซ้ำเพราะ `password != "python"` ยังเป็นจริง จนกว่าผู้ใช้จะพิมพ์ `python`
+
+<figure class="diagram">
+  <img src="/diagrams/python101-loops-2.svg" alt="แผนภาพลำดับการทำงานของ while loop" />
+  <figcaption>แผนภาพ while loop: ตรวจเงื่อนไขก่อนทุกครั้ง ถ้าเงื่อนไขเป็นจริงให้ทำงานใน block และอัปเดตค่าที่เกี่ยวกับเงื่อนไข แล้วกลับไปตรวจเงื่อนไขใหม่ ถ้าเงื่อนไขเป็นเท็จให้ออกจาก loop</figcaption>
+</figure>
+## break และ continue
+
+`break` หยุด loop ทันที
+
+<CodeExample example={examples['python101-loops-07']} />
+ผลลัพธ์คือ `1` ถึง `4` เพราะ loop หยุดทันทีเมื่อ `number == 5`
+
+`continue` ข้ามรอบปัจจุบัน
+
+<CodeExample example={examples['python101-loops-08']} />
+ผลลัพธ์คือ `1`, `2`, `4`, `5` เพราะรอบที่ `number == 3` ถูกข้าม
+
+## Loop กับ list
+
+<CodeExample example={examples['python101-loops-09']} />
+ผลลัพธ์:
+
+## ข้อผิดพลาดที่พบบ่อย
+
+- `while` ไม่มีทางจบ กลายเป็น infinite loop
+- ลืมเพิ่มค่าตัวนับ
+- เข้าใจ `range()` ผิดว่ารวมเลขสุดท้าย
+
+## แบบฝึกหัด
+
+1. ใช้ `for` และ `range()` แสดงเลข 1 ถึง 20 โดยให้เลข 20 แสดงด้วย
+2. ใช้ `for` และ `range()` แสดงเฉพาะเลขคู่ตั้งแต่ 2 ถึง 50 โดยให้เลข 50 แสดงด้วย
+3. ใช้ loop รับตัวเลขจากผู้ใช้ 5 ครั้ง แปลงเป็น `int` แล้วสะสมผลรวมในตัวแปร `total`
+
+<details class="answer-reveal">
+<summary>ดูเฉลยแบบฝึกหัด</summary>
+
+### เฉลยข้อ 1
+
+`range(1, 21)` ต้องใช้ 21 เพราะเลขสุดท้ายไม่ถูกรวม
+
+<CodeExample example={examples['python101-loops-11']} />
+### เฉลยข้อ 2
+
+ใช้ step เป็น `2` เพื่อข้ามทีละสองเลขและได้เฉพาะเลขคู่
+
+<CodeExample example={examples['python101-loops-12']} />
+### เฉลยข้อ 3
+
+เริ่ม `total` ที่ 0 แล้วบวกค่าที่รับเข้ามาทีละรอบ
+
+<CodeExample example={examples['python101-loops-13']} />
+</details>
+
+## โจทย์ท้าทาย
+
+สร้างเกมทายเลข 1-10 โดยกำหนดเลขลับไว้ในตัวแปร `secret` ให้ผู้ใช้ทายซ้ำจนถูก แสดง `น้อยไป` หรือ `มากไป` ระหว่างทาย และเมื่อถูกให้แสดงจำนวนครั้งที่ทาย
+
+<details class="answer-reveal">
+<summary>ดูเฉลยโจทย์ท้าทาย</summary>
+
+ใช้ `while True` เพื่อให้ทายซ้ำจนกว่าจะถูก แล้ว `break` เพื่อจบเกม
+
+<CodeExample example={examples['python101-loops-14']} />
+</details>
+
+## สรุป
+
+Loop ช่วยให้เขียนโค้ดที่ทำงานซ้ำได้สั้นและเป็นระบบมากขึ้น ไม่ต้องคัดลอกคำสั่งเดิมซ้ำหลายรอบ

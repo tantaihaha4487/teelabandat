@@ -1,0 +1,41 @@
+---
+section: git101
+title: "ติดตั้ง Git และตั้งค่าเริ่มต้น"
+description: "เรียนการติดตั้ง Git การตั้งค่า user name/email และการตรวจสอบว่าเครื่องพร้อมใช้งานแล้ว"
+order: 1
+source: git101/setup.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+Git คือเครื่องมือเก็บประวัติการเปลี่ยนแปลงของไฟล์ ก่อนไปบทถัดไป ให้ตรวจสอบก่อนว่าเครื่องของคุณมี Git พร้อมใช้งานแล้ว
+
+## สิ่งที่ต้องมี
+
+- Terminal หรือ PowerShell
+- Git ติดตั้งแล้ว
+- โฟลเดอร์สำหรับเก็บงานฝึก
+
+## คำสั่งเริ่มต้น
+
+<CodeExample example={examples['git101-setup-01']} />
+
+ค่าที่ตั้งด้วย `--global` มีผลกับทุก repository บนเครื่องนี้ ถ้าใช้อีเมลต่างกันในแต่ละโปรเจกต์ ควรตรวจอีเมลปัจจุบันด้วย `git config user.email` ก่อน commit
+
+## จุดที่มือใหม่พลาดบ่อย
+
+- ลืมตั้งค่า name/email ทำให้ commit ไม่สวย
+- พิมพ์คำสั่งผิดเพราะยังไม่คุ้น terminal
+- สับสนระหว่าง Git กับ GitHub
+
+## ฝึกทำ
+
+1. เช็กเวอร์ชัน Git ของเครื่อง
+2. ตั้งค่า name และ email ของตัวเอง
+3. เปิด terminal ใหม่แล้วลอง `git config --global user.name`
+
+## สรุป
+
+ตอนนี้เครื่องของคุณพร้อมใช้งาน Git แล้ว บทถัดไปจะพาไปรู้จักศัพท์สำคัญอย่าง repository, staging area, และ commit

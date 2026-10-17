@@ -1,0 +1,1577 @@
+{
+  "id": "python",
+  "title": "แบบฝึก Python",
+  "description": "ฝึกอ่านโค้ดและเลือกคำตอบ ดูคำใบ้ได้เมื่อยังไม่แน่ใจ หลังตรวจคำตอบจะมีเหตุผลให้ทบทวนทีละขั้น",
+  "topics": [
+    {
+      "id": "calculation",
+      "title": "การคำนวณและหน่วย"
+    },
+    {
+      "id": "loops",
+      "title": "ลูปและโครงสร้างข้อมูล"
+    },
+    {
+      "id": "functions",
+      "title": "ฟังก์ชัน"
+    },
+    {
+      "id": "exceptions",
+      "title": "ข้อผิดพลาดและข้อยกเว้น"
+    },
+    {
+      "id": "performance",
+      "title": "ประสิทธิภาพของโปรแกรม"
+    },
+    {
+      "id": "debugging",
+      "title": "หาจุดผิดในโค้ด"
+    }
+  ],
+  "questions": [
+    {
+      "sourceId": 1,
+      "bank": "python",
+      "topic": "calculation",
+      "prompt": "ต้นไม้ต้นหนึ่งสูงตามค่าที่กรอกเข้ามาตอนนี้ (หน่วยเซนติเมตร) และโตวันละเท่า ๆ กันตามอัตราที่กรอกเข้ามา (เซนติเมตร/วัน) ต้องคำนวณว่าอีกกี่วันต้นไม้จะสูงถึงความสูงเป้าหมาย โดยใช้สมการ จำนวนวัน = (ความสูงเป้าหมาย - ความสูงปัจจุบัน) หารด้วยอัตราการเติบโตต่อวัน จงเลือกนิพจน์ที่ถูกต้องแทนที่ _____",
+      "code": "height = float(input(\"ความสูงปัจจุบัน (ซม.): \"))\nrate = float(input(\"อัตราการเติบโต (ซม./วัน): \"))\ntarget = float(input(\"ความสูงเป้าหมาย (ซม.): \"))\ndays = _____\nprint(days)",
+      "options": [
+        "(height - target) / rate",
+        "(target - height) * rate",
+        "target / height / rate",
+        "(target - height) / rate",
+        "target - height / rate"
+      ],
+      "correctIndex": 3,
+      "hint": "หาความสูงที่ยังขาดอยู่ก่อน แล้วเทียบหน่วยของคำตอบกับเซนติเมตรต่อวัน (rate ต้องไม่เป็นศูนย์ ไม่เช่นนั้นจะหารไม่ได้)",
+      "reasoningSteps": [
+        "ส่วนต่างของความสูงคือ target ลบ height",
+        "จำนวนวันเท่ากับส่วนต่างนั้นหารด้วย rate จึงได้ (target - height) / rate",
+        "หน่วยเซนติเมตรหารด้วยเซนติเมตรต่อวัน เหลือเป็นหน่วยวัน"
+      ],
+      "context": "โจทย์นี้สมมติว่าความสูงเป้าหมายมากกว่าความสูงปัจจุบัน และอัตราการเติบโตต่อวันมากกว่า 0"
+    },
+    {
+      "sourceId": 2,
+      "bank": "python",
+      "topic": "calculation",
+      "prompt": "บัญชีเงินฝากบัญชีหนึ่งมีเงินอยู่ตามค่าที่กรอกเข้ามา (บาท) และเจ้าของบัญชีออมเพิ่มเดือนละเท่ากันตามค่าที่กรอกเข้ามา (บาท/เดือน) ต้องคำนวณว่าอีกกี่เดือนจึงจะมีเงินถึงเป้าหมาย โดยใช้สมการ จำนวนเดือน = (เป้าหมาย - เงินที่มีอยู่) หารด้วยจำนวนที่ออมต่อเดือน จงเลือกนิพจน์ที่ถูกต้องแทนที่ _____",
+      "code": "saved = float(input(\"เงินที่มีอยู่ตอนนี้ (บาท): \"))\nrate = float(input(\"จำนวนที่ออมต่อเดือน (บาท): \"))\ngoal = float(input(\"เป้าหมายเงินออม (บาท): \"))\nmonths = _____\nprint(months)",
+      "options": [
+        "(saved - goal) / rate",
+        "(goal - saved) * rate",
+        "goal / saved / rate",
+        "goal - saved / rate",
+        "(goal - saved) / rate"
+      ],
+      "correctIndex": 4,
+      "hint": "คิดว่าเงินยังขาดอีกเท่าไร แล้วดูว่าออมเงินก้อนนั้นได้กี่ครั้ง (rate ต้องไม่เป็นศูนย์)",
+      "reasoningSteps": [
+        "เงินที่ยังขาดคือ goal ลบ saved",
+        "แต่ละเดือนเงินเพิ่ม rate บาท จึงนำจำนวนที่ขาดหารด้วย rate",
+        "นิพจน์ที่ได้คือ (goal - saved) / rate เดือน"
+      ],
+      "context": "โจทย์นี้สมมติว่าเป้าหมายเงินออมมากกว่าเงินที่มีอยู่ตอนนี้ และจำนวนที่ออมต่อเดือนมากกว่า 0"
+    },
+    {
+      "sourceId": 3,
+      "bank": "python",
+      "topic": "calculation",
+      "prompt": "ถังเก็บน้ำใบหนึ่งมีน้ำอยู่ตามค่าที่กรอกเข้ามา (ลิตร) และถูกสูบออกด้วยอัตราคงที่ตามค่าที่กรอกเข้ามา (ลิตร/นาที) ต้องคำนวณว่าอีกกี่นาทีระดับน้ำจะลดลงถึงระดับต่ำสุดที่กำหนด โดยใช้สมการ จำนวนนาที = (ระดับน้ำปัจจุบัน - ระดับต่ำสุด) หารด้วยอัตราการสูบต่อนาที จงเลือกนิพจน์ที่ถูกต้องแทนที่ _____",
+      "code": "current_level = float(input(\"ระดับน้ำปัจจุบัน (ลิตร): \"))\nrate = float(input(\"อัตราการสูบออก (ลิตร/นาที): \"))\ntarget_level = float(input(\"ระดับต่ำสุดที่กำหนด (ลิตร): \"))\nminutes = _____\nprint(minutes)",
+      "options": [
+        "(target_level - current_level) / rate",
+        "(current_level - target_level) * rate",
+        "current_level / target_level / rate",
+        "current_level - target_level / rate",
+        "(current_level - target_level) / rate"
+      ],
+      "correctIndex": 4,
+      "hint": "ระดับน้ำกำลังลดลง ให้หาส่วนต่างจากระดับปัจจุบันไปยังระดับต่ำสุด (rate ต้องไม่เป็นศูนย์)",
+      "reasoningSteps": [
+        "ปริมาณน้ำที่ต้องสูบออกคือ current_level ลบ target_level",
+        "เวลาเท่ากับปริมาณที่ต้องสูบหารด้วยอัตราสูบต่อนาที",
+        "จึงใช้ (current_level - target_level) / rate"
+      ],
+      "context": "โจทย์นี้สมมติว่าระดับน้ำปัจจุบันมากกว่าระดับต่ำสุดที่กำหนด และอัตราการสูบออกต่อนาทีมากกว่า 0"
+    },
+    {
+      "sourceId": 4,
+      "bank": "python",
+      "topic": "calculation",
+      "prompt": "รถยนต์คันหนึ่งขับด้วยความเร็วคงที่ตามค่าที่กรอกเข้ามา (กิโลเมตร/ชั่วโมง) และเหลือระยะทางอีกจำนวนหนึ่ง (กิโลเมตร) กว่าจะถึงจุดหมาย ต้องคำนวณว่าอีกกี่นาทีจึงจะถึง โดย 1 ชั่วโมงเท่ากับ 60 นาที จงเลือกนิพจน์ที่ถูกต้องแทนที่ _____",
+      "code": "speed = float(input(\"ความเร็ว (กม./ชม.): \"))\ndistance = float(input(\"ระยะทางที่เหลือ (กม.): \"))\nminutes = _____\nprint(minutes)",
+      "options": [
+        "distance * speed * 60",
+        "distance / speed / 60",
+        "speed / distance * 60",
+        "distance / speed * 60",
+        "distance / speed"
+      ],
+      "correctIndex": 3,
+      "hint": "ระยะทางหารด้วยความเร็วได้เวลาเป็นชั่วโมงก่อน จากนั้นแปลงเป็นนาที (speed ต้องไม่เป็นศูนย์)",
+      "reasoningSteps": [
+        "เวลาเป็นชั่วโมงคำนวณจาก distance / speed",
+        "หนึ่งชั่วโมงมี 60 นาที จึงคูณเวลาที่ได้ด้วย 60",
+        "รวมเป็น distance / speed * 60"
+      ],
+      "context": "โจทย์นี้สมมติว่าความเร็วมากกว่า 0 และระยะทางที่เหลือมีค่ามากกว่าหรือเท่ากับ 0"
+    },
+    {
+      "sourceId": 5,
+      "bank": "python",
+      "topic": "calculation",
+      "prompt": "นักวิ่งคนหนึ่งวิ่งด้วยความเร็วคงที่ตามค่าที่กรอกเข้ามา (กิโลเมตร/ชั่วโมง) เป็นระยะทางตามค่าที่กรอกเข้ามา (กิโลเมตร) ต้องคำนวณว่าใช้เวลากี่วินาทีจึงจะถึงเส้นชัย โดย 1 ชั่วโมงเท่ากับ 3,600 วินาที จงเลือกนิพจน์ที่ถูกต้องแทนที่ _____",
+      "code": "distance = float(input(\"ระยะทาง (กม.): \"))\nspeed = float(input(\"ความเร็ว (กม./ชม.): \"))\nseconds = _____\nprint(seconds)",
+      "options": [
+        "distance * speed * 3600",
+        "distance / speed / 3600",
+        "distance / speed * 3600",
+        "speed / distance * 3600",
+        "distance / speed * 60"
+      ],
+      "correctIndex": 2,
+      "hint": "หาระยะทางหารความเร็วให้ได้ชั่วโมงก่อน แล้วใช้ตัวแปลงหน่วยที่โจทย์ให้ (speed ต้องไม่เป็นศูนย์)",
+      "reasoningSteps": [
+        "เวลาเป็นชั่วโมงคือ distance / speed",
+        "หนึ่งชั่วโมงมี 3,600 วินาที จึงคูณผลด้วย 3,600",
+        "นิพจน์คือ distance / speed * 3600"
+      ],
+      "context": "โจทย์นี้สมมติว่าความเร็วมากกว่า 0 และระยะทางมีค่ามากกว่าหรือเท่ากับ 0"
+    },
+    {
+      "sourceId": 6,
+      "bank": "python",
+      "topic": "calculation",
+      "prompt": "เครื่องบินลำหนึ่งบินด้วยความเร็วคงที่ตามค่าที่กรอกเข้ามา (กิโลเมตร/ชั่วโมง) เป็นเวลาตามค่าที่กรอกเข้ามา (นาที) ต้องคำนวณว่าเดินทางไปได้ระยะทางกี่กิโลเมตร โดย 60 นาทีเท่ากับ 1 ชั่วโมง จงเลือกนิพจน์ที่ถูกต้องแทนที่ _____",
+      "code": "speed = float(input(\"ความเร็ว (กม./ชม.): \"))\nminutes = float(input(\"เวลาที่บิน (นาที): \"))\ndistance = _____\nprint(distance)",
+      "options": [
+        "speed * minutes * 60",
+        "speed / minutes / 60",
+        "speed / minutes * 60",
+        "speed + minutes / 60",
+        "speed * (minutes / 60)"
+      ],
+      "correctIndex": 4,
+      "hint": "ความเร็วนี้คิดต่อชั่วโมง แต่เวลาป้อนเป็นนาที จึงต้องแปลงเวลาก่อนคูณ",
+      "reasoningSteps": [
+        "แปลงนาทีเป็นชั่วโมงด้วย minutes / 60",
+        "ระยะทางเท่ากับความเร็วคูณเวลาที่เป็นชั่วโมง",
+        "จึงเขียนได้เป็น speed * (minutes / 60)"
+      ],
+      "context": "โจทย์นี้สมมติว่าความเร็วมีค่ามากกว่าหรือเท่ากับ 0 และเวลาที่บินมีค่ามากกว่าหรือเท่ากับ 0 นาที"
+    },
+    {
+      "sourceId": 7,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร (ทดสอบ 2 คำ)",
+      "code": "def is_palindrome(text):\n    n = len(text)\n    for i in range(n // 2):\n        if text[i] != text[n - 1 - i]: return False\n    return True\nprint(is_palindrome(\"stars\"), is_palindrome(\"hello\"))",
+      "options": [
+        "True True",
+        "False False",
+        "True False",
+        "เกิด IndexError",
+        "False True"
+      ],
+      "correctIndex": 1,
+      "hint": "ฟังก์ชันเปรียบเทียบตัวอักษรจากหัวกับท้าย และคืน False ทันทีที่พบคู่ที่ไม่ตรงกัน",
+      "reasoningSteps": [
+        "คำว่า stars ไม่เป็นพาลินโดรม เพราะตัว t กับ r ไม่ตรงกัน จึงได้ False",
+        "คำว่า hello ตัว h กับ o ไม่ตรงกันตั้งแต่คู่แรก จึงได้ False",
+        "print แสดงค่าทั้งสองคั่นด้วยช่องว่าง"
+      ]
+    },
+    {
+      "sourceId": 8,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "text = \"hello\"\nr = \"\"\nfor ch in text:\n    r = ch + r\nprint(r)",
+      "options": [
+        "hello",
+        "lleh",
+        "o",
+        "olleh",
+        "\"olleh \""
+      ],
+      "correctIndex": 3,
+      "hint": "แต่ละรอบนำตัวอักษรใหม่ไปต่อไว้ด้านหน้าข้อความเดิม",
+      "reasoningSteps": [
+        "เริ่ม r เป็นสตริงว่าง แล้วอ่าน h, e, l, l, o ตามลำดับ",
+        "การต่อด้านหน้าทำให้ r เปลี่ยนเป็น h, eh, leh, lleh, olleh ตามลำดับ",
+        "ข้อความที่พิมพ์ออกมาคือ olleh"
+      ]
+    },
+    {
+      "sourceId": 9,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้ (สมมติว่า nums ไม่เป็นลิสต์ว่าง): หาค่ามากที่สุดในลิสต์ nums โดยห้ามใช้ max()",
+      "code": "ก.\nmx = nums[0]\nfor x in nums:\n    if x > mx:\n        mx = x\n\nข.\nmx = 0\nfor x in nums:\n    if x > mx:\n        mx = x\n\nค.\nmx = nums[0]\nfor x in nums:\n    if x < mx:\n        mx = x\n\nง.\nmx = nums[0]\nfor i in range(len(nums) - 1):\n    if nums[i] > mx:\n        mx = nums[i]\n\nจ.\nmx = nums[0]\nfor x in nums:\n    mx = x",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "ค่าเริ่มต้นควรมาจากข้อมูลจริง เพื่อให้ทำงานได้แม้ตัวเลขทุกตัวติดลบ",
+      "reasoningSteps": [
+        "กำหนด mx เป็นสมาชิกตัวแรกของ nums",
+        "ตรวจทุกค่า x แล้วแทน mx เมื่อพบค่าที่มากกว่า",
+        "เมื่อวนครบ mx จะเป็นค่าสูงสุดโดยไม่ต้องเรียก max()"
+      ]
+    },
+    {
+      "sourceId": 10,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้ (สมมติว่า k ไม่เท่ากับ 0): นับจำนวนที่หาร k ลงตัวในช่วง 1 ถึง n",
+      "code": "ก.\nc = 0\nfor i in range(1, n + 1):\n    if i % k == 0:\n        c += 1\n\nข.\nc = 0\nfor i in range(1, n):\n    if i % k == 0:\n        c += 1\n\nค.\nc = 0\nfor i in range(1, n + 1):\n    if i % k != 0:\n        c += 1\n\nง.\nc = 0\nfor i in range(1, n + 1):\n    if k % i == 0:\n        c += 1\n\nจ.\nc = 1\nfor i in range(1, n + 1):\n    if i % k == 0:\n        c += 1",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "ตรวจทุกจำนวนตั้งแต่ 1 จนถึง n รวม n ด้วย และใช้เศษจากการหารเพื่อเช็กการหารลงตัว",
+      "reasoningSteps": [
+        "range(1, n + 1) สร้างค่าตั้งแต่ 1 ถึง n เพราะปลายช่วงไม่ถูกรวม",
+        "เงื่อนไข i % k == 0 เป็นจริงเมื่อ i หารด้วย k ลงตัว",
+        "เพิ่มตัวนับเฉพาะรอบที่เงื่อนไขเป็นจริง จึงนับจำนวนที่ต้องการได้"
+      ]
+    },
+    {
+      "sourceId": 11,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร (สมมติว่า nums ไม่เป็นลิสต์ว่าง)",
+      "code": "nums = [5, 1, 9, 3, 7]\nmn = nums[0]\nfor x in nums:\n    if x < mn: mn = x\nprint(mn)",
+      "options": [
+        "0",
+        "9",
+        "1",
+        "5",
+        "7"
+      ],
+      "correctIndex": 2,
+      "hint": "ติดตามค่า mn ทีละตัว โดยเปลี่ยนค่าเฉพาะเมื่อเจอตัวเลขที่น้อยกว่า",
+      "reasoningSteps": [
+        "เริ่ม mn เท่ากับ 5 แล้วเจอ 1 จึงเปลี่ยน mn เป็น 1",
+        "ค่า 9, 3 และ 7 ไม่น้อยกว่า 1 จึงไม่เปลี่ยน mn",
+        "คำสั่ง print จึงแสดง 1"
+      ]
+    },
+    {
+      "sourceId": 12,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "i = 0\ntotal = 0\nwhile i < 10:\n    i = i + 1\n    if i % 3 == 0:\n        continue\n    total = total + i\nprint(total)",
+      "options": [
+        "55",
+        "3",
+        "37",
+        "18",
+        "45"
+      ],
+      "correctIndex": 2,
+      "hint": "continue ข้ามการบวกในรอบที่หาร 3 ลงตัว แต่ตัวนับ i ยังเดินต่อ",
+      "reasoningSteps": [
+        "ลูปพิจารณาเลข 1 ถึง 10",
+        "ข้าม 3, 6 และ 9 เลขที่นำมาบวกคือ 1, 2, 4, 5, 7, 8, 10",
+        "ผลรวมคือ 1 + 2 + 4 + 5 + 7 + 8 + 10 เท่ากับ 37"
+      ]
+    },
+    {
+      "sourceId": 13,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "n = 6\na, b = 0, 1\nfor _ in range(n): a, b = b, a + b\nprint(a)",
+      "options": [
+        "6",
+        "13",
+        "5",
+        "32",
+        "8"
+      ],
+      "correctIndex": 4,
+      "hint": "ติดตามค่าคู่ a และ b หลังทำซ้ำ โดยค่าที่พิมพ์คือ a ไม่ใช่ b",
+      "reasoningSteps": [
+        "เริ่ม a เท่ากับ 0 และ b เท่ากับ 1 แต่ละรอบกำหนด a เป็นค่า b เดิม และ b เป็นผลบวกของคู่เดิม",
+        "ค่า a หลังจบแต่ละรอบเป็น 1, 1, 2, 3, 5 และ 8",
+        "ทำครบ 6 รอบแล้ว print(a) จึงแสดง 8"
+      ]
+    },
+    {
+      "sourceId": 14,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "total = 0\nrow = 1\nwhile row <= 3:\n    for col in range(row):\n        total = total + row\n    row = row + 1\nprint(total)",
+      "options": [
+        "5",
+        "20",
+        "18",
+        "14",
+        "6"
+      ],
+      "correctIndex": 3,
+      "hint": "ในแต่ละแถว ค่า row ถูกบวกซ้ำเท่ากับจำนวนรอบของลูปด้านใน",
+      "reasoningSteps": [
+        "row เท่ากับ 1 ถูกบวก 1 ครั้ง ได้ 1",
+        "row เท่ากับ 2 ถูกบวก 2 ครั้ง ได้ 4 และ row เท่ากับ 3 ถูกบวก 3 ครั้ง ได้ 9",
+        "รวม 1 + 4 + 9 เท่ากับ 14"
+      ]
+    },
+    {
+      "sourceId": 15,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "m = [[1, 2], [3, 4], [5, 6]]\nt = 0\nfor row in m:\n    for v in row: t += v\nprint(t)",
+      "options": [
+        "6",
+        "21",
+        "22",
+        "10",
+        "9"
+      ],
+      "correctIndex": 1,
+      "hint": "ลูปด้านนอกเลือกทีละแถว ส่วนลูปด้านในบวกสมาชิกทุกตัวในแถวนั้น",
+      "reasoningSteps": [
+        "แถวแรกมี 1 + 2 เท่ากับ 3 และแถวที่สองมี 3 + 4 เท่ากับ 7",
+        "แถวสุดท้ายมี 5 + 6 เท่ากับ 11",
+        "รวมทุกแถว 3 + 7 + 11 เท่ากับ 21"
+      ]
+    },
+    {
+      "sourceId": 16,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "nums = [5, 2, 8, 1, 9, 3]\na = nums.copy(); n = len(a)\nfor i in range(n):\n    min_idx = i\n    for j in range(i + 1, n):\n        if a[j] < a[min_idx]: min_idx = j\n    a[i], a[min_idx] = a[min_idx], a[i]\nprint(a)",
+      "options": [
+        "[9, 8, 5, 3, 2, 1]",
+        "[9, 1, 2, 3, 5, 8]",
+        "[5, 2, 8, 1, 9, 3]",
+        "[1, 2, 3, 5, 8, 9]",
+        "[1, 2, 3, 5, 9, 8]"
+      ],
+      "correctIndex": 3,
+      "hint": "ในแต่ละรอบ โค้ดเลือกค่าน้อยที่สุดจากส่วนที่ยังไม่เรียงแล้วสลับมาไว้ตำแหน่งปัจจุบัน",
+      "reasoningSteps": [
+        "อัลกอริทึมนี้เป็น selection sort แบบเรียงจากน้อยไปมาก",
+        "เมื่อทำครบทุกตำแหน่ง ค่าจะเรียงเป็น 1, 2, 3, 5, 8, 9",
+        "การพิมพ์ลิสต์จึงได้ [1, 2, 3, 5, 8, 9]"
+      ]
+    },
+    {
+      "sourceId": 17,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร (สมมติว่าเมทริกซ์ m ถูกต้อง)",
+      "code": "m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nrows, cols = len(m), len(m[0])\nresult = [[0] * rows for _ in range(cols)]\nfor i in range(rows):\n    for j in range(cols):\n        result[j][i] = m[i][j]\nprint(result)",
+      "options": [
+        "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "[[7, 4, 1], [8, 5, 2], [9, 6, 3]]",
+        "[[1, 4, 7], [2, 5, 8], [3, 6, 9]]",
+        "[[1, 4, 0], [2, 5, 0], [3, 6, 0]]",
+        "[[3, 2, 1], [6, 5, 4], [9, 8, 7]]"
+      ],
+      "correctIndex": 2,
+      "hint": "ดูการกำหนด result[j][i] แถวเดิมจะกลายเป็นคอลัมน์ใหม่",
+      "reasoningSteps": [
+        "เมทริกซ์เดิมมีแถว [1,2,3], [4,5,6], [7,8,9]",
+        "ค่า m[i][j] ถูกย้ายไปตำแหน่ง result[j][i] ซึ่งสลับดัชนีแถวกับคอลัมน์",
+        "ผลคือ [[1,4,7], [2,5,8], [3,6,9]]"
+      ]
+    },
+    {
+      "sourceId": 18,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "nums = [2, 1, 4, 3]\ntarget = 4\nfor i in range(len(nums)):\n    for j in range(i + 1, len(nums)):\n        if nums[i] * nums[j] == target:\n            print((nums[i], nums[j]))\n            break",
+      "options": [
+        "(1, 4)",
+        "(1, 3)",
+        "(2, 2)",
+        "None",
+        "(2, 1)"
+      ],
+      "correctIndex": 0,
+      "hint": "เริ่มตรวจคู่ที่ดัชนี j มากกว่า i และหยุดลูปด้านในเมื่อพบผลคูณเป้าหมาย",
+      "reasoningSteps": [
+        "คู่ที่เริ่มจาก 2 ให้ผลคูณกับตัวถัดไปเป็น 2, 8 และ 6 จึงยังไม่ตรง 4",
+        "เมื่อเริ่มจาก 1 คู่ถัดไปคือ 1 กับ 4 ซึ่งคูณกันได้ 4",
+        "จึงพิมพ์ (1, 4) แล้ว break ออกจากลูปด้านใน"
+      ]
+    },
+    {
+      "sourceId": 19,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "จงเลือกตัวเลือกที่ทำงานถูกต้องตามข้อกำหนดต่อไปนี้ (แต่ละตัวเลือกคือเนื้อโค้ดในฟังก์ชันเดียวกัน): ตรวจว่ามีค่าซ้ำในลิสต์ nums ไหม โดยคืน True หรือ False",
+      "code": "ก.\nfor i in range(len(nums)):\n    for j in range(i + 1, len(nums)):\n        if nums[i] == nums[j]:\n            return True\nreturn False\n\nข.\nfor i in range(len(nums)):\n    for j in range(len(nums)):\n        if nums[i] == nums[j]:\n            return True\nreturn False\n\nค.\nfor i in range(len(nums)):\n    for j in range(i + 1, len(nums) - 1):\n        if nums[i] == nums[j]:\n            return True\nreturn False\n\nง.\nfound = False\nfor i in range(len(nums)):\n    for j in range(i + 1, len(nums)):\n        if nums[i] == nums[j]:\n            found = False\nreturn found\n\nจ.\nfor i in range(len(nums) - 1):\n    if nums[i] == nums[i + 1]:\n        return True\nreturn False",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "เปรียบเทียบตำแหน่งหนึ่งกับตำแหน่งถัด ๆ ไป โดยไม่เปรียบเทียบสมาชิกกับตัวเอง",
+      "reasoningSteps": [
+        "ใช้ j เริ่มที่ i + 1 จึงตรวจแต่ละคู่คนละตำแหน่งเพียงครั้งเดียว",
+        "ถ้าคู่ใดมีค่าเท่ากัน ให้คืน True ทันที",
+        "ถ้าตรวจครบแล้วยังไม่พบคู่ซ้ำ จึงคืน False"
+      ],
+      "context": "ตัวเลือกแต่ละข้อคือเนื้อโค้ดที่อยู่ภายในฟังก์ชันเดียวกัน ไม่ใช่โปรแกรมแยกกัน"
+    },
+    {
+      "sourceId": 20,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้ (สมมติว่า rows และ cols ถูกต้อง): หาผลรวมทุกช่องในตารางสูตรคูณขนาด rows x cols",
+      "code": "ก.\nt = 0\nfor i in range(1, rows + 1):\n    for j in range(1, cols + 1):\n        t += i * j\n\nข.\nt = 0\nfor i in range(1, rows + 1):\n    for j in range(1, cols + 1):\n        t += i + j\n\nค.\nt = 1\nfor i in range(1, rows + 1):\n    for j in range(1, cols + 1):\n        t += i * j\n\nง.\nt = 0\nfor i in range(1, rows + 1):\n    t += i * cols\n\nจ.\nt = 0\nfor i in range(1, rows + 1):\n    t += i",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "แต่ละช่องของตารางสูตรคูณเกิดจากเลขแถวคูณเลขคอลัมน์ ต้องนำมาบวกให้ครบทุกช่อง",
+      "reasoningSteps": [
+        "ลูปซ้อนกันเดินครบทุกคู่ (i, j) ในตารางขนาด rows คูณ cols",
+        "ค่าของแต่ละช่องคือ i คูณ j จึงต้องบวกผลคูณนี้เข้า t",
+        "เริ่ม t ที่ 0 ทำให้ผลรวมสะสมของทุกช่องถูกต้อง"
+      ]
+    },
+    {
+      "sourceId": 21,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(len(fruits))",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "\"apple\"",
+        "Error"
+      ],
+      "correctIndex": 1,
+      "hint": "len กับลิสต์จะนับสมาชิกชั้นนอกทั้งหมด ไม่ได้นับจำนวนตัวอักษรของสมาชิก",
+      "reasoningSteps": [
+        "ลิสต์ fruits มีสมาชิก apple, banana และ cherry",
+        "มีสมาชิกทั้งหมด 3 ตัว",
+        "ดังนั้น len(fruits) แสดง 3"
+      ]
+    },
+    {
+      "sourceId": 22,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "total = 0\nfor i in range(2, 10, 2):\n    total += i\nprint(total)",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "9",
+        "16"
+      ],
+      "correctIndex": 1,
+      "hint": "range มีค่าเริ่มต้น 2 เพิ่มครั้งละ 2 และไม่รวมขอบบน 10",
+      "reasoningSteps": [
+        "ค่าที่ได้จาก range(2, 10, 2) คือ 2, 4, 6 และ 8",
+        "ลูปบวกค่าทั้งสี่เข้ากับ total",
+        "2 + 4 + 6 + 8 เท่ากับ 20"
+      ]
+    },
+    {
+      "sourceId": 23,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "nums = [4, 9, 2, 7]\nprint(sum(nums), max(nums), min(nums))",
+      "options": [
+        "22 9 2",
+        "22 7 2",
+        "4 9 2",
+        "9 2 22",
+        "20 9 4"
+      ],
+      "correctIndex": 0,
+      "hint": "คำนวณผลรวม ค่ามากสุด และค่าน้อยสุดของลิสต์แยกกันตามลำดับอาร์กิวเมนต์",
+      "reasoningSteps": [
+        "ผลรวม 4 + 9 + 2 + 7 เท่ากับ 22",
+        "ค่ามากที่สุดคือ 9 และค่าน้อยที่สุดคือ 2",
+        "print แสดงผลลัพธ์ทั้งสามตามลำดับเป็น 22 9 2"
+      ]
+    },
+    {
+      "sourceId": 24,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "price = 19.876\nprint(round(price, 2))",
+      "options": [
+        "19.87",
+        "19.876",
+        "19.9",
+        "20",
+        "19.88"
+      ],
+      "correctIndex": 4,
+      "hint": "อาร์กิวเมนต์ตัวที่สองของ round ระบุจำนวนตำแหน่งทศนิยมที่ต้องการเก็บ",
+      "reasoningSteps": [
+        "round(price, 2) ปัดค่า price ให้เหลือทศนิยม 2 ตำแหน่ง",
+        "หลักทศนิยมถัดจาก 87 คือ 6 จึงปัดหลักร้อยส่วนขึ้น",
+        "ผลที่แสดงคือ 19.88"
+      ]
+    },
+    {
+      "sourceId": 25,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "changes = [3, -12, 7, -4]\nprint(max(changes), abs(min(changes)))",
+      "options": [
+        "3 4",
+        "7 12",
+        "7 -12",
+        "-12 7",
+        "12 7"
+      ],
+      "correctIndex": 1,
+      "hint": "หาค่าสูงสุดกับค่าต่ำสุดก่อน แล้วค่อยพิจารณาว่า abs เปลี่ยนเครื่องหมายอย่างไร",
+      "reasoningSteps": [
+        "ค่ามากที่สุดใน [3, -12, 7, -4] คือ 7",
+        "ค่าน้อยที่สุดคือ -12 และ abs(-12) มีค่าเป็น 12",
+        "print จึงแสดง 7 12"
+      ]
+    },
+    {
+      "sourceId": 26,
+      "bank": "python",
+      "topic": "loops",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "num = 2569\ntext = str(num)\nprint(len(text), int(text) + 1)",
+      "options": [
+        "2569 2570",
+        "1 2570",
+        "4 2570",
+        "4 25691",
+        "4 2569"
+      ],
+      "correctIndex": 2,
+      "hint": "แยกคิดความยาวของสตริงกับการแปลงกลับเป็นจำนวนเต็มก่อนบวกหนึ่ง",
+      "reasoningSteps": [
+        "str(2569) ได้ข้อความ '2569' ซึ่งมี 4 ตัวอักษร",
+        "int(text) แปลงกลับเป็น 2569 แล้วบวก 1 ได้ 2570",
+        "จึงแสดง 4 2570"
+      ]
+    },
+    {
+      "sourceId": 27,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันชื่อ greet_user รับพารามิเตอร์ name โดยไม่มีค่า return และพิมพ์ \"Hello, <name>\"",
+      "code": "ก.\ndef greet_user(name):\n    print(\"Hello,\", name)\n\nข.\ndef greet_user(name):\n    return \"Hello, \" + name\n\nค.\ndef greet_user():\n    print(\"Hello, name\")\n\nง.\ngreet_user(name):\n    print(\"Hello,\", name)\n\nจ.\ndef greet_user(name) print(\"Hello,\", name)",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "ข้อกำหนดต้องการให้ฟังก์ชันพิมพ์ข้อความ ไม่ได้ต้องการส่งค่ากลับ",
+      "reasoningSteps": [
+        "ประกาศฟังก์ชันด้วย def และรับ name เป็นพารามิเตอร์",
+        "print('Hello,', name) แสดงคำทักทายพร้อมชื่อที่ส่งเข้ามา",
+        "ตัวเลือกนี้ใช้ print และไม่มี return จึงตรงตามโจทย์"
+      ]
+    },
+    {
+      "sourceId": 28,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันชื่อ multiply รับสองพารามิเตอร์ a และ b คืนค่าผลคูณ",
+      "code": "ก.\ndef multiply(a, b):\n    return a * b\n\nข.\ndef multiply(a, b):\n    print(a * b)\n\nค.\ndef multiply(a):\n    return a * b\n\nง.\ndef multiply(a, b):\n    return a + b\n\nจ.\ndef multiply(a, b):\n    a * b",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "แยกให้ออกระหว่างการแสดงค่าทางหน้าจอกับการคืนค่าที่ผู้เรียกนำไปใช้ต่อได้",
+      "reasoningSteps": [
+        "ฟังก์ชันต้องรับทั้ง a และ b",
+        "ผลคูณคำนวณด้วย a คูณ b",
+        "ใช้ return เพื่อส่งผลคูณกลับให้ส่วนที่เรียกฟังก์ชัน"
+      ]
+    },
+    {
+      "sourceId": 29,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันชื่อ power รับ base และ exponent โดย exponent มีค่าเริ่มต้น 2 คืนค่า base ยกกำลัง exponent",
+      "code": "ก.\ndef power(base, exponent=2):\n    return base ** exponent\n\nข.\ndef power(base=2, exponent):\n    return base ** exponent\n\nค.\ndef power(base, exponent):\n    return base ** exponent\n\nง.\ndef power(base, exponent=2):\n    return base * exponent\n\nจ.\ndef power(exponent=2, base):\n    return base ** exponent",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "พารามิเตอร์ที่มีค่าเริ่มต้นต้องตามหลังพารามิเตอร์บังคับ และการยกกำลังใช้เครื่องหมายสองดอกจัน",
+      "reasoningSteps": [
+        "base เป็นพารามิเตอร์ที่ต้องระบุ ส่วน exponent กำหนดค่าเริ่มต้นเป็น 2",
+        "เครื่องหมาย ** ใช้คำนวณการยกกำลัง",
+        "จึงตรงกับ def power(base, exponent=2) ที่คืนค่า base ** exponent"
+      ]
+    },
+    {
+      "sourceId": 30,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันชื่อ total_items รับจำนวนอาร์กิวเมนต์ไม่จำกัดด้วย *args คืนค่าผลรวมทั้งหมด",
+      "code": "ก.\ndef total_items(*args):\n    total = 0\n    for x in args: total += x\n    return total\n\nข.\ndef total_items(args):\n    total = 0\n    for x in args: total += x\n    return total\n\nค.\ndef total_items(*args):\n    total = 0\n    for x in args: total += x\n    print(total)\n\nง.\ndef total_items(*args):\n    total = 0\n    for x in args: total = x\n    return total\n\nจ.\ndef total_items(**args):\n    total = 0\n    for x in args: total += x\n    return total",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "เครื่องหมายดอกจันเดี่ยวรับอาร์กิวเมนต์ตำแหน่งจำนวนไม่จำกัด และต้องคืนผลรวม ไม่ใช่แค่พิมพ์",
+      "reasoningSteps": [
+        "*args รวบรวมอาร์กิวเมนต์หลายตัวไว้ในทูเพิล args",
+        "วนสมาชิกทุกตัวแล้วสะสมลง total",
+        "return total ส่งผลรวมกลับ แทนการพิมพ์อย่างเดียว"
+      ]
+    },
+    {
+      "sourceId": 31,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันเวียนเกิด countdown รับ n พิมพ์เลขนับถอยหลังจนถึง 1 แล้วพิมพ์ \"Go!\" โดยไม่มี return",
+      "code": "ก.\ndef countdown(n):\n    if n <= 0:\n        print(\"Go!\")\n        return\n    print(n)\n    countdown(n - 1)\n\nข.\ndef countdown(n):\n    print(n)\n    countdown(n - 1)\n\nค.\ndef countdown(n):\n    if n <= 0:\n        print(\"Go!\")\n        return\n    print(n)\n\nง.\ndef countdown(n):\n    if n <= 0:\n        return \"Go!\"\n    print(n)\n    countdown(n - 1)\n\nจ.\ndef countdown(n):\n    if n <= 0:\n        print(\"Go!\")\n        return\n    countdown(n - 1)\n    print(n)",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "การเรียกซ้ำต้องมีกรณีหยุด และแต่ละรอบต้องทำให้ n เข้าใกล้กรณีนั้น",
+      "reasoningSteps": [
+        "เมื่อ n น้อยกว่าหรือเท่ากับ 0 ให้พิมพ์ Go! แล้ว return เพื่อหยุดเรียกซ้ำ",
+        "กรณีอื่นพิมพ์ n ก่อน",
+        "จากนั้นเรียก countdown(n - 1) จึงพิมพ์ถอยหลังจนถึง 1 แล้วตามด้วย Go!"
+      ]
+    },
+    {
+      "sourceId": 32,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันชื่อ add_item รับพารามิเตอร์ cart (list) เพิ่ม \"milk\" เข้าไปด้วย .append() โดยไม่ต้อง return",
+      "code": "ก.\ndef add_item(cart):\n    cart.append(\"milk\")\n\nข.\ndef add_item(cart):\n    cart = cart + [\"milk\"]\n\nค.\ndef add_item(cart):\n    return cart.append(\"milk\")\n\nง.\ndef add_item(cart):\n    cart.append(\"milk\")\n    return cart\n\nจ.\ndef add_item():\n    cart.append(\"milk\")",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "ลิสต์ถูกแก้ไขได้โดยตรงด้วย append ข้อกำหนดยังระบุว่าไม่ต้องส่งค่ากลับ",
+      "reasoningSteps": [
+        "cart.append('milk') เพิ่มสมาชิกเข้าไปในลิสต์เดิม",
+        "เมธอด append แก้ลิสต์โดยตรงและไม่จำเป็นต้องคืนลิสต์",
+        "ตัวเลือก ก จึงทำตามทั้งการใช้ append และการไม่ return"
+      ]
+    },
+    {
+      "sourceId": 33,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันชื่อ describe_pet รับ name และ species โดย species มีค่าเริ่มต้นเป็น \"dog\" คืนค่าข้อความ \"name is a species\"",
+      "code": "ก.\ndef describe_pet(name, species=\"dog\"):\n    return name + \" is a \" + species\n\nข.\ndef describe_pet(name, species=\"dog\"):\n    print(name + \" is a \" + species)\n\nค.\ndef describe_pet(species=\"dog\", name):\n    return name + \" is a \" + species\n\nง.\ndef describe_pet(name, species):\n    return name + \" is a \" + species\n\nจ.\ndef describe_pet(name, species=\"cat\"):\n    return name + \" is a \" + species",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "กำหนดค่าเริ่มต้นให้ species และต่อข้อความที่คืนออกไปโดยไม่ใช้ print",
+      "reasoningSteps": [
+        "name เป็นพารามิเตอร์บังคับ ส่วน species ต้องเริ่มต้นเป็น dog",
+        "ข้อความผลลัพธ์ประกอบด้วยชื่อ ตามด้วย ' is a ' และชนิดสัตว์",
+        "ตัวเลือก ก คืนสตริงและตั้งค่าเริ่มต้นตรงตามโจทย์"
+      ]
+    },
+    {
+      "sourceId": 34,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้ (สมมติว่า numbers ไม่เป็นลิสต์ว่าง): ฟังก์ชันชื่อ find_smallest รับลิสต์ตัวเลข คืนค่าน้อยที่สุดโดยเขียนลูปเอง ห้ามใช้ min()",
+      "code": "ก.\ndef find_smallest(numbers):\n    smallest = numbers[0]\n    for n in numbers:\n        if n < smallest: smallest = n\n    return smallest\n\nข.\ndef find_smallest(numbers):\n    smallest = 0\n    for n in numbers:\n        if n < smallest: smallest = n\n    return smallest\n\nค.\ndef find_smallest(numbers):\n    smallest = numbers[0]\n    for n in numbers:\n        if n > smallest: smallest = n\n    return smallest\n\nง.\ndef find_smallest(numbers):\n    smallest = numbers[0]\n    for n in numbers: smallest = n\n    return smallest\n\nจ.\ndef find_smallest(numbers):\n    return min(numbers)",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "เริ่มจากสมาชิกจริงตัวหนึ่งในลิสต์ แล้วแทนค่าเมื่อพบสมาชิกที่เล็กกว่า",
+      "reasoningSteps": [
+        "กำหนด smallest เป็น numbers[0] เพื่อให้เป็นค่าตั้งต้นที่อยู่ในข้อมูลจริง",
+        "วนครบทุกตัวและอัปเดตเมื่อ n น้อยกว่า smallest",
+        "คืน smallest หลังตรวจครบ จึงหาค่าน้อยสุดโดยไม่ใช้ min()"
+      ]
+    },
+    {
+      "sourceId": 35,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้: ฟังก์ชันชื่อ set_temperature แก้ไขตัวแปร global ชื่อ current_temp ให้เป็นค่าที่รับเข้ามา",
+      "code": "ก.\ndef set_temperature(t):\n    global current_temp\n    current_temp = t\n\nข.\ndef set_temperature(t):\n    current_temp = t\n\nค.\ndef set_temperature(t):\n    global t\n    current_temp = t\n\nง.\ndef set_temperature(current_temp):\n    current_temp = current_temp\n\nจ.\ndef set_temperature(t):\n    global current_temp\n    return t",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "ในฟังก์ชัน การกำหนดค่าให้ชื่อตัวแปรจะสร้างตัวแปรเฉพาะที่ เว้นแต่ประกาศขอบเขตไว้ก่อน",
+      "reasoningSteps": [
+        "global current_temp ระบุว่าชื่อนี้หมายถึงตัวแปรระดับโมดูล",
+        "จากนั้น current_temp = t จึงแก้ค่าตัวแปร global ให้เป็นค่าที่รับมา",
+        "ตัวเลือกอื่นไม่ได้ประกาศ global ให้ชื่อตัวแปรเป้าหมายอย่างถูกต้อง"
+      ]
+    },
+    {
+      "sourceId": 36,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "จงเลือกโค้ดที่ถูกต้องสำหรับข้อกำหนดต่อไปนี้ (สมมติว่า n มากกว่าหรือเท่ากับ 0): ฟังก์ชันเวียนเกิด sum_to_n รับ n คืนค่าผลรวม 1 ถึง n",
+      "code": "ก.\ndef sum_to_n(n):\n    if n <= 0:\n        return 0\n    return n + sum_to_n(n - 1)\n\nข.\ndef sum_to_n(n):\n    return n + sum_to_n(n - 1)\n\nค.\ndef sum_to_n(n):\n    if n <= 0:\n        return 0\n    return sum_to_n(n - 1)\n\nง.\ndef sum_to_n(n):\n    if n <= 0:\n        return n\n    return n + sum_to_n(n - 1)\n\nจ.\ndef sum_to_n(n):\n    if n <= 0:\n        return 0\n    return n + sum_to_n(n)",
+      "options": [
+        "ก",
+        "ข",
+        "ค",
+        "ง",
+        "จ"
+      ],
+      "correctIndex": 0,
+      "hint": "กำหนดค่าฐานที่หยุดการเรียกซ้ำ แล้วลด n ลงหนึ่งเพื่อรวมค่าก่อนหน้า",
+      "reasoningSteps": [
+        "เมื่อ n น้อยกว่าหรือเท่ากับ 0 คืน 0 เป็นกรณีฐาน",
+        "สำหรับ n ที่มากกว่า 0 ให้คืน n บวกผลรวมของ 1 ถึง n ลบ 1",
+        "จึงได้ n + sum_to_n(n - 1) และการเรียกซ้ำจะหยุดได้"
+      ],
+      "context": "โจทย์นี้สมมติว่า n เป็นจำนวนเต็มที่มีค่ามากกว่าหรือเท่ากับ 0"
+    },
+    {
+      "sourceId": 37,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "def classify(score):\n    if score >= 50:\n        return \"Pass\"\n    else:\n        return \"Fail\"\nprint(classify(45))",
+      "options": [
+        "Pass",
+        "Fail",
+        "45",
+        "None",
+        "Error"
+      ],
+      "correctIndex": 1,
+      "hint": "นำ 45 ไปเทียบกับเกณฑ์ 50 แล้วดูว่าฟังก์ชันคืนข้อความใดในกรณีไม่ผ่าน",
+      "reasoningSteps": [
+        "45 มากกว่าหรือเท่ากับ 50 เป็นเท็จ",
+        "จึงทำงานในแขนง else และคืนสตริง 'Fail'",
+        "print แสดง Fail"
+      ]
+    },
+    {
+      "sourceId": 38,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "def total_price(prices):\n    total = 0\n    for p in prices:\n        total += p\n    return total\nprint(total_price([120, 45, 300]))",
+      "options": [
+        "420",
+        "300",
+        "465",
+        "585",
+        "165"
+      ],
+      "correctIndex": 2,
+      "hint": "ฟังก์ชันเริ่มยอดรวมที่ศูนย์ แล้วบวกตัวเลขแต่ละตัวก่อนคืนผล",
+      "reasoningSteps": [
+        "เริ่ม total เท่ากับ 0",
+        "บวก 120 ได้ 120 บวก 45 ได้ 165 บวก 300 ได้ 465",
+        "คืน 465 และ print แสดงค่านั้น"
+      ]
+    },
+    {
+      "sourceId": 39,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "def double(x):\n    return x * 2\nresult = []\nfor n in [1, 2, 3]:\n    result.append(double(n))\nprint(result)",
+      "options": [
+        "[1, 2, 3]",
+        "[2, 4, 6]",
+        "[1, 4, 9]",
+        "[2, 2, 2]",
+        "6"
+      ],
+      "correctIndex": 1,
+      "hint": "ฟังก์ชันคูณค่าที่รับด้วยสอง และ append จะเก็บค่าที่ได้ต่อท้ายลิสต์",
+      "reasoningSteps": [
+        "เมื่อ n เป็น 1, 2 และ 3 ฟังก์ชัน double คืน 2, 4 และ 6",
+        "แต่ละค่าถูก append ลงใน result ตามลำดับ",
+        "จึงพิมพ์ [2, 4, 6]"
+      ]
+    },
+    {
+      "sourceId": 40,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "def count_passed(scores):\n    count = 0\n    for s in scores:\n        if s >= 60:\n            count += 1\n    return count\nprint(count_passed([55, 70, 60, 40, 90]))",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "correctIndex": 2,
+      "hint": "นับคะแนนที่เท่ากับเกณฑ์ด้วย เพราะเงื่อนไขใช้เครื่องหมายมากกว่าหรือเท่ากับ",
+      "reasoningSteps": [
+        "ตรวจคะแนน 55, 70, 60, 40, 90",
+        "70, 60 และ 90 ผ่านเงื่อนไข s มากกว่าหรือเท่ากับ 60 รวม 3 ค่า",
+        "ฟังก์ชันคืนและพิมพ์จำนวน 3"
+      ]
+    },
+    {
+      "sourceId": 41,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร (สมมติว่า n มากกว่าหรือเท่ากับ 0)",
+      "code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\nprint(factorial(4))",
+      "options": [
+        "4",
+        "10",
+        "16",
+        "24",
+        "1"
+      ],
+      "correctIndex": 3,
+      "hint": "คลี่การเรียกซ้ำทีละชั้นจนถึงกรณีฐาน แล้วคูณค่าที่รออยู่ย้อนกลับ",
+      "reasoningSteps": [
+        "factorial(4) เท่ากับ 4 คูณ factorial(3)",
+        "ต่อไปเป็น 3 คูณ 2 คูณ 1 โดย factorial(1) คืน 1",
+        "ผลคูณ 4 คูณ 3 คูณ 2 คูณ 1 เท่ากับ 24"
+      ],
+      "context": "โจทย์นี้สมมติว่า n เป็นจำนวนเต็มที่มีค่ามากกว่าหรือเท่ากับ 0"
+    },
+    {
+      "sourceId": 42,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "def find_first_negative(nums):\n    for n in nums:\n        if n < 0:\n            return n\n    return None\nprint(find_first_negative([3, 5, -2, 8, -9]))",
+      "options": [
+        "None",
+        "-2",
+        "-9",
+        "3",
+        "8"
+      ],
+      "correctIndex": 1,
+      "hint": "ฟังก์ชันคืนค่าทันทีเมื่อเจอค่าติดลบตัวแรก จึงไม่ต้องไปถึงตัวถัดไป",
+      "reasoningSteps": [
+        "ตรวจ 3 และ 5 ซึ่งไม่ติดลบ",
+        "ค่า -2 เป็นค่าติดลบตัวแรก จึง return -2 ทันที",
+        "ลูปไม่ตรวจ -9 ต่อ และ print แสดง -2"
+      ]
+    },
+    {
+      "sourceId": 43,
+      "bank": "python",
+      "topic": "functions",
+      "prompt": "ผลลัพธ์ที่ได้จากการรันโค้ดด้านล่างคืออะไร",
+      "code": "def apply_discount(price, percent=10):\n    return price - price * percent / 100\nfor p in [100, 200]:\n    print(apply_discount(p))",
+      "options": [
+        "100.0 / 200.0",
+        "10.0 / 20.0",
+        "90.0 / 180.0",
+        "110.0 / 220.0",
+        "90 / 200"
+      ],
+      "correctIndex": 2,
+      "hint": "เมื่อไม่ได้ส่ง percent ฟังก์ชันจะใช้ค่าเริ่มต้น แล้วหักส่วนลดจากราคาของแต่ละรอบ",
+      "reasoningSteps": [
+        "percent มีค่าเริ่มต้น 10 จึงลดราคา 10 เปอร์เซ็นต์",
+        "ราคา 100 เหลือ 100 ลบ 10 เท่ากับ 90.0 และราคา 200 เหลือ 200 ลบ 20 เท่ากับ 180.0",
+        "โปรแกรมพิมพ์สองบรรทัดคือ 90.0 แล้ว 180.0"
+      ]
+    },
+    {
+      "sourceId": 44,
+      "bank": "python",
+      "topic": "exceptions",
+      "prompt": "โค้ดด้านล่างจะเกิดอะไรขึ้นเมื่อรัน",
+      "code": "age = int(input(\"Enter your age: \"))\nprint(\"You are\", age, \"years old\")",
+      "options": [
+        "โปรแกรมทำงานต่อได้ปกติ ได้ค่า age เป็น 0",
+        "เกิด ValueError เพราะแปลงข้อความที่ไม่ใช่ตัวเลขเป็น int ไม่ได้",
+        "เกิด TypeError เพราะ input() คืนค่าผิดชนิด",
+        "โปรแกรมพิมพ์ \"You are twenty years old\"",
+        "เกิด SyntaxError เพราะเขียนโค้ดผิดหลักไวยากรณ์"
+      ],
+      "correctIndex": 1,
+      "hint": "จำไว้ว่า input คืนข้อความเสมอ แล้วพิจารณาว่าข้อความที่ป้อนเขียนเป็นเลขจำนวนเต็มได้หรือไม่",
+      "reasoningSteps": [
+        "input() รับคำว่า twenty มาเป็นสตริงก่อน",
+        "int('twenty') แปลงเป็นจำนวนเต็มไม่ได้ เพราะข้อความนี้ไม่ใช่รูปแบบตัวเลข",
+        "Python จึงยก ValueError ก่อนถึงคำสั่ง print"
+      ],
+      "context": "ถ้าผู้ใช้ป้อนคำว่า \"twenty\" จะเกิดอะไรขึ้น ให้สังเกตว่า input() รับค่ามาเป็นข้อความ \"twenty\" ก่อนที่โค้ดจะพยายามแปลงด้วย int()"
+    },
+    {
+      "sourceId": 45,
+      "bank": "python",
+      "topic": "exceptions",
+      "prompt": "โค้ดด้านล่างจะให้ผลลัพธ์ใด เมื่อ index มีค่า 5",
+      "code": "items = [\"pen\", \"book\", \"eraser\"]\nindex = 5\ntry:\n    print(items[index])\nexcept IndexError:\n    print(\"Index out of range\")\nexcept ValueError:\n    print(\"Invalid value\")",
+      "options": [
+        "Index out of range",
+        "Invalid value",
+        "None",
+        "\"eraser\"",
+        "โปรแกรมหยุดทำงานทันทีเพราะไม่มี except ที่ตรงกัน"
+      ],
+      "correctIndex": 0,
+      "hint": "ลิสต์มีสามตำแหน่ง โดยเริ่มนับดัชนีจากศูนย์ ดูว่า except ใดตรงกับชนิดข้อผิดพลาด",
+      "reasoningSteps": [
+        "items มีดัชนีที่ใช้ได้คือ 0, 1 และ 2",
+        "index เท่ากับ 5 อยู่นอกช่วง จึงเกิด IndexError",
+        "except IndexError จับข้อผิดพลาดนี้และพิมพ์ Index out of range"
+      ]
+    },
+    {
+      "sourceId": 46,
+      "bank": "python",
+      "topic": "exceptions",
+      "prompt": "โค้ดด้านล่างจะให้ผลลัพธ์ใด เมื่อ b เท่ากับ 0",
+      "code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        result = None\n    else:\n        print(\"Division succeeded\")\n    finally:\n        print(\"Done checking\")\n    return result\n\nprint(safe_divide(10, 0))",
+      "options": [
+        "Done checking / None",
+        "Division succeeded / Done checking / None",
+        "None",
+        "Done checking / 0",
+        "เกิด error ที่ไม่มี except รองรับ"
+      ],
+      "correctIndex": 0,
+      "hint": "ติดตามลำดับการทำงานของ try, except, else และ finally เมื่อการหารล้มเหลว",
+      "reasoningSteps": [
+        "10 หาร 0 ทำให้เกิด ZeroDivisionError แล้ว except กำหนด result เป็น None ส่วน else จึงไม่ทำงาน",
+        "finally ทำงานเสมอและพิมพ์ Done checking",
+        "ฟังก์ชันคืน None แล้ว print ด้านนอกพิมพ์ None อีกบรรทัด"
+      ]
+    },
+    {
+      "sourceId": 47,
+      "bank": "python",
+      "topic": "exceptions",
+      "prompt": "โค้ดด้านล่างจะให้ผลลัพธ์ใด",
+      "code": "def check_positive(n):\n    if n < 0:\n        raise ValueError(\"Number must be positive\")\n    return n ** 0.5\n\ntry:\n    print(check_positive(-9))\nexcept ValueError as e:\n    print(\"Error:\", e)",
+      "options": [
+        "Error: Number must be positive",
+        "-3.0",
+        "nan",
+        "Error: -9",
+        "โปรแกรมหยุดทำงานเพราะ raise ไม่สามารถถูกจับได้"
+      ],
+      "correctIndex": 0,
+      "hint": "เงื่อนไขในโค้ดตรวจเฉพาะ n < 0 จึงให้ศูนย์ผ่านได้ และ -9 ทำให้เงื่อนไขนี้เป็นจริง",
+      "reasoningSteps": [
+        "-9 น้อยกว่า 0 เป็นจริง จึง raise ValueError พร้อมข้อความ Number must be positive",
+        "except ValueError as e รับ exception และเก็บข้อความไว้ใน e",
+        "print รวม Error: กับข้อความนั้น จึงได้ Error: Number must be positive"
+      ]
+    },
+    {
+      "sourceId": 48,
+      "bank": "python",
+      "topic": "exceptions",
+      "prompt": "โค้ดด้านล่างจะให้ผลลัพธ์ใด",
+      "code": "def get_grade(scores, index):\n    try:\n        return scores[index]\n    except IndexError:\n        return \"N/A\"\n\nprint(get_grade([80, 90, 75], 1))\nprint(get_grade([80, 90, 75], 10))",
+      "options": [
+        "90 / N/A",
+        "N/A / 90",
+        "90 / 75",
+        "Error / Error",
+        "90 / None"
+      ],
+      "correctIndex": 0,
+      "hint": "ดัชนี 1 ยังอยู่ในลิสต์ แต่ดัชนี 10 อยู่นอกช่วงและมีการจัดการ IndexError รองรับไว้",
+      "reasoningSteps": [
+        "scores[1] คือสมาชิกตัวที่สอง มีค่า 90",
+        "scores[10] ทำให้เกิด IndexError และส่วน except คืน N/A",
+        "จึงพิมพ์ 90 แล้วพิมพ์ N/A"
+      ]
+    },
+    {
+      "sourceId": 49,
+      "bank": "python",
+      "topic": "exceptions",
+      "prompt": "โค้ดด้านล่างจะให้ผลลัพธ์ใด เมื่อป้อน weight เป็น \"-5\"",
+      "code": "weight_input = \"-5\"\ntry:\n    weight = float(weight_input)\n    if weight <= 0:\n        raise ValueError(\"Weight must be positive\")\n    print(\"BMI ready\")\nexcept ValueError as e:\n    print(\"Invalid input:\", e)",
+      "options": [
+        "Invalid input: Weight must be positive",
+        "BMI ready",
+        "Invalid input: could not convert string to float",
+        "-5.0",
+        "โปรแกรมหยุดทำงานเพราะ raise ซ้อนใน try"
+      ],
+      "correctIndex": 0,
+      "hint": "ข้อความ -5 แปลงเป็นตัวเลขได้ แต่เงื่อนไขตรวจค่าบวกเป็นอีกขั้นหนึ่ง",
+      "reasoningSteps": [
+        "float('-5') สำเร็จและได้ -5.0",
+        "ค่า -5.0 น้อยกว่าหรือเท่ากับ 0 จึงยก ValueError ที่เขียนข้อความ Weight must be positive เอง",
+        "except จับข้อผิดพลาดและพิมพ์ Invalid input: Weight must be positive"
+      ]
+    },
+    {
+      "sourceId": 50,
+      "bank": "python",
+      "topic": "exceptions",
+      "prompt": "โค้ดด้านล่างจะให้ผลลัพธ์ใด",
+      "code": "data = {\"name\": \"Ann\", \"age\": 20}\ntry:\n    print(data[\"email\"])\nexcept KeyError:\n    print(\"Key not found\")\nexcept IndexError:\n    print(\"Index error\")",
+      "options": [
+        "Key not found",
+        "Index error",
+        "None",
+        "โปรแกรมหยุดทำงานเพราะไม่มี except รองรับ KeyError",
+        "\"\""
+      ],
+      "correctIndex": 0,
+      "hint": "ดิกชันนารีรองรับการค้นค่าด้วยคีย์ เมื่อไม่มีคีย์นั้นจะเกิด exception ชนิดใด",
+      "reasoningSteps": [
+        "data มีคีย์ name และ age แต่ไม่มี email",
+        "การอ่าน data['email'] จึงเกิด KeyError",
+        "except KeyError ทำงานและพิมพ์ Key not found"
+      ]
+    },
+    {
+      "sourceId": 51,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดด้านล่างมี time complexity (Big O) เป็นเท่าใด",
+      "code": "def print_pairs(items):\n    for a in items:\n        for b in items:\n            print(a, b)",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n^2)",
+        "O(1)",
+        "O(2n)"
+      ],
+      "correctIndex": 2,
+      "hint": "ลูปด้านในทำงานครบ n ครั้งสำหรับสมาชิกแต่ละตัวของลูปด้านนอก",
+      "reasoningSteps": [
+        "ลูปแรกมีประมาณ n รอบ",
+        "ในแต่ละรอบ ลูปด้านในก็มี n รอบ จึงมีงานประมาณ n คูณ n",
+        "ตัดค่าคงที่ออกตาม Big O ได้ O(n^2)"
+      ]
+    },
+    {
+      "sourceId": 52,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดด้านล่างมี time complexity (Big O) เป็นเท่าใด",
+      "code": "def get_first(items):\n    return items[0]",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(n^2)",
+        "O(log n)",
+        "O(n log n)"
+      ],
+      "correctIndex": 0,
+      "hint": "ดูว่าจำนวนการทำงานเพิ่มตามความยาวลิสต์หรือไม่ เมื่อคืนสมาชิกตำแหน่งแรกเพียงครั้งเดียว",
+      "reasoningSteps": [
+        "items[0] เข้าถึงสมาชิกหนึ่งตำแหน่งโดยตรง",
+        "ไม่มีลูปหรือการค้นหาที่ต้องเพิ่มรอบตาม n",
+        "เวลาเป็นค่าคงที่ O(1)"
+      ]
+    },
+    {
+      "sourceId": 53,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดด้านล่างมี time complexity (Big O) ในกรณีเลวร้ายที่สุด (worst case) เป็นเท่าใด",
+      "code": "def has_duplicate(items):\n    for i in range(len(items)):\n        for j in range(i + 1, len(items)):\n            if items[i] == items[j]:\n                return True\n    return False",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(log n)",
+        "O(1)",
+        "O(n^3)"
+      ],
+      "correctIndex": 1,
+      "hint": "ในกรณีที่ไม่พบค่าซ้ำเลย โค้ดต้องตรวจคู่ตำแหน่งเกือบทั้งหมด นี่คือ worst case",
+      "reasoningSteps": [
+        "ลูปซ้อนกันเปรียบเทียบสมาชิกเป็นคู่ ๆ โดย j เริ่มหลัง i",
+        "จำนวนคู่ประมาณ n คูณ (n ลบ 1) หาร 2 ซึ่งเติบโตตามกำลังสอง",
+        "worst case ที่ต้องตรวจครบทุกคู่จึงมีเวลา O(n^2)"
+      ]
+    },
+    {
+      "sourceId": 54,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดสองแบบด้านล่างต่างนับจำนวนครั้งที่สมาชิกซ้ำกับตัวที่เคยเจอมาก่อน (นับ repeated occurrences หลังตัวแรก ไม่ใช่การเทียบทุกคู่) แบบใดมีประสิทธิภาพดีกว่าเมื่อข้อมูลมีขนาดใหญ่มาก",
+      "code": "# แบบ A\ndef count_seen_a(items):\n    seen = set()\n    count = 0\n    for x in items:\n        if x in seen:\n            count += 1\n        seen.add(x)\n    return count\n\n# แบบ B\ndef count_seen_b(items):\n    count = 0\n    for i in range(len(items)):\n        for j in range(i):\n            if items[i] == items[j]:\n                count += 1\n                break\n    return count",
+      "options": [
+        "แบบ A เร็วกว่า เพราะใช้ set เข้าถึงแบบ O(1) ทำให้ทั้งฟังก์ชันเป็น O(n)",
+        "แบบ B เร็วกว่า เพราะเขียนด้วย nested loop ตรงไปตรงมากว่า",
+        "ทั้งสองแบบมีความเร็วเท่ากันเพราะทำงานแบบเดียวกัน",
+        "แบบ A ช้ากว่า เพราะการสร้าง set ต้องใช้เวลาเพิ่ม",
+        "ไม่สามารถเปรียบเทียบได้เพราะขึ้นกับข้อมูลเท่านั้น"
+      ],
+      "correctIndex": 0,
+      "hint": "เปรียบเทียบการวนหนึ่งรอบพร้อมใช้ set กับการเปรียบเทียบย้อนกลับไปกับสมาชิกก่อนหน้าหลายตัว",
+      "reasoningSteps": [
+        "แบบ A ตรวจ membership ใน set ซึ่งโดยเฉลี่ยใช้เวลา O(1) ต่อรอบ และวน n รอบ",
+        "แบบ B ใช้ลูปซ้อนเพื่อเทียบกับสมาชิกก่อนหน้า จึงมีงานระดับ O(n^2)",
+        "เมื่อข้อมูลใหญ่ แบบ A จึงมีประสิทธิภาพกว่า โดยคาดหวังเวลาเฉลี่ย O(n) ขณะที่แบบ B ยังเป็น O(n^2)"
+      ]
+    },
+    {
+      "sourceId": 55,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดด้านล่างมี time complexity (Big O) เป็นเท่าใด (สมมติว่า matrix เป็นเมทริกซ์จัตุรัสขนาด n คูณ n)",
+      "code": "def sum_upper_triangle(matrix):\n    total = 0\n    n = len(matrix)\n    for i in range(n):\n        for j in range(i, n):\n            total += matrix[i][j]\n    return total",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n^2)",
+        "O(1)",
+        "O(n^3)"
+      ],
+      "correctIndex": 2,
+      "hint": "แม้จำนวนรอบด้านในลดลงในแต่ละรอบ แต่จำนวนรวมยังเป็นผลบวกของลำดับยาว n",
+      "reasoningSteps": [
+        "เมื่อ i เท่ากับ 0 ลูปด้านในทำ n รอบ และเมื่อ i เพิ่มขึ้น จำนวนรอบจะลดทีละหนึ่ง",
+        "จำนวนรวมเป็น n บวก (n ลบ 1) บวกต่อไปจนถึง 1 ซึ่งเท่ากับ n คูณ (n บวก 1) หาร 2",
+        "พจน์กำลังสูงสุดเป็น n ยกกำลังสอง จึงมีเวลา O(n^2)"
+      ]
+    },
+    {
+      "sourceId": 56,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดด้านล่างมี time complexity (Big O) เป็นเท่าใด สมมติว่า n คือความยาวของ items และ items ไม่เป็นลิสต์ว่าง",
+      "code": "def redundant_max(items):\n    result = []\n    for i in range(len(items)):\n        current_max = items[0]\n        for j in range(len(items)):\n            if items[j] > current_max:\n                current_max = items[j]\n        result.append(current_max)\n    return result",
+      "options": [
+        "O(n)",
+        "O(n^2)",
+        "O(1)",
+        "O(log n)",
+        "O(n log n)"
+      ],
+      "correctIndex": 1,
+      "hint": "ลูปค้นค่าสูงสุดทั้งลิสต์ถูกเรียกซ้ำหนึ่งครั้งต่อรอบของลูปด้านนอก",
+      "reasoningSteps": [
+        "ลูปด้านนอกทำ n รอบ",
+        "แต่ละรอบลูปด้านในตรวจ items ครบ n ตัว จึงทำงานประมาณ n คูณ n ครั้ง",
+        "เวลารวมเป็น O(n^2)"
+      ]
+    },
+    {
+      "sourceId": 57,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดด้านล่างมี space complexity (พื้นที่หน่วยความจำ) เป็นเท่าใด เมื่อเทียบกับขนาด input n",
+      "code": "def squares(items):\n    result = []\n    for x in items:\n        result.append(x * x)\n    return result",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(n^2)",
+        "O(log n)",
+        "ไม่สามารถระบุได้"
+      ],
+      "correctIndex": 1,
+      "hint": "นับหน่วยความจำของลิสต์ผลลัพธ์ที่คืนกลับ ซึ่งแยกจาก auxiliary space ส่วนอื่นที่ใช้ระหว่างทำงาน",
+      "reasoningSteps": [
+        "มีการสร้าง result ใหม่และ append ค่ากำลังสองหนึ่งค่าต่อสมาชิก เมื่อ input มี n ตัว ลิสต์ผลลัพธ์ก็มี n ค่า",
+        "หน่วยความจำของ output ที่คืนกลับนี้เติบโตเป็น O(n)",
+        "ส่วน auxiliary space อื่นที่ใช้ระหว่างทำงาน เช่นตัวแปร x เป็นค่าคงที่ O(1) แต่คำตอบโดยรวมของ space complexity ในที่นี้คือ O(n) ตามขนาดของ output"
+      ],
+      "context": "คำถามนี้นับพื้นที่หน่วยความจำของลิสต์ผลลัพธ์ที่คืนกลับรวมเข้าไปด้วย ไม่ได้นับเฉพาะ auxiliary space ที่ไม่รวม output"
+    },
+    {
+      "sourceId": 58,
+      "bank": "python",
+      "topic": "performance",
+      "prompt": "โค้ดด้านล่างมี time complexity (Big O) เป็นเท่าใด",
+      "code": "def running_total(items):\n    total = 0\n    totals = []\n    for x in items:\n        total += x\n        totals.append(total)\n    return totals",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n^2)",
+        "O(n log n)"
+      ],
+      "correctIndex": 2,
+      "hint": "ลูปมีหนึ่งรอบต่อสมาชิก และในแต่ละรอบทำงานด้วยเวลาคงที่",
+      "reasoningSteps": [
+        "วนผ่าน items ทั้งหมด n ตัว",
+        "แต่ละรอบบวกหนึ่งค่าและ append หนึ่งครั้ง",
+        "จำนวนงานแปรผันตรงกับ n จึงเป็น O(n)"
+      ]
+    },
+    {
+      "sourceId": 59,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างเกิด error เมื่อสั่งรัน จงหาสาเหตุของ error นี้",
+      "code": "price = 150\nquantity = 3\ntotal = price * quantity\nprint(Total)\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 4, in <module>\n    print(Total)\n          ^^^^^\nNameError: name 'Total' is not defined. Did you mean: 'total'?",
+      "options": [
+        "ต้องแปลง total เป็น str ก่อนนำไปใช้กับ print()",
+        "print() ใช้ได้กับข้อความในเครื่องหมายคำพูดเท่านั้น",
+        "Python แยกตัวพิมพ์เล็ก-ใหญ่ ตัวแปร Total กับ total เป็นคนละตัว และ Total ยังไม่เคยถูกสร้าง",
+        "price * quantity ให้ผลลัพธ์เป็นทศนิยม จึงพิมพ์ไม่ได้",
+        "ตัวแปร total ถูกสร้างหลังบรรทัด print จึงยังไม่มีค่า"
+      ],
+      "correctIndex": 2,
+      "hint": "เปรียบเทียบชื่อที่ประกาศไว้กับชื่อที่ส่งให้ print โดยสังเกตตัวพิมพ์เล็กและใหญ่",
+      "reasoningSteps": [
+        "ตัวแปรที่สร้างชื่อ total ด้วย t ตัวเล็ก",
+        "Python แยกตัวพิมพ์เล็กและใหญ่ ดังนั้น Total เป็นคนละชื่อและไม่เคยถูกกำหนด",
+        "print(Total) จึงทำให้เกิด NameError"
+      ]
+    },
+    {
+      "sourceId": 60,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการคำนวณราคาหลังหักส่วนลด 20 บาท ให้ได้ผลลัพธ์ 80 แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "price = \"100\"\ndiscount = 20\nfinal_price = price - discount\nprint(final_price)\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 3, in <module>\n    final_price = price - discount\n                  ~~~~~~^~~~~~~~~~\nTypeError: unsupported operand type(s) for -: 'str' and 'int'",
+      "options": [
+        "บรรทัดที่ 3 แก้เป็น final_price = int(price) - discount",
+        "บรรทัดที่ 4 แก้เป็น print(int(final_price))",
+        "บรรทัดที่ 3 แก้เป็น final_price = price - str(discount)",
+        "บรรทัดที่ 2 แก้เป็น discount = \"20\"",
+        "บรรทัดที่ 3 แก้เป็น final_price = price + discount"
+      ],
+      "correctIndex": 0,
+      "hint": "ค่าที่เขียนเป็น '100' เป็นข้อความ จึงต้องแปลงชนิดก่อนนำไปลบกับจำนวนเต็ม",
+      "reasoningSteps": [
+        "price มีชนิด str ส่วน discount มีชนิด int จึงนำมาลบกันตรง ๆ ไม่ได้",
+        "แปลง price ด้วย int(price) ให้เป็น 100",
+        "คำนวณ 100 ลบ 20 ได้ final_price เท่ากับ 80"
+      ]
+    },
+    {
+      "sourceId": 61,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างเกิด error เมื่อสั่งรัน จงหาสาเหตุของ error นี้",
+      "code": "age = 20\nprint(\"อายุ \" + age + \" ปี\")\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 2, in <module>\n    print(\"อายุ \" + age + \" ปี\")\n          ~~~~~~~~^~~~~\nTypeError: can only concatenate str (not \"int\") to str",
+      "options": [
+        "นำข้อความ (str) มาต่อด้วย + กับตัวเลข (int) โดยตรงไม่ได้ ต้องแปลงเป็น str ก่อน หรือใช้ f-string",
+        "ต้องใช้เครื่องหมาย - แทน + ในการต่อข้อความ",
+        "print() รับข้อความได้เพียงชิ้นเดียว",
+        "ตัวแปร age ยังไม่ได้ถูกกำหนดค่า",
+        "ภาษาไทยในข้อความทำให้เกิด error"
+      ],
+      "correctIndex": 0,
+      "hint": "เครื่องหมายบวกต่อข้อความเข้าด้วยกันได้ แต่ชนิดข้อมูลสองฝั่งต้องเข้ากัน",
+      "reasoningSteps": [
+        "'อายุ ' และ ' ปี' เป็น str แต่ age เป็น int",
+        "Python ไม่ต่อ str กับ int ด้วย + โดยอัตโนมัติ จึงเกิด TypeError",
+        "แปลง age เป็น str ก่อน หรือใช้ f-string เพื่อแทรกตัวเลขในข้อความ"
+      ]
+    },
+    {
+      "sourceId": 62,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการแสดงข้อความ สวัสดีครับ แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "greeting = \"สวัสดีครับ\nprint(greeting)\n\nผลที่แสดงเมื่อสั่งรัน:\n\n  File \"main.py\", line 1\n    greeting = \"สวัสดีครับ\n               ^\nSyntaxError: unterminated string literal (detected at line 1)",
+      "options": [
+        "บรรทัดที่ 1 เปลี่ยนเป็นเครื่องหมายคำพูดเดี่ยว เป็น greeting = 'สวัสดีครับ",
+        "บรรทัดที่ 1 เติมเครื่องหมายคำพูดปิด เป็น greeting = \"สวัสดีครับ\"",
+        "บรรทัดที่ 1 ลบเครื่องหมายคำพูดตัวแรกออก เป็น greeting = สวัสดีครับ",
+        "บรรทัดที่ 2 เติมวงเล็บปิด เป็น print(greeting))",
+        "บรรทัดที่ 2 แก้เป็น print(\"greeting\")"
+      ],
+      "correctIndex": 1,
+      "hint": "สตริงเริ่มด้วยเครื่องหมายคำพูดเปิด แต่ต้องมีเครื่องหมายปิดชนิดเดียวกันก่อนจบบรรทัด",
+      "reasoningSteps": [
+        "สตริงเริ่มด้วยอัญประกาศคู่ แต่ไม่มีอัญประกาศปิด",
+        "ตัวแปลภาษาอ่านต่อไปจนจบบรรทัดแล้วยังไม่พบจุดจบของสตริง",
+        "เติมอัญประกาศปิดเป็น greeting = \"สวัสดีครับ\" จึงแก้ SyntaxError"
+      ]
+    },
+    {
+      "sourceId": 63,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการแสดงคำว่า ผ่าน เมื่อคะแนนตั้งแต่ 50 ขึ้นไป แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "score = 75\nif score >= 50\n    print(\"ผ่าน\")\n\nผลที่แสดงเมื่อสั่งรัน:\n\n  File \"main.py\", line 2\n    if score >= 50\n                  ^\nSyntaxError: expected ':'",
+      "options": [
+        "บรรทัดที่ 2 เปลี่ยน >= เป็น =>",
+        "บรรทัดที่ 2 เติม ; เป็น if score >= 50;",
+        "บรรทัดที่ 3 ลบการเยื้องออก",
+        "บรรทัดที่ 2 ใส่วงเล็บเป็น if (score >= 50)",
+        "บรรทัดที่ 2 เติม : เป็น if score >= 50:"
+      ],
+      "correctIndex": 4,
+      "hint": "คำสั่ง if ต้องมีเครื่องหมายปิดส่วนเงื่อนไขก่อนเริ่มบล็อกคำสั่ง",
+      "reasoningSteps": [
+        "เงื่อนไข score มากกว่าหรือเท่ากับ 50 เขียนเปรียบเทียบได้ถูกแล้ว",
+        "Python ใช้เครื่องหมายโคลอนเพื่อเริ่มบล็อกหลังเงื่อนไข if",
+        "เติม : ท้ายบรรทัด ทำให้บรรทัด print ที่เยื้องอยู่เป็นเนื้อหาของ if"
+      ]
+    },
+    {
+      "sourceId": 64,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างเกิด error เมื่อสั่งรัน จงหาสาเหตุของ error นี้",
+      "code": "x = 10\nif x = 10:\n    print(\"สิบ\")\n\nผลที่แสดงเมื่อสั่งรัน:\n\n  File \"main.py\", line 2\n    if x = 10:\n       ^^^^^^\nSyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "options": [
+        "บรรทัด print ที่อยู่ใน if ต้องไม่เยื้อง",
+        "ตัวแปร x ต้องเป็นข้อความก่อนจึงจะเปรียบเทียบได้",
+        "ขาดเครื่องหมาย : ท้ายบรรทัด if",
+        "ค่า 10 ต้องอยู่ในเครื่องหมายคำพูด",
+        "ใช้ = (กำหนดค่า) ในเงื่อนไขของ if แทน == (เปรียบเทียบว่าเท่ากัน)"
+      ],
+      "correctIndex": 4,
+      "hint": "ในเงื่อนไขต้องตรวจความเท่ากัน ไม่ใช่กำหนดค่าใหม่ให้ตัวแปร",
+      "reasoningSteps": [
+        "เครื่องหมาย = ใช้กำหนดค่าให้ตัวแปร",
+        "การเปรียบเทียบว่า x เท่ากับ 10 ต้องใช้ ==",
+        "การใช้ = ใน if จึงเป็นไวยากรณ์ที่ไม่ถูกต้องในกรณีนี้"
+      ]
+    },
+    {
+      "sourceId": 65,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการหาผลรวมของ 0 ถึง 4 แล้วแสดงผลลัพธ์ 10 เพียงครั้งเดียว แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "total = 0\nfor i in range(5):\ntotal = total + i\nprint(total)\n\nผลที่แสดงเมื่อสั่งรัน:\n\n  File \"main.py\", line 3\n    total = total + i\n    ^\nIndentationError: expected an indented block after 'for' statement on line 2",
+      "options": [
+        "บรรทัดที่ 2 แก้เป็น for i in range(1, 5):",
+        "เยื้องบรรทัดที่ 4 เข้าไปให้อยู่ใน for",
+        "บรรทัดที่ 2 ลบเครื่องหมาย : ออก",
+        "เยื้องบรรทัดที่ 3 เข้าไปให้อยู่ใน for",
+        "เยื้องทั้งบรรทัดที่ 3 และ 4 เข้าไปให้อยู่ใน for"
+      ],
+      "correctIndex": 3,
+      "hint": "บรรทัดที่เป็นเนื้อหาของ for ต้องเยื้องเข้าไป ส่วนคำสั่งที่ทำครั้งเดียวหลังจบลูปควรอยู่นอกลูป",
+      "reasoningSteps": [
+        "หลัง for ต้องมีบล็อกคำสั่งที่เยื้องเข้ามา",
+        "total = total + i เป็นคำสั่งสะสมที่ต้องทำทุกครั้ง จึงต้องเยื้องบรรทัดนี้",
+        "print(total) คงอยู่นอกลูปเพื่อแสดงผลรวมเพียงครั้งเดียว ได้ 10"
+      ]
+    },
+    {
+      "sourceId": 66,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างเกิด error เมื่อสั่งรัน จงหาสาเหตุของ error นี้",
+      "code": "nums = [3, 7, 2]\ni = 0\nwhile i <= len(nums):\n    print(nums[i])\n    i += 1\n\nผลที่แสดงเมื่อสั่งรัน:\n\n3\n7\n2\nTraceback (most recent call last):\n  File \"main.py\", line 4, in <module>\n    print(nums[i])\n          ~~~~^^^\nIndexError: list index out of range",
+      "options": [
+        "list nums มีสมาชิกน้อยเกินไปจึงวนลูปไม่ได้",
+        "print() ไม่สามารถพิมพ์สมาชิกของ list ได้",
+        "ต้องเริ่ม i ที่ 1 เพราะ index แรกของ list คือ 1",
+        "ตัวแปร i ไม่ได้เพิ่มค่า ทำให้วนไม่รู้จบ",
+        "เงื่อนไข i <= len(nums) ทำให้รอบสุดท้ายใช้ i = 3 ซึ่งเกิน index สุดท้ายของ list (index 2)"
+      ],
+      "correctIndex": 4,
+      "hint": "สมาชิกสามตัวมีดัชนีสุดท้ายเท่ากับความยาวลิสต์ลบหนึ่ง ตรวจค่าของ i ในรอบสุดท้าย",
+      "reasoningSteps": [
+        "nums มีความยาว 3 และใช้ดัชนี 0, 1, 2",
+        "หลังพิมพ์สมาชิกดัชนี 2 แล้ว i เพิ่มเป็น 3 เงื่อนไข 3 น้อยกว่าหรือเท่ากับ 3 ยังเป็นจริง",
+        "จึงพยายามอ่าน nums[3] และเกิด IndexError"
+      ]
+    },
+    {
+      "sourceId": 67,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการหาผลรวมของ 4, 5, 6 ให้ได้ผลลัพธ์ 15 แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "for n in [4, 5, 6]:\n    total = total + n\nprint(total)\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 2, in <module>\n    total = total + n\n            ^^^^^\nNameError: name 'total' is not defined",
+      "options": [
+        "เพิ่มบรรทัด total = 0 ไว้ก่อน for",
+        "เพิ่มบรรทัด total = 0 ไว้หลัง for ก่อน print",
+        "บรรทัดที่ 2 แก้เป็น total = n",
+        "เพิ่มบรรทัด total = 0 ไว้ใน for ก่อนบรรทัดที่ 2",
+        "เพิ่มบรรทัด total = 1 ไว้ก่อน for"
+      ],
+      "correctIndex": 0,
+      "hint": "ตัวแปรสะสมต้องมีค่าเริ่มต้นก่อนนำค่าปัจจุบันมาบวกเพิ่ม",
+      "reasoningSteps": [
+        "บรรทัด total = total + n ต้องอ่านค่า total เดิมก่อน",
+        "ประกาศ total = 0 ก่อนเริ่มลูปเพื่อให้มีค่าเริ่มต้น",
+        "จากนั้นสะสม 4 บวก 5 บวก 6 ได้ 15"
+      ]
+    },
+    {
+      "sourceId": 68,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการพิมพ์สมาชิกทุกตัวใน matrix ทีละบรรทัด คือ 1, 2, 3, 4 แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "matrix = [[1, 2], [3, 4]]\nfor row in matrix:\n    for j in range(len(row)):\n        print(matrix[row][j])\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 4, in <module>\n    print(matrix[row][j])\n          ~~~~~~^^^^^\nTypeError: list indices must be integers or slices, not list",
+      "options": [
+        "บรรทัดที่ 3 แก้เป็น for j in row:",
+        "บรรทัดที่ 4 แก้เป็น print(row[j])",
+        "บรรทัดที่ 4 แก้เป็น print(matrix[j][row])",
+        "บรรทัดที่ 2 แก้เป็น for row in range(matrix):",
+        "บรรทัดที่ 4 แก้เป็น print(matrix[j])"
+      ],
+      "correctIndex": 1,
+      "hint": "ในลูปนี้ row เป็นแถวหนึ่งของ matrix อยู่แล้ว ส่วน j เป็นดัชนีในแถวนั้น",
+      "reasoningSteps": [
+        "เมื่อวน for row in matrix ตัวแปร row มีค่าเป็นลิสต์ย่อย เช่น [1, 2]",
+        "การใช้ลิสต์ row เป็นดัชนีของ matrix จึงทำให้เกิด TypeError",
+        "อ่านสมาชิกของแถวปัจจุบันด้วย row[j] เพื่อพิมพ์ 1, 2, 3, 4"
+      ]
+    },
+    {
+      "sourceId": 69,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างเกิด error เมื่อสั่งรัน จงหาสาเหตุของ error นี้",
+      "code": "result = []\nfor i in range(1, 3):\n    for j in range(1, 3):\n        result = result + i * j\nprint(result)\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 4, in <module>\n    result = result + i * j\n             ~~~~~~~^~~~~~~\nTypeError: can only concatenate list (not \"int\") to list",
+      "options": [
+        "ต้องประกาศ result = 0 แทน result = []",
+        "i * j ให้ผลเป็นทศนิยม จึงเก็บใน list ไม่ได้",
+        "ใช้ + ต่อ list กับตัวเลข (int) โดยตรงไม่ได้ ควรเพิ่มค่าด้วย result.append(i * j)",
+        "Python ไม่อนุญาตให้ใช้ loop ซ้อนกันเกิน 1 ชั้น",
+        "range(1, 3) ให้ค่าเพียงตัวเดียว จึงนำมาคูณไม่ได้"
+      ],
+      "correctIndex": 2,
+      "hint": "result เป็นลิสต์ แต่ i คูณ j เป็นจำนวนเต็ม ให้เลือกวิธีเพิ่มสมาชิกหนึ่งตัวเข้าไปในลิสต์",
+      "reasoningSteps": [
+        "เริ่ม result เป็นลิสต์ว่าง",
+        "แต่ result + i * j พยายามนำลิสต์มาต่อกับจำนวนเต็ม จึงเกิด TypeError",
+        "ใช้ result.append(i * j) เพื่อเพิ่มผลคูณเป็นสมาชิกใหม่"
+      ]
+    },
+    {
+      "sourceId": 70,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการคำนวณพื้นที่สี่เหลี่ยมกว้าง 5 ยาว 3 ให้ได้ผลลัพธ์ 15 แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "def area(width, height):\n    return width * height\n\nprint(area(5))\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 4, in <module>\n    print(area(5))\n          ^^^^^^^\nTypeError: area() missing 1 required positional argument: 'height'",
+      "options": [
+        "บรรทัดที่ 4 แก้เป็น print(area(width=5))",
+        "บรรทัดที่ 4 แก้เป็น print(area(5 * 3))",
+        "บรรทัดที่ 4 แก้เป็น print(area(5, 3))",
+        "บรรทัดที่ 1 แก้เป็น def area(width, height=5):",
+        "บรรทัดที่ 1 แก้เป็น def area(width):"
+      ],
+      "correctIndex": 2,
+      "hint": "ฟังก์ชันต้องได้รับค่ากว้างและยาวแยกกันสองค่า",
+      "reasoningSteps": [
+        "area ประกาศพารามิเตอร์บังคับสองตัวคือ width และ height",
+        "area(5) ส่งมาเพียงความกว้าง จึงขาดค่า height",
+        "เรียก area(5, 3) เพื่อคำนวณ 5 คูณ 3 ได้พื้นที่ 15"
+      ]
+    },
+    {
+      "sourceId": 71,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างเกิด error เมื่อสั่งรัน จงหาสาเหตุของ error นี้",
+      "code": "def add(a, b):\n    print(a + b)\n\nresult = add(2, 3) * 10\nprint(result)\n\nผลที่แสดงเมื่อสั่งรัน:\n\n5\nTraceback (most recent call last):\n  File \"main.py\", line 4, in <module>\n    result = add(2, 3) * 10\n             ~~~~~~~~~~^~~~\nTypeError: unsupported operand type(s) for *: 'NoneType' and 'int'",
+      "options": [
+        "ฟังก์ชัน add ใช้ print แทน return จึงคืนค่า None ทำให้นำไปคูณกับ 10 ไม่ได้",
+        "a + b ให้ผลเป็นข้อความ จึงคูณกับ 10 ไม่ได้",
+        "ต้องประกาศฟังก์ชันหลังจากบรรทัดที่เรียกใช้",
+        "เรียกฟังก์ชันร่วมกับการคูณในบรรทัดเดียวกันไม่ได้",
+        "พารามิเตอร์ a และ b ต้องมีค่าเริ่มต้น"
+      ],
+      "correctIndex": 0,
+      "hint": "print แสดงค่า แต่ไม่ได้ส่งค่านั้นกลับให้โค้ดที่เรียกฟังก์ชัน",
+      "reasoningSteps": [
+        "เมื่อเรียก add(2, 3) ฟังก์ชันพิมพ์ 5 ก่อน",
+        "ไม่มี return จึงคืน None โดยอัตโนมัติ",
+        "จากนั้น None คูณ 10 ทำไม่ได้และเกิด TypeError"
+      ]
+    },
+    {
+      "sourceId": 72,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างต้องการให้ฟังก์ชันเพิ่มค่าตัวแปร count ที่อยู่นอกฟังก์ชันขึ้น 1 แล้วแสดงผล 1 แต่เกิด error เมื่อสั่งรัน ควรแก้ไขอย่างไร",
+      "code": "count = 0\n\ndef increase():\n    count = count + 1\n\nincrease()\nprint(count)\n\nผลที่แสดงเมื่อสั่งรัน:\n\nTraceback (most recent call last):\n  File \"main.py\", line 6, in <module>\n    increase()\n  File \"main.py\", line 4, in increase\n    count = count + 1\n            ^^^^^\nUnboundLocalError: cannot access local variable 'count' where it is not associated with a value",
+      "options": [
+        "เพิ่มบรรทัด return count เป็นบรรทัดสุดท้ายในฟังก์ชัน",
+        "บรรทัดที่ 6 แก้เป็น increase(count)",
+        "เพิ่มบรรทัด count = 0 เป็นบรรทัดแรกในฟังก์ชัน",
+        "เพิ่มบรรทัด global count เป็นบรรทัดแรกในฟังก์ชัน",
+        "ลบบรรทัดที่ 1 count = 0 ออก"
+      ],
+      "correctIndex": 3,
+      "hint": "ถ้าต้องการกำหนดค่าตัวแปรระดับนอกภายในฟังก์ชัน ต้องประกาศขอบเขตของชื่อนั้นก่อน",
+      "reasoningSteps": [
+        "การกำหนดค่า count = count + 1 ทำให้ Python มอง count ในฟังก์ชันเป็นตัวแปรเฉพาะที่",
+        "จึงพยายามอ่านตัวแปรเฉพาะที่ก่อนที่มันจะมีค่า และเกิด UnboundLocalError",
+        "ประกาศ global count ก่อนบรรทัดเพิ่มค่า เพื่อแก้ตัวแปร count ภายนอก"
+      ]
+    },
+    {
+      "sourceId": 73,
+      "bank": "python",
+      "topic": "debugging",
+      "prompt": "โค้ดด้านล่างเกิด error เมื่อสั่งรัน จงหาสาเหตุของ error นี้",
+      "code": "nums = [10, 20, 30]\ntry:\n    print(nums[1])\nprint(\"จบโปรแกรม\")\n\nผลที่แสดงเมื่อสั่งรัน:\n\n  File \"main.py\", line 4\n    print(\"จบโปรแกรม\")\n    ^^^^^\nSyntaxError: expected 'except' or 'finally' block",
+      "options": [
+        "ใช้ print() ภายใน try ไม่ได้",
+        "บล็อก try ต้องตามด้วย except หรือ finally เสมอ",
+        "nums[1] อยู่นอกขอบเขตของ list",
+        "ต้องใส่ nums[1] ไว้ในวงเล็บสองชั้น",
+        "list ต้องมีสมาชิกมากกว่า 3 ตัว"
+      ],
+      "correctIndex": 1,
+      "hint": "try ใช้ดักข้อผิดพลาด แต่ต้องกำหนดด้วยว่าจะทำอย่างไรเมื่อเกิดหรือไม่เกิดข้อผิดพลาด",
+      "reasoningSteps": [
+        "บล็อก try เปิดไว้แล้ว แต่ไม่มี except หรือ finally ต่อท้าย",
+        "Python จึงแจ้ง SyntaxError ก่อนเริ่มทำงาน แม้ nums[1] จะเป็นดัชนีที่ใช้ได้ก็ตาม",
+        "เพิ่ม except หรือ finally หลังบล็อก try เพื่อให้ไวยากรณ์สมบูรณ์"
+      ]
+    }
+  ]
+}

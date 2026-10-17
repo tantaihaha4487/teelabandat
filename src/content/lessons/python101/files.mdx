@@ -1,0 +1,85 @@
+---
+section: python101
+title: "อ่านและเขียนไฟล์ด้วย Python"
+description: "เรียนการเปิด อ่าน เขียน และเพิ่มข้อมูลในไฟล์ด้วย Python พร้อมใช้ with, encoding UTF-8 และจัดการ path"
+order: 8
+source: python101/files.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/python101.json';
+
+โปรแกรมจำนวนมากต้องอ่านหรือบันทึกข้อมูล เช่น note, log, รายชื่อผู้ใช้ หรือผลลัพธ์จากการคำนวณ
+
+## เขียนไฟล์
+
+<CodeExample example={examples['python101-files-01']} />
+โหมด `w` คือเขียนใหม่ ถ้าไฟล์มีอยู่เดิมจะถูกแทนที่
+
+หลังรันแล้วจะมีไฟล์ `note.txt` ที่มีข้อความ 2 บรรทัด
+
+## อ่านไฟล์
+
+<CodeExample example={examples['python101-files-02']} />
+ผลลัพธ์:
+
+## เพิ่มข้อมูลต่อท้าย
+
+<CodeExample example={examples['python101-files-04']} />
+## อ่านทีละบรรทัด
+
+<CodeExample example={examples['python101-files-05']} />
+## ทำไมต้องใช้ with
+
+`with` ช่วยปิดไฟล์ให้อัตโนมัติ แม้เกิด error ระหว่างทำงาน
+
+## ข้อผิดพลาดที่พบบ่อย
+
+- อ่านไฟล์ที่ไม่มีอยู่ ทำให้เกิด `FileNotFoundError`
+- ลืม `encoding="utf-8"` เมื่อใช้ภาษาไทย
+- ใช้โหมด `w` แล้วข้อมูลเดิมหาย
+
+## แบบฝึกหัด
+
+1. รับชื่อผู้ใช้จาก `input()` แล้วเขียนลงไฟล์ `user.txt` โดยใช้ `encoding="utf-8"`
+2. เปิดไฟล์ `user.txt` อ่านทุกบรรทัดด้วย `readlines()` แล้วแสดงจำนวนบรรทัดด้วย `len()`
+3. รับ note ใหม่จากผู้ใช้ แล้วเพิ่มต่อท้ายไฟล์ `notes.txt` โดยไม่ลบ note เดิม
+
+<details class="answer-reveal">
+<summary>ดูเฉลยแบบฝึกหัด</summary>
+
+### เฉลยข้อ 1
+
+ใช้โหมด `w` เพื่อสร้างหรือเขียนทับไฟล์สำหรับเก็บชื่อผู้ใช้
+
+<CodeExample example={examples['python101-files-06']} />
+### เฉลยข้อ 2
+
+อ่านไฟล์ด้วย `readlines()` แล้วใช้ `len()` เพื่อนับจำนวนบรรทัด
+
+<CodeExample example={examples['python101-files-07']} />
+### เฉลยข้อ 3
+
+ใช้โหมด `a` เพื่อเพิ่ม note ใหม่ต่อท้ายไฟล์โดยไม่ลบของเดิม
+
+<CodeExample example={examples['python101-files-08']} />
+</details>
+
+## โจทย์ท้าทาย
+
+สร้าง todo app แบบ text file ที่รับคำสั่ง `add`, `list`, และ `quit`: `add` ให้เพิ่มงานใหม่ลง `todo.txt`, `list` ให้แสดงงานทั้งหมด, `quit` ให้จบโปรแกรม และถ้ายังไม่มี `todo.txt` ต้องแสดงว่า `ยังไม่มีงาน` โดยไม่ crash
+
+<details class="answer-reveal">
+<summary>ดูเฉลยโจทย์ท้าทาย</summary>
+
+ตัวอย่างนี้ครอบคลุมคำสั่ง `add`, `list`, `quit`, คำสั่งที่ไม่รู้จัก และกรณีเปิดโปรแกรมครั้งแรกที่ยังไม่มี `todo.txt`
+
+<CodeExample example={examples['python101-files-09']} />
+ตัวอย่างการรัน:
+
+</details>
+
+## สรุป
+
+การอ่านเขียนไฟล์ทำให้โปรแกรมเก็บข้อมูลไว้ใช้ต่อได้แม้ปิดโปรแกรมไปแล้ว แอปที่ใช้งานจริงส่วนใหญ่ต้องทำแบบนี้

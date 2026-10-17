@@ -1,0 +1,38 @@
+---
+section: git101
+title: "การทำงานร่วมกัน"
+description: "เรียน workflow พื้นฐานสำหรับทำงานกับคนอื่นผ่าน branch, pull request, และ review"
+order: 8
+source: git101/collaboration.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+การใช้ Git ในงานจริงไม่ได้มีแค่คนเดียว คุณอาจต้องทำงานกับทีม จึงควรรู้ workflow ที่ช่วยให้ทุกคนอ่านและ review งานได้ง่าย
+
+<CodeExample example={examples['git101-collaboration-01']} />
+
+## แนวทางพื้นฐาน
+
+- สร้าง branch แยกตามงาน
+- commit ให้สั้นและสื่อความหมาย
+- เปิด pull request เมื่อพร้อมให้ review
+- แก้ conflict อย่างใจเย็น
+
+## คำแนะนำสำหรับมือใหม่
+
+1. เปลี่ยนงานหนึ่งอย่างต่อหนึ่ง branch
+2. เขียนข้อความ commit ให้คนอื่นเข้าใจ
+3. อ่าน review ก่อน merge
+
+## จุดที่มือใหม่พลาดบ่อย
+
+- push โค้ดที่ยังไม่พร้อมให้ทีมใช้
+- ตั้งชื่อ branch แบบไม่บอกความหมาย
+- merge โดยไม่อ่านข้อความ review
+
+## สรุป
+
+ถ้าคุณใช้ branch และ pull request ได้เป็นระบบ การทำงานกับคนอื่นจะง่ายและปลอดภัยขึ้นมาก

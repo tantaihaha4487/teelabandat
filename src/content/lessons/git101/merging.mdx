@@ -1,0 +1,40 @@
+---
+section: git101
+title: "รวมสาขา"
+description: "เรียนการ merge branch และวิธีรับมือเมื่อเกิด conflict"
+order: 7
+source: git101/merging.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+เมื่อทำงานบน branch เสร็จแล้ว คุณมักจะ merge กลับเข้า branch หลัก การ merge คือการรวมประวัติสองสายเข้าด้วยกัน
+
+## คำสั่งหลัก
+
+<CodeExample example={examples['git101-merging-01']} />
+
+## ถ้าเกิด conflict
+
+1. เปิดไฟล์ที่ conflict
+2. หาเครื่องหมาย conflict
+3. เลือกเนื้อหาที่ถูกต้อง
+4. บันทึกไฟล์แล้ว commit การแก้ conflict
+
+## จุดที่มือใหม่พลาดบ่อย
+
+- merge ทั้งที่ยังไม่ได้ตรวจ branch ปลายทาง
+- กลัว conflict จนไม่กล้าใช้ Git
+- ลบข้อความ conflict marker ไม่ครบ
+
+## ฝึกทำ
+
+1. สร้าง branch ใหม่และแก้ไฟล์เดียวกันสอง branch
+2. merge กลับเข้ากัน
+3. อ่าน conflict แล้วแก้ด้วยตัวเอง
+
+## สรุป
+
+การ merge คือทักษะที่คุณจะเจอแน่นอนในงานจริง ถ้าอ่าน conflict ออก คุณก็ใช้งาน Git ได้มั่นใจขึ้นมาก

@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionIndex from '../components/SectionIndex.astro';
+import Icon from '../components/Icon.astro';
+import { sections, lessons, lessonUrl } from '../lib/content';
+const allSections = await sections();
+const allLessons = await lessons();
+const picks = ['python101/setup', 'python101/basics', 'git101/setup', 'git101/staging-commits'].map(id => allLessons.find(l => l.id === id)).filter(Boolean);
+---
+<Base title="เริ่มเรียน Python และ Git">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="hero-text"><p class="eyebrow"><span class="small-rule"></span>พื้นที่เรียนรู้สำหรับคนเริ่มเขียน</p><h1 id="home-title">เข้าใจโค้ด<br/>ทีละ<span class="underlined">บรรทัด<svg viewBox="0 0 300 18" aria-hidden="true"><path d="M4 12Q145 0 295 10"/></svg></span></h1><p class="hero-description">เรียน Python ตั้งแต่พื้นฐาน ใช้ Git เก็บประวัติงาน<br class="desktop-break"/> แล้วลองทำโจทย์พร้อมคำอธิบายภาษาไทย</p><div class="hero-actions"><a class="button" href="/learn/python101/setup/">เริ่มบทแรก <Icon name="arrow" size={19}/></a><a class="text-link" href="#courses">เลือกเรื่องที่อยากเรียน <Icon name="down" size={16}/></a></div><p class="hero-small">ยังไม่เคยเขียนโปรแกรมก็เริ่มได้</p></div>
+    <aside class="desk-note" aria-label="วิธีอ่านตัวอย่างในบทเรียน"><div class="note-top"><span class="note-tab">เปิดสมุด เริ่มเรียน</span><span class="note-corner" aria-hidden="true"><Icon name="down-left" size={25}/></span></div><div class="note-title"><span aria-hidden="true">“</span><h2>โค้ดแต่ละบรรทัด<br/>กำลังทำอะไร?</h2></div><div class="note-code"><span class="note-line">01</span><code>name = <em>"Mali"</em></code><span class="note-connector" aria-hidden="true"></span></div><div class="margin-note"><span class="margin-index">บรรทัดที่ 1</span><p>เก็บข้อความ <code>"Mali"</code> ไว้ในชื่อ <code>name</code><br/>เพื่อเรียกค่านี้มาใช้ต่อ</p></div><a class="note-link" href="/learn/python101/basics/">อ่านต่อเรื่องตัวแปร <Icon name="arrow" size={18}/></a></aside>
+    <div class="hero-margin" aria-hidden="true">ค่อย ๆ อ่าน · ลองเปลี่ยนค่า · สังเกตผลลัพธ์</div>
+  </section>
+  <section class="home-courses" id="courses" aria-labelledby="course-title"><div class="section-heading"><div><p class="eyebrow">สารบัญการเรียนรู้</p><h2 id="course-title">เลือกเริ่มจากเรื่องนี้</h2></div><p>แต่ละส่วนอ่านแยกกันได้<br/>ถ้าเพิ่งเริ่ม แนะนำ Python บทแรก</p></div><SectionIndex sections={allSections}/></section>
+  <section class="reading-picks" aria-labelledby="picks-title"><div><span class="section-counter" aria-hidden="true">อ่านต่อ</span><h2 id="picks-title">เตรียมเครื่องมือ<br/>แล้วลองเขียน</h2><p>บทพื้นฐานสำหรับเริ่มต้น<br/>ก่อนขยับไปเรื่องถัดไป</p></div><ol>{picks.map((l,i)=>l && <li><a href={lessonUrl(l)}><span class="pick-number">{String(i+1).padStart(2,'0')}</span><span><small>{l.data.section==='python101'?'Python':'Git'}</small><strong>{l.data.title}</strong></span><Icon name="arrow" size={20}/></a></li>)}</ol></section>
+</Base>

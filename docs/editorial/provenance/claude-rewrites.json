@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "status": "pending-technical-review",
+  "sections": {
+    "python101": [
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/basics.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/basics.md",
+        "claude_file": "basics.md",
+        "protected_blocks": 11,
+        "examples": 11
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/conditions.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/conditions.md",
+        "claude_file": "conditions.md",
+        "protected_blocks": 8,
+        "examples": 8
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/data-structures.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/data-structures.md",
+        "claude_file": "data-structures.md",
+        "protected_blocks": 13,
+        "examples": 13
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/errors.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/errors.md",
+        "claude_file": "errors.md",
+        "protected_blocks": 7,
+        "examples": 7
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/files.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/files.md",
+        "claude_file": "files.md",
+        "protected_blocks": 10,
+        "examples": 10
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/functions.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/functions.md",
+        "claude_file": "functions.md",
+        "protected_blocks": 12,
+        "examples": 12
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/index.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/index.md",
+        "claude_file": "index.md",
+        "protected_blocks": 0,
+        "examples": 0
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/input-output.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/input-output.md",
+        "claude_file": "input-output.md",
+        "protected_blocks": 11,
+        "examples": 11
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/loops.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/loops.md",
+        "claude_file": "loops.md",
+        "protected_blocks": 14,
+        "examples": 14
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/modules.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/modules.md",
+        "claude_file": "modules.md",
+        "protected_blocks": 11,
+        "examples": 11
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/oop.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/oop.md",
+        "claude_file": "oop.md",
+        "protected_blocks": 10,
+        "examples": 10
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/projects.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/projects.md",
+        "claude_file": "projects.md",
+        "protected_blocks": 2,
+        "examples": 2
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/roadmap.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/roadmap.md",
+        "claude_file": "roadmap.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "python101",
+        "file": "src/content/lessons/python101/setup.mdx",
+        "source": "/home/mashiro/Development/JavaScript/python101/docs/th/setup.md",
+        "claude_file": "setup.md",
+        "protected_blocks": 8,
+        "examples": 8
+      }
+    ],
+    "git101": [
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/basics.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/basics.md",
+        "claude_file": "basics.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/branching.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/branching.md",
+        "claude_file": "branching.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/collaboration.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/collaboration.md",
+        "claude_file": "collaboration.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/history.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/history.md",
+        "claude_file": "history.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/index.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/index.md",
+        "claude_file": "index.md",
+        "protected_blocks": 0,
+        "examples": 0
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/merging.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/merging.md",
+        "claude_file": "merging.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/projects.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/projects.md",
+        "claude_file": "projects.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/remote.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/remote.md",
+        "claude_file": "remote.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/repository.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/repository.md",
+        "claude_file": "repository.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/roadmap.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/roadmap.md",
+        "claude_file": "roadmap.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/setup.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/setup.md",
+        "claude_file": "setup.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/staging-commits.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/staging-commits.md",
+        "claude_file": "staging-commits.md",
+        "protected_blocks": 1,
+        "examples": 1
+      },
+      {
+        "section": "git101",
+        "file": "src/content/lessons/git101/undo.mdx",
+        "source": "/home/mashiro/Development/JavaScript/git101/docs/th/undo.md",
+        "claude_file": "undo.md",
+        "protected_blocks": 1,
+        "examples": 1
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "section": "python101",
+      "lesson": "conditions",
+      "file": "python101-conditions-1.svg",
+      "source": "flowchart TD\n  A[\"รับคะแนนจากผู้ใช้\"] --> B{\"คะแนน >= 80?\"}\n  B -->|ใช่| C[\"แสดง ดีมาก\"]\n  B -->|ไม่ใช่| D{\"คะแนน >= 50?\"}\n  D -->|ใช่| E[\"แสดง ผ่าน\"]\n  D -->|ไม่ใช่| F[\"แสดง ต้องฝึกเพิ่ม\"]\n"
+    },
+    {
+      "section": "python101",
+      "lesson": "loops",
+      "file": "python101-loops-1.svg",
+      "source": "flowchart TD\n  A[\"เริ่ม loop\"] --> B[\"หยิบค่าถัดไปจาก range หรือ list\"]\n  B --> C{\"ยังมีค่าอยู่ไหม?\"}\n  C -->|มี| D[\"ทำงานใน block ของ loop\"]\n  D --> B\n  C -->|ไม่มี| E[\"ออกจาก loop\"]\n"
+    },
+    {
+      "section": "python101",
+      "lesson": "loops",
+      "file": "python101-loops-2.svg",
+      "source": "flowchart TD\n  A[\"เริ่ม while\"] --> B{\"เงื่อนไขเป็นจริงไหม?\"}\n  B -->|จริง| C[\"ทำงานใน loop\"]\n  C --> D[\"อัปเดตค่าที่เกี่ยวกับเงื่อนไข\"]\n  D --> B\n  B -->|เท็จ| E[\"ออกจาก loop\"]\n"
+    },
+    {
+      "section": "python101",
+      "lesson": "roadmap",
+      "file": "python101-roadmap-1.svg",
+      "source": "flowchart LR\n  A[\"สัปดาห์ 1<br/>Syntax และ Input\"] --> B[\"สัปดาห์ 2<br/>Condition, Loop, Data\"]\n  B --> C[\"สัปดาห์ 3<br/>Function, File, Error\"]\n  C --> D[\"สัปดาห์ 4<br/>OOP และ Projects\"]\n  D --> E[\"เลือกสายต่อยอด<br/>Web, Data, Automation, AI\"]\n"
+    }
+  ],
+  "claude_results": [
+    "/tmp/dssi-claude-python-a3.json",
+    "/tmp/dssi-claude-python-a4.json",
+    "/tmp/dssi-claude-python-b2.json",
+    "/tmp/dssi-claude-git-a.json",
+    "/tmp/dssi-claude-git-b.json"
+  ]
+}

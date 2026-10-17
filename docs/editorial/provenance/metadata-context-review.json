@@ -1,0 +1,23 @@
+{
+  "provider": "Claude remote + Humanizer",
+  "status": "reviewed-and-applied",
+  "metadataFiles": 27,
+  "contextQuestions": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "19",
+    "36",
+    "41",
+    "57"
+  ],
+  "parentTitleClarifications": {
+    "src/content/lessons/python101/loops.mdx": "วนซ้ำใน Python ด้วย for และ while",
+    "src/content/lessons/git101/staging-commits.mdx": "เตรียมไฟล์และบันทึกงานด้วย Git",
+    "src/content/lessons/git101/remote.mdx": "เชื่อม Git กับ GitHub"
+  },
+  "resultSHA256": "234ee19bac3549b311f6636edfd8814cc2591d383729026a72c2ecaefafd6577"
+}

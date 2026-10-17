@@ -1,0 +1,9 @@
+{
+  "id": "python101",
+  "title": "เริ่มเขียน Python",
+  "summary": "จากตัวแปรแรกไปจนถึงฟังก์ชัน ไฟล์ และโปรแกรมของตัวเอง",
+  "order": 1,
+  "kind": "course",
+  "label": "Python 101",
+  "icon": "code"
+}

@@ -1,0 +1,40 @@
+{
+  "provider": "Claude remote + Humanizer",
+  "status": "exact-replacements-reviewed-and-applied",
+  "reviewedFiles": [
+    "src/content/lessons/git101/index.mdx",
+    "src/content/lessons/git101/setup.mdx",
+    "src/content/lessons/git101/repository.mdx",
+    "src/content/lessons/git101/basics.mdx",
+    "src/content/lessons/git101/staging-commits.mdx",
+    "src/content/lessons/git101/history.mdx",
+    "src/content/lessons/git101/branching.mdx",
+    "src/content/lessons/git101/merging.mdx",
+    "src/content/lessons/git101/collaboration.mdx",
+    "src/content/lessons/git101/remote.mdx",
+    "src/content/lessons/git101/undo.mdx",
+    "src/content/lessons/git101/roadmap.mdx",
+    "src/content/lessons/git101/projects.mdx",
+    "src/content/lessons/python101/index.mdx",
+    "src/content/lessons/python101/setup.mdx",
+    "src/content/lessons/python101/basics.mdx",
+    "src/content/lessons/python101/input-output.mdx",
+    "src/content/lessons/python101/conditions.mdx",
+    "src/content/lessons/python101/loops.mdx",
+    "src/content/lessons/python101/data-structures.mdx",
+    "src/content/lessons/python101/functions.mdx",
+    "src/content/lessons/python101/files.mdx",
+    "src/content/lessons/python101/errors.mdx",
+    "src/content/lessons/python101/modules.mdx",
+    "src/content/lessons/python101/oop.mdx",
+    "src/content/lessons/python101/roadmap.mdx",
+    "src/content/lessons/python101/projects.mdx"
+  ],
+  "appliedReplacements": 42,
+  "parentCorrections": [
+    "git restore: recovery is not guaranteed rather than universally impossible",
+    "git push: remove unconditional immediate-publication wording",
+    "simplify Python value/type distinction"
+  ],
+  "resultSHA256": "5909a8aefe5620003f2a08d07d34296ae4bbd56c215f56b1628f7a695431c21f"
+}

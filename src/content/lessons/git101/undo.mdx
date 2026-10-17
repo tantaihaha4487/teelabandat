@@ -1,0 +1,40 @@
+---
+section: git101
+title: "ย้อนการเปลี่ยนแปลง"
+description: "เรียนการใช้ restore, reset, และ revert เพื่อแก้ความผิดพลาดอย่างปลอดภัย"
+order: 10
+source: git101/undo.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+Git มีหลายวิธีสำหรับย้อนงานที่ไม่ต้องการ แต่แต่ละคำสั่งมีผลต่างกัน มือใหม่ควรเข้าใจให้ชัดก่อนใช้
+
+## คำสั่งหลัก
+
+<CodeExample example={examples['git101-undo-01']} />
+
+## วิธีจำง่าย
+
+- `restore` เอาการเปลี่ยนแปลงกลับในไฟล์
+- `reset` เลื่อน pointer ของ branch
+- `revert` สร้าง commit ใหม่เพื่อยกเลิก commit เก่า
+
+`git restore file.txt` ทิ้งการแก้ไขที่ยังไม่ stage ของไฟล์นั้น การแก้ไขที่ทิ้งอาจกู้คืนไม่ได้ ส่วน `git reset --soft HEAD~1` เลื่อน branch กลับหนึ่ง commit แต่เก็บการเปลี่ยนแปลงไว้ใน staging area เหมาะกับ commit ที่ยังไม่ push ไปที่ remote และยังไม่มีใครใช้ประวัตินั้นร่วมกัน
+
+## จุดที่มือใหม่พลาดบ่อย
+
+- ใช้ `reset` กับงานที่ push ไปแล้วโดยไม่คิดให้ดี
+- ลืมดูผลต่างก่อนย้อน
+- สับสนว่า revert คือการลบ commit เดิม
+
+## ฝึกทำ
+
+1. แก้ไฟล์หนึ่งไฟล์แล้วใช้ `git restore`
+2. ลอง `git revert` บน commit ทดลอง
+
+## สรุป
+
+ถ้าคุณรู้จักคำสั่งย้อนงาน คุณจะกล้าลองและไม่กลัวพลาดมากเกินไป

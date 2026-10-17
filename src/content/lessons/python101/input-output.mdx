@@ -1,0 +1,85 @@
+---
+section: python101
+title: "รับข้อมูลและแสดงผลใน Python"
+description: "เรียนการรับข้อมูลด้วย input แสดงผลด้วย print แปลงชนิดข้อมูล และจัดรูปแบบข้อความใน Python พร้อมแบบฝึกหัด"
+order: 3
+source: python101/input-output.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/python101.json';
+
+โปรแกรมหลายตัวต้องรับข้อมูลจากผู้ใช้ แล้วนำไปประมวลผลและตอบสนองกลับ ไม่ใช่แค่แสดงข้อความคงที่บนหน้าจอ
+
+## รับข้อมูลด้วย input
+
+<CodeExample example={examples['python101-input-output-01']} />
+ค่าที่ได้จาก `input()` จะเป็นข้อความเสมอ แม้ผู้ใช้จะพิมพ์ตัวเลข
+
+## แปลงชนิดข้อมูล
+
+<CodeExample example={examples['python101-input-output-02']} />
+ฟังก์ชันที่ใช้บ่อย:
+
+- `int()` แปลงเป็นจำนวนเต็ม
+- `float()` แปลงเป็นทศนิยม
+- `str()` แปลงเป็นข้อความ
+
+## ตัวอย่าง: เครื่องคิดเลขง่าย ๆ
+
+<CodeExample example={examples['python101-input-output-03']} />
+ตัวอย่างการรัน:
+
+## การจัดรูปแบบตัวเลข
+
+<CodeExample example={examples['python101-input-output-05']} />
+`:.2f` หมายถึงแสดงทศนิยม 2 ตำแหน่ง
+
+ผลลัพธ์คือ:
+
+## ข้อผิดพลาดที่พบบ่อย
+
+- ลืมแปลง `input()` เป็นตัวเลขก่อนคำนวณ
+- ผู้ใช้กรอกตัวอักษรในช่องที่ต้องเป็นตัวเลข
+- หารด้วยศูนย์ ทำให้เกิด `ZeroDivisionError`
+
+## แบบฝึกหัด
+
+1. รับ `name` และ `age` จากผู้ใช้ แปลง `age` เป็น `int` แล้วแสดงว่าอีก 10 ปีจะอายุเท่าไร
+2. รับคะแนน 3 ค่า แปลงเป็น `float` คำนวณค่าเฉลี่ย แล้วแสดงผลทศนิยม 2 ตำแหน่ง
+3. รับราคาสินค้าและเปอร์เซ็นต์ส่วนลด แปลงเป็น `float` แล้วแสดงราคาหลังหักส่วนลด
+
+<details class="answer-reveal">
+<summary>ดูเฉลยแบบฝึกหัด</summary>
+
+### เฉลยข้อ 1
+
+`input()` ได้ข้อความเสมอ จึงต้องใช้ `int()` ก่อนนำอายุไปบวกเลข
+
+<CodeExample example={examples['python101-input-output-07']} />
+### เฉลยข้อ 2
+
+แปลงคะแนนเป็น `float` เพื่อรองรับคะแนนทศนิยม แล้วหารด้วยจำนวนวิชา
+
+<CodeExample example={examples['python101-input-output-08']} />
+### เฉลยข้อ 3
+
+คำนวณส่วนลดจากเปอร์เซ็นต์ก่อน แล้วนำไปลบออกจากราคาตั้งต้น
+
+<CodeExample example={examples['python101-input-output-09']} />
+</details>
+
+## โจทย์ท้าทาย
+
+สร้างโปรแกรมที่รับอุณหภูมิ Celsius จากผู้ใช้ แปลงเป็น `float` คำนวณ Fahrenheit ด้วยสูตร `F = C * 9 / 5 + 32` แล้วแสดงทั้งค่า Celsius และ Fahrenheit
+
+<details class="answer-reveal">
+<summary>ดูเฉลยโจทย์ท้าทาย</summary>
+
+สูตรนี้ต้องแปลงค่า input เป็น `float` เพื่อให้คำนวณกับทศนิยมได้
+
+<CodeExample example={examples['python101-input-output-10']} />
+ตัวอย่างการรัน:
+
+</details>

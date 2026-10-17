@@ -1,0 +1,40 @@
+---
+section: git101
+title: "พื้นฐาน Git"
+description: "เรียนศัพท์สำคัญของ Git เช่น repository, working tree, staging area, commit, และ branch"
+order: 2
+source: git101/basics.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+Git ทำงานเหมือนสมุดบันทึกประวัติของโปรเจกต์ ไฟล์ที่คุณแก้จะอยู่ใน working tree ก่อน จากนั้นคุณเลือกไฟล์ที่ต้องการด้วย staging area แล้วค่อยบันทึกเป็น commit
+
+## คำสำคัญ
+
+- **Repository**: ที่เก็บประวัติของโปรเจกต์
+- **Working tree**: ไฟล์ที่กำลังแก้บนเครื่อง
+- **Staging area**: พื้นที่คัดเลือกไฟล์ก่อน commit
+- **Commit**: บันทึกสถานะของไฟล์ในเวลาหนึ่ง
+- **Branch**: เส้นทางการพัฒนาที่แยกออกมา
+
+## ตัวอย่างสั้น ๆ
+
+<CodeExample example={examples['git101-basics-01']} />
+
+## ข้อผิดพลาดที่เจอบ่อย
+
+- เข้าใจว่า commit คือการส่งไฟล์ขึ้น GitHub ทั้งหมด
+- คิดว่า `add` คือการสร้างไฟล์ใหม่เสมอ
+- ลืมดู `git status` ก่อน commit
+
+## ฝึกทำ
+
+1. อธิบายความต่างระหว่าง working tree กับ staging area ด้วยคำพูดของคุณ
+2. ลองสร้างไฟล์ข้อความหนึ่งไฟล์แล้วดู `git status`
+
+## สรุป
+
+เมื่อเข้าใจคำสำคัญเหล่านี้แล้ว คุณจะอ่าน workflow ของ Git ได้ง่ายขึ้นมาก บทถัดไปจะพาเริ่มสร้าง repository แรก

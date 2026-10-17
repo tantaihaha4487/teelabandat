@@ -1,0 +1,23 @@
+{
+  "provider": "Claude remote",
+  "humanizer": "remote installed skill supplied as instructions",
+  "status": "imported-and-protected-data-compared",
+  "resultSHA256": "8c4711459c94d733a27f16833c3c4ada6283f8b7341bf7b15b8a422f7e888ccf",
+  "questions": 73,
+  "hints": 73,
+  "reasoningSteps": 219,
+  "protected": [
+    "sourceId",
+    "code",
+    "options",
+    "correctIndex"
+  ],
+  "clarifications": [
+    44,
+    47,
+    53,
+    54,
+    55,
+    57
+  ]
+}

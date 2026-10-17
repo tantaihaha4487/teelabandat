@@ -1,0 +1,98 @@
+{
+  "git101-basics-01": {
+    "mode": "walkthrough",
+    "summary": "ลำดับคำสั่งพื้นฐานจากการดูสถานะด้วย git status นำ README.md เข้า staging area แล้ว commit พร้อมข้อความ",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-branching-01": {
+    "mode": "walkthrough",
+    "summary": "ดูรายชื่อ branch ในเครื่อง สร้าง feature-login พร้อมสลับไปทำงาน แล้วสลับกลับมาที่ main",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-collaboration-01": {
+    "mode": "walkthrough",
+    "summary": "สร้าง branch สำหรับงานหนึ่งชิ้น commit ไฟล์ notes.md แล้ว push ขึ้น origin พร้อมตั้ง tracking ด้วย -u",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-history-01": {
+    "mode": "walkthrough",
+    "summary": "ดูประวัติ commit ที่ไปถึงได้จาก HEAD ดูรายละเอียดของ commit ที่ระบุ และเทียบ working tree กับ staging area",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-merging-01": {
+    "mode": "console",
+    "summary": "รวมประวัติของ branch feature-notes เข้ากับ branch ที่กำลัง checkout อยู่",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-projects-01": {
+    "mode": "walkthrough",
+    "summary": "เริ่ม repository ใหม่ด้วย git init แล้วบันทึก README.md เป็น commit แรกของโปรเจกต์",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-remote-01": {
+    "mode": "walkthrough",
+    "summary": "ดู URL ของ remote ที่รู้จัก push และ pull branch main กับ origin และ fetch ข้อมูลล่าสุดโดยยังไม่รวมเข้ากับ branch ปัจจุบัน",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-repository-01": {
+    "mode": "walkthrough",
+    "summary": "เปรียบคำสั่งเริ่ม repository ใหม่ด้วย git init กับการคัดลอกจาก URL ด้วย git clone แล้วตรวจสถานะด้วย git status",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-roadmap-01": {
+    "mode": "walkthrough",
+    "summary": "ตรวจไฟล์ที่ยังไม่ commit ดูประวัติของทุก branch แบบกราฟบรรทัดเดียว และยืนยันชื่อ branch ที่ใช้งานอยู่",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-setup-01": {
+    "mode": "walkthrough",
+    "summary": "ตรวจเวอร์ชันของ Git แล้วตั้ง user.name และ user.email แบบ --global ที่จะใช้กับ commit ใหม่",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-staging-commits-01": {
+    "mode": "walkthrough",
+    "summary": "เทียบการ add ไฟล์เดียวกับการ add ทั้งโฟลเดอร์ด้วย git add . ก่อน commit สิ่งที่อยู่ใน staging area",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  },
+  "git101-undo-01": {
+    "mode": "walkthrough",
+    "summary": "สามวิธีย้อนงาน คืนไฟล์ด้วย git restore เลื่อน branch กลับหนึ่ง commit ด้วย git reset --soft และสร้าง commit ยกเลิกผลด้วย git revert",
+    "inputs": [],
+    "values": {},
+    "files": {},
+    "editable": []
+  }
+}

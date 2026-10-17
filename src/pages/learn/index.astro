@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionIndex from '../../components/SectionIndex.astro';
+import { sections } from '../../lib/content';
+const all = await sections();
+---
+<Base title="บทเรียนทั้งหมด" current="learn"><header class="page-intro"><p class="eyebrow">สารบัญ</p><h1>บทเรียนทั้งหมด</h1><p>เลือกเรื่องที่สนใจ แล้วอ่านตามลำดับบทของแต่ละหมวด</p></header><SectionIndex sections={all}/></Base>

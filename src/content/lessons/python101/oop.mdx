@@ -1,0 +1,127 @@
+---
+section: python101
+title: "เขียนโปรแกรมเชิงวัตถุใน Python"
+description: "เรียนพื้นฐาน OOP ใน Python เรื่อง class, object, attribute, method, constructor และ inheritance ด้วยตัวอย่างง่าย ๆ"
+order: 11
+source: python101/oop.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/python101.json';
+
+OOP คือแนวคิดการจัดโค้ดรอบ ๆ สิ่งที่เรียกว่า object
+
+ให้คิดว่า object คือ "สิ่งหนึ่งชิ้น" ที่มีทั้งข้อมูลและสิ่งที่ทำได้ เช่น นักเรียนมีชื่อกับคะแนน และสั่งให้แสดงข้อมูลหรือตรวจว่าผ่านได้
+
+## Class และ Object
+
+Class คือแบบพิมพ์เขียว ส่วน object คือของจริงที่สร้างจากแบบพิมพ์เขียวนั้น
+
+| คำ | ความหมาย | ตัวอย่าง |
+| --- | --- | --- |
+| Class | แบบพิมพ์เขียว | `Student` |
+| Object | ของจริงที่สร้างจาก class | `mali`, `anan` |
+| Attribute | ข้อมูลของ object | `name`, `score` |
+| Method | สิ่งที่ object ทำได้ | `show_info()` |
+
+เริ่มจากตัวอย่างนักเรียน:
+
+<CodeExample example={examples['python101-oop-01']} />
+ในตัวอย่างนี้ `mali` และ `anan` เป็น object คนละตัวกัน จึงเก็บ `name` และ `score` คนละชุดได้
+
+## __init__
+
+`__init__` ทำงานทันทีตอนสร้าง object ใช้กำหนดค่าเริ่มต้นให้ object
+
+<CodeExample example={examples['python101-oop-02']} />
+บรรทัดนี้ส่งค่าเข้า `__init__` แบบนี้:
+
+| ค่าที่ส่งเข้าไป | parameter ที่รับ | เก็บไว้ใน object |
+| --- | --- | --- |
+| `"Mali"` | `name` | `self.name` |
+| `90` | `score` | `self.score` |
+
+ดังนั้น `mali.name` จะได้ `"Mali"` และ `mali.score` จะได้ `90`
+
+## self
+
+`self` หมายถึง object ตัวปัจจุบันที่กำลังใช้งาน method นั้นอยู่
+
+เมื่อเขียน:
+
+<CodeExample example={examples['python101-oop-03']} />
+Python จะมองเหมือนว่า `mali` ถูกส่งเข้าไปเป็น `self` ดังนั้นใน method จึงใช้ `self.name` และ `self.score` เพื่ออ่านข้อมูลของ `mali`
+
+ถ้าเขียน:
+
+<CodeExample example={examples['python101-oop-04']} />
+`self` จะหมายถึง `anan` แทน
+
+## เมธอด (Method)
+
+Method คือ function ที่อยู่ใน class ใช้ทำงานกับข้อมูลของ object
+
+ตัวอย่างนี้ `mark_done()` เปลี่ยนข้อมูลใน object จากยังไม่เสร็จเป็นเสร็จแล้ว:
+
+<CodeExample example={examples['python101-oop-05']} />
+สิ่งสำคัญคือ method ไม่ได้แค่แสดงผล แต่สามารถเปลี่ยนข้อมูลของ object ได้ เช่น `self.completed = True`
+
+## ควรใช้ OOP เมื่อไร
+
+ใช้ OOP เมื่อมีข้อมูลหลายชิ้นที่เป็นชนิดเดียวกัน และแต่ละชิ้นมีพฤติกรรมของตัวเอง เช่น นักเรียนหลายคน บัญชีธนาคารหลายบัญชี สินค้าหลายชิ้น ตัวละครในเกม หรือ task หลายงานใน todo app
+
+ถ้าโปรแกรมมีแค่คำนวณค่าเดียวแล้วจบ function ธรรมดาอาจอ่านง่ายกว่า class
+
+## ข้อผิดพลาดที่พบบ่อย
+
+- ลืม `self` ใน method
+- เรียก class โดยไม่ใส่ argument ที่ `__init__` ต้องการ
+- ใช้ class ทั้งที่ function ธรรมดาก็พอ
+
+## แบบฝึกหัด
+
+1. สร้าง class `Book` ที่รับ `title` และ `author` ใน `__init__` แล้วเก็บเป็น `self.title` และ `self.author`
+2. สร้าง class `TodoItem` ที่รับ `title` และกำหนด `self.completed = False` ตอนสร้าง object
+3. เพิ่ม method `mark_done()` ใน `TodoItem` เพื่อเปลี่ยน `completed` จาก `False` เป็น `True` แล้วทดสอบก่อนและหลังเรียก method
+
+<details class="answer-reveal">
+<summary>ดูเฉลยแบบฝึกหัด</summary>
+
+### เฉลยข้อ 1
+
+`Book` เก็บข้อมูลหนังสือ 2 อย่างคือ `title` และ `author`
+
+<CodeExample example={examples['python101-oop-06']} />
+### เฉลยข้อ 2
+
+`TodoItem` เก็บชื่องานและเริ่มสถานะ `completed` เป็น `False`
+
+<CodeExample example={examples['python101-oop-07']} />
+### เฉลยข้อ 3
+
+method `mark_done()` เปลี่ยนสถานะ todo จาก `False` เป็น `True`
+
+<CodeExample example={examples['python101-oop-08']} />
+### ตัวอย่างทดสอบ
+
+ทดสอบการสร้าง object ของ `Book`
+
+<CodeExample example={examples['python101-oop-09']} />
+</details>
+
+## โจทย์ท้าทาย
+
+สร้าง class `BankAccount` ที่มี `owner` และ `balance`; ต้องมี method `deposit(amount)`, `withdraw(amount)`, และ `show_balance()` โดยต้องจัดการกรณีฝาก/ถอนยอดน้อยกว่าหรือเท่ากับ 0 และกรณีถอนเกินยอดเงิน
+
+<details class="answer-reveal">
+<summary>ดูเฉลยโจทย์ท้าทาย</summary>
+
+ตัวอย่างนี้ครอบคลุมฝากเงินปกติ ถอนเงินปกติ ถอนเกินยอด และฝาก/ถอนยอดที่ไม่ถูกต้อง
+
+<CodeExample example={examples['python101-oop-10']} />
+</details>
+
+## สรุป
+
+OOP ช่วยจัดข้อมูลกับพฤติกรรมให้อยู่ด้วยกัน แต่ควรใช้เมื่อช่วยให้โค้ดชัดขึ้นจริง ๆ

@@ -1,0 +1,35 @@
+{
+  "provider": "Claude remote",
+  "workflow": "installed remote Humanizer supplied as instructions",
+  "status": "reviewed",
+  "result": {
+    "reviewedFiles": [
+      "src/pages/404.astro",
+      "src/pages/index.astro",
+      "src/pages/search.astro",
+      "src/pages/practice/[bank].astro",
+      "src/pages/learn/index.astro",
+      "src/pages/learn/[section]/index.astro",
+      "src/pages/learn/[section]/[...slug].astro",
+      "src/layouts/Base.astro",
+      "src/components/CodeExample.astro",
+      "src/components/SectionIndex.astro",
+      "src/components/Icon.astro",
+      "src/components/interactive/CodeWalkthrough.vue",
+      "src/components/interactive/SearchPanel.vue",
+      "src/components/interactive/QuizRunner.vue",
+      "src/content/sections/practice.json",
+      "src/content/sections/python101.json",
+      "src/content/sections/git101.json"
+    ],
+    "replacements": [],
+    "notes": [
+      "ตรวจคำไทยที่ผู้เรียนเห็นทั้งหมดในไฟล์ที่ให้มาแล้ว ไม่พบวลีโปรโมท คำปฏิญาณเกินจริง คำนำซ้ำซ้อน หรือร่องรอยบุคลิก Mashiro/หนู/ครับ/ค่ะ",
+      "ตัวเลขจำนวนบทความ/ข้อ/ผลลัพธ์ที่แสดง (เช่น entries.length, filteredQuestions.length, results.value.length) ดึงจากข้อมูลจริงอยู่แล้ว ไม่มีการใส่ตัวเลขลอย ๆ",
+      "คำว่า ตัวแปร ที่พบ (เช่น 'อ่านต่อเรื่องตัวแปร') ใช้เป็นชื่อหัวข้อ ไม่ได้อ้างว่าตัวแปรมีชนิดข้อมูลตายตัว และตัวอย่างใน hero ใช้คำว่า 'ชื่อ name' แทนเพื่อเลี่ยงปัญหานี้อยู่แล้ว",
+      "ไม่มีการใช้ em dash/en dash ในเนื้อหาอธิบาย (เครื่องหมาย – ที่เจอใน CodeWalkthrough.vue ใช้แสดงช่วงเลขบรรทัด ไม่ใช่ตัวเชื่อมประโยค จึงไม่แก้)",
+      "ไม่มี bold label หรือ heading ประดับที่ต้องรื้อ เพราะ <strong> ที่มีอยู่ใช้บอกสถานะ UI จริง (ถูกต้อง/ยังไม่ถูก ฯลฯ) ไม่ใช่การประดับทุกหัวข้อ",
+      "สรุป: ไม่จำเป็นต้องแก้ไขข้อความใดในไฟล์ที่ให้มา เนื้อหาเป็นภาษาไทยที่กระชับ เป็นกลาง และตรงกับสเปกอยู่แล้ว"
+    ]
+  }
+}

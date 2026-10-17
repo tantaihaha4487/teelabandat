@@ -1,0 +1,92 @@
+---
+section: python101
+title: "ติดตั้ง Python และรันโปรแกรมแรก"
+description: "เรียนวิธีติดตั้ง Python ตรวจสอบเวอร์ชัน สร้างไฟล์ .py และรันโปรแกรม Python แรกผ่าน terminal สำหรับผู้เริ่มต้น"
+order: 1
+source: python101/setup.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/python101.json';
+
+บทนี้ทำให้เครื่องของคุณพร้อมเขียน Python และเข้าใจวิธีรันไฟล์อย่างถูกต้อง
+
+## Python คืออะไร
+
+Python เป็นภาษาโปรแกรมที่อ่านง่าย ใช้ได้หลายงาน เช่น เว็บ ระบบอัตโนมัติ วิเคราะห์ข้อมูล AI และสคริปต์เล็ก ๆ สำหรับผู้เริ่มต้น Python มีจุดเด่นคือ syntax ไม่ซับซ้อนและมีชุมชนผู้ใช้งานขนาดใหญ่ที่ช่วยตอบคำถามได้
+
+## ติดตั้ง Python
+
+1. ไปที่ `https://www.python.org/downloads/`
+2. ดาวน์โหลด Python เวอร์ชัน 3.12 หรือใหม่กว่า
+3. บน Windows ให้เลือก `Add Python to PATH` ระหว่างติดตั้ง
+4. เปิด terminal แล้วตรวจสอบ:
+
+<CodeExample example={examples['python101-setup-01']} />
+บางเครื่องอาจต้องใช้:
+
+<CodeExample example={examples['python101-setup-02']} />
+## ติดตั้ง editor
+
+แนะนำ VS Code เพราะใช้งานง่ายและมีส่วนเสริมสำหรับ Python
+
+1. ติดตั้ง VS Code
+2. เปิด Extensions
+3. ติดตั้ง extension ชื่อ `Python` จาก Microsoft
+
+## สร้างไฟล์แรก
+
+สร้างไฟล์ชื่อ `hello.py`
+
+<CodeExample example={examples['python101-setup-03']} />
+รันไฟล์:
+
+<CodeExample example={examples['python101-setup-04']} />
+## REPL คืออะไร
+
+REPL คือโหมดทดลองคำสั่ง Python ทีละบรรทัด เปิดด้วย:
+
+<CodeExample example={examples['python101-setup-05']} />
+ตัวอย่างหน้าจอจริงจะมีเครื่องหมาย `>>>` นำหน้า:
+
+ใน REPL คำสั่งอย่าง `1 + 2` จะแสดงผลลัพธ์ให้ทันที แต่ในไฟล์ `.py` ต้องใช้ `print()` ถ้าต้องการให้ผลลัพธ์ปรากฏบนหน้าจอ
+
+ออกจาก REPL ด้วย `exit()`
+
+## ข้อผิดพลาดที่พบบ่อย
+
+- ติดตั้งแล้วแต่ใช้ `python` ไม่ได้: ตรวจสอบ PATH หรือใช้ `python3` แทน
+- รันผิด folder: ใช้ `pwd` หรือ `dir` เพื่อตรวจว่าคุณอยู่ที่ไหน
+- ชื่อไฟล์เป็น `python.py`: อย่าตั้งชื่อชนกับชื่อภาษา ให้ใช้ `hello.py` แทน
+
+## แบบฝึกหัด
+
+1. สร้างไฟล์ชื่อ `intro.py` ใน folder ที่กำลังเรียน
+2. ในไฟล์นั้น ใช้ `print()` 3 บรรทัดเพื่อแสดงชื่อ อายุ และสิ่งที่อยากสร้างด้วย Python
+3. รันไฟล์จาก terminal ด้วย `python intro.py` แล้วตรวจว่าข้อความทั้ง 3 บรรทัดแสดงบนหน้าจอ
+
+<details class="answer-reveal">
+<summary>ดูเฉลย</summary>
+
+เฉลยนี้ครอบคลุมทั้ง 3 ข้อ: สร้างไฟล์ `intro.py`, ใช้ `print()` หลายบรรทัด และรันจาก terminal
+
+### เฉลยข้อ 1
+
+สร้างไฟล์ชื่อ `intro.py`
+
+### เฉลยข้อ 2
+
+ใส่โค้ดนี้ในไฟล์เพื่อแสดงชื่อ อายุ และสิ่งที่อยากสร้าง
+
+<CodeExample example={examples['python101-setup-07']} />
+### เฉลยข้อ 3
+
+รันด้วยคำสั่ง:
+
+<CodeExample example={examples['python101-setup-08']} />
+</details>
+
+## สรุป
+
+ตอนนี้คุณควรติดตั้ง Python ได้ รันไฟล์ `.py` ได้ และเข้าใจความต่างระหว่างการรันไฟล์กับ REPL

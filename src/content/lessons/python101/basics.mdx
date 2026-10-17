@@ -1,0 +1,96 @@
+---
+section: python101
+title: "พื้นฐาน Python สำหรับผู้เริ่มต้น"
+description: "เรียนพื้นฐาน Python เรื่องตัวแปร ชนิดข้อมูล comment การแสดงผล และ operator พร้อมตัวอย่างและแบบฝึกหัด"
+order: 2
+source: python101/basics.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/python101.json';
+
+บทนี้ปูพื้นฐานที่ใช้งานบ่อยใน Python ได้แก่ ตัวแปร ชนิดข้อมูล comment และการแสดงผล
+
+## ตัวแปร
+
+ตัวแปรคือชื่อที่อ้างถึงค่าหนึ่ง ส่วนชนิดข้อมูลเป็นคุณสมบัติของค่านั้น
+
+<CodeExample example={examples['python101-basics-01']} />
+Python ไม่ต้องประกาศชนิดข้อมูลล่วงหน้า เมื่อกำหนดค่าใหม่ให้ตัวแปรเดิม ชื่อนั้นก็แค่ไปอ้างถึงค่าใหม่ ซึ่งอาจเป็นคนละชนิดข้อมูลก็ได้
+
+## ชนิดข้อมูลพื้นฐาน
+
+| ชนิด | ตัวอย่าง | ใช้ทำอะไร |
+| --- | --- | --- |
+| `str` | `"hello"` | ข้อความ |
+| `int` | `10` | จำนวนเต็ม |
+| `float` | `3.14` | ทศนิยม |
+| `bool` | `True` | จริง/เท็จ |
+
+ตรวจชนิดข้อมูลด้วย `type()`:
+
+<CodeExample example={examples['python101-basics-02']} />
+## การแสดงผล
+
+ใช้ `print()` เพื่อแสดงข้อมูล
+
+<CodeExample example={examples['python101-basics-03']} />
+ใช้ `+` ต่อข้อความกับตัวแปรข้อความได้ เช่น `"Hello " + name`
+`f-string` ช่วยแทรกค่าตัวแปรลงในข้อความได้เลย อ่านง่ายและใช้บ่อยมาก
+
+## ความคิดเห็นในโค้ด (Comment)
+
+Comment คือข้อความที่ Python ไม่รัน ใช้อธิบายโค้ดที่อาจอ่านยาก
+
+<CodeExample example={examples['python101-basics-04']} />
+## การตั้งชื่อตัวแปร
+
+ใช้ `snake_case`:
+
+<CodeExample example={examples['python101-basics-05']} />
+หลีกเลี่ยงชื่อสั้นเกินไป เช่น `x` ถ้าไม่ใช่โค้ดทดลอง เพราะอ่านยาก
+
+## ข้อผิดพลาดที่พบบ่อย
+
+<CodeExample example={examples['python101-basics-06']} />
+แก้โดยแปลงชนิดข้อมูล:
+
+<CodeExample example={examples['python101-basics-07']} />
+## แบบฝึกหัด
+
+1. สร้างตัวแปร `name`, `age`, `school`, และ `favorite_subject` แล้วใส่ค่าตัวอย่างของตัวเอง
+2. ใช้ f-string แสดงประโยคเดียวที่มีค่าจากตัวแปรทั้ง 4 ตัว
+3. ใช้ `type()` ตรวจชนิดข้อมูลของตัวแปรอย่างน้อย 3 ตัว และแสดงผลด้วย `print()`
+
+<details class="answer-reveal">
+<summary>ดูเฉลยแบบฝึกหัด</summary>
+
+### เฉลยข้อ 1
+
+สร้างตัวแปรให้ครบตามโจทย์: ชื่อ อายุ โรงเรียน และวิชาที่ชอบ
+
+<CodeExample example={examples['python101-basics-08']} />
+### เฉลยข้อ 2
+
+ใช้ f-string รวมค่าจากตัวแปรเป็นประโยคเดียว
+
+<CodeExample example={examples['python101-basics-09']} />
+### เฉลยข้อ 3
+
+ใช้ `type()` เพื่อตรวจชนิดข้อมูลของค่าอย่างน้อย 3 ค่า
+
+<CodeExample example={examples['python101-basics-10']} />
+</details>
+
+## โจทย์ท้าทาย
+
+เขียนโปรแกรมที่มีตัวแปร `name` และ `age` จากนั้นคำนวณ `future_age = age + 5` แล้วแสดงประโยคว่าอีก 5 ปีคนนั้นจะอายุเท่าไร
+
+<details class="answer-reveal">
+<summary>ดูเฉลยโจทย์ท้าทาย</summary>
+
+เก็บอายุปัจจุบันไว้ในตัวแปร แล้วสร้างตัวแปรใหม่สำหรับอายุในอีก 5 ปี
+
+<CodeExample example={examples['python101-basics-11']} />
+</details>

@@ -1,0 +1,484 @@
+:root {
+  --motion-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-settle: cubic-bezier(0.27, 1.06, 0.18, 1);
+  --motion-press: cubic-bezier(0.31, 0.94, 0.34, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.reading-progress {
+  position: fixed;
+  z-index: 100;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--primary);
+  pointer-events: none;
+}
+
+@keyframes ink-progress {
+  to { transform: scaleX(1); }
+}
+
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    animation: ink-progress linear both;
+    animation-timeline: scroll(root block);
+    animation-duration: auto;
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .reading-progress { display: none; }
+}
+
+.site-header,
+.site-footer {
+  transition:
+    transform 520ms var(--motion-out),
+    opacity 420ms var(--motion-out);
+}
+
+.main-shell {
+  transition: opacity 420ms var(--motion-out);
+}
+
+.brand-mark,
+.brand-mark i,
+.desktop-nav a,
+.header-search {
+  transition:
+    transform 180ms var(--motion-press),
+    opacity 300ms var(--motion-out);
+}
+
+.brand-mark i {
+  transform-origin: left center;
+}
+
+.desktop-nav a {
+  position: relative;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0.8;
+  background: currentColor;
+  transition: transform 260ms var(--motion-out);
+}
+
+.desktop-nav a[aria-current]::after {
+  transform: scaleX(1);
+}
+
+.home-hero .eyebrow,
+.home-hero .hero-description,
+.home-hero .hero-actions,
+.home-hero .hero-small,
+.hero-margin,
+.section-heading,
+.page-intro,
+.course-intro,
+.practice-intro,
+.article-header,
+.chapter-sidebar,
+.contents-rail {
+  transition:
+    transform 680ms var(--motion-settle),
+    opacity 520ms var(--motion-out);
+}
+
+.home-hero .hero-text h1 {
+  transition:
+    transform 680ms var(--motion-settle),
+    opacity 520ms var(--motion-out);
+}
+
+.desk-note {
+  transform-origin: 70% 18%;
+  transition: transform 240ms var(--motion-settle);
+  animation: note-enter 680ms var(--motion-settle) 75ms backwards;
+}
+
+.button {
+  transition: transform 180ms var(--motion-press), opacity 180ms var(--motion-out);
+}
+
+.course-stamp,
+.chapter-go,
+.note-link,
+.reading-picks li a,
+.lesson-index > li > a,
+.lesson-pagination a,
+.chapter-sidebar a,
+.contents-rail nav a,
+.chapter-number svg,
+.chapter-go svg,
+.header-search svg,
+.brand-mark {
+  transform-origin: center;
+  transition:
+    transform 360ms var(--motion-settle),
+    opacity 260ms var(--motion-out);
+}
+
+.small-rule,
+.underlined svg {
+  transform-origin: left center;
+  transition: transform 520ms var(--motion-settle), opacity 300ms var(--motion-out);
+}
+
+.desk-note::before,
+.note-connector {
+  transform-origin: top center;
+  transition: transform 420ms var(--motion-settle), opacity 260ms var(--motion-out);
+}
+
+.desk-note .note-top,
+.desk-note .note-title,
+.desk-note .note-code,
+.desk-note .margin-note,
+.desk-note .note-link {
+  transition:
+    transform 520ms var(--motion-settle),
+    opacity 420ms var(--motion-out);
+}
+
+.desk-note .note-title { transition-delay: 55ms; }
+.desk-note .note-code { transition-delay: 110ms; }
+.desk-note .margin-note { transition-delay: 165ms; }
+.desk-note .note-link { transition-delay: 220ms; }
+.desktop-nav a:nth-child(2) { transition-delay: 35ms; }
+.desktop-nav a:nth-child(3) { transition-delay: 70ms; }
+.desktop-nav a:nth-child(4) { transition-delay: 105ms; }
+.desktop-nav a:nth-child(5) { transition-delay: 140ms; }
+.home-hero .hero-description { transition-delay: 80ms; }
+.home-hero .hero-actions { transition-delay: 140ms; }
+.home-hero .hero-small { transition-delay: 195ms; }
+.hero-margin { transition-delay: 180ms; }
+
+.chapter-row {
+  position: relative;
+  transition: transform 260ms var(--motion-settle), opacity 260ms var(--motion-out);
+}
+
+.chapter-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  transform: scaleY(0);
+  transform-origin: top center;
+  background: var(--primary);
+  transition: transform 360ms var(--motion-settle);
+}
+
+.chapter-go svg,
+.reading-picks li svg,
+.note-link svg,
+.lesson-index > li > a > svg {
+  transition: transform 260ms var(--motion-settle), opacity 220ms var(--motion-out);
+}
+
+.lesson-navigation nav a,
+.contents-rail nav a,
+.chapter-links a,
+.reading-picks li a,
+.lesson-pagination a,
+.result-item a {
+  transition: transform 210ms var(--motion-press), opacity 210ms var(--motion-out);
+}
+
+.prose details > summary,
+.contents-rail summary,
+.question-navigation > summary,
+.hint-details > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.prose details > summary::-webkit-details-marker,
+.contents-rail summary::-webkit-details-marker,
+.question-navigation > summary::-webkit-details-marker,
+.hint-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.prose details > summary::after,
+.contents-rail summary::after,
+.question-navigation > summary::after,
+.hint-details > summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  transform: rotate(0deg);
+  font-size: 1.3em;
+  line-height: 1;
+  transition: transform 240ms var(--motion-settle), opacity 200ms var(--motion-out);
+}
+
+.prose details[open] > summary::after,
+.contents-rail details[open] > summary::after,
+.question-navigation[open] > summary::after,
+.hint-details[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+.mobile-nav summary span {
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 240ms var(--motion-settle);
+}
+
+.mobile-nav[open] summary span {
+  transform: rotate(45deg);
+}
+
+@starting-style {
+  .site-header { opacity: 0.76; transform: translateY(-10px); }
+  .main-shell { opacity: 0.88; }
+  .site-footer { opacity: 0.9; transform: translateY(7px); }
+  .brand-mark { transform: rotate(-7deg) scale(0.9); }
+  .brand-mark i { transform: scaleX(0.22); }
+  .desktop-nav a { opacity: 0.65; transform: translateY(-7px); }
+  .header-search { opacity: 0.72; transform: translateY(-6px); }
+  .home-hero .eyebrow { opacity: 0.76; transform: translateY(12px); }
+  .home-hero .hero-text h1 { opacity: 0.82; transform: translateY(18px) rotate(-0.5deg); }
+  .home-hero .hero-description { opacity: 0.78; transform: translateY(14px); }
+  .home-hero .hero-actions { opacity: 0.8; transform: translateY(14px); }
+  .home-hero .hero-small { opacity: 0.84; transform: translateY(9px); }
+  .desk-note .note-top { opacity: 0.8; transform: translateY(8px); }
+  .desk-note .note-title { opacity: 0.84; transform: translateY(10px); }
+  .desk-note .note-code { opacity: 0.86; transform: translateY(9px); }
+  .desk-note .margin-note { opacity: 0.86; transform: translateY(8px); }
+  .desk-note .note-link { opacity: 0.9; transform: translateY(7px); }
+  .desk-note::before { transform: scaleY(0.25); }
+  .note-connector { transform: scaleY(0.2); }
+  .hero-margin { opacity: 0.82; transform: translateX(8px); }
+  .small-rule { transform: scaleX(0.2); }
+  .underlined svg { opacity: 0.4; transform: scaleX(0.22); }
+  .section-heading,
+  .page-intro,
+  .course-intro,
+  .practice-intro,
+  .article-header { opacity: 0.84; transform: translateY(12px); }
+  .chapter-sidebar { opacity: 0.82; transform: translateX(-9px); }
+  .contents-rail { opacity: 0.82; transform: translateX(9px); }
+}
+
+@keyframes reading-reveal {
+  from { opacity: 0.58; transform: translateY(18px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes note-enter {
+  from { opacity: 0.82; transform: translateY(22px) rotate(1.2deg) scale(0.985); }
+  68% { opacity: 1; transform: translateY(-3px) rotate(-0.2deg) scale(1.01); }
+  to { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+}
+
+@supports (animation-timeline: view()) {
+  .chapter-number,
+  .chapter-body,
+  .lesson-index > li,
+  .reading-picks li,
+  .prose > h2,
+  .prose > h3,
+  .prose > blockquote {
+    animation: reading-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 24%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .desktop-nav a:hover { transform: translateY(-2px); }
+  .desktop-nav a:hover::after { transform: scaleX(1); }
+  .brand:hover .brand-mark { transform: rotate(-4deg) translateY(-2px); }
+  .brand:hover .brand-mark i:first-child { transform: scaleX(1.08); }
+  .brand:hover .brand-mark i:last-child { transform: scaleX(1.28); }
+  .header-search:hover svg { transform: rotate(-12deg) scale(1.12); }
+  .button:hover { transform: translateY(-3px); }
+  .desk-note:hover { transform: translateY(-4px) rotate(-0.35deg); }
+  .desk-note:hover .note-link svg { transform: translateX(5px); }
+  .chapter-row:hover { transform: translateY(-2px); }
+  .chapter-row:hover::before,
+  .chapter-row:focus-within::before { transform: scaleY(1); }
+  .chapter-row:hover .chapter-number svg { transform: rotate(8deg) translateY(-2px); }
+  .chapter-row:hover .chapter-go svg { transform: translateX(5px) rotate(3deg); }
+  .chapter-links a:hover { transform: translateY(-2px); }
+  .reading-picks li a:hover { transform: translateX(4px); }
+  .reading-picks li a:hover svg,
+  .lesson-index > li > a:hover svg { transform: translateX(5px); }
+  .lesson-index > li > a:hover { transform: translateX(5px); }
+  .lesson-navigation nav a:hover,
+  .contents-rail nav a:hover { transform: translateX(4px); }
+  .lesson-pagination a:hover { transform: translateY(-3px); }
+  .chapter-go:hover { transform: rotate(-4deg) scale(1.04); }
+  .result-item a:hover { transform: translateX(5px); }
+  body .quiz-runner .answer-option:hover:has(input:not(:disabled)) { transform: translateX(5px); }
+  body .quiz-runner .action-button:hover:not(:disabled),
+  body .quiz-runner .question-navigation button:hover { transform: translateY(-2px); }
+  body .code-walkthrough .step-controls button:hover,
+  body .code-walkthrough .copy-button:hover { transform: translateY(-2px); }
+}
+
+.desk-note:focus-within { transform: translateY(-4px) rotate(-0.35deg); }
+.chapter-row:focus-within { transform: translateY(-2px); }
+.chapter-row:focus-within::before { transform: scaleY(1); }
+.chapter-row:focus-within .chapter-number svg { transform: rotate(8deg) translateY(-2px); }
+
+.desktop-nav a:focus-visible { transform: translateY(-2px); }
+.desktop-nav a:focus-visible::after { transform: scaleX(1); }
+.brand:focus-visible .brand-mark { transform: rotate(-4deg) translateY(-2px); }
+.header-search:focus-visible svg,
+.chapter-row:focus-within .chapter-go svg { transform: translateX(4px); }
+.button:focus-visible,
+.chapter-go:focus-visible { transform: translateY(-2px); }
+.chapter-links a:focus-visible,
+.reading-picks li a:focus-visible,
+.lesson-index > li > a:focus-visible,
+.lesson-navigation nav a:focus-visible,
+.contents-rail nav a:focus-visible,
+.lesson-pagination a:focus-visible,
+.result-item a:focus-visible { transform: translateX(4px); }
+body #main .quiz-runner .answer-option:has(input:focus-visible) { transform: translateX(5px); }
+body .quiz-runner .action-button:focus-visible:not(:disabled),
+body .quiz-runner .question-navigation button:focus-visible,
+body .code-walkthrough .step-controls button:focus-visible,
+body .code-walkthrough .copy-button:focus-visible { transform: translateY(-2px); }
+
+.button:active,
+.chapter-go:active,
+.header-search:active,
+.desktop-nav a:active,
+.note-link:active,
+.chapter-links a:active,
+.reading-picks a:active,
+.lesson-index a:active,
+.lesson-pagination a:active,
+.result-item a:active,
+button:not(:disabled):active,
+summary:active,
+body .quiz-runner .action-button:not(:disabled):active,
+body .quiz-runner .question-navigation button:active,
+body .quiz-runner .answer-option:active,
+body .code-walkthrough .step-controls button:active,
+body .code-walkthrough .copy-button:active {
+  transform: scale(0.97);
+}
+
+body .quiz-runner .answer-option,
+body .quiz-runner .action-button,
+body .quiz-runner .question-navigation button,
+body .code-walkthrough .step-controls button,
+body .code-walkthrough .copy-button,
+body .search-panel .result-item a {
+  transition: transform 180ms var(--motion-press), opacity 180ms var(--motion-out);
+}
+
+@keyframes answer-correct {
+  0% { transform: scale(1); }
+  64% { transform: scale(1.025) translateY(-2px); }
+  100% { transform: scale(1); }
+}
+
+@keyframes answer-wrong {
+  0%, 100% { transform: translateX(0); }
+  24% { transform: translateX(-5px); }
+  56% { transform: translateX(3px); }
+  80% { transform: translateX(-2px); }
+}
+
+@keyframes feedback-arrive {
+  from { opacity: 0.45; transform: translateY(16px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes stamp-in {
+  from { opacity: 0.7; transform: translateY(5px) scale(0.92) rotate(-4deg); }
+  70% { opacity: 1; transform: translateY(-2px) scale(1.06) rotate(1deg); }
+  to { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+}
+
+body .quiz-runner .answer-option.is-correct {
+  animation: answer-correct 440ms var(--motion-settle);
+}
+
+body .quiz-runner .answer-option.is-wrong {
+  animation: answer-wrong 360ms var(--motion-press);
+}
+
+body .quiz-runner .feedback,
+body .quiz-runner .completion-summary {
+  animation: feedback-arrive 420ms var(--motion-out) both;
+}
+
+body .quiz-runner .feedback--correct > strong {
+  display: inline-block;
+  animation: stamp-in 480ms var(--motion-settle) both;
+}
+
+@keyframes note-arrive {
+  from { opacity: 0.5; transform: translateY(11px) scaleY(0.985); }
+  to { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+@keyframes active-line {
+  from { opacity: 0.72; transform: translateX(-5px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes copy-confirm {
+  from { opacity: 0.5; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body .code-walkthrough .active-note {
+  animation: note-arrive 360ms var(--motion-settle) both;
+  transform-origin: top left;
+}
+
+body .code-walkthrough .code-row--active {
+  animation: active-line 250ms var(--motion-out) both;
+}
+
+body .code-walkthrough .copy-status {
+  animation: copy-confirm 300ms var(--motion-out) both;
+}
+
+body .code-walkthrough details > summary::after {
+  content: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .code-walkthrough .copy-button:focus-visible {
+    transform: none;
+  }
+}
+
+body .quiz-runner .reset-dialog[open] {
+  transition: transform 320ms var(--motion-settle), opacity 260ms var(--motion-out);
+}
+
+@starting-style {
+  body .quiz-runner .reset-dialog[open] {
+    opacity: 0.5;
+    transform: translateY(14px) scale(0.97);
+  }
+}

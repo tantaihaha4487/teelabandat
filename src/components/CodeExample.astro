@@ -1,0 +1,17 @@
+---
+import CodeWalkthrough from './interactive/CodeWalkthrough.vue';
+import type { CodeExampleData, CodeTeachingData } from '../lib/types';
+import { highlightCodeLines } from '../lib/highlight';
+interface Props { example: CodeExampleData; }
+const { example } = Astro.props;
+const highlightedLines = await highlightCodeLines(example.code, example.language);
+const teachingModules = import.meta.glob<{ default: Record<string, CodeTeachingData> }>(
+  '../content/teaching/*.json',
+  { eager: true },
+);
+const teaching = Object.entries(teachingModules).find(([path]) => {
+  const section = path.match(/teaching\/([^/]+)\.json$/)?.[1];
+  return section && example.id.startsWith(`${section}-`);
+})?.[1].default[example.id];
+---
+<CodeWalkthrough example={example} highlightedLines={highlightedLines} teaching={teaching} client:visible/>

@@ -1,0 +1,18 @@
+{
+  "provider": "Claude remote + Humanizer",
+  "result_sha256": "9c39045df9448b9704671d381da79bb8be7468b56788dec6eb9f906593f40e21",
+  "status": "reviewed and applied locally",
+  "examples": 12,
+  "duplicate_explanations_consolidated": 12,
+  "parent_review": [
+    "Preserved existing commands and ranges",
+    "Added staging status and decorate reference details",
+    "Checked default diff/restore/log/branch semantics against official Git documentation"
+  ],
+  "sources": [
+    "https://git-scm.com/docs/git-diff",
+    "https://git-scm.com/docs/git-restore",
+    "https://git-scm.com/docs/git-log",
+    "https://git-scm.com/docs/git-branch"
+  ]
+}

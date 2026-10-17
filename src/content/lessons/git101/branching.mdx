@@ -1,0 +1,39 @@
+---
+section: git101
+title: "การสร้างสาขา"
+description: "เรียนการใช้ branch, switch, และ checkout -b เพื่อแยกงานออกจากกัน"
+order: 6
+source: git101/branching.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+Branch คือเส้นทางการทำงานที่แยกออกจากกัน ทำให้คุณลองแก้ฟีเจอร์ใหม่ได้โดยไม่รบกวนงานหลัก
+
+## คำสั่งหลัก
+
+<CodeExample example={examples['git101-branching-01']} />
+
+## วิธีคิด
+
+- `main` คือสาขาหลัก
+- สร้าง branch ใหม่เมื่อจะเริ่มงานเฉพาะทาง
+- สลับ branch เพื่อไปทำอีกงานหนึ่งได้
+
+## จุดที่มือใหม่พลาดบ่อย
+
+- ใช้ branch เยอะเกินไปโดยไม่ตั้งชื่อให้เข้าใจง่าย
+- ลืมสลับกลับสาขาหลักก่อน merge
+- คิดว่า branch คือโฟลเดอร์ใหม่
+
+## ฝึกทำ
+
+1. สร้าง branch ใหม่ชื่อ `feature-notes`
+2. แก้ไฟล์หนึ่งไฟล์แล้ว commit บน branch นั้น
+3. สลับกลับ `main`
+
+## สรุป
+
+Branch ทำให้คุณแยกงานได้อย่างปลอดภัย บทถัดไปจะสอนวิธีรวม branch กลับเข้าหากัน

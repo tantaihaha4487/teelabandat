@@ -1,0 +1,9 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import { sections, lessons, lessonUrl } from '../../../lib/content';
+export async function getStaticPaths() { return (await sections()).filter(s=>s.kind==='course').map(section=>({ params:{ section:section.id }, props:{ section } })); }
+const { section } = Astro.props;
+const entries = (await lessons()).filter(l=>l.data.section===section.id);
+---
+<Base title={section.title} description={section.summary} current={section.id}><div class="breadcrumbs"><a href="/learn/">บทเรียนทั้งหมด</a><span aria-hidden="true">/</span><span>{section.label}</span></div><header class="course-intro"><div class="course-stamp"><Icon name={section.icon} size={45}/><span>{section.label}</span></div><div><p class="eyebrow">{entries.length} บทความ · เรียนตามลำดับหรือเลือกหัวข้อ</p><h1>{section.title}</h1><p>{section.summary}</p></div></header><ol class="lesson-index">{entries.map((l,i)=><li><a href={lessonUrl(l)}><span class="lesson-index-number">{String(i+1).padStart(2,'0')}</span><div><h2>{l.data.title}</h2><p>{l.data.description}</p></div><Icon name="arrow" size={23}/></a></li>)}</ol></Base>

@@ -1,0 +1,4218 @@
+{
+  "python101-basics-01": {
+    "id": "python101-basics-01",
+    "language": "python",
+    "code": "name = \"Mali\"\nage = 16\nheight = 165.5\nis_student = True",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร name ให้เก็บข้อความ \"Mali\""
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร age ให้เก็บเลขจำนวนเต็ม 16"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "กำหนดตัวแปร height ให้เก็บเลขทศนิยม 165.5"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "กำหนดตัวแปร is_student ให้เก็บค่าความจริง True"
+      }
+    ],
+    "status": "working",
+    "title": "ตัวแปรพื้นฐานสี่ชนิด"
+  },
+  "python101-basics-02": {
+    "id": "python101-basics-02",
+    "language": "python",
+    "code": "print(type(\"hello\"))\nprint(type(10))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "แสดงชนิดของ \"hello\" ซึ่งเป็น str"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "แสดงชนิดของ 10 ซึ่งเป็น int"
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจชนิดข้อมูลด้วย type"
+  },
+  "python101-basics-03": {
+    "id": "python101-basics-03",
+    "language": "python",
+    "code": "name = \"Mali\"\nprint(\"Hello\", name)\nprint(\"Hello \" + name)\nprint(f\"Hello {name}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร name เป็น \"Mali\""
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "print คั่นด้วยจุลภาคจะแทรกช่องว่างให้อัตโนมัติ ได้ \"Hello Mali\""
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ต่อข้อความด้วยเครื่องหมาย + ต้องเว้นวรรคในสตริงเอง ได้ \"Hello Mali\""
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ใช้ f-string แทรกค่า name ลงในข้อความโดยตรง ได้ \"Hello Mali\""
+      }
+    ],
+    "status": "working",
+    "title": "สามวิธีต่อข้อความกับตัวแปร"
+  },
+  "python101-basics-04": {
+    "id": "python101-basics-04",
+    "language": "python",
+    "code": "# คำนวณราคาหลังลด 10%\nprice = 100\nfinal_price = price * 0.9",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "บรรทัดนี้เป็นคอมเมนต์อธิบายว่าโค้ดด้านล่างคำนวณราคาหลังลด 10% ไพธอนข้ามบรรทัดนี้ไป"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร price เป็น 100"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "คำนวณ final_price จาก price คูณ 0.9 ได้ 90.0"
+      }
+    ],
+    "status": "working",
+    "title": "คำนวณราคาหลังลดราคา"
+  },
+  "python101-basics-05": {
+    "id": "python101-basics-05",
+    "language": "python",
+    "code": "student_name = \"Anan\"\ntotal_score = 95",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร student_name เป็น \"Anan\""
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร total_score เป็น 95"
+      }
+    ],
+    "status": "working",
+    "title": "เก็บชื่อและคะแนนนักเรียน"
+  },
+  "python101-basics-06": {
+    "id": "python101-basics-06",
+    "language": "python",
+    "code": "age = \"16\"\nprint(age + 1)  # error เพราะข้อความบวกเลขไม่ได้",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนด age เป็นข้อความ \"16\" ไม่ใช่ตัวเลข"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พยายามบวก age กับ 1 เกิด error เพราะ Python บวกข้อความกับเลขจำนวนเต็มเข้าด้วยกันไม่ได้ ตามที่คอมเมนต์ท้ายบรรทัดบอกไว้"
+      }
+    ],
+    "status": "broken",
+    "title": "บวกข้อความกับเลขไม่ได้",
+    "error": "age เป็นข้อความ จึงนำไปบวกกับจำนวนเต็ม 1 ตรง ๆ ไม่ได้และทำให้เกิด TypeError"
+  },
+  "python101-basics-07": {
+    "id": "python101-basics-07",
+    "language": "python",
+    "code": "age = int(\"16\")\nprint(age + 1)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ใช้ int() แปลงข้อความ \"16\" เป็นเลขจำนวนเต็มแล้วเก็บในตัวแปร age"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "บวก age กับ 1 ได้ผลลัพธ์ 17 แล้วแสดงผล"
+      }
+    ],
+    "status": "working",
+    "title": "แปลงข้อความเป็นตัวเลขก่อนบวก"
+  },
+  "python101-basics-08": {
+    "id": "python101-basics-08",
+    "language": "python",
+    "code": "name = \"Mali\"\nage = 16\nschool = \"Python School\"\nfavorite_subject = \"ศิลปะ\"",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร name เป็น \"Mali\""
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร age เป็น 16"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "กำหนดตัวแปร school เป็น \"Python School\""
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "กำหนดตัวแปร favorite_subject เป็น \"ศิลปะ\""
+      }
+    ],
+    "status": "working",
+    "title": "ตัวแปรข้อมูลนักเรียนสี่ค่า"
+  },
+  "python101-basics-09": {
+    "id": "python101-basics-09",
+    "language": "python",
+    "code": "print(f\"{name} อายุ {age} ปี เรียนที่ {school} และชอบวิชา{favorite_subject}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ใช้ f-string แทรกค่า name, age, school และ favorite_subject ลงในประโยคเดียวแล้วแสดงผล"
+      }
+    ],
+    "status": "working",
+    "title": "รวมตัวแปรในประโยคเดียว"
+  },
+  "python101-basics-10": {
+    "id": "python101-basics-10",
+    "language": "python",
+    "code": "print(type(name))\nprint(type(age))\nprint(type(favorite_subject))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "แสดงชนิดของตัวแปร name ซึ่งเป็น str"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "แสดงชนิดของตัวแปร age ซึ่งเป็น int"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดงชนิดของตัวแปร favorite_subject ซึ่งเป็น str"
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจชนิดของตัวแปรที่สร้างไว้"
+  },
+  "python101-basics-11": {
+    "id": "python101-basics-11",
+    "language": "python",
+    "code": "name = \"Mali\"\nage = 16\nfuture_age = age + 5\n\nprint(f\"อีก 5 ปี {name} จะอายุ {future_age} ปี\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร name เป็น \"Mali\""
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร age เป็น 16"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "คำนวณ future_age จาก age บวก 5 ได้ 21"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ใช้ f-string แสดงชื่อและ future_age ที่คำนวณไว้"
+      }
+    ],
+    "status": "working",
+    "title": "คำนวณอายุในอีกห้าปี"
+  },
+  "python101-conditions-01": {
+    "id": "python101-conditions-01",
+    "language": "python",
+    "code": "score = int(input(\"คะแนน: \"))\n\nif score >= 80:\n    print(\"ดีมาก\")\nelif score >= 50:\n    print(\"ผ่าน\")\nelse:\n    print(\"ต้องฝึกเพิ่ม\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับค่าจากผู้ใช้ด้วย input แล้วแปลงเป็นเลขจำนวนเต็มเก็บในตัวแปร score"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ตรวจว่า score มากกว่าหรือเท่ากับ 80 หรือไม่"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดงคำว่า \"ดีมาก\""
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขแรก ตรวจต่อว่า score มากกว่าหรือเท่ากับ 50 หรือไม่"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดงคำว่า \"ผ่าน\""
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขใดเลย ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "แสดงคำว่า \"ต้องฝึกเพิ่ม\""
+      }
+    ],
+    "status": "working",
+    "title": "ให้คะแนนตามช่วงที่กรอก"
+  },
+  "python101-conditions-03": {
+    "id": "python101-conditions-03",
+    "language": "python",
+    "code": "age = 18\nhas_card = True\n\nif age >= 18 and has_card:\n    print(\"เข้าได้\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร age เป็น 18"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร has_card เป็น True"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ตรวจว่า age มากกว่าหรือเท่ากับ 18 และ has_card เป็นจริงพร้อมกันหรือไม่"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าทั้งสองเงื่อนไขเป็นจริง แสดงคำว่า \"เข้าได้\""
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจสิทธิ์เข้าด้วยสองเงื่อนไข"
+  },
+  "python101-conditions-04": {
+    "id": "python101-conditions-04",
+    "language": "python",
+    "code": "is_admin = False\nis_owner = True\n\nif is_admin or is_owner:\n    print(\"แก้ไขได้\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร is_admin เป็น False"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร is_owner เป็น True"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ตรวจว่า is_admin หรือ is_owner อย่างใดอย่างหนึ่งเป็นจริงหรือไม่"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "เนื่องจาก is_owner เป็น True เงื่อนไขเป็นจริง และแสดงคำว่า \"แก้ไขได้\""
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจสิทธิ์แก้ไขด้วยเงื่อนไขหรือ"
+  },
+  "python101-conditions-05": {
+    "id": "python101-conditions-05",
+    "language": "python",
+    "code": "age = int(input(\"อายุ: \"))\nif age < 13:\n    print(\"เด็ก\")\nelif age < 20:\n    print(\"วัยรุ่น\")\nelse:\n    print(\"ผู้ใหญ่\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับค่าจากผู้ใช้แล้วแปลงเป็นเลขจำนวนเต็มเก็บในตัวแปร age"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ตรวจว่า age น้อยกว่า 13 หรือไม่"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดงคำว่า \"เด็ก\""
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขแรก ตรวจต่อว่า age น้อยกว่า 20 หรือไม่"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดงคำว่า \"วัยรุ่น\""
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขใดเลย ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "แสดงคำว่า \"ผู้ใหญ่\""
+      }
+    ],
+    "status": "working",
+    "title": "แบ่งกลุ่มอายุจากค่าที่กรอก"
+  },
+  "python101-conditions-06": {
+    "id": "python101-conditions-06",
+    "language": "python",
+    "code": "score = int(input(\"คะแนน: \"))\nif score >= 80:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelif score >= 60:\n    print(\"C\")\nelif score >= 50:\n    print(\"D\")\nelse:\n    print(\"F\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับค่าจากผู้ใช้แล้วแปลงเป็นเลขจำนวนเต็มเก็บในตัวแปร score"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ตรวจว่า score มากกว่าหรือเท่ากับ 80 หรือไม่"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดง \"A\""
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขแรก ตรวจว่า score มากกว่าหรือเท่ากับ 70 หรือไม่"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดง \"B\""
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ถ้ายังไม่เข้า ตรวจว่า score มากกว่าหรือเท่ากับ 60 หรือไม่"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดง \"C\""
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "ถ้ายังไม่เข้า ตรวจว่า score มากกว่าหรือเท่ากับ 50 หรือไม่"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดง \"D\""
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขใดเลย ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "แสดง \"F\""
+      }
+    ],
+    "status": "working",
+    "title": "ให้เกรดตามช่วงคะแนน"
+  },
+  "python101-conditions-07": {
+    "id": "python101-conditions-07",
+    "language": "python",
+    "code": "username = input(\"username: \")\npassword = input(\"password: \")\nif username == \"admin\" and password == \"1234\":\n    print(\"เข้าสู่ระบบได้\")\nelse:\n    print(\"username หรือ password ไม่ถูกต้อง\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับชื่อผู้ใช้จากผู้ใช้เก็บในตัวแปร username"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับรหัสผ่านจากผู้ใช้เก็บในตัวแปร password"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ตรวจว่า username เป็น \"admin\" และ password เป็น \"1234\" พร้อมกันหรือไม่"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าทั้งสองค่าตรงกัน แสดงคำว่า \"เข้าสู่ระบบได้\""
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าค่าใดค่าหนึ่งไม่ตรง ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "แสดงคำว่า \"username หรือ password ไม่ถูกต้อง\""
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจชื่อผู้ใช้และรหัสผ่าน"
+  },
+  "python101-conditions-08": {
+    "id": "python101-conditions-08",
+    "language": "python",
+    "code": "temperature = float(input(\"อุณหภูมิวันนี้: \"))\n\nif temperature < 18:\n    print(\"หนาว: ใส่เสื้อกันหนาว\")\nelif temperature < 28:\n    print(\"เย็น: ใส่เสื้อแขนยาวบาง ๆ\")\nelse:\n    print(\"ร้อน: ใส่เสื้อยืดสบาย ๆ และพกน้ำ\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับค่าจากผู้ใช้แล้วแปลงเป็นเลขทศนิยมเก็บในตัวแปร temperature"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ตรวจว่า temperature น้อยกว่า 18 หรือไม่"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดง \"หนาว: ใส่เสื้อกันหนาว\""
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขแรก ตรวจว่า temperature น้อยกว่า 28 หรือไม่"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ถ้าเงื่อนไขนี้เป็นจริง แสดง \"เย็น: ใส่เสื้อแขนยาวบาง ๆ\""
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขใดเลย ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "แสดง \"ร้อน: ใส่เสื้อยืดสบาย ๆ และพกน้ำ\""
+      }
+    ],
+    "status": "working",
+    "title": "แนะนำเสื้อผ้าตามอุณหภูมิ"
+  },
+  "python101-data-structures-01": {
+    "id": "python101-data-structures-01",
+    "language": "python",
+    "code": "scores = [80, 75, 90]\nscores.append(88)\nprint(scores[0])\nprint(len(scores))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง list ชื่อ scores มีสมาชิก 80, 75, 90"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "เพิ่ม 88 ต่อท้าย scores ทำให้มี 4 ตัว"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดงสมาชิกตัวแรกของ scores คือ 80"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "แสดงจำนวนสมาชิกทั้งหมดของ scores คือ 4"
+      }
+    ],
+    "status": "working",
+    "title": "เพิ่มสมาชิกและอ่านค่าใน list",
+    "output": "80\n4"
+  },
+  "python101-data-structures-03": {
+    "id": "python101-data-structures-03",
+    "language": "python",
+    "code": "point = (10, 20)\nprint(point[0])",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง tuple ชื่อ point เก็บคู่ค่า 10 กับ 20"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "แสดงสมาชิกตัวแรกของ point คือ 10"
+      }
+    ],
+    "status": "working",
+    "title": "อ่านค่าจาก tuple"
+  },
+  "python101-data-structures-04": {
+    "id": "python101-data-structures-04",
+    "language": "python",
+    "code": "student = {\n    \"name\": \"Mali\",\n    \"age\": 16,\n    \"grade\": \"A\"\n}\n\nprint(student[\"name\"])\nstudent[\"age\"] = 17\nprint(student[\"age\"])",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มสร้าง dict ชื่อ student ด้วยปีกกาเปิด"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดคู่ key \"name\" ค่า \"Mali\""
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "กำหนดคู่ key \"age\" ค่า 16"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "กำหนดคู่ key \"grade\" ค่า \"A\""
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ปิดการสร้าง dict ด้วยปีกกาปิด"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "แสดงค่าที่ key \"name\" คือ \"Mali\""
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "เปลี่ยนค่าที่ key \"age\" จาก 16 เป็น 17"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "แสดงค่าที่ key \"age\" หลังเปลี่ยนคือ 17"
+      }
+    ],
+    "status": "working",
+    "title": "อ่านและแก้ไขค่าใน dict",
+    "output": "Mali\n17"
+  },
+  "python101-data-structures-06": {
+    "id": "python101-data-structures-06",
+    "language": "python",
+    "code": "tags = {\"python\", \"beginner\", \"python\"}\nprint(tags)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง set ชื่อ tags จาก \"python\", \"beginner\", \"python\" ซึ่ง set เก็บค่าที่ไม่ซ้ำกันเท่านั้น"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "แสดงค่าใน tags เหลือเพียง \"python\" กับ \"beginner\" เพราะค่าที่ซ้ำถูกตัดออก"
+      }
+    ],
+    "status": "working",
+    "title": "set ตัดค่าซ้ำอัตโนมัติ",
+    "output": "{'python', 'beginner'}"
+  },
+  "python101-data-structures-08": {
+    "id": "python101-data-structures-08",
+    "language": "python",
+    "code": "numbers = [10, 20, 30, 40, 50]\nprint(numbers[1:4])\nprint(numbers[:3])\nprint(numbers[-1])",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง list ชื่อ numbers มีสมาชิก 10, 20, 30, 40, 50"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "แสดงสมาชิกตั้งแต่ตำแหน่งที่ 1 ถึงก่อนตำแหน่งที่ 4 ได้ [20, 30, 40]"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดงสมาชิกตั้งแต่ต้นถึงก่อนตำแหน่งที่ 3 ได้ [10, 20, 30]"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "แสดงสมาชิกตัวสุดท้ายของ numbers คือ 50"
+      }
+    ],
+    "status": "working",
+    "title": "ตัดชิ้นส่วน list ด้วย slice",
+    "output": "[20, 30, 40]\n[10, 20, 30]\n50"
+  },
+  "python101-data-structures-10": {
+    "id": "python101-data-structures-10",
+    "language": "python",
+    "code": "friends = [\"Mali\", \"Anan\", \"Nok\"]\nfriends.append(\"Som\")\nprint(friends)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง list ชื่อ friends มีสมาชิก \"Mali\", \"Anan\", \"Nok\""
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "เพิ่ม \"Som\" ต่อท้าย friends"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดง friends ทั้งหมดซึ่งตอนนี้มี 4 ชื่อ"
+      }
+    ],
+    "status": "working",
+    "title": "เพิ่มเพื่อนใหม่เข้า list"
+  },
+  "python101-data-structures-11": {
+    "id": "python101-data-structures-11",
+    "language": "python",
+    "code": "book = {\n    \"title\": \"Python Adventure\",\n    \"author\": \"Mali\",\n    \"pages\": 120\n}\nprint(book[\"title\"])",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มสร้าง dict ชื่อ book"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดคู่ key \"title\" ค่า \"Python Adventure\""
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "กำหนดคู่ key \"author\" ค่า \"Mali\""
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "กำหนดคู่ key \"pages\" ค่า 120"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ปิดการสร้าง dict ด้วยปีกกาปิด"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "แสดงค่าที่ key \"title\" คือ \"Python Adventure\""
+      }
+    ],
+    "status": "working",
+    "title": "อ่านค่าจาก dict หนังสือ"
+  },
+  "python101-data-structures-12": {
+    "id": "python101-data-structures-12",
+    "language": "python",
+    "code": "words = []\nfor round_number in range(5):\n    words.append(input(\"พิมพ์คำ: \"))\n\nunique_words = set(words)\nprint(unique_words)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง list ว่างชื่อ words"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "วนซ้ำ 5 รอบด้วยตัวแปร round_number ที่ไม่ได้ใช้ค่าในลูป"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "รับคำจากผู้ใช้แต่ละรอบแล้วเพิ่มเข้า words"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "แปลง words เป็น set ชื่อ unique_words เพื่อตัดคำที่ซ้ำออก"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "แสดงคำที่ไม่ซ้ำกันใน unique_words"
+      }
+    ],
+    "status": "working",
+    "title": "เก็บคำที่พิมพ์แล้วตัดคำซ้ำ"
+  },
+  "python101-data-structures-13": {
+    "id": "python101-data-structures-13",
+    "language": "python",
+    "code": "contacts = {\n    \"Mali\": \"080-111-1111\",\n    \"Anan\": \"080-222-2222\"\n}\n\nname = input(\"ค้นหาชื่อ: \")\nif name in contacts:\n    print(f\"เบอร์ของ {name}: {contacts[name]}\")\nelse:\n    phone = input(\"ยังไม่มีเบอร์นี้ เพิ่มเบอร์ใหม่: \")\n    contacts[name] = phone\n    print(f\"เพิ่มแล้ว: {name} -> {phone}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มสร้าง dict ชื่อ contacts"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดคู่ key \"Mali\" ค่า \"080-111-1111\""
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "กำหนดคู่ key \"Anan\" ค่า \"080-222-2222\""
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ปิดการสร้าง dict ด้วยปีกกาปิด"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "รับชื่อที่ต้องการค้นหาจากผู้ใช้เก็บในตัวแปร name"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ตรวจว่า name มีอยู่ใน contacts แล้วหรือไม่"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "ถ้ามีอยู่แล้ว แสดงเบอร์โทรของชื่อนั้น"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ถ้ายังไม่มีชื่อนี้ ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "รับเบอร์โทรใหม่จากผู้ใช้เก็บในตัวแปร phone"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "เพิ่มคู่ key name กับค่า phone เข้าไปใน contacts"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "แสดงข้อความยืนยันว่าเพิ่มชื่อและเบอร์ใหม่แล้ว"
+      }
+    ],
+    "status": "working",
+    "title": "ค้นหาเบอร์โทรหรือเพิ่มใหม่"
+  },
+  "python101-errors-01": {
+    "id": "python101-errors-01",
+    "language": "python",
+    "code": "try:\n    age = int(input(\"อายุ: \"))\n    print(f\"คุณอายุ {age}\")\nexcept ValueError:\n    print(\"กรุณากรอกตัวเลข\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มส่วน try เพื่อทดลองรันคำสั่งที่อาจเกิดข้อผิดพลาด"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับค่าจากผู้ใช้แล้วแปลงเป็นเลขจำนวนเต็มเก็บในตัวแปร age"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดงอายุที่รับมา"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าการแปลงค่าใน try ล้มเหลวเพราะไม่ใช่ตัวเลข (ValueError) ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "แสดงคำว่า \"กรุณากรอกตัวเลข\""
+      }
+    ],
+    "status": "working",
+    "title": "ดักข้อผิดพลาดเมื่อกรอกไม่ใช่ตัวเลข"
+  },
+  "python101-errors-02": {
+    "id": "python101-errors-02",
+    "language": "python",
+    "code": "try:\n    number = int(input(\"เลข: \"))\nexcept ValueError:\n    print(\"ไม่ใช่เลข\")\nfinally:\n    print(\"จบการทำงาน\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มส่วน try เพื่อทดลองรันคำสั่งที่อาจเกิดข้อผิดพลาด"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับค่าจากผู้ใช้แล้วแปลงเป็นเลขจำนวนเต็มเก็บในตัวแปร number"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ถ้าการแปลงค่าล้มเหลวเพราะไม่ใช่ตัวเลข (ValueError) ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "แสดงคำว่า \"ไม่ใช่เลข\""
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ส่วน finally ทำงานเสมอไม่ว่า try จะสำเร็จหรือเกิดข้อผิดพลาด"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "แสดงคำว่า \"จบการทำงาน\""
+      }
+    ],
+    "status": "working",
+    "title": "ใช้ finally ให้ทำงานทุกครั้ง",
+    "output": "Traceback (most recent call last):\n  File \"main.py\", line 2, in <module>\n    print(age + 1)\nTypeError: can only concatenate str (not \"int\") to str"
+  },
+  "python101-errors-04": {
+    "id": "python101-errors-04",
+    "language": "python",
+    "code": "try:\n    number = int(input(\"กรอกตัวเลข: \"))\n    print(f\"ตัวเลขคือ {number}\")\nexcept ValueError:\n    print(\"กรุณากรอกเป็นตัวเลขเท่านั้น\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มส่วน try เพื่อทดลองรันคำสั่งที่อาจเกิดข้อผิดพลาด"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับค่าจากผู้ใช้แล้วแปลงเป็นเลขจำนวนเต็มเก็บในตัวแปร number"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดงตัวเลขที่รับมา"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าการแปลงค่าล้มเหลวเพราะไม่ใช่ตัวเลข (ValueError) ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "แสดงคำว่า \"กรุณากรอกเป็นตัวเลขเท่านั้น\""
+      }
+    ],
+    "status": "working",
+    "title": "ดักข้อผิดพลาดเมื่อกรอกไม่ใช่ตัวเลข"
+  },
+  "python101-errors-05": {
+    "id": "python101-errors-05",
+    "language": "python",
+    "code": "try:\n    with open(\"data.txt\", \"r\", encoding=\"utf-8\") as file:\n        print(file.read())\nexcept FileNotFoundError:\n    print(\"ไม่พบไฟล์ data.txt\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มส่วน try เพื่อทดลองรันคำสั่งที่อาจเกิดข้อผิดพลาด"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "เปิดไฟล์ data.txt สำหรับอ่าน โดยใช้ with เพื่อให้ไฟล์ถูกปิดอัตโนมัติ"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "อ่านเนื้อหาทั้งหมดในไฟล์แล้วแสดงผล"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ถ้าเปิดไฟล์ไม่สำเร็จเพราะไม่พบไฟล์ (FileNotFoundError) ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "แสดงคำว่า \"ไม่พบไฟล์ data.txt\""
+      }
+    ],
+    "status": "working",
+    "title": "ดักข้อผิดพลาดเมื่อไม่พบไฟล์"
+  },
+  "python101-errors-06": {
+    "id": "python101-errors-06",
+    "language": "python",
+    "code": "try:\n    first = float(input(\"เลขตัวแรก: \"))\n    second = float(input(\"เลขตัวที่สอง: \"))\n    print(first / second)\nexcept ValueError:\n    print(\"กรุณากรอกตัวเลข\")\nexcept ZeroDivisionError:\n    print(\"หารด้วยศูนย์ไม่ได้\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มส่วน try เพื่อทดลองรันคำสั่งที่อาจเกิดข้อผิดพลาด"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับเลขตัวแรกจากผู้ใช้แล้วแปลงเป็นเลขทศนิยมเก็บในตัวแปร first"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "รับเลขตัวที่สองจากผู้ใช้แล้วแปลงเป็นเลขทศนิยมเก็บในตัวแปร second"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "หาร first ด้วย second แล้วแสดงผล"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าแปลงค่าใดค่าหนึ่งล้มเหลวเพราะไม่ใช่ตัวเลข (ValueError) ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "แสดงคำว่า \"กรุณากรอกตัวเลข\""
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ถ้า second เป็น 0 เกิด ZeroDivisionError ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "แสดงคำว่า \"หารด้วยศูนย์ไม่ได้\""
+      }
+    ],
+    "status": "working",
+    "title": "ดักทั้งค่าไม่ใช่เลขและหารด้วยศูนย์"
+  },
+  "python101-errors-07": {
+    "id": "python101-errors-07",
+    "language": "python",
+    "code": "secret = 7\nattempts = 0\n\nwhile True:\n    try:\n        guess = int(input(\"ทายเลข 1-10: \"))\n    except ValueError:\n        print(\"กรุณากรอกตัวเลข\")\n        continue\n\n    attempts += 1\n\n    if guess == secret:\n        print(f\"ถูกต้อง ใช้ {attempts} ครั้ง\")\n        break\n    if guess < secret:\n        print(\"น้อยไป\")\n    else:\n        print(\"มากไป\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร secret เป็นเลขลับ 7"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร attempts เริ่มที่ 0 ไว้นับจำนวนครั้งที่ทาย"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เริ่มลูปที่ทำซ้ำไม่มีที่สิ้นสุดจนกว่าจะเจอ break"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "เริ่มส่วน try เพื่อทดลองรับค่าที่อาจเกิดข้อผิดพลาด"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "รับค่าจากผู้ใช้แล้วแปลงเป็นเลขจำนวนเต็มเก็บในตัวแปร guess"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ถ้าแปลงค่าล้มเหลวเพราะไม่ใช่ตัวเลข (ValueError) ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "แสดงคำว่า \"กรุณากรอกตัวเลข\""
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ข้ามไปเริ่มรอบถัดไปของลูปทันทีโดยไม่รันคำสั่งที่เหลือ"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "เพิ่มค่า attempts ขึ้นหนึ่งเมื่อรับค่าที่แปลงเป็นจำนวนเต็มได้"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "ตรวจว่า guess เท่ากับ secret หรือไม่"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "note": "ถ้าทายถูก แสดงจำนวนครั้งที่ใช้ทาย"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "หยุดลูปทันทีเพราะทายถูกแล้ว"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "ถ้ายังไม่ออกจากลูป ตรวจว่า guess น้อยกว่า secret หรือไม่"
+      },
+      {
+        "range": [
+          17,
+          17
+        ],
+        "note": "ถ้าน้อยกว่า แสดงคำว่า \"น้อยไป\""
+      },
+      {
+        "range": [
+          18,
+          18
+        ],
+        "note": "ถ้าไม่น้อยกว่า ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          19,
+          19
+        ],
+        "note": "แสดงคำว่า \"มากไป\""
+      }
+    ],
+    "status": "working",
+    "title": "เกมทายเลขพร้อมนับจำนวนครั้ง"
+  },
+  "python101-files-01": {
+    "id": "python101-files-01",
+    "language": "python",
+    "code": "with open(\"note.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"สวัสดี Python\\n\")\n    file.write(\"นี่คือไฟล์แรกของฉัน\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เปิดไฟล์ note.txt สำหรับเขียน โดยใช้ with เพื่อให้ไฟล์ถูกปิดอัตโนมัติ โหมด \"w\" เขียนทับเนื้อหาเดิม"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "เขียนข้อความ \"สวัสดี Python\" ตามด้วยการขึ้นบรรทัดใหม่"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เขียนข้อความ \"นี่คือไฟล์แรกของฉัน\" ต่อท้าย"
+      }
+    ],
+    "status": "working",
+    "title": "เขียนข้อความลงไฟล์ใหม่"
+  },
+  "python101-files-02": {
+    "id": "python101-files-02",
+    "language": "python",
+    "code": "with open(\"note.txt\", \"r\", encoding=\"utf-8\") as file:\n    content = file.read()\n\nprint(content)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เปิดไฟล์ note.txt สำหรับอ่าน โดยใช้ with เพื่อให้ไฟล์ถูกปิดอัตโนมัติ"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "อ่านเนื้อหาทั้งหมดในไฟล์เก็บในตัวแปร content"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "แสดงเนื้อหาที่อ่านได้จาก content"
+      }
+    ],
+    "status": "working",
+    "title": "อ่านเนื้อหาจากไฟล์",
+    "output": "สวัสดี Python\nนี่คือไฟล์แรกของฉัน"
+  },
+  "python101-files-04": {
+    "id": "python101-files-04",
+    "language": "python",
+    "code": "with open(\"note.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"\\nบรรทัดใหม่\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เปิดไฟล์ note.txt ในโหมดต่อท้าย \"a\" ซึ่งไม่ลบเนื้อหาเดิม"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "เขียนขึ้นบรรทัดใหม่แล้วตามด้วย \"บรรทัดใหม่\" ต่อท้ายไฟล์"
+      }
+    ],
+    "status": "working",
+    "title": "เพิ่มข้อความต่อท้ายไฟล์"
+  },
+  "python101-files-05": {
+    "id": "python101-files-05",
+    "language": "python",
+    "code": "with open(\"note.txt\", \"r\", encoding=\"utf-8\") as file:\n    for line in file:\n        print(line.strip())",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เปิดไฟล์ note.txt สำหรับอ่าน โดยใช้ with เพื่อให้ไฟล์ถูกปิดอัตโนมัติ"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "วนอ่านไฟล์ทีละบรรทัดด้วยตัวแปร line"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ใช้ strip() ตัดช่องว่างและตัวขึ้นบรรทัดใหม่ที่หัวและท้ายข้อความ แล้วแสดงแต่ละบรรทัด"
+      }
+    ],
+    "status": "working",
+    "title": "วนอ่านไฟล์ทีละบรรทัด"
+  },
+  "python101-files-06": {
+    "id": "python101-files-06",
+    "language": "python",
+    "code": "name = input(\"ชื่อผู้ใช้: \")\nwith open(\"user.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(name + \"\\n\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับชื่อผู้ใช้จากผู้ใช้เก็บในตัวแปร name"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "เปิดไฟล์ user.txt สำหรับเขียน โดยใช้ with เพื่อให้ไฟล์ถูกปิดอัตโนมัติ"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เขียนค่า name ตามด้วยการขึ้นบรรทัดใหม่ลงในไฟล์"
+      }
+    ],
+    "status": "working",
+    "title": "บันทึกชื่อผู้ใช้ลงไฟล์"
+  },
+  "python101-files-07": {
+    "id": "python101-files-07",
+    "language": "python",
+    "code": "with open(\"user.txt\", \"r\", encoding=\"utf-8\") as file:\n    lines = file.readlines()\nprint(f\"ไฟล์มี {len(lines)} บรรทัด\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เปิดไฟล์ user.txt สำหรับอ่าน โดยใช้ with เพื่อให้ไฟล์ถูกปิดอัตโนมัติ"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "อ่านทุกบรรทัดในไฟล์เก็บเป็น list ในตัวแปร lines"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดงจำนวนบรรทัดทั้งหมดที่อ่านได้จาก lines"
+      }
+    ],
+    "status": "working",
+    "title": "นับจำนวนบรรทัดในไฟล์"
+  },
+  "python101-files-08": {
+    "id": "python101-files-08",
+    "language": "python",
+    "code": "note = input(\"note ใหม่: \")\nwith open(\"notes.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(note + \"\\n\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับข้อความบันทึกใหม่จากผู้ใช้เก็บในตัวแปร note"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "เปิดไฟล์ notes.txt ในโหมดต่อท้าย \"a\" ซึ่งไม่ลบเนื้อหาเดิม"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เขียนค่า note ตามด้วยการขึ้นบรรทัดใหม่ต่อท้ายไฟล์"
+      }
+    ],
+    "status": "working",
+    "title": "เพิ่มบันทึกใหม่ต่อท้ายไฟล์"
+  },
+  "python101-files-09": {
+    "id": "python101-files-09",
+    "language": "python",
+    "code": "while True:\n    command = input(\"พิมพ์ add/list/quit: \")\n\n    if command == \"add\":\n        task = input(\"งานใหม่: \")\n        with open(\"todo.txt\", \"a\", encoding=\"utf-8\") as file:\n            file.write(task + \"\\n\")\n        print(\"บันทึกงานแล้ว\")\n    elif command == \"list\":\n        try:\n            with open(\"todo.txt\", \"r\", encoding=\"utf-8\") as file:\n                lines = file.readlines()\n        except FileNotFoundError:\n            lines = []\n\n        if len(lines) == 0:\n            print(\"ยังไม่มีงาน\")\n        else:\n            for line in lines:\n                print(\"- \" + line.strip())\n    elif command == \"quit\":\n        break\n    else:\n        print(\"คำสั่งไม่ถูกต้อง\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มลูปที่ทำซ้ำไม่มีที่สิ้นสุดจนกว่าจะเจอ break"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับคำสั่งจากผู้ใช้เก็บในตัวแปร command"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ตรวจว่า command เป็น \"add\" หรือไม่"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าใช่ รับชื่องานใหม่จากผู้ใช้เก็บในตัวแปร task"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "เปิดไฟล์ todo.txt ในโหมดต่อท้าย \"a\" เพื่อไม่ลบงานเดิม"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "เขียน task ตามด้วยการขึ้นบรรทัดใหม่ลงในไฟล์"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "แสดงคำว่า \"บันทึกงานแล้ว\""
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ถ้า command ไม่ใช่ \"add\" แต่เป็น \"list\" ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "เริ่มส่วน try เพื่อทดลองเปิดไฟล์ที่อาจไม่มีอยู่"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "เปิดไฟล์ todo.txt สำหรับอ่าน"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "อ่านทุกบรรทัดในไฟล์เก็บเป็น list ในตัวแปร lines"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "ถ้าไฟล์ todo.txt ยังไม่เคยถูกสร้าง (FileNotFoundError) ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "note": "กำหนด lines เป็น list ว่าง"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "ตรวจว่า lines ไม่มีสมาชิกเลยหรือไม่"
+      },
+      {
+        "range": [
+          17,
+          17
+        ],
+        "note": "ถ้าไม่มีงานเลย แสดงคำว่า \"ยังไม่มีงาน\""
+      },
+      {
+        "range": [
+          18,
+          18
+        ],
+        "note": "ถ้ามีงานอยู่ ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          19,
+          19
+        ],
+        "note": "วนอ่าน lines ทีละบรรทัดด้วยตัวแปร line"
+      },
+      {
+        "range": [
+          20,
+          20
+        ],
+        "note": "แสดงแต่ละงานนำหน้าด้วยขีดกลาง โดย strip() ตัดช่องว่างและตัวขึ้นบรรทัดใหม่ที่หัวและท้ายข้อความ"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "note": "ถ้า command เป็น \"quit\" ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "note": "หยุดลูปทันที"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "note": "ถ้า command ไม่ตรงกับคำสั่งใดเลย ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "note": "แสดงคำว่า \"คำสั่งไม่ถูกต้อง\""
+      }
+    ],
+    "status": "working",
+    "title": "โปรแกรมจดบันทึกงานแบบง่าย",
+    "output": "พิมพ์ add/list/quit: list\nยังไม่มีงาน\nพิมพ์ add/list/quit: add\nงานใหม่: อ่านบท Functions\nบันทึกงานแล้ว\nพิมพ์ add/list/quit: list\n- อ่านบท Functions"
+  },
+  "python101-functions-01": {
+    "id": "python101-functions-01",
+    "language": "python",
+    "code": "def greet():\n    print(\"สวัสดี\")\n\ngreet()",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ greet ที่ไม่รับพารามิเตอร์"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน แสดงคำว่า \"สวัสดี\""
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เรียกใช้ฟังก์ชัน greet ทำให้แสดงคำว่า \"สวัสดี\""
+      }
+    ],
+    "status": "working",
+    "title": "เรียกใช้ฟังก์ชันที่ไม่รับค่า",
+    "output": "สวัสดี"
+  },
+  "python101-functions-03": {
+    "id": "python101-functions-03",
+    "language": "python",
+    "code": "def greet(name):\n    print(f\"สวัสดี {name}\")\n\ngreet(\"Mali\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ greet ที่รับพารามิเตอร์ name"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน แสดงคำว่า \"สวัสดี\" ตามด้วยค่า name ที่ได้รับ"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เรียกใช้ greet โดยส่ง \"Mali\" เข้าไป ทำให้แสดงคำว่า \"สวัสดี Mali\""
+      }
+    ],
+    "status": "working",
+    "title": "ส่งค่าผ่านพารามิเตอร์เข้าฟังก์ชัน"
+  },
+  "python101-functions-04": {
+    "id": "python101-functions-04",
+    "language": "python",
+    "code": "def add(a, b):\n    return a + b\n\nresult = add(3, 4)\nprint(result)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ add ที่รับพารามิเตอร์ a และ b"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน คืนค่าผลบวกของ a กับ b"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เรียกใช้ add(3, 4) และเก็บค่าที่คืนมา (7) ไว้ในตัวแปร result"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "แสดงค่า result คือ 7"
+      }
+    ],
+    "status": "working",
+    "title": "ฟังก์ชันคืนค่าผลบวก"
+  },
+  "python101-functions-05": {
+    "id": "python101-functions-05",
+    "language": "python",
+    "code": "def greet(name=\"friend\"):\n    print(f\"Hello {name}\")\n\ngreet()\ngreet(\"Anan\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ greet ที่รับพารามิเตอร์ name โดยมีค่าเริ่มต้นเป็น \"friend\" ถ้าไม่ส่งค่ามา"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน แสดงคำว่า \"Hello\" ตามด้วยค่า name"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เรียก greet() โดยไม่ส่งค่าใด ๆ จึงใช้ค่าเริ่มต้น \"friend\" แสดง \"Hello friend\""
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "เรียก greet(\"Anan\") โดยส่งค่าของตัวเอง แสดง \"Hello Anan\""
+      }
+    ],
+    "status": "working",
+    "title": "ฟังก์ชันพร้อมค่าเริ่มต้น",
+    "output": "Hello friend\nHello Anan"
+  },
+  "python101-functions-07": {
+    "id": "python101-functions-07",
+    "language": "python",
+    "code": "def show_age():\n    age = 16\n    print(age)\n\nshow_age()",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ show_age ที่ไม่รับพารามิเตอร์"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน กำหนดตัวแปร age เป็น 16 ซึ่งมีขอบเขตใช้ได้เฉพาะในฟังก์ชันนี้"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "แสดงค่า age ภายในฟังก์ชัน"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "เรียกใช้ show_age ทำให้แสดงค่า 16"
+      }
+    ],
+    "status": "working",
+    "title": "ตัวแปรภายในฟังก์ชันมีขอบเขตเฉพาะ"
+  },
+  "python101-functions-08": {
+    "id": "python101-functions-08",
+    "language": "python",
+    "code": "def celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n\nprint(celsius_to_fahrenheit(0))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ celsius_to_fahrenheit ที่รับพารามิเตอร์ celsius"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน คืนค่าจากสูตร celsius คูณ 9 หาร 5 บวก 32"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เรียก celsius_to_fahrenheit(0) ได้ผลลัพธ์ 32.0 แล้วแสดงผล"
+      }
+    ],
+    "status": "working",
+    "title": "แปลงองศาเซลเซียสเป็นฟาเรนไฮต์"
+  },
+  "python101-functions-09": {
+    "id": "python101-functions-09",
+    "language": "python",
+    "code": "def rectangle_area(width, height):\n    return width * height\n\nprint(rectangle_area(4, 5))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ rectangle_area ที่รับพารามิเตอร์ width และ height"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน คืนค่าผลคูณของ width กับ height"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เรียก rectangle_area(4, 5) ได้ผลลัพธ์ 20 แล้วแสดงผล"
+      }
+    ],
+    "status": "working",
+    "title": "คำนวณพื้นที่สี่เหลี่ยมผืนผ้า"
+  },
+  "python101-functions-10": {
+    "id": "python101-functions-10",
+    "language": "python",
+    "code": "def is_even(number):\n    return number % 2 == 0\n\nprint(is_even(2))\nprint(is_even(3))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชันชื่อ is_even ที่รับพารามิเตอร์ number"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน คืนค่าความจริงว่า number หารด้วย 2 ลงตัวหรือไม่"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เรียก is_even(2) ได้ผลลัพธ์ True เพราะ 2 หารด้วย 2 ลงตัว"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "เรียก is_even(3) ได้ผลลัพธ์ False เพราะ 3 หารด้วย 2 ไม่ลงตัว"
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจเลขคู่ด้วยฟังก์ชัน",
+    "output": "True\nFalse"
+  },
+  "python101-functions-12": {
+    "id": "python101-functions-12",
+    "language": "python",
+    "code": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return a - b\n\ndef multiply(a, b):\n    return a * b\n\ndef divide(a, b):\n    if b == 0:\n        return \"หารด้วยศูนย์ไม่ได้\"\n    return a / b\n\nfirst = float(input(\"เลขตัวแรก: \"))\noperator = input(\"เครื่องหมาย (+ - * /): \")\nsecond = float(input(\"เลขตัวที่สอง: \"))\n\nif operator == \"+\":\n    result = add(first, second)\nelif operator == \"-\":\n    result = subtract(first, second)\nelif operator == \"*\":\n    result = multiply(first, second)\nelif operator == \"/\":\n    result = divide(first, second)\nelse:\n    result = \"ไม่รู้จักเครื่องหมายนี้\"\n\nprint(result)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชัน add ที่รับ a และ b"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ภายในฟังก์ชัน คืนค่าผลบวกของ a กับ b"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ประกาศฟังก์ชัน subtract ที่รับ a และ b"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ภายในฟังก์ชัน คืนค่าผลลบ a ลบ b"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ประกาศฟังก์ชัน multiply ที่รับ a และ b"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "ภายในฟังก์ชัน คืนค่าผลคูณของ a กับ b"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "ประกาศฟังก์ชัน divide ที่รับ a และ b"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "ตรวจว่า b เป็น 0 หรือไม่"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "ถ้า b เป็น 0 คืนข้อความ \"หารด้วยศูนย์ไม่ได้\" แทนที่จะหาร"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "ถ้า b ไม่เป็น 0 คืนค่า a หาร b"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "รับเลขตัวแรกจากผู้ใช้แล้วแปลงเป็นเลขทศนิยมเก็บในตัวแปร first"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "รับเครื่องหมายจากผู้ใช้เก็บในตัวแปร operator"
+      },
+      {
+        "range": [
+          17,
+          17
+        ],
+        "note": "รับเลขตัวที่สองจากผู้ใช้แล้วแปลงเป็นเลขทศนิยมเก็บในตัวแปร second"
+      },
+      {
+        "range": [
+          19,
+          19
+        ],
+        "note": "ตรวจว่า operator เป็น \"+\" หรือไม่"
+      },
+      {
+        "range": [
+          20,
+          20
+        ],
+        "note": "ถ้าใช่ เรียก add(first, second) แล้วเก็บผลลัพธ์ไว้ในตัวแปร result"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "note": "ถ้าไม่ใช่ ตรวจว่า operator เป็น \"-\" หรือไม่"
+      },
+      {
+        "range": [
+          22,
+          22
+        ],
+        "note": "ถ้าใช่ เรียก subtract(first, second) แล้วเก็บไว้ใน result"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "note": "ถ้ายังไม่ใช่ ตรวจว่า operator เป็น \"*\" หรือไม่"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "note": "ถ้าใช่ เรียก multiply(first, second) แล้วเก็บไว้ใน result"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "note": "ถ้ายังไม่ใช่ ตรวจว่า operator เป็น \"/\" หรือไม่"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "note": "ถ้าใช่ เรียก divide(first, second) แล้วเก็บไว้ใน result"
+      },
+      {
+        "range": [
+          27,
+          27
+        ],
+        "note": "ถ้าไม่ตรงกับเครื่องหมายใดเลย ให้ทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          28,
+          28
+        ],
+        "note": "กำหนด result เป็นข้อความ \"ไม่รู้จักเครื่องหมายนี้\""
+      },
+      {
+        "range": [
+          30,
+          30
+        ],
+        "note": "แสดงค่า result"
+      }
+    ],
+    "status": "working",
+    "title": "เครื่องคิดเลขสี่ฟังก์ชัน"
+  },
+  "python101-input-output-01": {
+    "id": "python101-input-output-01",
+    "language": "python",
+    "code": "name = input(\"ชื่อของคุณ: \")\nprint(f\"สวัสดี {name}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "บรรทัดนี้แสดงข้อความ ชื่อของคุณ แล้วรอให้ผู้ใช้พิมพ์ชื่อ เก็บค่าที่พิมพ์ไว้ในตัวแปร name"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "บรรทัดนี้พิมพ์คำว่าสวัสดี ต่อด้วยชื่อที่เก็บไว้ในตัวแปร name"
+      }
+    ],
+    "status": "working",
+    "title": "รับชื่อแล้วทักทาย"
+  },
+  "python101-input-output-02": {
+    "id": "python101-input-output-02",
+    "language": "python",
+    "code": "age_text = input(\"อายุ: \")\nage = int(age_text)\nprint(f\"ปีหน้าคุณจะอายุ {age + 1}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับข้อความอายุจากผู้ใช้ เก็บไว้ในตัวแปร age_text ตอนนี้ยังเป็นข้อความ ไม่ใช่ตัวเลข"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "แปลงข้อความใน age_text ให้เป็นตัวเลขจำนวนเต็ม แล้วเก็บไว้ในตัวแปร age"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "พิมพ์อายุปีหน้าโดยนำค่า age มาบวกด้วย 1"
+      }
+    ],
+    "status": "working",
+    "title": "แปลงอายุเป็นตัวเลขแล้วบวกเพิ่ม"
+  },
+  "python101-input-output-03": {
+    "id": "python101-input-output-03",
+    "language": "python",
+    "code": "first = float(input(\"เลขตัวแรก: \"))\nsecond = float(input(\"เลขตัวที่สอง: \"))\n\nprint(f\"ผลบวก = {first + second}\")\nprint(f\"ผลลบ = {first - second}\")\nprint(f\"ผลคูณ = {first * second}\")\nprint(f\"ผลหาร = {first / second}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับเลขตัวแรกจากผู้ใช้แล้วแปลงเป็นทศนิยม เก็บไว้ในตัวแปร first"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับเลขตัวที่สองจากผู้ใช้แล้วแปลงเป็นทศนิยม เก็บไว้ในตัวแปร second"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์ผลบวกของ first กับ second"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "พิมพ์ผลลบของ first กับ second"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "พิมพ์ผลคูณของ first กับ second"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "พิมพ์ผลหารของ first กับ second"
+      }
+    ],
+    "status": "working",
+    "title": "คำนวณบวกลบคูณหารจากตัวเลขสองค่า",
+    "output": "เลขตัวแรก: 10\nเลขตัวที่สอง: 2\nผลบวก = 12.0\nผลลบ = 8.0\nผลคูณ = 20.0\nผลหาร = 5.0"
+  },
+  "python101-input-output-05": {
+    "id": "python101-input-output-05",
+    "language": "python",
+    "code": "price = 199.987\nprint(f\"ราคา {price:.2f} บาท\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร price ให้เท่ากับ 199.987"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "จัดรูปแบบการแสดงผลให้มีทศนิยม 2 ตำแหน่งด้วย :.2f โดยปัดค่า 199.987 เป็น 199.99 ไม่เปลี่ยนค่าที่เก็บใน price"
+      }
+    ],
+    "status": "working",
+    "title": "จัดรูปแบบทศนิยมสองตำแหน่ง",
+    "output": "ราคา 199.99 บาท"
+  },
+  "python101-input-output-07": {
+    "id": "python101-input-output-07",
+    "language": "python",
+    "code": "name = input(\"ชื่อ: \")\nage = int(input(\"อายุ: \"))\nprint(f\"อีก 10 ปี {name} จะอายุ {age + 10} ปี\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับชื่อจากผู้ใช้ เก็บไว้ในตัวแปร name"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับอายุจากผู้ใช้แล้วแปลงเป็นเลขจำนวนเต็มทันที เก็บไว้ในตัวแปร age"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "พิมพ์ชื่อพร้อมอายุที่บวกเพิ่มไป 10 ปี"
+      }
+    ],
+    "status": "working",
+    "title": "ทำนายอายุในอีก 10 ปี"
+  },
+  "python101-input-output-08": {
+    "id": "python101-input-output-08",
+    "language": "python",
+    "code": "score1 = float(input(\"คะแนนที่ 1: \"))\nscore2 = float(input(\"คะแนนที่ 2: \"))\nscore3 = float(input(\"คะแนนที่ 3: \"))\naverage = (score1 + score2 + score3) / 3\nprint(f\"คะแนนเฉลี่ยคือ {average:.2f}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับคะแนนที่ 1 จากผู้ใช้แล้วแปลงเป็นทศนิยม"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับคะแนนที่ 2 จากผู้ใช้แล้วแปลงเป็นทศนิยม"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "รับคะแนนที่ 3 จากผู้ใช้แล้วแปลงเป็นทศนิยม"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "รวมคะแนนทั้งสามค่าแล้วหารด้วย 3 เก็บผลลัพธ์ไว้ในตัวแปร average"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "แสดงค่าเฉลี่ยโดยปัดค่าให้มีทศนิยม 2 ตำแหน่ง"
+      }
+    ],
+    "status": "working",
+    "title": "หาค่าเฉลี่ยจากคะแนนสามค่า"
+  },
+  "python101-input-output-09": {
+    "id": "python101-input-output-09",
+    "language": "python",
+    "code": "price = float(input(\"ราคาสินค้า: \"))\ndiscount = float(input(\"ส่วนลด (%): \"))\nfinal_price = price - (price * discount / 100)\nprint(f\"ราคาสุทธิ: {final_price:.2f} บาท\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับราคาสินค้าจากผู้ใช้แล้วแปลงเป็นทศนิยม"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "รับเปอร์เซ็นต์ส่วนลดจากผู้ใช้แล้วแปลงเป็นทศนิยม"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "คำนวณส่วนลดเป็นจำนวนเงิน แล้วหักออกจากราคาเดิม เก็บไว้ในตัวแปร final_price"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "แสดงราคาสุทธิโดยปัดค่าให้มีทศนิยม 2 ตำแหน่ง"
+      }
+    ],
+    "status": "working",
+    "title": "คำนวณราคาหลังหักส่วนลด"
+  },
+  "python101-input-output-10": {
+    "id": "python101-input-output-10",
+    "language": "python",
+    "code": "celsius = float(input(\"อุณหภูมิ Celsius: \"))\nfahrenheit = celsius * 9 / 5 + 32\n\nprint(f\"{celsius:.1f} C = {fahrenheit:.1f} F\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "รับอุณหภูมิเป็นองศาเซลเซียสจากผู้ใช้แล้วแปลงเป็นทศนิยม"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "แปลงค่า celsius เป็นฟาเรนไฮต์ตามสูตร คูณ 9 หาร 5 แล้วบวก 32"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "แสดงอุณหภูมิทั้งสองค่าโดยปัดค่าให้มีทศนิยม 1 ตำแหน่ง"
+      }
+    ],
+    "status": "working",
+    "title": "แปลงองศาเซลเซียสเป็นฟาเรนไฮต์",
+    "output": "อุณหภูมิ Celsius: 25\n25.0 C = 77.0 F"
+  },
+  "python101-loops-01": {
+    "id": "python101-loops-01",
+    "language": "python",
+    "code": "for number in range(1, 6):\n    print(number)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เริ่มวนซ้ำ number จะรับค่า 1 2 3 4 5 ตามลำดับ เพราะ range(1, 6) ไม่รวม 6"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พิมพ์ค่า number ในแต่ละรอบของการวนซ้ำ"
+      }
+    ],
+    "status": "working",
+    "title": "วนพิมพ์เลข 1 ถึง 5",
+    "output": "1\n2\n3\n4\n5"
+  },
+  "python101-loops-04": {
+    "id": "python101-loops-04",
+    "language": "python",
+    "code": "password = \"\"\n\nwhile password != \"python\":\n    password = input(\"รหัสผ่าน: \")\n\nprint(\"เข้าสู่ระบบสำเร็จ\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร password ให้เป็นข้อความว่างก่อนเริ่มวนซ้ำ"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "วนซ้ำต่อไปเรื่อย ๆ ตราบใดที่ password ยังไม่เท่ากับคำว่า python"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "รับรหัสผ่านใหม่จากผู้ใช้ทุกครั้งที่วนซ้ำ แล้วเก็บทับในตัวแปร password"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "พิมพ์ข้อความนี้เมื่อออกจากลูปแล้ว คือตอนที่ password เท่ากับ python"
+      }
+    ],
+    "status": "working",
+    "title": "วนถามรหัสผ่านจนกว่าจะถูก",
+    "output": "รหัสผ่าน: 1234\nรหัสผ่าน: hello\nรหัสผ่าน: python\nเข้าสู่ระบบสำเร็จ"
+  },
+  "python101-loops-07": {
+    "id": "python101-loops-07",
+    "language": "python",
+    "code": "for number in range(1, 10):\n    if number == 5:\n        break\n    print(number)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "วนซ้ำให้ number รับค่าตั้งแต่ 1 ถึง 9"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ตรวจสอบว่า number เท่ากับ 5 หรือไม่ในแต่ละรอบ"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ถ้า number เท่ากับ 5 ให้หยุดการวนซ้ำทั้งหมดทันทีด้วย break"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์ number เมื่อยังไม่ถึงเงื่อนไขที่ทำให้หยุด"
+      }
+    ],
+    "status": "working",
+    "title": "หยุดวนซ้ำทันทีที่เจอเลข 5"
+  },
+  "python101-loops-08": {
+    "id": "python101-loops-08",
+    "language": "python",
+    "code": "for number in range(1, 6):\n    if number == 3:\n        continue\n    print(number)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "วนซ้ำให้ number รับค่าตั้งแต่ 1 ถึง 5"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ตรวจสอบว่า number เท่ากับ 3 หรือไม่ในแต่ละรอบ"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ถ้า number เท่ากับ 3 ให้ข้ามไปวนรอบถัดไปทันทีด้วย continue โดยไม่พิมพ์ค่านี้"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์ number สำหรับรอบที่ไม่ถูกข้าม"
+      }
+    ],
+    "status": "working",
+    "title": "ข้ามเลข 3 ตอนวนซ้ำ"
+  },
+  "python101-loops-09": {
+    "id": "python101-loops-09",
+    "language": "python",
+    "code": "fruits = [\"apple\", \"banana\", \"orange\"]\n\nfor fruit in fruits:\n    print(f\"I like {fruit}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้างลิสต์ fruits ที่มีสมาชิก 3 ตัวคือ apple banana orange"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "วนซ้ำไปทีละสมาชิกในลิสต์ fruits โดยเก็บค่าปัจจุบันไว้ในตัวแปร fruit"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์ข้อความ I like ต่อด้วยชื่อผลไม้ในรอบนั้น"
+      }
+    ],
+    "status": "working",
+    "title": "วนพิมพ์ชื่อผลไม้ในลิสต์",
+    "output": "I like apple\nI like banana\nI like orange"
+  },
+  "python101-loops-11": {
+    "id": "python101-loops-11",
+    "language": "python",
+    "code": "for number in range(1, 21):\n    print(number)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "วนซ้ำให้ number รับค่าตั้งแต่ 1 ถึง 20"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พิมพ์ค่า number ในแต่ละรอบ"
+      }
+    ],
+    "status": "working",
+    "title": "วนพิมพ์เลข 1 ถึง 20"
+  },
+  "python101-loops-12": {
+    "id": "python101-loops-12",
+    "language": "python",
+    "code": "for number in range(2, 51, 2):\n    print(number)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "วนซ้ำให้ number รับค่าตั้งแต่ 2 ถึง 50 โดยเพิ่มทีละ 2 ตัวเลขที่ได้จึงเป็นเลขคู่ทั้งหมด"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พิมพ์ค่า number ในแต่ละรอบ"
+      }
+    ],
+    "status": "working",
+    "title": "วนพิมพ์เลขคู่ 2 ถึง 50"
+  },
+  "python101-loops-13": {
+    "id": "python101-loops-13",
+    "language": "python",
+    "code": "total = 0\nfor round_number in range(1, 6):\n    score = int(input(f\"ตัวเลขที่ {round_number}: \"))\n    total += score\n\nprint(f\"คะแนนรวมคือ {total}\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร total ให้เท่ากับ 0 เพื่อใช้สะสมผลรวม"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "วนซ้ำ 5 รอบ โดย round_number จะรับค่า 1 ถึง 5"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "รับตัวเลขจากผู้ใช้ในรอบนั้น แปลงเป็นจำนวนเต็ม เก็บไว้ในตัวแปร score"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "นำค่า score ในรอบนั้นไปบวกเพิ่มเข้าไปใน total"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "พิมพ์ผลรวมคะแนนทั้งหมดหลังจากวนซ้ำครบ 5 รอบ"
+      }
+    ],
+    "status": "working",
+    "title": "รวมคะแนนที่รับเข้ามา 5 ครั้ง"
+  },
+  "python101-loops-14": {
+    "id": "python101-loops-14",
+    "language": "python",
+    "code": "secret = 7\nattempts = 0\n\nwhile True:\n    guess = int(input(\"ทายเลขลับ 1-10: \"))\n    attempts += 1\n\n    if guess == secret:\n        print(f\"ถูกต้อง ใช้ {attempts} ครั้ง\")\n        break\n    if guess < secret:\n        print(\"น้อยไป\")\n    else:\n        print(\"มากไป\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "กำหนดตัวแปร secret ให้เท่ากับ 7 ซึ่งเป็นเลขลับที่ต้องทาย"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "กำหนดตัวแปร attempts ให้เท่ากับ 0 เพื่อนับจำนวนครั้งที่ทาย"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เริ่มวนซ้ำแบบไม่มีที่สิ้นสุด จะวนไปเรื่อย ๆ จนกว่าจะเจอ break"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "รับตัวเลขที่ผู้ใช้ทายแปลงเป็นจำนวนเต็ม เก็บไว้ในตัวแปร guess"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "เพิ่มค่า attempts ขึ้น 1 ทุกครั้งที่มีการทาย"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "ตรวจสอบว่า guess เท่ากับ secret หรือไม่"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ถ้าทายถูก พิมพ์ข้อความแจ้งผลพร้อมจำนวนครั้งที่ใช้ทาย"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "หยุดการวนซ้ำทันทีเมื่อทายถูก"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "ถ้าทายผิดและยังไม่ถึงบรรทัด break ตรวจสอบว่า guess น้อยกว่า secret หรือไม่"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "ถ้า guess น้อยกว่า secret พิมพ์ว่าน้อยไป"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขก่อนหน้า คือ guess มากกว่า secret"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "note": "พิมพ์ว่ามากไป"
+      }
+    ],
+    "status": "working",
+    "title": "เกมทายเลขลับพร้อมนับจำนวนครั้ง"
+  },
+  "python101-modules-01": {
+    "id": "python101-modules-01",
+    "language": "python",
+    "code": "import random\n\nnumber = random.randint(1, 10)\nprint(number)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้าโมดูล random เพื่อใช้ฟังก์ชันเกี่ยวกับการสุ่ม"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "สุ่มเลขจำนวนเต็มระหว่าง 1 ถึง 10 เก็บไว้ในตัวแปร number"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์เลขที่สุ่มได้"
+      }
+    ],
+    "status": "working",
+    "title": "สุ่มเลขด้วยโมดูล random"
+  },
+  "python101-modules-02": {
+    "id": "python101-modules-02",
+    "language": "python",
+    "code": "from math import sqrt\n\nprint(sqrt(16))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้าฟังก์ชัน sqrt จากโมดูล math เพื่อใช้หาค่ารากที่สอง"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "พิมพ์ค่ารากที่สองของ 16"
+      }
+    ],
+    "status": "working",
+    "title": "หาค่ารากที่สองด้วยโมดูล math"
+  },
+  "python101-modules-03": {
+    "id": "python101-modules-03",
+    "language": "python",
+    "code": "def add(a, b):\n    return a + b",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชัน add ที่รับพารามิเตอร์ a และ b"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "คืนค่าผลบวกของ a กับ b กลับไปยังผู้ที่เรียกใช้ฟังก์ชัน"
+      }
+    ],
+    "status": "working",
+    "title": "ฟังก์ชันบวกเลขสองค่า"
+  },
+  "python101-modules-04": {
+    "id": "python101-modules-04",
+    "language": "python",
+    "code": "from helpers import add\n\nprint(add(2, 3))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้าฟังก์ชัน add จากไฟล์ helpers.py"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เรียกฟังก์ชัน add ด้วยค่า 2 กับ 3 แล้วพิมพ์ผลลัพธ์ที่ได้"
+      }
+    ],
+    "status": "working",
+    "title": "เรียกใช้ฟังก์ชันจากไฟล์อื่น"
+  },
+  "python101-modules-05": {
+    "id": "python101-modules-05",
+    "language": "bash",
+    "code": "python -m pip install requests",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "คำสั่งนี้รันใน terminal เพื่อติดตั้งไลบรารี requests ผ่าน pip"
+      }
+    ],
+    "status": "working",
+    "title": "ติดตั้งไลบรารี requests"
+  },
+  "python101-modules-06": {
+    "id": "python101-modules-06",
+    "language": "bash",
+    "code": "python -m venv .venv",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "คำสั่งนี้รันใน terminal เพื่อสร้างสภาพแวดล้อมแยกเฉพาะโปรเจกต์ไว้ในโฟลเดอร์ .venv"
+      }
+    ],
+    "status": "working",
+    "title": "สร้าง virtual environment"
+  },
+  "python101-modules-07": {
+    "id": "python101-modules-07",
+    "language": "python",
+    "code": "import random\n\nnumber = random.randint(1, 100)\nprint(number)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้าโมดูล random เพื่อใช้ฟังก์ชันเกี่ยวกับการสุ่ม"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "สุ่มเลขจำนวนเต็มระหว่าง 1 ถึง 100 เก็บไว้ในตัวแปร number"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์เลขที่สุ่มได้"
+      }
+    ],
+    "status": "working",
+    "title": "สุ่มเลข 1 ถึง 100"
+  },
+  "python101-modules-08": {
+    "id": "python101-modules-08",
+    "language": "python",
+    "code": "from datetime import date\n\ntoday = date.today()\nprint(today)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้า date จากโมดูล datetime เพื่อใช้จัดการเรื่องวันที่"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เรียก date.today() เพื่อดึงวันที่ปัจจุบัน เก็บไว้ในตัวแปร today"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์วันที่ปัจจุบัน"
+      }
+    ],
+    "status": "working",
+    "title": "แสดงวันที่ปัจจุบัน"
+  },
+  "python101-modules-09": {
+    "id": "python101-modules-09",
+    "language": "python",
+    "code": "def add_tax(price, tax_percent):\n    return price + (price * tax_percent / 100)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชัน add_tax ที่รับราคาสินค้าและเปอร์เซ็นต์ภาษี"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "คืนค่าราคาสินค้ารวมภาษีที่คำนวณได้"
+      }
+    ],
+    "status": "working",
+    "title": "ฟังก์ชันคำนวณราคารวมภาษี"
+  },
+  "python101-modules-10": {
+    "id": "python101-modules-10",
+    "language": "python",
+    "code": "from tax_tools import add_tax\n\nprint(add_tax(100, 7))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้าฟังก์ชัน add_tax จากไฟล์ tax_tools.py"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เรียก add_tax ด้วยราคา 100 และภาษี 7 เปอร์เซ็นต์ แล้วพิมพ์ผลลัพธ์"
+      }
+    ],
+    "status": "working",
+    "title": "เรียกใช้ฟังก์ชันคำนวณภาษีจากไฟล์อื่น"
+  },
+  "python101-modules-11": {
+    "id": "python101-modules-11",
+    "language": "python",
+    "code": "import random\nimport string\n\nlength = int(input(\"ความยาวรหัสผ่าน: \"))\n\nif length <= 0:\n    print(\"ความยาวต้องมากกว่า 0\")\nelse:\n    characters = string.ascii_letters + string.digits\n    password = \"\"\n\n    for count in range(length):\n        password += random.choice(characters)\n\n    print(password)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้าโมดูล random เพื่อใช้สุ่มตัวอักษร"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "นำเข้าโมดูล string เพื่อใช้ชุดตัวอักษรสำเร็จรูป"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "รับความยาวรหัสผ่านที่ต้องการจากผู้ใช้แล้วแปลงเป็นจำนวนเต็ม เก็บไว้ในตัวแปร length"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ตรวจสอบว่า length น้อยกว่าหรือเท่ากับ 0 หรือไม่"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ถ้า length ไม่ถูกต้อง พิมพ์ข้อความแจ้งเตือน"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "ถ้า length มากกว่า 0 ให้ทำงานในส่วนนี้แทน"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "รวมตัวอักษรตัวพิมพ์เล็กพิมพ์ใหญ่กับตัวเลขไว้ในตัวแปร characters เพื่อใช้สุ่ม"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "กำหนดตัวแปร password ให้เป็นข้อความว่างก่อนเริ่มสุ่ม"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "วนซ้ำตามจำนวนรอบเท่ากับ length"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "สุ่มตัวอักษรหนึ่งตัวจาก characters แล้วต่อเพิ่มเข้าไปใน password ทุกรอบ"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "พิมพ์รหัสผ่านที่สุ่มได้"
+      }
+    ],
+    "status": "working",
+    "title": "สุ่มสร้างรหัสผ่านตามความยาวที่กำหนด"
+  },
+  "python101-oop-01": {
+    "id": "python101-oop-01",
+    "language": "python",
+    "code": "class Student:\n    def __init__(self, name, score):\n        self.name = name\n        self.score = score\n\n    def show_info(self):\n        print(f\"{self.name} ได้ {self.score} คะแนน\")\n\n    def is_passed(self):\n        return self.score >= 50\n\nmali = Student(\"Mali\", 90)\nanan = Student(\"Anan\", 45)\n\nmali.show_info()\nanan.show_info()\n\nprint(mali.is_passed())\nprint(anan.is_passed())",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศ class ชื่อ Student ซึ่งเป็นแบบพิมพ์สำหรับสร้างข้อมูลนักเรียน"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ประกาศฟังก์ชัน __init__ ที่ทำงานตอนสร้าง object ใหม่ รับชื่อและคะแนน"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เก็บชื่อที่รับเข้ามาไว้ในตัวแปร self.name ของ object นี้"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เก็บคะแนนที่รับเข้ามาไว้ในตัวแปร self.score ของ object นี้"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ประกาศฟังก์ชัน show_info สำหรับแสดงข้อมูลของนักเรียนคนนั้น"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "พิมพ์ชื่อและคะแนนของนักเรียนคนนั้น"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ประกาศฟังก์ชัน is_passed สำหรับตรวจว่านักเรียนผ่านหรือไม่"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "คืนค่า True ถ้าคะแนนมากกว่าหรือเท่ากับ 50 ไม่งั้นคืนค่า False"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "สร้าง object ชื่อ mali จาก class Student ด้วยชื่อ Mali และคะแนน 90"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "สร้าง object ชื่อ anan จาก class Student ด้วยชื่อ Anan และคะแนน 45"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "เรียกฟังก์ชัน show_info ของ mali เพื่อแสดงข้อมูลของเขา"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "เรียกฟังก์ชัน show_info ของ anan เพื่อแสดงข้อมูลของเขา"
+      },
+      {
+        "range": [
+          18,
+          18
+        ],
+        "note": "พิมพ์ผลลัพธ์ของ mali.is_passed() ว่าผ่านหรือไม่"
+      },
+      {
+        "range": [
+          19,
+          19
+        ],
+        "note": "พิมพ์ผลลัพธ์ของ anan.is_passed() ว่าผ่านหรือไม่"
+      }
+    ],
+    "status": "working",
+    "title": "สร้าง class นักเรียนพร้อมเช็กว่าผ่านหรือไม่"
+  },
+  "python101-oop-02": {
+    "id": "python101-oop-02",
+    "language": "python",
+    "code": "mali = Student(\"Mali\", 90)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง object ชื่อ mali จาก class Student โดยตั้งชื่อ Mali และคะแนน 90"
+      }
+    ],
+    "status": "working",
+    "title": "สร้าง object นักเรียนคนหนึ่ง"
+  },
+  "python101-oop-03": {
+    "id": "python101-oop-03",
+    "language": "python",
+    "code": "mali.show_info()",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เรียกฟังก์ชัน show_info ของ object mali เพื่อพิมพ์ชื่อและคะแนนของเขา"
+      }
+    ],
+    "status": "working",
+    "title": "แสดงข้อมูลของ mali"
+  },
+  "python101-oop-04": {
+    "id": "python101-oop-04",
+    "language": "python",
+    "code": "anan.show_info()",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "เรียกฟังก์ชัน show_info ของ object anan เพื่อพิมพ์ชื่อและคะแนนของเขา"
+      }
+    ],
+    "status": "working",
+    "title": "แสดงข้อมูลของ anan"
+  },
+  "python101-oop-05": {
+    "id": "python101-oop-05",
+    "language": "python",
+    "code": "class TodoItem:\n    def __init__(self, title):\n        self.title = title\n        self.completed = False\n\n    def mark_done(self):\n        self.completed = True\n\n    def show_status(self):\n        if self.completed:\n            print(f\"{self.title}: เสร็จแล้ว\")\n        else:\n            print(f\"{self.title}: ยังไม่เสร็จ\")\n\ntask = TodoItem(\"ฝึกเขียน OOP\")\ntask.show_status()\ntask.mark_done()\ntask.show_status()",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศ class ชื่อ TodoItem ซึ่งเป็นแบบพิมพ์สำหรับสร้างรายการงาน"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ประกาศฟังก์ชัน __init__ ที่ทำงานตอนสร้าง object ใหม่ รับชื่องาน"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เก็บชื่องานที่รับเข้ามาไว้ในตัวแปร self.title"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "กำหนดให้ self.completed เริ่มต้นเป็น False คือยังไม่เสร็จ"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ประกาศฟังก์ชัน mark_done สำหรับเปลี่ยนสถานะงานเป็นเสร็จแล้ว"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "เปลี่ยนค่า self.completed เป็น True"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ประกาศฟังก์ชัน show_status สำหรับแสดงสถานะของงาน"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "ตรวจสอบว่า self.completed เป็น True หรือไม่"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "ถ้าเสร็จแล้ว พิมพ์ชื่องานพร้อมคำว่าเสร็จแล้ว"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "ถ้ายังไม่เสร็จ ให้ทำงานในส่วนนี้แทน"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "พิมพ์ชื่องานพร้อมคำว่ายังไม่เสร็จ"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "สร้าง object ชื่อ task จาก class TodoItem ด้วยชื่องานว่า ฝึกเขียน OOP"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "เรียก show_status ครั้งแรก ตอนนี้งานยังไม่เสร็จจึงแสดงว่ายังไม่เสร็จ"
+      },
+      {
+        "range": [
+          17,
+          17
+        ],
+        "note": "เรียก mark_done เพื่อเปลี่ยนสถานะของ task เป็นเสร็จแล้ว"
+      },
+      {
+        "range": [
+          18,
+          18
+        ],
+        "note": "เรียก show_status อีกครั้ง คราวนี้จะแสดงว่าเสร็จแล้ว"
+      }
+    ],
+    "status": "working",
+    "title": "สร้างรายการงานที่เปลี่ยนสถานะเสร็จได้"
+  },
+  "python101-oop-06": {
+    "id": "python101-oop-06",
+    "language": "python",
+    "code": "class Book:\n    def __init__(self, title, author):\n        self.title = title\n        self.author = author",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศ class ชื่อ Book ซึ่งเป็นแบบพิมพ์สำหรับเก็บข้อมูลหนังสือ"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ประกาศฟังก์ชัน __init__ ที่รับชื่อหนังสือและชื่อผู้เขียน"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เก็บชื่อหนังสือที่รับเข้ามาไว้ในตัวแปร self.title"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เก็บชื่อผู้เขียนที่รับเข้ามาไว้ในตัวแปร self.author"
+      }
+    ],
+    "status": "working",
+    "title": "สร้าง class หนังสือ"
+  },
+  "python101-oop-07": {
+    "id": "python101-oop-07",
+    "language": "python",
+    "code": "class TodoItem:\n    def __init__(self, title):\n        self.title = title\n        self.completed = False\n\n    def mark_done(self):\n        self.completed = True",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศ class ชื่อ TodoItem"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ประกาศฟังก์ชัน __init__ ที่รับชื่องาน"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เก็บชื่องานที่รับเข้ามาไว้ในตัวแปร self.title"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "กำหนดให้ self.completed เริ่มต้นเป็น False คือยังไม่เสร็จ"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ประกาศฟังก์ชัน mark_done สำหรับเปลี่ยนสถานะงานเป็นเสร็จแล้ว"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "เปลี่ยนค่า self.completed เป็น True"
+      }
+    ],
+    "status": "working",
+    "title": "class รายการงานแบบย่อ"
+  },
+  "python101-oop-08": {
+    "id": "python101-oop-08",
+    "language": "python",
+    "code": "todo = TodoItem(\"ฝึกเขียน class\")\nprint(todo.completed)\ntodo.mark_done()\nprint(todo.completed)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง object ชื่อ todo จาก TodoItem ด้วยชื่องานว่า ฝึกเขียน class"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พิมพ์ค่า todo.completed ตอนนี้ยังเป็น False เพราะยังไม่เรียก mark_done"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เรียก mark_done เพื่อเปลี่ยน todo.completed เป็น True"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "พิมพ์ค่า todo.completed อีกครั้ง คราวนี้จะเป็น True"
+      }
+    ],
+    "status": "working",
+    "title": "ทดสอบเปลี่ยนสถานะงาน"
+  },
+  "python101-oop-09": {
+    "id": "python101-oop-09",
+    "language": "python",
+    "code": "book = Book(\"Python Basics\", \"Thanachot P.\")\nprint(book.title)\nprint(book.author)",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "สร้าง object ชื่อ book จาก class Book ด้วยชื่อหนังสือ Python Basics และผู้เขียน Thanachot P."
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พิมพ์ชื่อหนังสือจาก book.title"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "พิมพ์ชื่อผู้เขียนจาก book.author"
+      }
+    ],
+    "status": "working",
+    "title": "สร้างและแสดงข้อมูลหนังสือ"
+  },
+  "python101-oop-10": {
+    "id": "python101-oop-10",
+    "language": "python",
+    "code": "class BankAccount:\n    def __init__(self, owner, balance=0):\n        self.owner = owner\n        self.balance = balance\n\n    def deposit(self, amount):\n        if amount <= 0:\n            print(\"ยอดฝากต้องมากกว่า 0\")\n            return\n        self.balance += amount\n\n    def withdraw(self, amount):\n        if amount <= 0:\n            print(\"ยอดถอนต้องมากกว่า 0\")\n        elif amount > self.balance:\n            print(\"ยอดเงินไม่พอ\")\n        else:\n            self.balance -= amount\n\n    def show_balance(self):\n        print(f\"{self.owner} มียอดเงิน {self.balance} บาท\")\n\naccount = BankAccount(\"Mali\", 100)\naccount.deposit(50)\naccount.withdraw(30)\naccount.withdraw(500)\naccount.withdraw(0)\naccount.show_balance()",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศ class ชื่อ BankAccount ซึ่งเป็นแบบพิมพ์สำหรับบัญชีธนาคาร"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ประกาศฟังก์ชัน __init__ รับชื่อเจ้าของบัญชีและยอดเงินเริ่มต้น ถ้าไม่ระบุยอดเงินจะเป็น 0"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "เก็บชื่อเจ้าของบัญชีไว้ในตัวแปร self.owner"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "เก็บยอดเงินเริ่มต้นไว้ในตัวแปร self.balance"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ประกาศฟังก์ชัน deposit สำหรับฝากเงิน รับจำนวนเงินที่จะฝาก"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ตรวจสอบว่าจำนวนเงินที่ฝากน้อยกว่าหรือเท่ากับ 0 หรือไม่"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "ถ้าจำนวนเงินไม่ถูกต้อง พิมพ์ข้อความแจ้งเตือน"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "หยุดฟังก์ชันทันทีด้วย return โดยไม่ฝากเงินเข้าบัญชี"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "ถ้าจำนวนเงินถูกต้อง นำยอดฝากไปบวกเพิ่มเข้า self.balance"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "ประกาศฟังก์ชัน withdraw สำหรับถอนเงิน รับจำนวนเงินที่จะถอน"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "ตรวจสอบว่าจำนวนเงินที่ถอนน้อยกว่าหรือเท่ากับ 0 หรือไม่"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "note": "ถ้าจำนวนเงินไม่ถูกต้อง พิมพ์ข้อความแจ้งเตือน"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "ถ้าจำนวนเงินเป็นบวก ให้ตรวจต่อว่ายอดถอนเกินยอดเงินที่มีหรือไม่"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "พิมพ์ข้อความแจ้งว่ายอดเงินไม่พอ"
+      },
+      {
+        "range": [
+          17,
+          17
+        ],
+        "note": "ถ้าจำนวนเงินถูกต้องและยอดเงินพอ ให้ทำงานในส่วนนี้แทน"
+      },
+      {
+        "range": [
+          18,
+          18
+        ],
+        "note": "หักยอดเงินที่ถอนออกจาก self.balance"
+      },
+      {
+        "range": [
+          20,
+          20
+        ],
+        "note": "ประกาศฟังก์ชัน show_balance สำหรับแสดงยอดเงินในบัญชี"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "note": "พิมพ์ชื่อเจ้าของบัญชีพร้อมยอดเงินปัจจุบัน"
+      },
+      {
+        "range": [
+          23,
+          23
+        ],
+        "note": "สร้าง object ชื่อ account จาก BankAccount ด้วยชื่อ Mali และยอดเงินเริ่มต้น 100"
+      },
+      {
+        "range": [
+          24,
+          24
+        ],
+        "note": "เรียก deposit ฝากเงินเพิ่ม 50 บาท"
+      },
+      {
+        "range": [
+          25,
+          25
+        ],
+        "note": "เรียก withdraw ถอนเงิน 30 บาท ถอนได้เพราะยอดเงินพอ"
+      },
+      {
+        "range": [
+          26,
+          26
+        ],
+        "note": "เรียก withdraw ถอนเงิน 500 บาท ถอนไม่ได้เพราะยอดเงินไม่พอ"
+      },
+      {
+        "range": [
+          27,
+          27
+        ],
+        "note": "เรียก withdraw ถอนเงิน 0 บาท ไม่ถอนเพราะจำนวนเงินไม่ถูกต้อง"
+      },
+      {
+        "range": [
+          28,
+          28
+        ],
+        "note": "เรียก show_balance เพื่อแสดงยอดเงินคงเหลือในบัญชี"
+      }
+    ],
+    "status": "working",
+    "title": "จำลองบัญชีธนาคารแบบฝากถอน"
+  },
+  "python101-projects-01": {
+    "id": "python101-projects-01",
+    "language": "python",
+    "code": "import random\n\nsecret = random.randint(1, 100)\nattempts = 0\n\nwhile True:\n    try:\n        guess = int(input(\"ทายเลข 1-100: \"))\n    except ValueError:\n        print(\"กรุณากรอกตัวเลข\")\n        continue\n\n    attempts += 1\n\n    if guess < secret:\n        print(\"น้อยไป\")\n    elif guess > secret:\n        print(\"มากไป\")\n    else:\n        print(f\"ถูกต้อง ใช้ {attempts} ครั้ง\")\n        break",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "นำเข้าโมดูล random เพื่อใช้สุ่มเลขลับ"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "สุ่มเลขลับระหว่าง 1 ถึง 100 เก็บไว้ในตัวแปร secret"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "กำหนดตัวแปร attempts ให้เท่ากับ 0 เพื่อนับจำนวนครั้งที่ทาย"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "เริ่มวนซ้ำแบบไม่มีที่สิ้นสุด จะวนไปเรื่อย ๆ จนกว่าจะเจอ break"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "เริ่มลองทำคำสั่งต่อไปนี้ ถ้าเกิดข้อผิดพลาดจะไปที่ except แทน"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "รับค่าที่ผู้ใช้พิมพ์แล้วแปลงเป็นจำนวนเต็ม เก็บไว้ในตัวแปร guess"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ถ้าแปลงค่าไม่สำเร็จ เช่นผู้ใช้พิมพ์ตัวอักษร จะเข้ามาทำส่วนนี้แทน"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "พิมพ์ข้อความแจ้งว่าต้องกรอกตัวเลข"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "ข้ามไปวนรอบใหม่ทันทีด้วย continue โดยไม่ทำคำสั่งที่เหลือในรอบนี้"
+      },
+      {
+        "range": [
+          13,
+          13
+        ],
+        "note": "เพิ่มค่า attempts ขึ้น 1 เมื่อแปลงค่าที่กรอกเป็นจำนวนเต็มสำเร็จ"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "ตรวจสอบว่า guess น้อยกว่า secret หรือไม่"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "ถ้า guess น้อยกว่า secret พิมพ์ว่าน้อยไป"
+      },
+      {
+        "range": [
+          17,
+          17
+        ],
+        "note": "ถ้าไม่เข้าเงื่อนไขก่อนหน้า ตรวจสอบว่า guess มากกว่า secret หรือไม่"
+      },
+      {
+        "range": [
+          18,
+          18
+        ],
+        "note": "ถ้า guess มากกว่า secret พิมพ์ว่ามากไป"
+      },
+      {
+        "range": [
+          19,
+          19
+        ],
+        "note": "ถ้าไม่เข้าทั้งสองเงื่อนไขก่อนหน้า คือทายถูก ให้ทำงานในส่วนนี้"
+      },
+      {
+        "range": [
+          20,
+          20
+        ],
+        "note": "พิมพ์ข้อความแจ้งว่าทายถูกพร้อมจำนวนครั้งที่ใช้ทาย"
+      },
+      {
+        "range": [
+          21,
+          21
+        ],
+        "note": "หยุดการวนซ้ำทันทีเมื่อทายถูก"
+      }
+    ],
+    "status": "working",
+    "title": "เกมทายเลขที่กันข้อมูลผิดพลาด"
+  },
+  "python101-projects-02": {
+    "id": "python101-projects-02",
+    "language": "python",
+    "code": "def calculate(a, operator, b):\n    if operator == \"+\":\n        return a + b\n    if operator == \"-\":\n        return a - b\n    if operator == \"*\":\n        return a * b\n    if operator == \"/\":\n        if b == 0:\n            return \"หารด้วยศูนย์ไม่ได้\"\n        return a / b\n    return \"ไม่รู้จักเครื่องหมายนี้\"\n\nfirst = float(input(\"เลขตัวแรก: \"))\noperator = input(\"เครื่องหมาย (+ - * /): \")\nsecond = float(input(\"เลขตัวที่สอง: \"))\n\nprint(calculate(first, operator, second))",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "ประกาศฟังก์ชัน calculate ที่รับตัวเลขสองตัวและเครื่องหมายดำเนินการ"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "ตรวจสอบว่า operator เป็นเครื่องหมายบวกหรือไม่"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "ถ้าเป็นบวก คืนค่าผลบวกของ a กับ b"
+      },
+      {
+        "range": [
+          4,
+          4
+        ],
+        "note": "ตรวจสอบว่า operator เป็นเครื่องหมายลบหรือไม่"
+      },
+      {
+        "range": [
+          5,
+          5
+        ],
+        "note": "ถ้าเป็นลบ คืนค่าผลลบของ a กับ b"
+      },
+      {
+        "range": [
+          6,
+          6
+        ],
+        "note": "ตรวจสอบว่า operator เป็นเครื่องหมายคูณหรือไม่"
+      },
+      {
+        "range": [
+          7,
+          7
+        ],
+        "note": "ถ้าเป็นคูณ คืนค่าผลคูณของ a กับ b"
+      },
+      {
+        "range": [
+          8,
+          8
+        ],
+        "note": "ตรวจสอบว่า operator เป็นเครื่องหมายหารหรือไม่"
+      },
+      {
+        "range": [
+          9,
+          9
+        ],
+        "note": "ตรวจสอบว่า b เท่ากับ 0 หรือไม่ ก่อนจะหาร"
+      },
+      {
+        "range": [
+          10,
+          10
+        ],
+        "note": "ถ้า b เท่ากับ 0 คืนข้อความแจ้งว่าหารด้วยศูนย์ไม่ได้"
+      },
+      {
+        "range": [
+          11,
+          11
+        ],
+        "note": "ถ้า b ไม่เท่ากับ 0 คืนค่าผลหารของ a กับ b"
+      },
+      {
+        "range": [
+          12,
+          12
+        ],
+        "note": "ถ้า operator ไม่ตรงกับเครื่องหมายใดเลย คืนข้อความแจ้งว่าไม่รู้จักเครื่องหมายนี้"
+      },
+      {
+        "range": [
+          14,
+          14
+        ],
+        "note": "รับเลขตัวแรกจากผู้ใช้แล้วแปลงเป็นทศนิยม เก็บไว้ในตัวแปร first"
+      },
+      {
+        "range": [
+          15,
+          15
+        ],
+        "note": "รับเครื่องหมายดำเนินการจากผู้ใช้ เก็บไว้ในตัวแปร operator"
+      },
+      {
+        "range": [
+          16,
+          16
+        ],
+        "note": "รับเลขตัวที่สองจากผู้ใช้แล้วแปลงเป็นทศนิยม เก็บไว้ในตัวแปร second"
+      },
+      {
+        "range": [
+          18,
+          18
+        ],
+        "note": "เรียกฟังก์ชัน calculate ด้วยค่าที่รับมา แล้วพิมพ์ผลลัพธ์ที่ได้"
+      }
+    ],
+    "status": "working",
+    "title": "เครื่องคิดเลขจากเครื่องหมายที่ผู้ใช้เลือก"
+  },
+  "python101-setup-01": {
+    "id": "python101-setup-01",
+    "language": "bash",
+    "code": "python --version",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "คำสั่งนี้รันใน terminal เพื่อแสดงเวอร์ชันของ Python ที่ติดตั้งอยู่"
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจสอบเวอร์ชันของ Python"
+  },
+  "python101-setup-02": {
+    "id": "python101-setup-02",
+    "language": "bash",
+    "code": "python3 --version",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "คำสั่งนี้รันใน terminal เพื่อแสดงเวอร์ชันของ Python 3 ที่ติดตั้งอยู่"
+      }
+    ],
+    "status": "working",
+    "title": "ตรวจสอบเวอร์ชันด้วยคำสั่ง python3"
+  },
+  "python101-setup-03": {
+    "id": "python101-setup-03",
+    "language": "python",
+    "code": "print(\"Hello, Python101\")\nprint(\"สวัสดี Python\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "พิมพ์ข้อความ Hello, Python101 ออกทางหน้าจอ"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พิมพ์ข้อความ สวัสดี Python ออกทางหน้าจอ"
+      }
+    ],
+    "status": "working",
+    "title": "พิมพ์ข้อความทักทายแรก"
+  },
+  "python101-setup-04": {
+    "id": "python101-setup-04",
+    "language": "bash",
+    "code": "python hello.py",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "คำสั่งนี้รันใน terminal เพื่อสั่งให้ Python รันไฟล์ hello.py"
+      }
+    ],
+    "status": "working",
+    "title": "รันไฟล์ hello.py"
+  },
+  "python101-setup-05": {
+    "id": "python101-setup-05",
+    "language": "bash",
+    "code": "python",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "คำสั่งนี้รันใน terminal เพื่อเปิดโหมดโต้ตอบของ Python ที่พิมพ์คำสั่งแล้วเห็นผลทันที"
+      }
+    ],
+    "status": "working",
+    "title": "เข้าสู่โหมดโต้ตอบของ Python",
+    "output": ">>> 1 + 2\n3\n>>> print(\"test\")\ntest"
+  },
+  "python101-setup-07": {
+    "id": "python101-setup-07",
+    "language": "python",
+    "code": "print(\"ชื่อ: Mali\")\nprint(\"อายุ: 16\")\nprint(\"อยากสร้างด้วย Python: โปรแกรมบันทึกงาน\")",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "พิมพ์ชื่อของผู้แนะนำตัว"
+      },
+      {
+        "range": [
+          2,
+          2
+        ],
+        "note": "พิมพ์อายุของผู้แนะนำตัว"
+      },
+      {
+        "range": [
+          3,
+          3
+        ],
+        "note": "พิมพ์สิ่งที่อยากสร้างด้วย Python"
+      }
+    ],
+    "status": "working",
+    "title": "แนะนำตัวเองด้วย print"
+  },
+  "python101-setup-08": {
+    "id": "python101-setup-08",
+    "language": "bash",
+    "code": "python intro.py",
+    "notes": [
+      {
+        "range": [
+          1,
+          1
+        ],
+        "note": "คำสั่งนี้รันใน terminal เพื่อสั่งให้ Python รันไฟล์ intro.py"
+      }
+    ],
+    "status": "working",
+    "title": "รันไฟล์ intro.py"
+  }
+}

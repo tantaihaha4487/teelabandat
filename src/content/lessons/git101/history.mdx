@@ -1,0 +1,39 @@
+---
+section: git101
+title: "ดูประวัติ Git"
+description: "เรียนคำสั่ง git log, git show, และ git diff เพื่อดูว่ามีอะไรเปลี่ยนไปบ้าง"
+order: 5
+source: git101/history.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+Git ไม่ได้มีไว้แค่บันทึกงาน แต่ยังช่วยคุณย้อนดูว่าใครเปลี่ยนอะไร เมื่อไหร่ และเปลี่ยนไปจากอะไรบ้าง
+
+## คำสั่งหลัก
+
+<CodeExample example={examples['git101-history-01']} />
+
+## ใช้เมื่อไร
+
+- `git log` ดูรายการ commit
+- `git show` ดูรายละเอียดของ commit เดียว
+- `git diff` ดูความต่างระหว่างไฟล์สองสถานะ
+
+## จุดที่มือใหม่พลาดบ่อย
+
+- เปิด log แล้วตกใจกับข้อความเยอะ ๆ
+- ไม่รู้ว่า diff ใช้ดูการเปลี่ยนแปลง
+- มองข้าม commit message ที่ควรอธิบายงาน
+
+## ฝึกทำ
+
+1. ทำ commit สองครั้ง
+2. ใช้ `git log --oneline`
+3. ใช้ `git show` เพื่อดูรายละเอียด commit ล่าสุด
+
+## สรุป
+
+การอ่าน history ได้คือทักษะสำคัญของคนใช้ Git มันช่วยให้คุณเข้าใจงานของตัวเองและแก้ปัญหาได้เร็วขึ้น

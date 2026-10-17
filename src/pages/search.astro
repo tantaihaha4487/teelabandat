@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import SearchPanel from '../components/interactive/SearchPanel.vue';
+import { searchIndex } from '../lib/content';
+const entries = await searchIndex();
+---
+<Base title="ค้นหาเนื้อหา"><header class="page-intro"><p class="eyebrow">หาหัวข้อที่อยากอ่าน</p><h1>ค้นหาเนื้อหา</h1><p>ค้นด้วยคำภาษาไทย ชื่อคำสั่ง หรือเรื่องที่กำลังสงสัย</p></header><SearchPanel entries={entries} client:load/><noscript><p class="callout">เปิด JavaScript เพื่อค้นหา หรือ <a href="/learn/">เปิดสารบัญบทเรียนทั้งหมด</a></p></noscript></Base>

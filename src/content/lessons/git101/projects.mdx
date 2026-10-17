@@ -1,0 +1,32 @@
+---
+section: git101
+title: "โปรเจกต์ฝึก Git"
+description: "โปรเจกต์สำหรับฝึกใช้ Git ตั้งแต่ branch, commit, remote, ไปจนถึงการแก้ conflict"
+order: 12
+source: git101/projects.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+โปรเจกต์เหล่านี้ออกแบบมาให้คุณได้ใช้คำสั่งจริงในสถานการณ์จริง ไม่ต้องเริ่มจากงานใหญ่ ให้เริ่มจากงานเล็กและทำซ้ำให้คล่องก่อน
+
+<CodeExample example={examples['git101-projects-01']} />
+
+## โปรเจกต์แนะนำ
+
+- **Notes repo**: สร้าง repository สำหรับจดโน้ตการเรียน
+- **Branch practice**: แยก branch ตามหัวข้อแล้ว merge กลับ
+- **Remote practice**: เชื่อม repository กับ GitHub และทดลอง push/pull
+
+## สิ่งที่ควรฝึกในแต่ละโปรเจกต์
+
+1. สร้าง repository ใหม่
+2. ทำ commit อย่างน้อย 3 ครั้ง
+3. สร้าง branch ใหม่ 1 branch
+4. ทดลอง merge หรือ revert อย่างน้อย 1 ครั้ง
+
+## สรุป
+
+ยิ่งฝึกโปรเจกต์ซ้ำ ๆ คำสั่ง Git ก็จะกลายเป็นนิสัยในการทำงานจริงของคุณ

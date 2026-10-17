@@ -1,0 +1,41 @@
+---
+section: git101
+title: "เชื่อม Git กับ GitHub"
+description: "เรียนการเชื่อม Git กับ GitHub ด้วย remote, push, pull, และ fetch"
+order: 9
+source: git101/remote.md
+draft: false
+---
+
+import CodeExample from '../../../components/CodeExample.astro';
+import examples from '../../../content/examples/git101.json';
+
+Remote คือ repository ที่อยู่นอกเครื่องของคุณ เช่น GitHub เมื่อเข้าใจ remote แล้วคุณจะสามารถแชร์งานและรับงานกลับมาได้
+
+## คำสั่งหลัก
+
+<CodeExample example={examples['git101-remote-01']} />
+
+## วิธีคิด
+
+- `push` ส่ง commit จากเครื่องคุณไปยัง remote
+- `pull` ดึงการเปลี่ยนแปลงจาก remote เข้ามา
+- `fetch` ดึงข้อมูลมาแต่ยังไม่รวมทันที
+
+`git push origin main` ส่ง commit จาก `main` ในเครื่องไปยัง remote ถ้าทำงานเป็นทีมควร push ขึ้น branch ของตัวเองแทนการ push ตรงไปที่ `main` ส่วน `git pull origin main` จะรวม `main` จาก `origin` เข้ากับ branch ที่กำลัง checkout อยู่ ควรตรวจ branch ปัจจุบันด้วย `git branch --show-current` ก่อนรันคำสั่งนี้
+
+## จุดที่มือใหม่พลาดบ่อย
+
+- สับสนว่า push กับ pull ทำงานคนละทิศ
+- ลืมเช็ก branch ก่อน push
+- คิดว่า Git กับ GitHub คือสิ่งเดียวกัน
+
+## ฝึกทำ
+
+1. เช็ก remote ของ repository
+2. ลอง push branch ที่สร้างเอง
+3. ใช้ `git fetch` แล้วดูความต่างก่อน merge
+
+## สรุป
+
+ถ้าคุณเชื่อม local repository กับ GitHub ได้ คุณก็พร้อมเริ่มทำงานร่วมกับคนอื่น

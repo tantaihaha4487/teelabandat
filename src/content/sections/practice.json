@@ -1,0 +1,10 @@
+{
+  "id": "practice",
+  "title": "ลองทำโจทย์ Python",
+  "summary": "เลือกคำตอบ ดูคำใบ้ และค่อย ๆ ไล่เหตุผลของแต่ละข้อ",
+  "order": 3,
+  "kind": "practice",
+  "label": "แบบฝึก",
+  "icon": "practice",
+  "bank": "python"
+}
