@@ -25,6 +25,6 @@ const nav = await sections();
       <details class="mobile-nav"><summary>เมนู <span aria-hidden="true">+</span></summary><nav aria-label="เมนูบนมือถือ"><a href="/learn/">บทเรียนทั้งหมด</a>{nav.map(s=><a href={sectionUrl(s)} aria-current={current === s.id ? 'page' : undefined}>{s.label}</a>)}</nav></details>
     </header>
     <main id="main" class:list={['main-shell', { wide }]}><slot/></main>
-    <footer class="site-footer"><a class="footer-brand" href="/">ทีละบรรทัด<span>อ่าน ลองเขียน แล้วค่อยไปต่อ</span></a><nav aria-label="ท้ายหน้า"><a href="/learn/">เลือกบทเรียน</a><a href="/search/">ค้นหาเนื้อหา</a></nav><div class="footer-companion"><Mascot pose="nap" class="footer-mascot"/><p>เรียนได้ตามจังหวะของตัวเอง</p></div></footer>
+    <footer class="site-footer"><a class="footer-brand" href="/">ทีละบรรทัด<span>อ่าน ลองเขียน แล้วค่อยไปต่อ</span></a><nav aria-label="ท้ายหน้า"><a href="/learn/">เลือกบทเรียน</a><a href="/search/">ค้นหาเนื้อหา</a></nav><div class="footer-companion"><Mascot pose="nap" class="footer-mascot"/><div class="footer-copy"><p>เรียนได้ตามจังหวะของตัวเอง</p><p class="artist-credit">ภาพมาสคอตวาดโดย <a href="https://x.com/fuffi_fufi">@fuffi_fufi</a></p></div></div></footer>
   </body>
 </html>

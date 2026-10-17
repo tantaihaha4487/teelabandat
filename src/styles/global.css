@@ -1609,7 +1609,10 @@ button:disabled {
 .search-mascot { --mascot-size: 10rem; flex: 0 0 10rem; transform: rotate(5deg); }
 .footer-companion { display: flex; align-items: center; gap: .45rem; }
 .footer-mascot { --mascot-size: 5rem; flex: none; }
+.footer-copy { display: grid; gap: .22rem; }
 .footer-companion p { margin: 0; color: var(--muted); font-size: .76rem; }
+.footer-companion .artist-credit { font-size: .7rem; }
+.artist-credit a { color: var(--primary); text-underline-offset: .15em; }
 .rail-companion { margin-block-start: 2rem; padding-block-start: 1.1rem; border-block-start: 1px solid var(--outline); }
 .rail-mascot { --mascot-size: 7.5rem; margin-inline: auto; transform: rotate(-6deg); }
 .rail-companion .reading-note { margin-block-start: .35rem; padding-block-start: 0; border: 0; text-align: center; }
