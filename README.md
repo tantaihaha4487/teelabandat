@@ -4,6 +4,7 @@
 <h1 align="center">ทีละบรรทัด (Teelabandat)</h1>
 <p align="center"><strong>Read the code until it makes sense, then change a value and see what happens</strong></p>
 <p align="center">A Thai-language site for learning Python and Git from the beginning.<br />Mashiro reads along, the code is there to try, and the exercises are there to review.</p>
+<p align="center">Mascot artwork by <a href="https://x.com/fuffi_fufi">@fuffi_fufi</a>.</p>
 <p align="center">
   <img alt="Astro 7.4.0" src="https://img.shields.io/badge/Astro-7.4.0-6741a5?style=flat-square" />
   <img alt="Vue 3.5.44" src="https://img.shields.io/badge/Vue-3.5.44-346044?style=flat-square" />

@@ -1,6 +1,7 @@
 # Mashiro mascot stickers
 
 Source artwork supplied locally in `/home/mashiro/Pictures/mashiro-emote`.
+Mascot artwork by [@fuffi_fufi](https://x.com/fuffi_fufi).
 The source files remain untouched. Website assets are 384 × 384 WebP stills
 exported from the first animation frame, with transparency retained and metadata
 removed. The four assets total 66,446 bytes; no animation runtime is loaded.
