@@ -1,42 +1,42 @@
 <p align="center">
-  <img src="public/mascot/sparkling.webp" width="144" height="144" alt="มาชิโระ มาสคอตแมวตาเป็นประกาย" />
+  <img src="public/mascot/sparkling.webp" width="144" height="144" alt="Mashiro, the cat mascot, with sparkling eyes" />
 </p>
-<h1 align="center">ทีละบรรทัด</h1>
-<p align="center"><strong>อ่านโค้ดให้เข้าใจ แล้วลองเปลี่ยนค่าด้วยตัวเอง</strong></p>
-<p align="center">เว็บเรียน Python และ Git ภาษาไทยสำหรับผู้เริ่มต้น<br />มีมาชิโระอยู่เป็นเพื่อนอ่าน โค้ดให้ลอง และแบบฝึกให้ทบทวน</p>
+<h1 align="center">ทีละบรรทัด (Teelabandat)</h1>
+<p align="center"><strong>Read the code until it makes sense, then change a value and see what happens</strong></p>
+<p align="center">A Thai-language site for learning Python and Git from the beginning.<br />Mashiro reads along, the code is there to try, and the exercises are there to review.</p>
 <p align="center">
   <img alt="Astro 7.4.0" src="https://img.shields.io/badge/Astro-7.4.0-6741a5?style=flat-square" />
   <img alt="Vue 3.5.44" src="https://img.shields.io/badge/Vue-3.5.44-346044?style=flat-square" />
-  <img alt="Bun" src="https://img.shields.io/badge/Bun-ใช้จัดการโปรเจกต์-51465c?style=flat-square" />
-  <img alt="เนื้อหาภาษาไทย" src="https://img.shields.io/badge/เนื้อหา-ภาษาไทย-6741a5?style=flat-square" />
+  <img alt="Bun: project tooling" src="https://img.shields.io/badge/Bun-project%20tooling-51465c?style=flat-square" />
+  <img alt="Content: Thai" src="https://img.shields.io/badge/content-Thai-6741a5?style=flat-square" />
 </p>
 
-![หน้าหลักทีละบรรทัด พร้อมสารบัญ Python และ Git และมาสคอตมาชิโระ](docs/assets/home-preview.jpg)
+![Teelabandat home page showing the Python and Git table of contents and the Mashiro mascot](docs/assets/home-preview.jpg)
 
-## อ่าน ลองเขียน แล้วค่อยไปต่อ
+## Read it, try it, move on
 
-- **27 บทเรียน** ครอบคลุม Python และ Git พร้อม **109 ตัวอย่างโค้ด**
-- **โค้ดสั้นอ่านจบในกล่องเดียว** แยกโค้ดพื้นเข้มกับผลลัพธ์พื้นสว่างให้เห็นชัด
-- **ไล่การทำงานทีละขั้น** ดูบรรทัดที่ทำงาน ค่าตัวแปร และผลลัพธ์ในแต่ละจังหวะ
-- **ลองเปลี่ยนค่า** ในตัวอย่างที่เตรียมช่องให้แก้ แล้วรัน Python ในเบราว์เซอร์
-- **เล่นอัตโนมัติ หยุด หรืออ่านช้าลง** เลือกความเร็วได้ตามจังหวะของตัวเอง
-- **แบบฝึก Python 73 ข้อ** พร้อมเฉลยและคำอธิบาย
-- ค้นหาด้วยภาษาไทยหรือชื่อคำสั่ง อ่านได้ทั้งมือถือและเดสก์ท็อป
+- **27 lessons** across Python and Git, with **109 code examples**
+- **Examples short enough to fit one box**, with dark code panels separated from light output panels
+- **Step-by-step execution**: the line being run, the variable values, and the output at each point
+- **Editable values** in the examples that provide an input field, running Python in the browser
+- **Autoplay, pause, or slow down** to whatever pace suits you
+- **73 Python exercises** with answers and explanations
+- Search in Thai or by command name, on mobile or desktop
 
-ไม่ต้องสมัครบัญชี คำตอบแบบฝึกอยู่ในหน่วยความจำของหน้า และหายเมื่อรีเฟรช ไม่มีการเก็บความคืบหน้าการเรียน
+No account is required. Exercise answers are held in page memory and disappear on refresh. Learning progress is not stored.
 
 <details>
-<summary><strong>ดูตัวอย่างกล่องโค้ดและผลลัพธ์</strong></summary>
+<summary><strong>See an example code box and its output</strong></summary>
 
-![ตัวอย่างตรวจชนิดข้อมูลใน Python แยกส่วนโค้ดกับผลลัพธ์ที่อ่านง่าย](docs/assets/console-preview.jpg)
+![A Python type-checking example with the code and the output shown separately](docs/assets/console-preview.jpg)
 
-ตัวอย่างที่ซับซ้อนมีตัวเล่นทีละขั้น ส่วนตัวอย่างสั้นแสดงผลลัพธ์กับคำอธิบายกระชับ ไม่ต้องกดผ่านทีละบรรทัด
+Complex examples have a step player. Short examples show the output with a brief explanation, so there is nothing to click through.
 
 </details>
 
-## เปิดบนเครื่องตัวเอง
+## Run it locally
 
-ต้องมี **Node.js 22.22.0 ขึ้นไป** และ **Bun**
+You need **Node.js 22.22.0 or later** and **Bun**.
 
 ```sh
 git clone https://github.com/tantaihaha4487/teelabandat.git
@@ -45,55 +45,55 @@ bun install
 bun run dev
 ```
 
-เปิด URL ที่แสดงใน terminal โดยปกติคือ `http://127.0.0.1:4321/`
+Open the URL printed in the terminal, usually `http://127.0.0.1:4321/`.
 
-### สร้างเว็บพร้อมใช้งาน
+### Build for deployment
 
 ```sh
 bun run build
 bun run preview
 ```
 
-ไฟล์เว็บอยู่ใน `dist/` นำไปวางบนโฮสต์ที่รองรับเว็บ static ได้ ไม่ต้องตั้งค่า API key หรือฐานข้อมูล
+The site files land in `dist/` and can go on any host that serves static sites. There is no API key or database to configure.
 
-Python ทำงานใน Web Worker ผ่าน Pyodide ซึ่งถูกคัดลอกมาไว้กับเว็บตอนเริ่มพัฒนาหรือ build และโหลดเมื่อกดทดลอง ส่วน Git แสดงคำสั่งและคำอธิบาย ไม่สั่งงาน shell บนเครื่องผู้เรียน
+Python runs in a Web Worker through Pyodide, which is copied alongside the site when the dev server starts or when you build, and loads when you press run. Git lessons show commands and explanations; they do not run a shell on the learner's machine.
 
-## เพิ่มบทเรียนของตัวเอง
+## Add your own lessons
 
-เนื้อหาแยกจากหน้าตาเว็บ เพิ่มหมวดและบทเรียนแล้วสารบัญกับเมนูจะอัปเดตจากข้อมูล
+Content is separate from the interface. Add a section and its lessons, and the table of contents and menu update from that data.
 
-| อยากแก้อะไร | อยู่ที่ไหน |
+| What you want to change | Where it lives |
 | --- | --- |
-| หมวดการเรียน | `src/content/sections/` |
-| บทเรียน | `src/content/lessons/` |
-| โค้ดตัวอย่าง | `src/content/examples/` |
-| ขั้นตอน ค่าตัวแปร และช่องทดลอง | `src/content/teaching/` |
-| คลังโจทย์ | `src/data/python-bank.json` |
-| มาสคอต | `public/mascot/` |
+| Learning sections | `src/content/sections/` |
+| Lessons | `src/content/lessons/` |
+| Code examples | `src/content/examples/` |
+| Steps, variable values, and input fields | `src/content/teaching/` |
+| Exercise bank | `src/data/python-bank.json` |
+| Mascot | `public/mascot/` |
 
-อ่านรายละเอียดใน [CONTENT.md](CONTENT.md) และแนวทางหน้าตาเว็บใน [DESIGN.md](DESIGN.md)
+See [CONTENT.md](CONTENT.md) for content authoring instructions in Thai, and [DESIGN.md](DESIGN.md) for interface guidelines in English.
 
 <details>
-<summary><strong>คำสั่งสำหรับตรวจงานและที่มาเนื้อหา</strong></summary>
+<summary><strong>Checking commands and content sources</strong></summary>
 
 ```sh
-bun run validate       # ตรวจโครงสร้างเนื้อหาและข้อมูลตัวอย่าง
-bun run check          # ตรวจ Astro และ TypeScript
-bun run build          # ตรวจเนื้อหาและสร้างเว็บ
-bun run check:routes   # ตรวจลิงก์และเส้นทางจาก dist/
+bun run validate       # check content structure and example data
+bun run check          # check Astro and TypeScript
+bun run build          # check content and build the site
+bun run check:routes   # check links and routes from dist/
 ```
 
-การเทียบกับ Python101, Git101 และ Wayo ต้นฉบับจะทำเมื่อมีไฟล์อ้างอิงบนเครื่อง หากไม่มี จะข้ามเฉพาะการเทียบต้นฉบับและแจ้งไว้ในผลคำสั่ง
+Comparison against the original Python101, Git101, and Wayo material runs only when the reference files are present locally. Without them, only that comparison is skipped, and the command output says so.
 
-เนื้อหาเรียบเรียงจาก Python101, Git101 และคลังโจทย์ Wayo โดยเก็บโค้ด คำสั่ง ผลลัพธ์ และลำดับตัวเลือกเดิม ตัวอย่างสำหรับฝึกแก้ข้อผิดพลาดยังคงผิดตามต้นฉบับและมีป้ายบอก
+The content is adapted from Python101, Git101, and the Wayo exercise bank, keeping the original code, commands, output, and option ordering. Examples written for debugging practice still contain their original mistakes and are labeled as such.
 
-ดูบันทึกการเรียบเรียงด้วย Claude และ Humanizer ใน [docs/editorial](docs/editorial) และที่มามาสคอตใน [docs/mascot-assets.md](docs/mascot-assets.md)
+Editing notes for Claude and Humanizer are in [docs/editorial](docs/editorial) (in Thai). Mascot sources are listed in [docs/mascot-assets.md](docs/mascot-assets.md) (in English).
 
 </details>
 
 ---
 
 <p align="center">
-  <img src="public/mascot/nap.webp" width="104" height="104" alt="มาชิโระงีบอยู่หน้าแล็ปท็อป" /><br />
-  <sub>เรียนได้ตามจังหวะของตัวเอง</sub>
+  <img src="public/mascot/nap.webp" width="104" height="104" alt="Mashiro napping in front of a laptop" /><br />
+  <sub>Learn at your own pace</sub>
 </p>
