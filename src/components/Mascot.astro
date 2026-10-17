@@ -1,0 +1,13 @@
+---
+interface Props {
+  pose?: 'think' | 'sparkling' | 'nap' | 'surprise';
+  class?: string;
+  eager?: boolean;
+}
+const { pose = 'think', class: className, eager = false } = Astro.props;
+---
+<img class:list={['mascot-sticker', className]} src={`/mascot/${pose}.webp`} alt="" width="384" height="384" loading={eager ? 'eager' : 'lazy'} decoding="async" draggable="false"/>
+
+<style>
+  .mascot-sticker { display: block; width: var(--mascot-size, 9rem); height: auto; max-width: 100%; object-fit: contain; user-select: none; pointer-events: none; }
+</style>

@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import Icon from '../../../components/Icon.astro';
+import Mascot from '../../../components/Mascot.astro';
 import { sections, lessons, lessonUrl } from '../../../lib/content';
 export async function getStaticPaths() { return (await lessons()).map(lesson=>({ params:{ section:lesson.data.section, slug:lesson.id.replace(/^.*?\//,'') }, props:{ lesson } })); }
 const { lesson } = Astro.props;
@@ -15,6 +16,6 @@ const { Content, headings } = await render(lesson);
   <div class="lesson-shell">
     <aside class="chapter-sidebar"><a class="sidebar-home" href={`/learn/${section.id}/`}><Icon name={section.icon} size={22}/>{section.label}</a><div class="lesson-navigation desktop-chapter-nav"><p class="sidebar-label">บทเรียนในหมวดนี้</p><nav aria-label="รายการบทเรียน">{siblings.map((l,i)=><a href={lessonUrl(l)} aria-current={l.id===lesson.id?'page':undefined}><span>{String(i+1).padStart(2,'0')}</span>{l.data.title}</a>)}</nav></div><details class="lesson-navigation mobile-chapter-nav"><summary>เลือกบทเรียนในหมวดนี้</summary><nav aria-label="รายการบทเรียน">{siblings.map((l,i)=><a href={lessonUrl(l)} aria-current={l.id===lesson.id?'page':undefined}><span>{String(i+1).padStart(2,'0')}</span>{l.data.title}</a>)}</nav></details></aside>
     <article class="lesson-article"><div class="breadcrumbs"><a href="/learn/">บทเรียน</a><span aria-hidden="true">/</span><a href={`/learn/${section.id}/`}>{section.label}</a></div><header class="article-header"><p class="eyebrow">บทความ {String(index+1).padStart(2,'0')} / {String(siblings.length).padStart(2,'0')}</p><h1>{lesson.data.title}</h1><p>{lesson.data.description}</p></header><div class="prose"><Content/></div><nav class="lesson-pagination" aria-label="อ่านบทถัดไป">{previous ? <a href={lessonUrl(previous)}><small>← บทก่อนหน้า</small><span>{previous.data.title}</span></a>:<span/>}{next && <a class="next-lesson" href={lessonUrl(next)}><small>บทถัดไป →</small><span>{next.data.title}</span></a>}</nav></article>
-    <aside class="contents-rail"><details open><summary>ในบทความนี้</summary><nav aria-label="สารบัญในบทความ">{headings.filter(h=>h.depth===2).map(h=><a href={`#${h.slug}`}>{h.text}</a>)}</nav></details><p class="reading-note">ลองพิมพ์ตัวอย่างเอง<br/>แล้วเปลี่ยนค่าดูสักครั้ง</p></aside>
+    <aside class="contents-rail"><details open><summary>ในบทความนี้</summary><nav aria-label="สารบัญในบทความ">{headings.filter(h=>h.depth===2).map(h=><a href={`#${h.slug}`}>{h.text}</a>)}</nav></details><div class="rail-companion"><Mascot pose="think" class="rail-mascot"/><p class="reading-note">ลองพิมพ์ตัวอย่างเอง<br/>แล้วเปลี่ยนค่าดูสักครั้ง</p></div></aside>
   </div>
 </Base>

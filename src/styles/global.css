@@ -1599,3 +1599,38 @@ button:disabled {
 }
 
 @media(max-width:760px){.lesson-navigation summary{list-style-position:inside}}
+
+/* Mashiro's paper stickers sit beside the reading, never over it. */
+.mascot-desk { margin-block-start: 7.5rem; }
+.desk-companion { position: absolute; inset-block-start: -8.8rem; inset-inline-end: .5rem; width: 10.8rem; transform: rotate(5deg); transform-origin: 50% 90%; transition: transform 350ms cubic-bezier(.27,1.06,.18,1); }
+.hero-mascot { --mascot-size: 10.8rem; }
+.mascot-name { position: absolute; inset-inline-end: 9rem; inset-block-start: 4.5rem; padding: .15rem .65rem; color: var(--primary); background: var(--paper); border: 1px solid var(--outline); border-radius: 8px 8px 2px 8px; font-size: .73rem; white-space: nowrap; transform: rotate(-10deg); }
+.mascot-intro { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.search-mascot { --mascot-size: 10rem; flex: 0 0 10rem; transform: rotate(5deg); }
+.footer-companion { display: flex; align-items: center; gap: .45rem; }
+.footer-mascot { --mascot-size: 5rem; flex: none; }
+.footer-companion p { margin: 0; color: var(--muted); font-size: .76rem; }
+.rail-companion { margin-block-start: 2rem; padding-block-start: 1.1rem; border-block-start: 1px solid var(--outline); }
+.rail-mascot { --mascot-size: 7.5rem; margin-inline: auto; transform: rotate(-6deg); }
+.rail-companion .reading-note { margin-block-start: .35rem; padding-block-start: 0; border: 0; text-align: center; }
+.mascot-not-found { display: flex; align-items: center; justify-content: center; gap: 2rem; text-align: start; }
+.lost-mascot { --mascot-size: 15rem; flex: 0 1 15rem; transform: rotate(-5deg); }
+@media (hover: hover) and (pointer: fine) {
+  .mascot-desk:hover .desk-companion { transform: translateY(-5px) rotate(0deg); }
+}
+@media (max-width: 40rem) {
+  .mascot-desk { margin-block-start: 7.5rem; }
+  .desk-companion { inset-inline-end: .25rem; }
+  .search-mascot { --mascot-size: 6rem; flex-basis: 6rem; }
+  .mascot-intro { gap: .25rem; }
+  .mascot-intro h1 { font-size: 2rem; }
+  .footer-companion { justify-content: flex-start; }
+  .footer-mascot { --mascot-size: 4.5rem; }
+  .mascot-not-found { flex-direction: column; gap: .5rem; text-align: center; }
+  .mascot-not-found .eyebrow { justify-content: center; }
+  .lost-mascot { --mascot-size: 11rem; flex-basis: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .desk-companion { transition: none; }
+  .mascot-desk:hover .desk-companion { transform: rotate(5deg); }
+}

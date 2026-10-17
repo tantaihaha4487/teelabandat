@@ -6,6 +6,7 @@ import '@fontsource/ibm-plex-sans-thai/500.css';
 import '@fontsource/ibm-plex-sans-thai/600.css';
 import '@fontsource/jetbrains-mono/400.css';
 import Icon from '../components/Icon.astro';
+import Mascot from '../components/Mascot.astro';
 import { sections, sectionUrl } from '../lib/content';
 interface Props { title: string; description?: string; current?: string; wide?: boolean; }
 const { title, description = 'บทเรียน Python และ Git ภาษาไทย พร้อมคำอธิบายโค้ดทีละบรรทัด และแบบฝึกสำหรับผู้เริ่มต้น', current = '', wide = false } = Astro.props;
@@ -24,6 +25,6 @@ const nav = await sections();
       <details class="mobile-nav"><summary>เมนู <span aria-hidden="true">+</span></summary><nav aria-label="เมนูบนมือถือ"><a href="/learn/">บทเรียนทั้งหมด</a>{nav.map(s=><a href={sectionUrl(s)} aria-current={current === s.id ? 'page' : undefined}>{s.label}</a>)}</nav></details>
     </header>
     <main id="main" class:list={['main-shell', { wide }]}><slot/></main>
-    <footer class="site-footer"><a class="footer-brand" href="/">ทีละบรรทัด<span>อ่าน ลองเขียน แล้วค่อยไปต่อ</span></a><nav aria-label="ท้ายหน้า"><a href="/learn/">เลือกบทเรียน</a><a href="/search/">ค้นหาเนื้อหา</a></nav><p>เรียนได้ตามจังหวะของตัวเอง</p></footer>
+    <footer class="site-footer"><a class="footer-brand" href="/">ทีละบรรทัด<span>อ่าน ลองเขียน แล้วค่อยไปต่อ</span></a><nav aria-label="ท้ายหน้า"><a href="/learn/">เลือกบทเรียน</a><a href="/search/">ค้นหาเนื้อหา</a></nav><div class="footer-companion"><Mascot pose="nap" class="footer-mascot"/><p>เรียนได้ตามจังหวะของตัวเอง</p></div></footer>
   </body>
 </html>
