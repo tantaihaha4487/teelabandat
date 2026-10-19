@@ -1,59 +1,68 @@
 ---
 section: python101
 title: "ฟังก์ชันใน Python"
-description: "เรียนการสร้าง function ใน Python การส่ง parameter การคืนค่าด้วย return scope และการแบ่งโค้ดให้อ่านง่าย"
+description: "สร้าง function ส่งค่าเข้าไปด้วย parameter รับผลกลับด้วย return และเข้าใจว่าตัวแปรใน function ใช้ได้ถึงไหน"
 order: 7
 source: python101/functions.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/python101.json';
 
-Function คือชุดคำสั่งที่ตั้งชื่อไว้ ใช้เรียกซ้ำได้หลายครั้ง และช่วยแยกงานแต่ละส่วนให้โค้ดอ่านง่ายขึ้น
+Function คือชุดคำสั่งที่เราตั้งชื่อไว้ อยากใช้เมื่อไรก็เรียกชื่อนั้น ไม่ต้องเขียนคำสั่งเดิมซ้ำ และช่วยแบ่งโปรแกรมยาว ๆ เป็นส่วนเล็กที่อ่านง่าย จริง ๆ แล้วเราใช้ function มาตั้งแต่บทแรก `print()` และ `input()` ก็เป็น function ที่ Python เตรียมไว้ให้
+
+<Flow
+  caption="ส่งค่าเข้าไป function ทำงานกับค่านั้น แล้วส่งผลลัพธ์ออกมาให้เก็บใส่ตัวแปร"
+  steps={[
+    { label: 'ส่งค่าเข้าไป (arguments)', code: 'add(3, 4)' },
+    { label: 'function ทำงานกับค่าที่ได้รับ', code: 'a + b' },
+    { label: 'ส่งผลลัพธ์กลับ', code: 'return 7' },
+    { label: 'เก็บผลไว้ใช้ต่อ', code: 'result = 7' },
+  ]}
+/>
 
 ## สร้าง function
 
-<CodeExample example={examples['python101-functions-01']} />
-ผลลัพธ์:
+ใช้ `def` ตามด้วยชื่อ วงเล็บ และ `:` บรรทัดที่ย่อหน้าเข้าไปคือคำสั่งข้างใน การสร้าง function ยังไม่ทำให้มันทำงาน ต้องเรียกชื่อพร้อมวงเล็บอย่าง `greet()` ก่อน
 
+<CodeExample example={examples['python101-functions-01']} />
 ## พารามิเตอร์ (Parameters)
 
-Parameters คือค่าที่ส่งเข้าไปใน function เพื่อให้ function ทำงานกับข้อมูลต่างกันได้
+parameter คือช่องรับค่าที่ function รอไว้ ค่าที่ส่งเข้าไปตอนเรียกจะถูกใส่ในช่องนั้น function เดียวจึงทำงานกับข้อมูลที่ต่างกันได้
 
 <CodeExample example={examples['python101-functions-03']} />
 ผลลัพธ์: `สวัสดี Mali`
 
 ## ค่าที่ส่งกลับ (Return value)
 
-`return` ใช้ส่งค่ากลับออกมาจาก function เพื่อเอาไปเก็บ ใช้ต่อ หรือคำนวณต่อได้
+`return` ส่งค่าออกมาจาก function เพื่อให้โค้ดส่วนอื่นเอาไปเก็บ แสดง หรือคำนวณต่อ
 
 <CodeExample example={examples['python101-functions-04']} />
-ใช้ `return` เมื่อ function ควรส่งค่ากลับไปให้ส่วนอื่นใช้ต่อ
+`add(3, 4)` ส่ง `7` กลับมา แล้ว `7` ถูกเก็บไว้ใน `result` ก่อนนำไป `print()`
 
-ถ้า function ใช้ `return` เราสามารถเก็บผลลัพธ์ไว้ในตัวแปร เช่น `result` แล้วนำไป `print()` หรือคำนวณต่อได้
+ความต่างระหว่าง `print()` กับ `return` ที่มือใหม่สับสนบ่อย: `print()` แค่แสดงค่าบนหน้าจอ ส่วน `return` ส่งค่ากลับมาให้โปรแกรมใช้ต่อได้
 
 ## ค่าเริ่มต้นของพารามิเตอร์ (Default arguments)
 
-Default arguments คือค่าตั้งต้นที่ function ใช้เมื่อเราไม่ส่งค่าเข้ามา
+default argument คือค่าที่ function ใช้แทนเมื่อเราไม่ได้ส่งค่าเข้ามา
 
 <CodeExample example={examples['python101-functions-05']} />
-ผลลัพธ์:
+เรียก `greet()` เปล่า ๆ จึงได้ `Hello friend` ส่วน `greet("Anan")` ได้ชื่อที่เราส่งไป
 
 ## ขอบเขตของตัวแปร (Scope)
 
-ตัวแปรที่สร้างใน function จะใช้ได้ใน function นั้นเท่านั้น
-
-ถ้าเรียกใช้ตัวแปรนั้นนอก function จะเกิด error เพราะตัวแปรอยู่นอกขอบเขตที่เข้าถึงได้
+ตัวแปรที่สร้างข้างใน function มีอยู่แค่ใน function นั้น ถ้าเรียกใช้จากนอก function จะเกิด error เพราะข้างนอกมองไม่เห็นตัวแปรนั้น
 
 <CodeExample example={examples['python101-functions-07']} />
-ผลลัพธ์: `16`
+ผลลัพธ์: `16` เพราะ `print(age)` อยู่ข้างใน function เดียวกับที่สร้าง `age`
 
 ## ข้อผิดพลาดที่พบบ่อย
 
-- ลืมเรียก function หลังสร้าง
-- ใช้ `print()` แทน `return` ในงานที่ต้องนำค่าไปคำนวณต่อ
-- ตั้งชื่อ function ไม่ชัดเจน
+- สร้าง function แล้วลืมเรียกใช้
+- ใช้ `print()` แทน `return` ในงานที่ต้องเอาค่าไปคำนวณต่อ
+- ตั้งชื่อ function ไม่บอกว่ามันทำอะไร
 
 ## แบบฝึกหัด
 
@@ -66,7 +75,7 @@ Default arguments คือค่าตั้งต้นที่ function ใ�
 
 ### เฉลยข้อ 1
 
-สร้าง function ที่รับค่า Celsius แล้ว `return` ค่า Fahrenheit เพื่อเอาผลลัพธ์ไปใช้ต่อได้
+function รับค่า Celsius แล้ว `return` ค่า Fahrenheit ออกมา เราจึงเอาผลไปใส่ `print()` ได้ทันที
 
 <CodeExample example={examples['python101-functions-08']} />
 ผลลัพธ์: `32.0`
@@ -80,11 +89,9 @@ Default arguments คือค่าตั้งต้นที่ function ใ�
 
 ### เฉลยข้อ 3
 
-เลขคู่คือเลขที่หาร 2 แล้วเศษเป็น 0
+เลขคู่คือเลขที่หารด้วย 2 แล้วเหลือเศษ 0 `%` ให้ค่าเศษจากการหาร และ `== 0` ให้ผลเป็น `True` หรือ `False` ซึ่ง `return` ออกไปได้เลย
 
 <CodeExample example={examples['python101-functions-10']} />
-ผลลัพธ์:
-
 </details>
 
 ## โจทย์ท้าทาย
@@ -94,11 +101,11 @@ Default arguments คือค่าตั้งต้นที่ function ใ�
 <details class="answer-reveal">
 <summary>ดูเฉลยโจทย์ท้าทาย</summary>
 
-แยกแต่ละเครื่องหมายเป็น function แล้วใช้ `if/elif/else` เพื่อครอบคลุม `+`, `-`, `*`, `/`, การหารด้วยศูนย์ และเครื่องหมายที่ไม่รู้จัก
+แต่ละเครื่องหมายมี function ของตัวเอง แล้วใช้ `if/elif/else` เลือกว่าจะเรียกตัวไหน `divide` ตรวจก่อนว่าตัวหารเป็นศูนย์หรือเปล่า ส่วนเครื่องหมายที่ไม่รู้จักจะตกไปที่ `else`
 
 <CodeExample example={examples['python101-functions-12']} />
 </details>
 
 ## สรุป
 
-Function ช่วยให้โค้ดเป็นระเบียบและลดการเขียนซ้ำ และเป็นทักษะที่ต้องใช้ต่อเมื่อเขียนโปรแกรมที่ใหญ่ขึ้น
+function ทำให้โค้ดเป็นระเบียบและไม่ต้องเขียนซ้ำ ใช้ parameter รับค่าเข้า ใช้ `return` ส่งผลออก โปรแกรมยิ่งใหญ่ยิ่งต้องแบ่งงานเป็น function

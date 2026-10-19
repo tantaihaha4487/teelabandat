@@ -1,0 +1,85 @@
+---
+// A step-by-step diagram for lessons: boxes joined by arrows, read as an ordered list.
+// Each step has a short label and an optional detail line or code sample.
+interface Step { label: string; detail?: string; code?: string; }
+interface Props { steps: Step[]; caption: string; loop?: string; }
+const { steps, caption, loop } = Astro.props;
+---
+<figure class="flow">
+  <ol class="flow__steps">
+    {steps.map((step, i) => (
+      <li class="flow__step" style={`--i:${i}`}>
+        <span class="flow__number" aria-hidden="true">{i + 1}</span>
+        <strong>{step.label}</strong>
+        {step.code && <code>{step.code}</code>}
+        {step.detail && <span class="flow__detail">{step.detail}</span>}
+      </li>
+    ))}
+  </ol>
+  {loop && <p class="flow__loop"><span aria-hidden="true">↺</span>{loop}</p>}
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .flow { margin-block: 28px; padding: 20px; border-radius: var(--shape-xl); background: var(--md-surface-container-low); }
+  .flow__steps { display: flex; flex-wrap: wrap; align-items: stretch; gap: 28px; margin: 0; padding: 0; list-style: none; counter-reset: none; }
+  .flow__step {
+    position: relative;
+    flex: 1 1 150px;
+    display: grid;
+    align-content: start;
+    gap: 4px;
+    min-width: 0;
+    padding: 14px 16px 16px;
+    border-radius: var(--shape-lg);
+    background: var(--md-surface-container-lowest);
+    border: 1px solid var(--md-outline-variant);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .flow__step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 16px;
+    height: 16px;
+    background: var(--md-primary);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h16m-6-6 6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h16m-6-6 6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    translate: 0 -50%;
+  }
+  .flow__number {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 4px;
+    border-radius: var(--shape-full);
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .flow__step strong { font-weight: 600; color: var(--md-on-surface); }
+  .flow__step code {
+    width: fit-content;
+    max-width: 100%;
+    padding: 2px 8px;
+    border-radius: var(--shape-sm);
+    background: var(--code-bg);
+    color: var(--code-ink);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .flow__detail { font-size: 15px; color: var(--md-on-surface-variant); }
+  .flow__loop { display: flex; align-items: center; gap: 8px; margin: 14px 0 0; font-size: 15px; color: var(--md-primary); font-weight: 600; }
+  .flow__loop span { font-size: 20px; line-height: 1; }
+  .flow figcaption { margin-top: 12px; font-size: 15px; line-height: 1.7; color: var(--md-on-surface-variant); }
+  @media (max-width: 599px) {
+    .flow { padding: 14px; }
+    .flow__steps { flex-direction: column; gap: 22px; }
+    .flow__step { flex-basis: auto; }
+    .flow__step:not(:last-child)::after { top: auto; bottom: -19px; right: auto; left: 28px; rotate: 90deg; translate: 0 0; }
+  }
+</style>

@@ -9,21 +9,21 @@
           1,
           1
         ],
-        "note": "git status แสดงสถานะของไฟล์ในโฟลเดอร์ปัจจุบัน บอกว่าไฟล์ไหนถูกแก้ไข ไฟล์ไหนยังไม่ได้ติดตาม และกำลังอยู่บน branch ไหน รวมถึงไฟล์ที่อยู่ใน staging area แล้ว"
+        "note": "ดูสถานะก่อนทำอะไร: อยู่ branch ไหน ไฟล์ไหนถูกแก้ ไฟล์ไหน Git ยังไม่ติดตาม และไฟล์ไหนอยู่ใน staging area แล้ว"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git add README.md นำไฟล์ README.md เข้าสู่ staging area เพื่อเตรียมบันทึกการเปลี่ยนแปลง โดยเลือกเฉพาะไฟล์นี้ ไม่กระทบไฟล์อื่น"
+        "note": "เลือกเฉพาะ README.md เข้า staging area ไฟล์อื่นที่แก้ไว้ยังไม่ถูกเลือก"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git commit -m \"Add project notes\" บันทึกการเปลี่ยนแปลงที่อยู่ใน staging area พร้อมข้อความอธิบายว่า Add project notes"
+        "note": "บันทึกสิ่งที่อยู่ใน staging area เป็น commit ใหม่ พร้อมข้อความ Add project notes บอกว่าทำอะไร"
       }
     ],
     "status": "working",
@@ -39,21 +39,21 @@
           1,
           1
         ],
-        "note": "git branch แสดงรายชื่อ branch ในเครื่อง (local) เท่านั้น ไม่รวม branch บน remote และทำเครื่องหมาย branch ที่ใช้งานอยู่ตอนนี้"
+        "note": "แสดงรายชื่อ branch ในเครื่อง (ไม่รวม branch บน remote) branch ที่อยู่ตอนนี้มีเครื่องหมาย * นำหน้า"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git switch -c feature-login สร้าง branch ใหม่ชื่อ feature-login จากจุดที่อยู่ตอนนี้ แล้วสลับไปทำงานในสาขานั้นทันที"
+        "note": "สร้าง branch ใหม่ชื่อ feature-login แยกจากจุดที่อยู่ตอนนี้ แล้วย้ายไปอยู่ทันที (-c ย่อมาจาก create)"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git switch main สลับกลับไปทำงานที่ branch main"
+        "note": "สลับกลับไปที่ main ไฟล์ในโฟลเดอร์จะเปลี่ยนกลับเป็นแบบของ main"
       }
     ],
     "status": "working",
@@ -69,28 +69,28 @@
           1,
           1
         ],
-        "note": "git switch -c feature-notes สร้าง branch ใหม่ชื่อ feature-notes สำหรับงานนี้ แล้วสลับไปทำงานในสาขานั้น"
+        "note": "สร้าง branch ใหม่สำหรับงานนี้โดยเฉพาะ แล้วย้ายไปอยู่ทันที"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git add notes.md เลือกไฟล์ notes.md ที่แก้แล้วเข้า staging area เพื่อเตรียม commit"
+        "note": "เลือก notes.md ที่แก้แล้วเข้า staging area"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git commit -m \"Update study notes\" บันทึกการเปลี่ยนแปลงเป็น commit ที่มีข้อความบอกเจตนา ให้คนอื่นในทีมอ่านแล้วเข้าใจว่าทำอะไร"
+        "note": "บันทึกเป็น commit พร้อมข้อความที่บอกว่าทำอะไร เพื่อนในทีมอ่านแล้วเข้าใจทันที"
       },
       {
         "range": [
           4,
           4
         ],
-        "note": "git push -u origin feature-notes ส่ง branch feature-notes ขึ้นไปยัง remote ชื่อ origin และตั้งความสัมพันธ์ tracking กับ branch นั้นบน origin ทำให้ push หรือ pull ครั้งต่อไปพิมพ์สั้นลงโดยไม่ต้องระบุ remote กับชื่อ branch อีก"
+        "note": "ส่ง branch feature-notes ขึ้น origin -u ผูก branch ในเครื่องกับ branch ชื่อเดียวกันบน origin ครั้งต่อไปพิมพ์แค่ git push หรือ git pull ก็พอ"
       }
     ],
     "status": "working",
@@ -106,21 +106,21 @@
           1,
           1
         ],
-        "note": "git log แสดงประวัติ commit ที่ไปถึงได้จาก HEAD หรือ branch ปัจจุบัน ไม่ใช่ทุก branch ในโปรเจกต์ ถ้าต้องการดูทุก branch ต้องใส่ตัวเลือก --all"
+        "note": "แสดงรายการ commit ใหม่สุดอยู่บน เห็นเฉพาะ commit ที่ไล่ย้อนได้จาก branch ปัจจุบัน ถ้าอยากเห็นทุก branch ให้เพิ่ม --all (กด q เพื่อออก)"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git show <commit> แสดงรายละเอียดของ commit ที่ระบุ ต้องแทน <commit> ด้วย hash หรือชื่ออ้างอิงจริงของ commit นั้น"
+        "note": "ดูว่า commit เดียวเปลี่ยนอะไรไปบ้าง เปลี่ยน <commit> เป็นรหัส (hash) หรือชื่ออ้างอิงของ commit นั้นจริง ๆ"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git diff แสดงความแตกต่างระหว่างไฟล์ใน working tree กับสิ่งที่อยู่ใน staging area (index) เมื่อไม่ใส่ตัวเลือกเพิ่มเติม ถ้าต้องการเทียบ staging area กับ commit ล่าสุดให้ใช้ git diff --staged"
+        "note": "ไม่ใส่ตัวเลือกอะไร จะเทียบไฟล์ใน working tree กับสิ่งที่อยู่ใน staging area คือเห็นสิ่งที่แก้แต่ยังไม่ได้ add ถ้าอยากเทียบ staging area กับ commit ล่าสุดให้ใช้ git diff --staged"
       }
     ],
     "status": "working",
@@ -136,7 +136,7 @@
           1,
           1
         ],
-        "note": "git merge feature-notes นำประวัติของ branch feature-notes มารวมเข้ากับ branch ที่กำลัง checkout อยู่ตอนนี้ เช่น main"
+        "note": "ดึงประวัติจาก feature-notes เข้ามารวมใน branch ที่เราอยู่ตอนนี้ เช่น main จึงต้องสลับไป branch ที่จะรับงานก่อนรันคำสั่งนี้"
       }
     ],
     "status": "working",
@@ -152,21 +152,21 @@
           1,
           1
         ],
-        "note": "git init เริ่ม repository ใหม่ในโฟลเดอร์ปัจจุบัน สำหรับโปรเจกต์โน้ตนี้"
+        "note": "เริ่ม repository ใหม่ในโฟลเดอร์ของโปรเจกต์โน้ต"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git add README.md เลือกไฟล์แนะนำโปรเจกต์เข้า staging area"
+        "note": "เลือก README.md ไฟล์แนะนำโปรเจกต์เข้า staging area"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git commit -m \"Start notes project\" บันทึกจุดเริ่มต้นของโปรเจกต์เป็น commit แรก"
+        "note": "บันทึกเป็น commit แรก ซึ่งเป็นจุดเริ่มต้นในประวัติของโปรเจกต์"
       }
     ],
     "status": "working",
@@ -182,28 +182,28 @@
           1,
           1
         ],
-        "note": "git remote -v แสดง URL ของ remote ที่ repository นี้รู้จักทั้งหมด ทั้ง URL ตอนรับข้อมูล (fetch) และตอนส่งข้อมูล (push)"
+        "note": "แสดง remote ทั้งหมดที่ repository นี้รู้จัก พร้อม URL ที่ใช้ดึงข้อมูล (fetch) และส่งข้อมูล (push)"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git push origin main ส่ง commit จาก branch main ในเครื่องไปยัง remote ชื่อ origin"
+        "note": "ส่ง commit จาก main ในเครื่องขึ้นไปที่ remote ชื่อ origin"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git pull origin main ดึงการเปลี่ยนแปลงของ main จาก origin มารวมเข้ากับ branch ที่กำลัง checkout อยู่ในเครื่อง ไม่ใช่ branch อื่น"
+        "note": "ดึงงานบน main ของ origin มารวมกับ branch ที่เราอยู่ตอนนี้ ไม่ว่า branch นั้นจะชื่ออะไร ไม่ได้รวมเข้า branch อื่น"
       },
       {
         "range": [
           4,
           4
         ],
-        "note": "git fetch origin ดึงข้อมูลล่าสุดจาก origin เข้ามาเก็บไว้ แต่ยังไม่รวมเข้ากับ branch ปัจจุบัน และยังไม่เปลี่ยนไฟล์งานทันที"
+        "note": "ดึงข้อมูลล่าสุดจาก origin มาเก็บไว้ดูก่อน ยังไม่รวมเข้ากับ branch ที่อยู่ และไฟล์งานยังไม่เปลี่ยน"
       }
     ],
     "status": "working",
@@ -219,21 +219,21 @@
           1,
           1
         ],
-        "note": "git init สร้างโฟลเดอร์ข้อมูล Git (.git) ในโฟลเดอร์ปัจจุบัน เพื่อเริ่มเก็บประวัติของโปรเจกต์ใหม่"
+        "note": "สร้างโฟลเดอร์ซ่อน .git ในโฟลเดอร์ปัจจุบัน แล้ว Git ก็เริ่มเก็บประวัติของโปรเจกต์นี้ได้"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git clone https://github.com/user/repo.git คัดลอก repository จาก URL ที่ระบุมาเก็บไว้ในเครื่อง พร้อมประวัติทั้งหมดและตั้ง remote ชื่อ origin ให้อัตโนมัติ หลัง clone ต้อง cd เข้าไปในโฟลเดอร์ repo ที่ได้มาก่อนจึงจะใช้คำสั่ง git ต่อได้"
+        "note": "คัดลอก repository จาก URL มาไว้ในเครื่อง ได้ทั้งไฟล์และประวัติทั้งหมด และตั้ง remote ชื่อ origin ให้เอง เสร็จแล้วต้อง cd เข้าโฟลเดอร์ที่ได้มาก่อนใช้คำสั่ง git อื่น"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git status ตรวจสอบสถานะไฟล์ของ repository ที่กำลังเปิดอยู่ ต้องอยู่ในโฟลเดอร์ repo นั้นก่อน ไม่ว่าจะมาจาก git init หรือ git clone"
+        "note": "ดูสถานะของ repository ที่อยู่ตอนนี้ ต้องอยู่ในโฟลเดอร์ของ repository นั้นก่อน ไม่ว่าจะได้มาจาก init หรือ clone"
       }
     ],
     "status": "working",
@@ -249,21 +249,21 @@
           1,
           1
         ],
-        "note": "git status แสดงสถานะของไฟล์ในโฟลเดอร์ปัจจุบัน ใช้ตรวจงานที่ยังไม่ commit ก่อนเริ่มหรือจบการฝึกแต่ละสัปดาห์"
+        "note": "ดูว่ามีงานที่ยังไม่ commit หรือเปล่า ทำก่อนเริ่มและหลังจบการฝึกแต่ละครั้ง"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git log --oneline --decorate --graph --all แสดงประวัติ commit ของทุก branch แบบย่อบรรทัดเดียว พร้อมภาพกราฟแสดงความสัมพันธ์ของสาขา การใส่ --all ทำให้เห็นทุก branch ไม่ใช่แค่ branch ปัจจุบัน โดย --decorate แสดงชื่ออ้างอิง เช่น ชื่อ branch และ tag ที่ชี้มายัง commit"
+        "note": "วาดประวัติทุก branch เป็นกราฟ commit ละบรรทัด --all ทำให้เห็นทุก branch ไม่ใช่แค่ branch ที่อยู่ และ --decorate แสดงชื่อ branch หรือ tag ที่ชี้อยู่ที่แต่ละ commit"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git branch --show-current แสดงชื่อ branch ที่กำลังใช้งานอยู่ตอนนี้ เพื่อยืนยันว่ากำลังฝึกอยู่บน branch ที่ตั้งใจ"
+        "note": "แสดงชื่อ branch ที่อยู่ตอนนี้ ไว้ยืนยันว่ากำลังฝึกบน branch ที่ตั้งใจ"
       }
     ],
     "status": "working",
@@ -279,21 +279,21 @@
           1,
           1
         ],
-        "note": "git --version แสดงเวอร์ชันของ Git ที่ติดตั้งอยู่ในเครื่อง"
+        "note": "เช็กว่าติดตั้ง Git แล้วหรือยัง ถ้าขึ้นเลขเวอร์ชันแปลว่าพร้อมใช้"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git config --global user.name \"Your Name\" ตั้งชื่อผู้ใช้ที่จะแสดงในทุก commit ใหม่ของ repository ทั้งหมดบนเครื่องนี้ สำหรับผู้ใช้ OS คนนี้ ยกเว้น repository ใดมีการตั้งค่าเฉพาะที่ override ไว้ ค่านี้ไม่กระทบ commit ที่มีอยู่แล้ว"
+        "note": "ตั้งชื่อที่จะติดไปกับทุก commit ใหม่ --global ทำให้ใช้กับทุก repository ของผู้ใช้คนนี้ในเครื่อง ยกเว้น repository ที่ตั้งชื่อเฉพาะไว้เอง commit ที่ทำไปแล้วไม่เปลี่ยนตาม"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git config --global user.email \"you@example.com\" ตั้งอีเมลที่จะแสดงในทุก commit ใหม่เช่นเดียวกับ user.name เปลี่ยนค่าตัวอย่างเป็นอีเมลของคุณเอง"
+        "note": "ตั้งอีเมลที่ติดไปกับทุก commit ใหม่แบบเดียวกับชื่อ อย่าลืมเปลี่ยนเป็นอีเมลของคุณเอง"
       }
     ],
     "status": "working",
@@ -309,21 +309,21 @@
           1,
           1
         ],
-        "note": "git add file.txt นำไฟล์ file.txt เข้าสู่ staging area"
+        "note": "เลือกเฉพาะ file.txt เข้า staging area"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git add . นำการเปลี่ยนแปลงทั้งหมดใต้โฟลเดอร์ปัจจุบันเข้าสู่ staging area รวมถึงไฟล์ใหม่ที่ยังไม่ถูกติดตาม (untracked) แต่ไม่รวมไฟล์ที่ถูก ignore ไว้ ควรตรวจด้วย git status ก่อน commit"
+        "note": "จุดคือโฟลเดอร์ปัจจุบัน คำสั่งนี้เลือกทุกการเปลี่ยนแปลงในโฟลเดอร์นี้ รวมไฟล์ใหม่ที่ Git ยังไม่ติดตาม แต่ไม่รวมไฟล์ที่ตั้งให้ ignore ไว้ เช็ก git status ก่อน commit ว่าไม่มีไฟล์ที่ไม่ตั้งใจติดไป"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git commit -m \"Write first draft\" บันทึกสิ่งที่ staged เป็น commit ใหม่ พร้อมข้อความว่าเป็นร่างแรก"
+        "note": "บันทึกทุกอย่างใน staging area เป็น commit ใหม่ ข้อความ Write first draft บอกว่าเป็นร่างแรก"
       }
     ],
     "status": "working",
@@ -339,21 +339,21 @@
           1,
           1
         ],
-        "note": "git restore file.txt คืนไฟล์ file.txt ให้ตรงกับสถานะที่ถูก stage ล่าสุด ไม่ใช่กลับไปที่ commit ล่าสุดเสมอ การแก้ไขที่ยังไม่ stage ของไฟล์นั้นจะหายไป และอาจกู้คืนไม่ได้"
+        "note": "ทิ้งการแก้ไขใน file.txt ที่ยังไม่ได้ stage ไฟล์จะกลับไปเหมือนเวอร์ชันที่ stage ไว้ล่าสุด (ถ้าไม่ได้ stage อะไรไว้ ก็คือเหมือนตอน commit ล่าสุด) สิ่งที่ทิ้งไปอาจกู้คืนไม่ได้"
       },
       {
         "range": [
           2,
           2
         ],
-        "note": "git reset --soft HEAD~1 เลื่อน branch กลับไปหนึ่ง commit โดยคงเนื้อหาของ commit นั้นไว้ใน staging area รวมกับสิ่งที่ staged อยู่ก่อนแล้วถ้ามี เหมาะกับ commit ที่ยังไม่ push และยังไม่มีใครใช้ประวัตินั้นร่วมกัน"
+        "note": "ถอย branch กลับหนึ่ง commit แต่เนื้อหาของ commit นั้นยังรออยู่ใน staging area ครบ (รวมกับของที่ stage ไว้ก่อนแล้วถ้ามี) ใช้กับ commit ที่ยังไม่ push และยังไม่มีใครใช้ประวัตินั้นร่วมกัน"
       },
       {
         "range": [
           3,
           3
         ],
-        "note": "git revert <commit> สร้าง commit ใหม่ที่ยกเลิกผลของ commit ที่ระบุ โดยไม่ลบ commit เดิมออกจากประวัติ ต้องแทน <commit> ด้วย hash จริง"
+        "note": "สร้าง commit ใหม่ที่ทำตรงข้ามกับ commit ที่ระบุ commit เดิมยังอยู่ในประวัติ จึงปลอดภัยกับงานที่ push แล้ว เปลี่ยน <commit> เป็นรหัสจริง"
       }
     ],
     "status": "working",

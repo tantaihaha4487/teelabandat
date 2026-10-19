@@ -1,28 +1,45 @@
 ---
 section: python101
 title: "จัดการข้อผิดพลาดใน Python"
-description: "เรียนการอ่าน error และจัดการข้อผิดพลาดใน Python ด้วย try, except, else, finally และการตรวจสอบ input"
+description: "อ่าน error ให้เข้าใจ แล้วจัดการด้วย try, except และ finally เพื่อไม่ให้โปรแกรมหยุดกลางทางเมื่อผู้ใช้กรอกผิด"
 order: 9
 source: python101/errors.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/python101.json';
 
-Error เป็นเรื่องปกติของการเขียนโปรแกรม จุดสำคัญคือการอ่าน error ให้เข้าใจและจัดการให้เหมาะสม มากกว่าการพยายามไม่ให้เกิด error เลย
+ทุกคนเจอ error ตลอด รวมถึงคนที่เขียนโปรแกรมมาหลายปี สิ่งที่ต้องฝึกคืออ่าน error ให้รู้ว่าผิดตรงไหน และเตรียมรับมือกับสิ่งที่ผู้ใช้อาจทำผิด เช่น พิมพ์ตัวอักษรในช่องที่ต้องเป็นตัวเลข
 
 ## try และ except
 
+ใส่โค้ดที่อาจพังไว้ใน `try` แล้วบอกใน `except` ว่าถ้าพังด้วย error ชนิดนั้นจะให้ทำอะไรแทน
+
+<Flow
+  caption="ถ้าไม่มี error โค้ดใน except จะไม่ทำงานเลย"
+  steps={[
+    { label: 'ลองทำโค้ดใน try', code: 'int(input(...))' },
+    { label: 'ถ้าเกิด error ชนิดที่ระบุ', code: 'ValueError' },
+    { label: 'ข้ามไปทำโค้ดใน except', code: 'print("กรุณากรอกตัวเลข")' },
+    { label: 'โปรแกรมทำงานต่อได้', detail: 'ไม่หยุดกลางทาง' },
+  ]}
+/>
+
 <CodeExample example={examples['python101-errors-01']} />
-ถ้าโค้ดใน `try` เกิด `ValueError` โปรแกรมจะไปทำงานใน `except`
+ถ้าผู้ใช้พิมพ์ `abc` บรรทัด `int(...)` จะเกิด `ValueError` Python จึงข้ามไปทำงานใน `except` แทนการหยุดโปรแกรมพร้อม error ยาว ๆ
 
 ## finally
 
+โค้ดใน `finally` ทำงานเสมอ ไม่ว่าจะเกิด error หรือไม่ มักใช้กับงานเก็บกวาดที่ต้องทำทุกครั้ง
+
 <CodeExample example={examples['python101-errors-02']} />
-`finally` ทำงานเสมอ ไม่ว่าจะ error หรือไม่
+กรอกเลขถูกหรือผิด ก็จะเห็น `จบการทำงาน` เสมอ (กล่องผลลัพธ์ของตัวอย่างนี้แสดง traceback ของหัวข้อ "อ่าน traceback" ด้านล่าง ไม่ใช่ผลจากโค้ดนี้)
 
 ## ชนิด Error ที่พบบ่อย (Common errors)
+
+ชื่อ error บอกใบ้ได้มากว่าผิดเรื่องอะไร
 
 | Error | สาเหตุที่พบบ่อย |
 | --- | --- |
@@ -34,17 +51,24 @@ Error เป็นเรื่องปกติของการเขีย�
 
 ## อ่าน traceback
 
-Traceback จะบอกไฟล์ บรรทัด และชนิด error ให้ดูจากบรรทัดล่างสุดก่อน แล้วค่อยย้อนขึ้นไปดูตำแหน่งในโค้ด
+traceback คือข้อความ error ที่ Python แสดงเมื่อโปรแกรมพัง มันบอกชื่อไฟล์ เลขบรรทัด และชนิดของ error ให้อ่านจากบรรทัดล่างสุดก่อน แล้วค่อยย้อนขึ้นไปดูว่าผิดที่บรรทัดไหน
 
 ตัวอย่างเช่น ถ้าเขียน `print(age + 1)` โดยที่ `age` เป็นข้อความ:
 
-ให้อ่านบรรทัดล่างสุดก่อน: `TypeError` บอกว่าเราเอา string ไปบวกกับ int ไม่ได้ จากนั้นดู `line 2` เพื่อกลับไปแก้บรรทัดที่ผิด
+```text
+Traceback (most recent call last):
+  File "main.py", line 2, in <module>
+    print(age + 1)
+TypeError: can only concatenate str (not "int") to str
+```
+
+บรรทัดล่างสุด `TypeError` บอกว่าเอา string ไปบวกกับ int ไม่ได้ ส่วน `line 2` บอกว่าต้องกลับไปแก้บรรทัดที่ 2
 
 ## ข้อผิดพลาดที่พบบ่อย
 
-- ใช้ `except:` กว้างเกินไปจนไม่รู้ว่า error อะไร
-- ซ่อน error ทั้งหมดด้วยข้อความทั่วไป
-- ไม่แก้สาเหตุจริงของ error
+- เขียน `except:` เปล่า ๆ ซึ่งจับทุก error จนไม่รู้ว่าจริง ๆ แล้วพังเพราะอะไร
+- ซ่อนทุก error ด้วยข้อความกว้าง ๆ อย่าง "เกิดข้อผิดพลาด"
+- จับ error ไว้แล้วไม่ได้แก้สาเหตุจริง
 
 ## แบบฝึกหัด
 
@@ -57,17 +81,17 @@ Traceback จะบอกไฟล์ บรรทัด และชนิด e
 
 ### เฉลยข้อ 1
 
-ใช้ `try/except ValueError` เพื่อครอบคลุมกรณีผู้ใช้กรอกตัวอักษรแทนตัวเลข
+ครอบการแปลงค่าด้วย `try` แล้วจับ `ValueError` สำหรับกรณีที่ผู้ใช้กรอกตัวอักษร
 
 <CodeExample example={examples['python101-errors-04']} />
 ### เฉลยข้อ 2
 
-ใช้ `except FileNotFoundError` เพื่อบอกผู้ใช้เมื่อไฟล์ไม่มีอยู่จริง
+จับ `FileNotFoundError` แล้วบอกผู้ใช้ตรง ๆ ว่าไม่พบไฟล์
 
 <CodeExample example={examples['python101-errors-05']} />
 ### เฉลยข้อ 3
 
-แยก `ValueError` สำหรับข้อมูลที่ไม่ใช่เลข และ `ZeroDivisionError` สำหรับหารด้วยศูนย์
+ใส่ `except` สองอัน แยกสองปัญหาออกจากกัน: `ValueError` เมื่อข้อมูลไม่ใช่ตัวเลข และ `ZeroDivisionError` เมื่อหารด้วยศูนย์ ผู้ใช้จะได้รู้ว่าผิดเพราะอะไร
 
 <CodeExample example={examples['python101-errors-06']} />
 </details>
@@ -79,11 +103,11 @@ Traceback จะบอกไฟล์ บรรทัด และชนิด e
 <details class="answer-reveal">
 <summary>ดูเฉลยโจทย์ท้าทาย</summary>
 
-ใช้ `continue` หลังกรอกผิด เพื่อกลับไปรับข้อมูลใหม่โดยไม่นับเป็นจำนวนครั้งที่ทาย
+`continue` อยู่ใน `except` จึงกลับไปถามใหม่ก่อนถึงบรรทัด `attempts += 1` การกรอกผิดจึงไม่ถูกนับ
 
 <CodeExample example={examples['python101-errors-07']} />
 </details>
 
 ## สรุป
 
-Error handling ทำให้โปรแกรมเป็นมิตรกับผู้ใช้และช่วยให้คุณ debug ได้เป็นระบบ
+อ่าน traceback จากล่างขึ้นบน ใช้ `try/except` กับ error ที่คาดไว้ล่วงหน้า และระบุชนิด error ให้ชัด โปรแกรมจะไม่พังต่อหน้าผู้ใช้ และเราจะหาสาเหตุได้เร็วขึ้น

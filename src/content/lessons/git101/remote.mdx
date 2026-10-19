@@ -1,16 +1,27 @@
 ---
 section: git101
 title: "เชื่อม Git กับ GitHub"
-description: "เรียนการเชื่อม Git กับ GitHub ด้วย remote, push, pull, และ fetch"
+description: "ส่งงานขึ้น GitHub และรับงานกลับมาด้วย remote, push, pull และ fetch"
 order: 9
 source: git101/remote.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/git101.json';
 
-Remote คือ repository ที่อยู่นอกเครื่องของคุณ เช่น GitHub เมื่อเข้าใจ remote แล้วคุณจะสามารถแชร์งานและรับงานกลับมาได้
+remote คือ repository ที่อยู่นอกเครื่องของเรา เช่น บน GitHub พอเชื่อมกับ remote แล้ว เราก็ส่งงานให้คนอื่นเห็น และรับงานของคนอื่นกลับมาได้ ชื่อ `origin` ในคำสั่งคือชื่อเล่นที่ Git ตั้งให้ remote หลักโดยอัตโนมัติตอน clone
+
+<Flow
+  caption="push ส่งออก pull รับเข้า สองคำสั่งนี้ทำงานคนละทิศกัน"
+  steps={[
+    { label: 'เครื่องเรา', detail: 'commit ที่บันทึกไว้' },
+    { label: 'ส่งขึ้น', code: 'git push' },
+    { label: 'GitHub (origin)', detail: 'ทุกคนในทีมเห็นงานนี้' },
+    { label: 'ดึงกลับมา', code: 'git pull' },
+  ]}
+/>
 
 ## คำสั่งหลัก
 
@@ -18,17 +29,20 @@ Remote คือ repository ที่อยู่นอกเครื่อง�
 
 ## วิธีคิด
 
-- `push` ส่ง commit จากเครื่องคุณไปยัง remote
-- `pull` ดึงการเปลี่ยนแปลงจาก remote เข้ามา
-- `fetch` ดึงข้อมูลมาแต่ยังไม่รวมทันที
+- `git remote -v` แสดงว่า repository นี้เชื่อมกับ remote ไหนอยู่
+- `push` ส่ง commit จากเครื่องเราไปที่ remote
+- `pull` ดึงการเปลี่ยนแปลงจาก remote มารวมกับงานในเครื่อง
+- `fetch` ดึงข้อมูลมาดูก่อน แต่ยังไม่รวมเข้ากับงานของเรา
 
-`git push origin main` ส่ง commit จาก `main` ในเครื่องไปยัง remote ถ้าทำงานเป็นทีมควร push ขึ้น branch ของตัวเองแทนการ push ตรงไปที่ `main` ส่วน `git pull origin main` จะรวม `main` จาก `origin` เข้ากับ branch ที่กำลัง checkout อยู่ ควรตรวจ branch ปัจจุบันด้วย `git branch --show-current` ก่อนรันคำสั่งนี้
+`git push origin main` ส่ง commit จาก `main` ในเครื่องไปที่ remote ถ้าทำงานเป็นทีม ควร push ขึ้น branch ของตัวเองแทนการ push ตรงเข้า `main`
+
+`git pull origin main` รวม `main` จาก `origin` เข้ากับ branch ที่เราอยู่ตอนนี้ ไม่ว่า branch นั้นจะชื่ออะไร จึงควรเช็กก่อนด้วย `git branch --show-current`
 
 ## จุดที่มือใหม่พลาดบ่อย
 
-- สับสนว่า push กับ pull ทำงานคนละทิศ
+- สับสนว่า push กับ pull ทำงานทิศไหน
 - ลืมเช็ก branch ก่อน push
-- คิดว่า Git กับ GitHub คือสิ่งเดียวกัน
+- คิดว่า Git กับ GitHub คือสิ่งเดียวกัน (Git อยู่ในเครื่องเรา GitHub คือเว็บที่เก็บ remote)
 
 ## ฝึกทำ
 
@@ -38,4 +52,4 @@ Remote คือ repository ที่อยู่นอกเครื่อง�
 
 ## สรุป
 
-ถ้าคุณเชื่อม local repository กับ GitHub ได้ คุณก็พร้อมเริ่มทำงานร่วมกับคนอื่น
+เมื่อเชื่อม repository ในเครื่องกับ GitHub ได้แล้ว ก็พร้อมทำงานร่วมกับคนอื่น

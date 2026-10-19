@@ -1,9 +1,22 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import Icon from '../../../components/Icon.astro';
+import Shape from '../../../components/Shape.astro';
+import Mascot from '../../../components/Mascot.astro';
 import { sections, lessons, lessonUrl } from '../../../lib/content';
 export async function getStaticPaths() { return (await sections()).filter(s=>s.kind==='course').map(section=>({ params:{ section:section.id }, props:{ section } })); }
 const { section } = Astro.props;
+const allSections = await sections();
+const order = allSections.findIndex(s => s.id === section.id);
+const shapes = ['cookie', 'clover', 'flower', 'burst'] as const;
+const tones = ['primary', 'tertiary', 'secondary'] as const;
 const entries = (await lessons()).filter(l=>l.data.section===section.id);
 ---
-<Base title={section.title} description={section.summary} current={section.id}><div class="breadcrumbs"><a href="/learn/">บทเรียนทั้งหมด</a><span aria-hidden="true">/</span><span>{section.label}</span></div><header class="course-intro"><div class="course-stamp"><Icon name={section.icon} size={45}/><span>{section.label}</span></div><div><p class="eyebrow">{entries.length} บทความ · เรียนตามลำดับหรือเลือกหัวข้อ</p><h1>{section.title}</h1><p>{section.summary}</p></div></header><ol class="lesson-index">{entries.map((l,i)=><li><a href={lessonUrl(l)}><span class="lesson-index-number">{String(i+1).padStart(2,'0')}</span><div><h2>{l.data.title}</h2><p>{l.data.description}</p></div><Icon name="arrow" size={23}/></a></li>)}</ol></Base>
+<Base title={section.title} description={section.summary} current={section.id}>
+  <div class="breadcrumbs"><a href="/learn/">บทเรียนทั้งหมด</a><span aria-hidden="true">/</span><span>{section.label}</span></div>
+  <header class:list={['course-intro', `tone-${tones[order % tones.length]}`]}>
+    <div class="course-stamp" style={`view-transition-name: section-${section.id}`}><Shape kind={shapes[order % shapes.length]} class="course-stamp__shape"/><Icon name={section.icon} size={44}/></div>
+    <div class="course-intro__text"><p class="chip chip--static">{section.label} · {entries.length} บทความ</p><h1>{section.title}</h1><p>{section.summary}</p><p class="course-intro__hint">เรียนตามลำดับหรือเลือกหัวข้อ</p></div><span class="course-mascot" aria-hidden="true"><Mascot pose="blep" eager/></span>
+  </header>
+  <ol class="lesson-index">{entries.map((l,i)=><li style={`--i:${i}`}><a href={lessonUrl(l)}><span class="lesson-index-number">{String(i+1).padStart(2,'0')}</span><div><h2 style={`view-transition-name: lesson-${l.id.replace(/[^a-z0-9]+/gi,'-')}`}>{l.data.title}</h2><p>{l.data.description}</p></div><span class="lesson-index-go"><Icon name="arrow" size={22} stroke={2}/></span></a></li>)}</ol>
+</Base>

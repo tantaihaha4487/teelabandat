@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Mascot from '../components/Mascot.astro';
+import Shape from '../components/Shape.astro';
+import Icon from '../components/Icon.astro';
 ---
-<Base title="ไม่พบหน้านี้"><section class="not-found mascot-not-found"><Mascot pose="surprise" class="lost-mascot" eager/><div><p class="eyebrow">404</p><h1>ไม่พบหน้านี้</h1><p>ลิงก์อาจเปลี่ยนไป ลองค้นหาบทเรียนจากสารบัญ</p><a class="button" href="/learn/">เปิดบทเรียนทั้งหมด <span aria-hidden="true">→</span></a></div></section></Base>
+<Base title="ไม่พบหน้านี้"><section class="not-found"><span class="lost-wrap"><Shape kind="burst" class="lost-shape"/><Mascot pose="surprise" class="lost-mascot" eager/></span><div><p class="not-found__code">404</p><h1>ไม่พบหน้านี้</h1><p>ลิงก์อาจเปลี่ยนไป ลองค้นหาบทเรียนจากสารบัญ</p><a class="button button--lg" href="/learn/"><span>เปิดบทเรียนทั้งหมด</span><span class="button__icon"><Icon name="arrow" size={20} stroke={2}/></span></a></div></section></Base>

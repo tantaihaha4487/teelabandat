@@ -1,13 +1,20 @@
 ---
+// Animated Mashiro stickers with a still first frame for reduced motion and as the fallback.
+export type MascotPose = 'think' | 'sparkling' | 'nap' | 'surprise' | 'blep' | 'cry' | 'six-seven';
 interface Props {
-  pose?: 'think' | 'sparkling' | 'nap' | 'surprise';
+  pose?: MascotPose;
   class?: string;
   eager?: boolean;
+  still?: boolean;
 }
-const { pose = 'think', class: className, eager = false } = Astro.props;
+const { pose = 'think', class: className, eager = false, still = false } = Astro.props;
 ---
-<img class:list={['mascot-sticker', className]} src={`/mascot/${pose}.webp`} alt="" width="384" height="384" loading={eager ? 'eager' : 'lazy'} decoding="async" draggable="false"/>
+<picture class="mascot-picture">
+  {!still && <source srcset={`/mascot/anim/${pose}.webp`} type="image/webp" media="(prefers-reduced-motion: no-preference)"/>}
+  <img class:list={['mascot-sticker', className]} src={`/mascot/${pose}.webp`} alt="" width="384" height="384" loading={eager ? 'eager' : 'lazy'} decoding="async" draggable="false"/>
+</picture>
 
 <style>
+  .mascot-picture { display: contents; }
   .mascot-sticker { display: block; width: var(--mascot-size, 9rem); height: auto; max-width: 100%; object-fit: contain; user-select: none; pointer-events: none; }
 </style>

@@ -1,6 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import QuizRunner from '../../components/interactive/QuizRunner.vue';
+import Shape from '../../components/Shape.astro';
+import Icon from '../../components/Icon.astro';
+import Mascot from '../../components/Mascot.astro';
 import { banks } from '../../lib/content';
 import { displayCode } from '../../lib/code';
 import { highlightCodeLines } from '../../lib/highlight';
@@ -14,4 +17,4 @@ const highlightedCode = Object.fromEntries(await Promise.all(bank.questions
     await highlightCodeLines(displayCode(question.code), 'python'),
   ]))) as Record<number, HighlightedCodeLine[]>;
 ---
-<Base title={bank.title} description={bank.description} current="practice"><header class="practice-intro"><p class="eyebrow">ฝึกทำและอ่านเหตุผล</p><h1>{bank.title}</h1><p>{bank.description}</p><p class="session-note">คำตอบอยู่เฉพาะหน้านี้ รีเฟรชแล้วจะเริ่มใหม่</p></header><QuizRunner bank={bank} highlightedCode={highlightedCode} client:load/><noscript><p class="callout">เปิด JavaScript เพื่อเลือกคำตอบและตรวจแบบฝึก</p><ol>{bank.questions.map(q=><li><h2>ข้อ {q.sourceId}</h2><p>{q.prompt}</p>{q.context && <p>{q.context}</p>}<pre><code>{displayCode(q.code)}</code></pre><details><summary>ดูคำตอบและคำอธิบาย</summary><p>{q.options[q.correctIndex]}</p><ol>{q.reasoningSteps.map(s=><li>{s}</li>)}</ol></details></li>)}</ol></noscript></Base>
+<Base title={bank.title} description={bank.description} current="practice"><header class="practice-intro tone-secondary"><div class="course-stamp" style="view-transition-name: section-practice"><Shape kind="flower" class="course-stamp__shape"/><Icon name="practice" size={44}/></div><div class="practice-intro__text"><p class="chip chip--static">ฝึกทำและอ่านเหตุผล</p><h1>{bank.title}</h1><p>{bank.description}</p><p class="session-note">คำตอบอยู่เฉพาะหน้านี้ รีเฟรชแล้วจะเริ่มใหม่</p></div><span class="course-mascot" aria-hidden="true"><Mascot pose="six-seven" eager/></span></header><QuizRunner bank={bank} highlightedCode={highlightedCode} client:load/><noscript><p class="callout">เปิด JavaScript เพื่อเลือกคำตอบและตรวจแบบฝึก</p><ol>{bank.questions.map(q=><li><h2>ข้อ {q.sourceId}</h2><p>{q.prompt}</p>{q.context && <p>{q.context}</p>}<pre><code>{displayCode(q.code)}</code></pre><details><summary>ดูคำตอบและคำอธิบาย</summary><p>{q.options[q.correctIndex]}</p><ol>{q.reasoningSteps.map(s=><li>{s}</li>)}</ol></details></li>)}</ol></noscript></Base>

@@ -1,40 +1,54 @@
 ---
 section: git101
 title: "คอร์ส Git ภาษาไทยสำหรับผู้เริ่มต้น"
-description: "รวมบทเรียน Git ตั้งแต่ตั้งค่าเริ่มต้น commit, branch, merge, remote ไปจนถึงการทำงานร่วมกันและโปรเจกต์ฝึกจริง"
+description: "บทเรียน Git ตั้งแต่ตั้งค่าเครื่อง commit, branch, merge, remote ไปจนถึงการทำงานร่วมกับคนอื่นและโปรเจกต์ฝึกมือ"
 order: 0
 source: git101/index.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/git101.json';
 
-ยินดีต้อนรับสู่ Git101 คอร์สนี้ออกแบบมาสำหรับคนที่เพิ่งเริ่มใช้ Git และอยากเข้าใจ workflow จริงแบบไม่ต้องจำคำสั่งแบบท่องจำ เป้าหมายคือให้คุณใช้ Git กับงานของตัวเองได้อย่างมั่นใจ
+คอร์สนี้สำหรับคนที่เพิ่งเริ่มใช้ Git เราจะเรียนจากงานที่ทำจริงในแต่ละวัน ไม่ต้องท่องคำสั่ง เรียนจบแล้วคุณควรใช้ Git กับงานของตัวเองได้โดยไม่กลัวทำไฟล์หาย
+
+Git คือโปรแกรมที่จดประวัติการแก้ไฟล์ในโปรเจกต์ เหมือนกด save แบบมีชื่อกำกับ ย้อนกลับไปดูหรือกู้คืนเวอร์ชันเก่าได้ทุกเมื่อ
+
+<Flow
+  caption="วงจรที่จะทำซ้ำทุกวัน บทต่อ ๆ ไปจะอธิบายทีละขั้น"
+  steps={[
+    { label: 'แก้ไฟล์', detail: 'ทำงานตามปกติ' },
+    { label: 'ดูว่าอะไรเปลี่ยน', code: 'git status' },
+    { label: 'เลือกไฟล์ที่จะบันทึก', code: 'git add' },
+    { label: 'บันทึกเป็นจุดในประวัติ', code: 'git commit' },
+    { label: 'ส่งขึ้น GitHub', code: 'git push' },
+  ]}
+/>
 
 ## วิธีเรียน
 
 1. อ่านคำอธิบายก่อนรันคำสั่ง
 2. พิมพ์คำสั่งเองอย่างน้อยหนึ่งรอบ
-3. ลองแก้ไฟล์แล้วดู `git status`
-4. ฝึก commit สั้น ๆ หลายครั้ง
-5. ถ้าเจอ conflict ให้อ่านสถานะก่อนแก้
+3. ลองแก้ไฟล์แล้วดูผลจาก `git status`
+4. ฝึก commit ครั้งละน้อย ๆ แต่บ่อย ๆ
+5. ถ้าเจอ conflict ให้อ่านสถานะก่อนลงมือแก้
 
 ## เริ่มจากตรงไหน
 
 - [Setup](/learn/git101/setup/) ติดตั้ง Git และตั้งค่าเริ่มต้น
-- [Basics](/learn/git101/basics/) เรียนคำศัพท์สำคัญของ Git
-- [Roadmap](/learn/git101/roadmap/) ดูภาพรวมการเรียน 4 สัปดาห์
+- [Basics](/learn/git101/basics/) คำศัพท์สำคัญของ Git
+- [Roadmap](/learn/git101/roadmap/) แผนการเรียน 4 สัปดาห์
 - [Projects](/learn/git101/projects/) ฝึกใช้ Git กับสถานการณ์จริง
 
 ## สิ่งที่จะได้เรียน
 
-- ติดตั้ง Git และตั้งค่า user name, email
-- เข้าใจ repository, working tree, staging area, commit, branch
-- ใช้คำสั่ง add, commit, status, log, diff, branch, merge, remote
-- ย้อนการเปลี่ยนแปลงได้อย่างปลอดภัย
-- ทำงานร่วมกับ GitHub แบบพื้นฐาน
+- ติดตั้ง Git และตั้งค่า user name กับ email
+- เข้าใจ repository, working tree, staging area, commit และ branch
+- ใช้คำสั่ง add, commit, status, log, diff, branch, merge และ remote
+- ย้อนการเปลี่ยนแปลงอย่างปลอดภัย
+- ทำงานร่วมกับ GitHub ขั้นพื้นฐาน
 
 ## เส้นทางแนะนำ
 
-เริ่มจาก [ติดตั้งเครื่องมือ](/learn/git101/setup/) แล้วเรียนตามลำดับใน sidebar ทางซ้าย ถ้าคุณยังใหม่กับ Git ควรเรียนเรียงตามบทเพราะแต่ละบทต่อยอดจากบทก่อนหน้า
+เริ่มที่ [ติดตั้งเครื่องมือ](/learn/git101/setup/) แล้วเรียนตามลำดับในรายการบทเรียน ถ้ายังใหม่กับ Git แนะนำให้เรียงตามบท เพราะแต่ละบทใช้ของที่เรียนจากบทก่อนหน้า

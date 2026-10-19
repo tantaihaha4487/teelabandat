@@ -1,40 +1,56 @@
 ---
 section: git101
 title: "พื้นฐาน Git"
-description: "เรียนศัพท์สำคัญของ Git เช่น repository, working tree, staging area, commit, และ branch"
+description: "ศัพท์ที่ต้องรู้ก่อนใช้ Git: repository, working tree, staging area, commit และ branch และไฟล์เดินทางผ่านแต่ละที่อย่างไร"
 order: 2
 source: git101/basics.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/git101.json';
 
-Git ทำงานเหมือนสมุดบันทึกประวัติของโปรเจกต์ ไฟล์ที่คุณแก้จะอยู่ใน working tree ก่อน จากนั้นคุณเลือกไฟล์ที่ต้องการด้วย staging area แล้วค่อยบันทึกเป็น commit
+Git เหมือนสมุดบันทึกประวัติของโปรเจกต์ ไฟล์ที่เราแก้จะยังไม่ถูกจดทันที เราต้องเลือกก่อนว่าจะจดไฟล์ไหน แล้วค่อยสั่งบันทึก ไฟล์จึงเดินทางผ่านสามที่:
+
+<Flow
+  caption="add ย้ายการเปลี่ยนแปลงจาก working tree ไปไว้ใน staging area ส่วน commit บันทึกทุกอย่างใน staging area ลงประวัติพร้อมกัน"
+  steps={[
+    { label: 'Working tree', detail: 'ไฟล์ที่เรากำลังแก้อยู่ในเครื่อง' },
+    { label: 'Staging area', code: 'git add', detail: 'ไฟล์ที่เลือกไว้ว่าจะบันทึกรอบนี้' },
+    { label: 'Repository', code: 'git commit', detail: 'ประวัติที่บันทึกถาวรแล้ว' },
+  ]}
+/>
 
 ## คำสำคัญ
 
-- **Repository**: ที่เก็บประวัติของโปรเจกต์
-- **Working tree**: ไฟล์ที่กำลังแก้บนเครื่อง
-- **Staging area**: พื้นที่คัดเลือกไฟล์ก่อน commit
-- **Commit**: บันทึกสถานะของไฟล์ในเวลาหนึ่ง
-- **Branch**: เส้นทางการพัฒนาที่แยกออกมา
+| คำ | หมายถึง |
+| --- | --- |
+| Repository | ที่เก็บประวัติทั้งหมดของโปรเจกต์ |
+| Working tree | ไฟล์ที่กำลังแก้อยู่บนเครื่อง |
+| Staging area | ที่พักไฟล์ที่เลือกไว้ก่อน commit |
+| Commit | ภาพถ่ายสถานะของไฟล์ ณ เวลาหนึ่ง พร้อมข้อความอธิบาย |
+| Branch | เส้นทางการพัฒนาที่แยกออกมา ทำงานได้โดยไม่กระทบเส้นหลัก |
+
+staging area มีไว้ทำไม: สมมติแก้ไปสามไฟล์ แต่มีแค่สองไฟล์ที่เกี่ยวกับงานเดียวกัน เราก็ `add` แค่สองไฟล์นั้นแล้ว commit แยกไว้ ประวัติจะอ่านง่ายกว่าการบันทึกทุกอย่างรวมกัน
 
 ## ตัวอย่างสั้น ๆ
+
+ดูสถานะ เลือก `README.md` เข้า staging area แล้วบันทึกพร้อมข้อความอธิบาย:
 
 <CodeExample example={examples['git101-basics-01']} />
 
 ## ข้อผิดพลาดที่เจอบ่อย
 
-- เข้าใจว่า commit คือการส่งไฟล์ขึ้น GitHub ทั้งหมด
-- คิดว่า `add` คือการสร้างไฟล์ใหม่เสมอ
+- คิดว่า commit คือการส่งไฟล์ขึ้น GitHub จริง ๆ แล้ว commit บันทึกในเครื่องเราเท่านั้น การส่งขึ้น GitHub คือ `push`
+- คิดว่า `add` คือการสร้างไฟล์ใหม่ จริง ๆ แล้วมันคือการเลือกไฟล์เข้า staging area
 - ลืมดู `git status` ก่อน commit
 
 ## ฝึกทำ
 
-1. อธิบายความต่างระหว่าง working tree กับ staging area ด้วยคำพูดของคุณ
+1. อธิบายความต่างระหว่าง working tree กับ staging area ด้วยคำพูดของตัวเอง
 2. ลองสร้างไฟล์ข้อความหนึ่งไฟล์แล้วดู `git status`
 
 ## สรุป
 
-เมื่อเข้าใจคำสำคัญเหล่านี้แล้ว คุณจะอ่าน workflow ของ Git ได้ง่ายขึ้นมาก บทถัดไปจะพาเริ่มสร้าง repository แรก
+พอรู้ว่าไฟล์เดินทางจาก working tree ไป staging area แล้วไป repository คำสั่ง Git ส่วนใหญ่ก็จะเข้าใจง่ายขึ้น บทถัดไปจะสร้าง repository แรกกัน
