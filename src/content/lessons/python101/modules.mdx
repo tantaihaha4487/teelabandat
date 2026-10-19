@@ -1,28 +1,35 @@
 ---
 section: python101
 title: "แบ่งโค้ดเป็นโมดูลด้วย import ใน Python"
-description: "เรียนการใช้ Python modules ด้วย import ไลบรารีมาตรฐาน การสร้าง module ของตัวเอง และการติดตั้ง package"
+description: "ใช้โค้ดที่มีคนเขียนไว้แล้วด้วย import สร้าง module ของตัวเอง และรู้จัก pip กับ virtual environment"
 order: 10
 source: python101/modules.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/python101.json';
 
-Module คือไฟล์ Python หรือชุดคำสั่งที่นำมาใช้ซ้ำได้ ช่วยให้ไม่ต้องเขียนทุกอย่างเอง
+module คือไฟล์ Python ที่มีโค้ดพร้อมใช้ เช่น function สำหรับสุ่มเลขหรือคำนวณรากที่สอง Python มี module ติดมาให้เยอะมาก เราเรียกมาใช้ด้วย `import` ได้เลยโดยไม่ต้องเขียนเองทั้งหมด
 
 ## import module
 
+`import random` ดึงทั้ง module เข้ามา เวลาใช้ต้องเรียกผ่านชื่อ module เช่น `random.randint()`
+
 <CodeExample example={examples['python101-modules-01']} />
-ผลลัพธ์จะเป็นเลขสุ่ม เช่น `7` ครั้งต่อไปอาจได้เลขอื่น
+ผลลัพธ์เป็นเลขสุ่มตั้งแต่ 1 ถึง 10 เช่น `7` รันอีกครั้งอาจได้เลขอื่น
 
 ## import เฉพาะสิ่งที่ใช้
+
+`from ... import ...` ดึงมาแค่สิ่งที่ต้องการ แล้วเรียกชื่อนั้นได้ตรง ๆ ไม่ต้องมีชื่อ module นำหน้า
 
 <CodeExample example={examples['python101-modules-02']} />
 ผลลัพธ์: `4.0`
 
 ## Built-in modules ที่ควรรู้
+
+module เหล่านี้ติดมากับ Python ไม่ต้องติดตั้งเพิ่ม
 
 - `random` สุ่มค่า
 - `math` คณิตศาสตร์
@@ -31,24 +38,35 @@ Module คือไฟล์ Python หรือชุดคำสั่งท�
 
 ## สร้าง module เอง
 
+ไฟล์ `.py` ไหนก็เป็น module ได้ เมื่อโปรแกรมเริ่มยาว ให้ย้าย function ที่ใช้บ่อยไปไว้อีกไฟล์
+
+<Flow
+  caption="ทั้งสองไฟล์ต้องอยู่ใน folder เดียวกัน และชื่อที่ใช้ import คือชื่อไฟล์โดยไม่มี .py"
+  steps={[
+    { label: 'เขียน function ไว้ในไฟล์หนึ่ง', code: 'helpers.py' },
+    { label: 'import จากอีกไฟล์', code: 'from helpers import add' },
+    { label: 'เรียกใช้เหมือนเขียนไว้ในไฟล์เดียวกัน', code: 'add(2, 3)' },
+  ]}
+/>
+
 สร้างไฟล์ `helpers.py`
 
 <CodeExample example={examples['python101-modules-03']} />
-ใช้ใน `main.py`
+แล้วใช้ใน `main.py`
 
 <CodeExample example={examples['python101-modules-04']} />
 ผลลัพธ์: `5`
 
 ## pip คืออะไร
 
-ส่วนนี้เป็นภาพรวมสำหรับบทต่อ ๆ ไป ตอนเริ่มต้นให้ใช้ built-in modules ก่อนก็พอ
+ส่วนนี้เป็นภาพรวมไว้ใช้ในอนาคต ตอนนี้ใช้แค่ built-in modules ก็พอ
 
-`pip` ใช้ติดตั้ง package จากภายนอก เช่น `requests`
+`pip` คือเครื่องมือติดตั้ง package ที่คนอื่นเขียนและแจกไว้ เช่น `requests` สำหรับดึงข้อมูลจากเว็บ คำสั่งนี้พิมพ์ใน terminal ไม่ใช่ในไฟล์ Python
 
 <CodeExample example={examples['python101-modules-05']} />
 ## Virtual environment
 
-Virtual environment ช่วยแยก dependencies ของแต่ละโปรเจกต์ ถ้ายังเรียนพื้นฐานอยู่ ให้จำไว้ก่อนว่าเป็นเครื่องมือสำหรับโปรเจกต์จริง
+virtual environment แยก package ของแต่ละโปรเจกต์ออกจากกัน โปรเจกต์หนึ่งจะได้ไม่ไปกวนอีกโปรเจกต์ ถ้ายังเรียนพื้นฐานอยู่ แค่รู้ไว้ว่ามันใช้ตอนทำโปรเจกต์จริงก็พอ
 
 <CodeExample example={examples['python101-modules-06']} />
 ## แบบฝึกหัด
@@ -62,17 +80,17 @@ Virtual environment ช่วยแยก dependencies ของแต่ละ�
 
 ### เฉลยข้อ 1
 
-`random.randint(1, 100)` ครอบคลุมเลขตั้งแต่ 1 ถึง 100
+`random.randint(1, 100)` สุ่มเลขได้ทั้ง 1 และ 100 (ต่างจาก `range()` ที่ไม่นับตัวท้าย)
 
 <CodeExample example={examples['python101-modules-07']} />
 ### เฉลยข้อ 2
 
-ใช้ `date.today()` จาก module `datetime` เพื่อแสดงวันที่ปัจจุบัน
+ดึง `date` มาจาก module `datetime` ด้วย `import` แล้วเรียก `date.today()`
 
 <CodeExample example={examples['python101-modules-08']} />
 ### เฉลยข้อ 3
 
-สร้าง module แยกไฟล์ แล้ว import function มาใช้ในไฟล์หลัก
+เขียน function ไว้ในไฟล์ของมันเอง แล้ว import มาใช้ในไฟล์หลัก
 
 ไฟล์ `tax_tools.py`:
 
@@ -89,11 +107,11 @@ Virtual environment ช่วยแยก dependencies ของแต่ละ�
 <details class="answer-reveal">
 <summary>ดูเฉลยโจทย์ท้าทาย</summary>
 
-ตัวอย่างนี้ครอบคลุมความยาวที่ไม่ถูกต้อง (`<= 0`) และความยาวที่ใช้สร้างรหัสผ่านได้
+`string.ascii_letters + string.digits` ให้ตัวอักษรอังกฤษทั้งพิมพ์เล็กพิมพ์ใหญ่กับตัวเลข 0-9 แล้ว loop สุ่มหยิบด้วย `random.choice()` ทีละตัวจนครบความยาว ถ้าความยาว `<= 0` จะแสดงข้อความเตือนแทน
 
 <CodeExample example={examples['python101-modules-11']} />
 </details>
 
 ## สรุป
 
-Module ทำให้คุณใช้ความสามารถที่มีอยู่แล้วและแยกโค้ดให้เป็นระเบียบมากขึ้น
+`import` ให้เราใช้โค้ดที่มีอยู่แล้ว และการแยก function ไปไว้ใน module ของเราเองช่วยให้ไฟล์หลักสั้นและอ่านง่ายขึ้น

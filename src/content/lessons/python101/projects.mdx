@@ -1,7 +1,7 @@
 ---
 section: python101
 title: "โปรเจกต์ Python สำหรับผู้เริ่มต้น"
-description: "ฝึกทำโปรเจกต์ Python สำหรับผู้เริ่มต้น เช่น เกมทายเลข calculator, quiz, to-do list และ contact book"
+description: "โปรเจกต์ฝึกมือสำหรับผู้เริ่มต้น เช่น เกมทายเลข calculator quiz to-do list และ contact book"
 order: 13
 source: python101/projects.md
 draft: false
@@ -10,61 +10,63 @@ draft: false
 import CodeExample from '../../../components/CodeExample.astro';
 import examples from '../../../content/examples/python101.json';
 
-โปรเจกต์ช่วยเปลี่ยนความรู้เป็นทักษะจริง เลือกทำทีละโปรเจกต์และพยายามปรับแต่งเพิ่มเอง
+อ่านบทเรียนอย่างเดียวยังไม่ทำให้เขียนโปรแกรมเป็น ต้องลงมือทำของที่ใช้งานได้จริงด้วย เลือกทำทีละโปรเจกต์ พอทำได้แล้วลองเพิ่มความสามารถเองอีกนิด
 
 ## 1. เกมทายเลข
 
 เป้าหมาย: ให้คอมพิวเตอร์สุ่มเลข แล้วผู้ใช้ทายจนถูก
 
-แนวคิดที่ใช้: `random`, loop, condition, input, error handling
+ได้ฝึก: `random`, loop, condition, input, error handling
 
 <CodeExample example={examples['python101-projects-01']} />
-เพิ่มความท้าทาย: จำกัดจำนวนครั้ง เพิ่มระดับความยาก หรือเก็บคะแนนสูงสุดในไฟล์
+ถ้าทำได้แล้ว ลองจำกัดจำนวนครั้ง เพิ่มระดับความยาก หรือเก็บคะแนนดีที่สุดไว้ในไฟล์
 
 ## 2. Calculator
 
-เป้าหมาย: รับเลขสองตัวและเครื่องหมาย แล้วคำนวณผลลัพธ์
+เป้าหมาย: รับเลขสองตัวกับเครื่องหมาย แล้วคำนวณผลลัพธ์
 
 <CodeExample example={examples['python101-projects-02']} />
+`calculate()` ใช้ `return` ออกทันทีเมื่อเจอเครื่องหมายที่ตรง จึงไม่ต้องใช้ `elif` ถ้าไม่ตรงเลยสักตัว จะถึงบรรทัดสุดท้ายที่ตอบว่าไม่รู้จักเครื่องหมาย
+
 ## 3. To-do list
 
-เป้าหมาย: เพิ่มและแสดงรายการงาน
+เป้าหมาย: เพิ่มงานและแสดงรายการงาน
 
-แนวคิดที่ใช้: list, loop, function, file
+ได้ฝึก: list, loop, function, file
 
-ขั้นต่อไป: บันทึกงานลง `todo.txt` และโหลดกลับมาตอนเปิดโปรแกรม
+ขั้นต่อไป: บันทึกงานลง `todo.txt` แล้วโหลดกลับมาตอนเปิดโปรแกรม
 
 ## 4. Password generator
 
 เป้าหมาย: สุ่มรหัสผ่านตามความยาวที่ผู้ใช้กำหนด
 
-แนวคิดที่ใช้: `random`, string, loop
+ได้ฝึก: `random`, string, loop
 
 ## 5. Rock paper scissors
 
 เป้าหมาย: เล่นเป่ายิ้งฉุบกับคอมพิวเตอร์
 
-แนวคิดที่ใช้: condition, random choice, score counter
+ได้ฝึก: condition, การสุ่มด้วย `random.choice()`, ตัวนับคะแนน
 
 ## 6. Contact book
 
 เป้าหมาย: เพิ่ม ค้นหา และลบเบอร์ติดต่อ
 
-แนวคิดที่ใช้: dictionary, loop, file
+ได้ฝึก: dictionary, loop, file
 
 ## 7. Quiz app
 
-เป้าหมาย: ถามคำถามหลายข้อ ตรวจคำตอบ และสรุปคะแนน
+เป้าหมาย: ถามคำถามหลายข้อ ตรวจคำตอบ แล้วสรุปคะแนน
 
-แนวคิดที่ใช้: list of dictionaries, loop, condition
+ได้ฝึก: list ที่เก็บ dictionary หลายตัว, loop, condition
 
 ## วิธีทำโปรเจกต์ให้ได้ผล
 
-1. ทำ version เล็กที่สุดก่อน
-2. ทดสอบทุกครั้งที่เพิ่ม feature
-3. ถ้า error ให้อ่านบรรทัดที่ error ก่อน
-4. เขียนสิ่งที่อยากเพิ่มไว้ แล้วทำทีละข้อ
+1. ทำเวอร์ชันที่เล็กที่สุดที่ใช้งานได้ก่อน
+2. ทดสอบทุกครั้งที่เพิ่มความสามารถใหม่
+3. ถ้าเจอ error ให้อ่านบรรทัดที่ error ชี้ก่อน
+4. จดสิ่งที่อยากเพิ่มไว้ แล้วทำทีละข้อ
 
 ## สรุป
 
-หลังทำโปรเจกต์เหล่านี้ คุณจะได้ฝึกพื้นฐานเกือบครบ: input, condition, loop, function, data structure, file และ error handling
+ทำครบทุกโปรเจกต์นี้แล้ว คุณจะได้ใช้พื้นฐานเกือบทุกเรื่องในคอร์ส ตั้งแต่ input, condition, loop, function, data structure, file ไปจนถึง error handling

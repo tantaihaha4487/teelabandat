@@ -1,7 +1,7 @@
 ---
 section: git101
 title: "แผนการเรียน 4 สัปดาห์"
-description: "แผนเรียน Git สำหรับผู้เริ่มต้นแบบค่อยเป็นค่อยไปใน 4 สัปดาห์"
+description: "แผนเรียน Git แบบค่อยเป็นค่อยไปใน 4 สัปดาห์ สำหรับคนที่เพิ่งเริ่ม"
 order: 11
 source: git101/roadmap.md
 draft: false
@@ -10,26 +10,28 @@ draft: false
 import CodeExample from '../../../components/CodeExample.astro';
 import examples from '../../../content/examples/git101.json';
 
-ถ้าคุณอยากเรียน Git แบบไม่รีบ นี่คือแผนที่ช่วยให้เห็นภาพรวมและฝึกทีละขั้น
+แผนนี้แบ่ง Git ออกเป็นสี่สัปดาห์ ฝึกทีละขั้นโดยไม่ต้องรีบ
+
+สามคำสั่งนี้ใช้ได้ทุกสัปดาห์เวลาอยากรู้ว่าตอนนี้อยู่ตรงไหน `git status` บอกสถานะไฟล์ `git log --oneline --decorate --graph --all` วาดประวัติทุก branch เป็นเส้นกราฟ commit ละบรรทัด และ `git branch --show-current` บอกชื่อ branch ที่อยู่ตอนนี้
 
 <CodeExample example={examples['git101-roadmap-01']} />
 
 ## สัปดาห์ที่ 1
 
 - ติดตั้ง Git และตั้งค่าเริ่มต้น
-- เรียนพื้นฐาน repository, staging, และ commit
+- พื้นฐาน repository, staging และ commit
 
 ## สัปดาห์ที่ 2
 
-- ดู history ด้วย `git log` และ `git diff`
-- ฝึก branch และการสลับ branch
+- ดูประวัติด้วย `git log` และ `git diff`
+- ฝึกสร้างและสลับ branch
 
 ## สัปดาห์ที่ 3
 
 - ฝึก merge และแก้ conflict
-- เรียน remote, push, pull, และ fetch
+- remote, push, pull และ fetch
 
 ## สัปดาห์ที่ 4
 
-- ฝึก undo อย่างปลอดภัย
-- ทำโปรเจกต์จริงและลอง pull request
+- ฝึกย้อนงานอย่างปลอดภัย
+- ทำโปรเจกต์จริงและลองเปิด pull request

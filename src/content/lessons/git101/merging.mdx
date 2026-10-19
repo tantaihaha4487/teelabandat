@@ -1,40 +1,63 @@
 ---
 section: git101
 title: "รวมสาขา"
-description: "เรียนการ merge branch และวิธีรับมือเมื่อเกิด conflict"
+description: "รวม branch กลับเข้าเส้นหลักด้วย git merge และแก้ conflict เมื่อสอง branch แก้บรรทัดเดียวกัน"
 order: 7
 source: git101/merging.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/git101.json';
 
-เมื่อทำงานบน branch เสร็จแล้ว คุณมักจะ merge กลับเข้า branch หลัก การ merge คือการรวมประวัติสองสายเข้าด้วยกัน
+ทำงานบน branch เสร็จแล้ว ก็ถึงเวลารวมกลับเข้าเส้นหลัก การ merge คือการรวมประวัติของสอง branch เข้าด้วยกัน
 
 ## คำสั่งหลัก
+
+`git merge` ดึงงานจาก branch ที่ระบุเข้ามาใน branch ที่เราอยู่ตอนนี้ จะรวมเข้า `main` จึงต้อง `git switch main` ก่อน แล้วค่อยรันคำสั่งนี้
 
 <CodeExample example={examples['git101-merging-01']} />
 
 ## ถ้าเกิด conflict
 
+conflict เกิดเมื่อสอง branch แก้บรรทัดเดียวกันไม่เหมือนกัน Git เลือกเองไม่ได้ว่าจะเอาแบบไหน จึงหยุดให้เราตัดสินใจ เป็นเรื่องปกติ ไม่ได้แปลว่าทำอะไรพัง ในไฟล์จะมีเครื่องหมายแบบนี้:
+
+```text
+<<<<<<< HEAD
+ข้อความบน branch ที่เราอยู่
+=======
+ข้อความจาก branch ที่กำลังรวมเข้ามา
+>>>>>>> feature-notes
+```
+
+<Flow
+  caption="แก้เสร็จแล้วต้องไม่มีบรรทัด <<<<<<<, ======= หรือ >>>>>>> เหลืออยู่ในไฟล์"
+  steps={[
+    { label: 'เปิดไฟล์ที่ conflict', code: 'git status', detail: 'บอกว่าไฟล์ไหนมีปัญหา' },
+    { label: 'หาเครื่องหมาย conflict', code: '<<<<<<<' },
+    { label: 'เลือกหรือรวมเนื้อหาที่ถูก', detail: 'แล้วลบเครื่องหมายทิ้ง' },
+    { label: 'บันทึกแล้ว commit', code: 'git add + git commit' },
+  ]}
+/>
+
 1. เปิดไฟล์ที่ conflict
 2. หาเครื่องหมาย conflict
-3. เลือกเนื้อหาที่ถูกต้อง
+3. เลือกเนื้อหาที่ถูกต้อง หรือเขียนรวมทั้งสองแบบ
 4. บันทึกไฟล์แล้ว commit การแก้ conflict
 
 ## จุดที่มือใหม่พลาดบ่อย
 
-- merge ทั้งที่ยังไม่ได้ตรวจ branch ปลายทาง
+- merge โดยไม่ได้ดูก่อนว่าอยู่บน branch ไหน
 - กลัว conflict จนไม่กล้าใช้ Git
-- ลบข้อความ conflict marker ไม่ครบ
+- ลบเครื่องหมาย conflict ไม่ครบ
 
 ## ฝึกทำ
 
-1. สร้าง branch ใหม่และแก้ไฟล์เดียวกันสอง branch
+1. สร้าง branch ใหม่ แล้วแก้ไฟล์เดียวกันในสอง branch
 2. merge กลับเข้ากัน
 3. อ่าน conflict แล้วแก้ด้วยตัวเอง
 
 ## สรุป
 
-การ merge คือทักษะที่คุณจะเจอแน่นอนในงานจริง ถ้าอ่าน conflict ออก คุณก็ใช้งาน Git ได้มั่นใจขึ้นมาก
+ในงานจริงต้องเจอ merge แน่นอน ถ้าอ่าน conflict ออกและแก้เองได้ ก็จะใช้ Git ได้อย่างมั่นใจขึ้นมาก

@@ -1,38 +1,52 @@
 ---
 section: git101
 title: "การทำงานร่วมกัน"
-description: "เรียน workflow พื้นฐานสำหรับทำงานกับคนอื่นผ่าน branch, pull request, และ review"
+description: "ทำงานกับทีมผ่าน branch และ pull request ให้ทุกคนอ่านและ review งานกันได้ง่าย"
 order: 8
 source: git101/collaboration.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/git101.json';
 
-การใช้ Git ในงานจริงไม่ได้มีแค่คนเดียว คุณอาจต้องทำงานกับทีม จึงควรรู้ workflow ที่ช่วยให้ทุกคนอ่านและ review งานได้ง่าย
+ในงานจริงเรามักไม่ได้เขียนโค้ดคนเดียว ทีมจึงต้องมีวิธีทำงานร่วมกันที่ทุกคนเห็นว่าใครเปลี่ยนอะไร และตรวจงานกันก่อนรวมเข้าเส้นหลัก
+
+<Flow
+  caption="pull request (PR) คือคำขอบนเว็บ GitHub ให้ทีมช่วยตรวจ branch ของเราก่อน merge เข้า main"
+  steps={[
+    { label: 'แยก branch ของตัวเอง', code: 'git switch -c' },
+    { label: 'บันทึกงาน', code: 'git add + commit' },
+    { label: 'ส่ง branch ขึ้น GitHub', code: 'git push -u' },
+    { label: 'เปิด pull request', detail: 'บนหน้าเว็บ GitHub' },
+    { label: 'เพื่อนตรวจแล้ว merge', detail: 'งานเข้า main' },
+  ]}
+/>
+
+ตัวอย่างนี้ทำครบตั้งแต่สร้าง branch ไปจนถึงส่งขึ้น GitHub `-u` ใน `git push` จำไว้ว่า branch นี้ผูกกับ branch ชื่อเดียวกันบน `origin` ครั้งต่อไปพิมพ์แค่ `git push` ก็พอ
 
 <CodeExample example={examples['git101-collaboration-01']} />
 
 ## แนวทางพื้นฐาน
 
-- สร้าง branch แยกตามงาน
-- commit ให้สั้นและสื่อความหมาย
-- เปิด pull request เมื่อพร้อมให้ review
+- แยก branch ตามงาน
+- commit ทีละน้อย และเขียนข้อความที่บอกว่าเปลี่ยนอะไร
+- เปิด pull request เมื่องานพร้อมให้คนอื่นตรวจ
 - แก้ conflict อย่างใจเย็น
 
 ## คำแนะนำสำหรับมือใหม่
 
-1. เปลี่ยนงานหนึ่งอย่างต่อหนึ่ง branch
-2. เขียนข้อความ commit ให้คนอื่นเข้าใจ
-3. อ่าน review ก่อน merge
+1. หนึ่ง branch ทำงานเรื่องเดียว
+2. เขียนข้อความ commit ให้คนอื่นอ่านแล้วเข้าใจ
+3. อ่านความเห็นจากการ review ให้ครบก่อน merge
 
 ## จุดที่มือใหม่พลาดบ่อย
 
 - push โค้ดที่ยังไม่พร้อมให้ทีมใช้
-- ตั้งชื่อ branch แบบไม่บอกความหมาย
-- merge โดยไม่อ่านข้อความ review
+- ตั้งชื่อ branch ที่ไม่บอกว่าเป็นงานอะไร
+- merge โดยไม่อ่านความเห็นจากการ review
 
 ## สรุป
 
-ถ้าคุณใช้ branch และ pull request ได้เป็นระบบ การทำงานกับคนอื่นจะง่ายและปลอดภัยขึ้นมาก
+ใช้ branch กับ pull request เป็นระบบแล้ว การทำงานกับคนอื่นจะง่ายขึ้นมาก และพลาดน้อยลง

@@ -1,22 +1,23 @@
 ---
 section: python101
 title: "เขียนโปรแกรมเชิงวัตถุใน Python"
-description: "เรียนพื้นฐาน OOP ใน Python เรื่อง class, object, attribute, method, constructor และ inheritance ด้วยตัวอย่างง่าย ๆ"
+description: "พื้นฐาน OOP ใน Python: class, object, attribute, method, __init__ และ self ผ่านตัวอย่างนักเรียน todo และบัญชีธนาคาร"
 order: 11
 source: python101/oop.md
 draft: false
 ---
 
 import CodeExample from '../../../components/CodeExample.astro';
+import Flow from '../../../components/Flow.astro';
 import examples from '../../../content/examples/python101.json';
 
-OOP คือแนวคิดการจัดโค้ดรอบ ๆ สิ่งที่เรียกว่า object
+OOP (Object-Oriented Programming) คือวิธีจัดโค้ดโดยรวมข้อมูลกับการกระทำที่เกี่ยวกับข้อมูลนั้นไว้ด้วยกันเป็น object
 
-ให้คิดว่า object คือ "สิ่งหนึ่งชิ้น" ที่มีทั้งข้อมูลและสิ่งที่ทำได้ เช่น นักเรียนมีชื่อกับคะแนน และสั่งให้แสดงข้อมูลหรือตรวจว่าผ่านได้
+ลองนึกถึงนักเรียนหนึ่งคน เขามีข้อมูลคือชื่อกับคะแนน และมีสิ่งที่ทำได้ คือแสดงข้อมูลตัวเองและบอกว่าสอบผ่านหรือเปล่า object หนึ่งตัวก็เก็บทั้งสองอย่างนี้ไว้ในที่เดียว
 
 ## Class และ Object
 
-Class คือแบบพิมพ์เขียว ส่วน object คือของจริงที่สร้างจากแบบพิมพ์เขียวนั้น
+class คือแบบพิมพ์เขียว ส่วน object คือของจริงที่สร้างจากแบบนั้น เหมือนแม่พิมพ์ขนมหนึ่งอันที่ใช้ทำขนมได้หลายชิ้น ขนมแต่ละชิ้นใส่ไส้ต่างกันได้
 
 | คำ | ความหมาย | ตัวอย่าง |
 | --- | --- | --- |
@@ -25,14 +26,24 @@ Class คือแบบพิมพ์เขียว ส่วน object ค�
 | Attribute | ข้อมูลของ object | `name`, `score` |
 | Method | สิ่งที่ object ทำได้ | `show_info()` |
 
+<Flow
+  caption="class เดียว สร้าง object ได้หลายตัว แต่ละตัวเก็บข้อมูลของตัวเองแยกกัน"
+  steps={[
+    { label: 'เขียนแบบพิมพ์เขียว', code: 'class Student:' },
+    { label: 'สร้าง object จากแบบนั้น', code: 'Student("Mali", 90)' },
+    { label: 'object เก็บข้อมูลของตัวเอง', code: 'mali.score  # 90' },
+    { label: 'สั่งให้ object ทำงาน', code: 'mali.show_info()' },
+  ]}
+/>
+
 เริ่มจากตัวอย่างนักเรียน:
 
 <CodeExample example={examples['python101-oop-01']} />
-ในตัวอย่างนี้ `mali` และ `anan` เป็น object คนละตัวกัน จึงเก็บ `name` และ `score` คนละชุดได้
+`mali` และ `anan` เป็น object คนละตัวที่สร้างจาก class เดียวกัน แต่ละตัวจึงมี `name` และ `score` ของตัวเอง `is_passed()` ของ Mali ได้ `True` ส่วนของ Anan ได้ `False` เพราะ 45 น้อยกว่า 50
 
 ## __init__
 
-`__init__` ทำงานทันทีตอนสร้าง object ใช้กำหนดค่าเริ่มต้นให้ object
+`__init__` เป็น method พิเศษที่ทำงานเองทันทีตอนสร้าง object ใช้ตั้งค่าเริ่มต้นให้ object
 
 <CodeExample example={examples['python101-oop-02']} />
 บรรทัดนี้ส่งค่าเข้า `__init__` แบบนี้:
@@ -42,41 +53,41 @@ Class คือแบบพิมพ์เขียว ส่วน object ค�
 | `"Mali"` | `name` | `self.name` |
 | `90` | `score` | `self.score` |
 
-ดังนั้น `mali.name` จะได้ `"Mali"` และ `mali.score` จะได้ `90`
+`mali.name` จึงได้ `"Mali"` และ `mali.score` ได้ `90`
 
 ## self
 
-`self` หมายถึง object ตัวปัจจุบันที่กำลังใช้งาน method นั้นอยู่
+`self` คือ object ตัวที่กำลังเรียก method อยู่ตอนนั้น
 
 เมื่อเขียน:
 
 <CodeExample example={examples['python101-oop-03']} />
-Python จะมองเหมือนว่า `mali` ถูกส่งเข้าไปเป็น `self` ดังนั้นใน method จึงใช้ `self.name` และ `self.score` เพื่ออ่านข้อมูลของ `mali`
+Python จะส่ง `mali` เข้าไปเป็น `self` ให้เอง ใน method จึงใช้ `self.name` และ `self.score` อ่านข้อมูลของ `mali` ได้
 
 ถ้าเขียน:
 
 <CodeExample example={examples['python101-oop-04']} />
-`self` จะหมายถึง `anan` แทน
+คราวนี้ `self` คือ `anan` method เดียวกันจึงแสดงข้อมูลของ Anan
 
 ## เมธอด (Method)
 
-Method คือ function ที่อยู่ใน class ใช้ทำงานกับข้อมูลของ object
+method คือ function ที่อยู่ใน class และทำงานกับข้อมูลของ object
 
-ตัวอย่างนี้ `mark_done()` เปลี่ยนข้อมูลใน object จากยังไม่เสร็จเป็นเสร็จแล้ว:
+ในตัวอย่างนี้ `mark_done()` เปลี่ยนสถานะงานจากยังไม่เสร็จเป็นเสร็จแล้ว:
 
 <CodeExample example={examples['python101-oop-05']} />
-สิ่งสำคัญคือ method ไม่ได้แค่แสดงผล แต่สามารถเปลี่ยนข้อมูลของ object ได้ เช่น `self.completed = True`
+method ไม่ได้มีไว้แสดงผลอย่างเดียว มันเปลี่ยนข้อมูลใน object ได้ด้วย อย่างบรรทัด `self.completed = True` ทำให้ `show_status()` ครั้งที่สองแสดงคำว่าเสร็จแล้ว
 
 ## ควรใช้ OOP เมื่อไร
 
-ใช้ OOP เมื่อมีข้อมูลหลายชิ้นที่เป็นชนิดเดียวกัน และแต่ละชิ้นมีพฤติกรรมของตัวเอง เช่น นักเรียนหลายคน บัญชีธนาคารหลายบัญชี สินค้าหลายชิ้น ตัวละครในเกม หรือ task หลายงานใน todo app
+ใช้ OOP เมื่อมีของชนิดเดียวกันหลายชิ้น และแต่ละชิ้นมีข้อมูลและพฤติกรรมของตัวเอง เช่น นักเรียนหลายคน บัญชีธนาคารหลายบัญชี สินค้าหลายชิ้น ตัวละครในเกม หรืองานหลายงานใน todo app
 
-ถ้าโปรแกรมมีแค่คำนวณค่าเดียวแล้วจบ function ธรรมดาอาจอ่านง่ายกว่า class
+ถ้าโปรแกรมแค่คำนวณค่าเดียวแล้วจบ function ธรรมดามักอ่านง่ายกว่า class
 
 ## ข้อผิดพลาดที่พบบ่อย
 
-- ลืม `self` ใน method
-- เรียก class โดยไม่ใส่ argument ที่ `__init__` ต้องการ
+- ลืมใส่ `self` เป็น parameter แรกของ method
+- สร้าง object โดยไม่ส่งค่าที่ `__init__` ต้องการ
 - ใช้ class ทั้งที่ function ธรรมดาก็พอ
 
 ## แบบฝึกหัด
@@ -95,17 +106,17 @@ Method คือ function ที่อยู่ใน class ใช้ทำง�
 <CodeExample example={examples['python101-oop-06']} />
 ### เฉลยข้อ 2
 
-`TodoItem` เก็บชื่องานและเริ่มสถานะ `completed` เป็น `False`
+`TodoItem` เก็บชื่องาน และตั้ง `completed` เป็น `False` ไว้ก่อน เพราะงานที่เพิ่งสร้างยังไม่เสร็จ
 
 <CodeExample example={examples['python101-oop-07']} />
 ### เฉลยข้อ 3
 
-method `mark_done()` เปลี่ยนสถานะ todo จาก `False` เป็น `True`
+`mark_done()` เปลี่ยน `completed` เป็น `True` ลองพิมพ์ค่าก่อนและหลังเรียก จะเห็น `False` แล้วตามด้วย `True`
 
 <CodeExample example={examples['python101-oop-08']} />
 ### ตัวอย่างทดสอบ
 
-ทดสอบการสร้าง object ของ `Book`
+ลองสร้าง object จาก `Book` แล้วอ่าน attribute ทั้งสองตัว
 
 <CodeExample example={examples['python101-oop-09']} />
 </details>
@@ -117,11 +128,11 @@ method `mark_done()` เปลี่ยนสถานะ todo จาก `False`
 <details class="answer-reveal">
 <summary>ดูเฉลยโจทย์ท้าทาย</summary>
 
-ตัวอย่างนี้ครอบคลุมฝากเงินปกติ ถอนเงินปกติ ถอนเกินยอด และฝาก/ถอนยอดที่ไม่ถูกต้อง
+`deposit()` และ `withdraw()` ตรวจยอดที่ไม่ถูกต้องก่อนเปลี่ยน `balance` เสมอ ส่วนท้ายโค้ดลองฝาก 50 ถอน 30 แล้วลองถอน 500 (เกินยอด) และถอน 0 (ยอดไม่ถูกต้อง) สองครั้งหลังจะขึ้นข้อความเตือนและยอดเงินไม่เปลี่ยน สุดท้ายจึงเหลือ 120 บาท
 
 <CodeExample example={examples['python101-oop-10']} />
 </details>
 
 ## สรุป
 
-OOP ช่วยจัดข้อมูลกับพฤติกรรมให้อยู่ด้วยกัน แต่ควรใช้เมื่อช่วยให้โค้ดชัดขึ้นจริง ๆ
+OOP รวมข้อมูลกับการกระทำของมันไว้ด้วยกันใน object เหมาะกับโปรแกรมที่มีของชนิดเดียวกันหลายชิ้น แต่ถ้า function ธรรมดาอ่านง่ายกว่า ก็ไม่จำเป็นต้องใช้ class
