@@ -256,7 +256,8 @@ html { scroll-behavior: smooth; }
 .line-card__code::before { animation: sweep-in 520ms var(--ease-emph-decel) 760ms both; }
 .line-card__note { transform-origin: 0 0; animation: pop-in var(--dur-reveal) var(--ease-out-back) 900ms both; }
 @media (hover: hover) and (pointer: fine) {
-  .hero-orbit:hover .hero-mascot { animation: wiggle 700ms var(--ease-expressive-spatial); }
+  /* wiggle lives on the wrapper so leaving hover never restarts the mascot's pop-in */
+  .hero-orbit:hover .hero-mascot-wrap { animation: wiggle 700ms var(--ease-expressive-spatial); }
 }
 @keyframes wiggle {
   25% { transform: rotate(-7deg) scale(1.04); }

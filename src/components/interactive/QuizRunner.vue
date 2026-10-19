@@ -724,6 +724,13 @@ legend {
   border-color: var(--md-primary);
 }
 
+.action-button--primary:disabled {
+  color: color-mix(in srgb, var(--md-on-surface) 62%, transparent);
+  background: color-mix(in srgb, var(--md-on-surface) 12%, transparent);
+  border-color: transparent;
+  opacity: 1;
+}
+
 .action-button--primary:hover:not(:disabled) {
   background: color-mix(in srgb, var(--md-primary) 88%, var(--md-on-surface));
 }
