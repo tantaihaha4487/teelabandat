@@ -1,7 +1,7 @@
 {
   "python101-basics-01": {
     "mode": "walkthrough",
-    "summary": "กำหนดตัวแปรสี่ตัวที่เก็บข้อความ จำนวนเต็ม ทศนิยม และค่าความจริง โดยยังไม่มีการแสดงผล",
+    "summary": "สร้างตัวแปรสี่ตัว เก็บค่าสี่ชนิด: ข้อความ จำนวนเต็ม ทศนิยม และค่าจริง/เท็จ โค้ดนี้ยังไม่แสดงอะไรบนหน้าจอ",
     "inputs": [],
     "values": {},
     "files": {},
@@ -114,7 +114,7 @@
   },
   "python101-basics-02": {
     "mode": "console",
-    "summary": "ใช้ type() ตรวจชนิดของข้อความและของจำนวนเต็มแล้วแสดงผลออกหน้าจอ",
+    "summary": "ถาม Python ด้วย type() ว่าข้อความกับตัวเลขเป็นชนิดอะไร",
     "inputs": [],
     "values": {},
     "files": {},
@@ -123,7 +123,7 @@
   },
   "python101-basics-03": {
     "mode": "walkthrough",
-    "summary": "แสดงข้อความทักทายค่าเดียวกันด้วย print คั่นจุลภาค การต่อด้วย + และ f-string",
+    "summary": "แสดงคำทักทายเดียวกันสามแบบ: คั่นด้วยจุลภาค ต่อด้วย + และใช้ f-string",
     "inputs": [],
     "values": {},
     "files": {},
@@ -195,7 +195,7 @@
   },
   "python101-basics-04": {
     "mode": "walkthrough",
-    "summary": "คำนวณราคาหลังลด 10% เก็บไว้ในตัวแปร final_price โดยมีคอมเมนต์อธิบายที่ไพธอนข้ามไป",
+    "summary": "คิดราคาหลังลด 10% เก็บไว้ใน final_price โดยมี comment บอกว่าโค้ดทำอะไร",
     "inputs": [],
     "values": {},
     "files": {},
@@ -247,7 +247,7 @@
   },
   "python101-basics-05": {
     "mode": "walkthrough",
-    "summary": "เก็บชื่อนักเรียนและคะแนนรวมไว้ในตัวแปรสองตัวโดยยังไม่แสดงผล",
+    "summary": "ตั้งชื่อตัวแปรแบบ snake_case ให้อ่านแล้วรู้ว่าเก็บอะไร",
     "inputs": [],
     "values": {},
     "files": {},
@@ -290,7 +290,7 @@
   },
   "python101-basics-06": {
     "mode": "walkthrough",
-    "summary": "ตัวแปร age เก็บ \"16\" เป็นข้อความ เมื่อนำไปบวกกับ 1 จึงเกิดข้อผิดพลาดตอนรัน",
+    "summary": "age เก็บ \"16\" แบบข้อความ พอเอาไปบวก 1 จึงเกิด TypeError ตอนรัน",
     "inputs": [],
     "values": {},
     "files": {},
@@ -329,7 +329,7 @@
   },
   "python101-basics-07": {
     "mode": "walkthrough",
-    "summary": "ใช้ int() แปลง \"16\" เป็นจำนวนเต็มก่อน แล้วบวก 1 ได้ 17",
+    "summary": "แปลง \"16\" เป็นจำนวนเต็มด้วย int() ก่อน แล้วบวก 1 ได้ 17",
     "inputs": [],
     "values": {},
     "files": {},
@@ -366,7 +366,7 @@
   },
   "python101-basics-08": {
     "mode": "walkthrough",
-    "summary": "สร้างตัวแปรสี่ตัวเก็บชื่อ อายุ โรงเรียน และวิชาที่ชอบ ไว้ใช้ในตัวอย่างถัดไป",
+    "summary": "สร้างตัวแปรสี่ตัวเก็บชื่อ อายุ โรงเรียน และวิชาที่ชอบ เพื่อใช้ในอีกสองตัวอย่างถัดไป",
     "inputs": [],
     "values": {},
     "files": {},
@@ -479,27 +479,27 @@
   },
   "python101-basics-09": {
     "mode": "console",
-    "summary": "ใช้ f-string รวมตัวแปรสี่ตัวที่สร้างไว้ก่อนหน้าให้อยู่ในประโยคเดียว",
+    "summary": "ใช้ f-string รวมค่าจากตัวแปรสี่ตัวให้เป็นประโยคเดียว",
     "inputs": [],
     "files": {},
     "editable": [],
     "setup": "name = \"Mali\"\nage = 16\nschool = \"Python School\"\nfavorite_subject = \"ศิลปะ\"",
-    "context": "ใช้ค่าที่กำหนดไว้ในตัวอย่างตัวแปรข้อมูลนักเรียนก่อนหน้า",
+    "context": "ใช้ตัวแปรสี่ตัวจากตัวอย่างข้อมูลนักเรียนก่อนหน้า",
     "consoleOutput": "Mali อายุ 16 ปี เรียนที่ Python School และชอบวิชาศิลปะ\n"
   },
   "python101-basics-10": {
     "mode": "console",
-    "summary": "ตรวจชนิดของตัวแปร name, age และ favorite_subject ที่สร้างไว้ก่อนหน้า",
+    "summary": "ตรวจชนิดของตัวแปรสามตัวที่สร้างไว้ก่อนหน้าด้วย type()",
     "inputs": [],
     "files": {},
     "editable": [],
     "setup": "name = \"Mali\"\nage = 16\nschool = \"Python School\"\nfavorite_subject = \"ศิลปะ\"",
-    "context": "ตรวจชนิดของ name, age และ favorite_subject ที่กำหนดไว้ในตัวอย่างก่อนหน้า",
+    "context": "ใช้ name, age และ favorite_subject จากตัวอย่างข้อมูลนักเรียนก่อนหน้า",
     "consoleOutput": "<class 'str'>\n<class 'int'>\n<class 'str'>\n"
   },
   "python101-basics-11": {
     "mode": "walkthrough",
-    "summary": "นำค่า age บวก 5 เก็บไว้ในตัวแปร future_age แล้วแสดงประโยคด้วย f-string",
+    "summary": "บวกอายุอีก 5 ปีเก็บไว้ใน future_age แล้วแสดงเป็นประโยคด้วย f-string",
     "inputs": [],
     "values": {},
     "files": {},
@@ -598,7 +598,7 @@
   },
   "python101-conditions-01": {
     "mode": "walkthrough",
-    "summary": "รับคะแนนจากผู้ใช้แล้วเลือกข้อความตามช่วง 80 ขึ้นไป 50 ขึ้นไป หรือต่ำกว่านั้น",
+    "summary": "รับคะแนนแล้วเลือกข้อความตามช่วง: 80 ขึ้นไป, 50 ถึง 79 หรือต่ำกว่า 50",
     "inputs": [
       "80"
     ],
@@ -659,7 +659,7 @@
   },
   "python101-conditions-03": {
     "mode": "walkthrough",
-    "summary": "ใช้ and ตรวจว่า age ถึง 18 และ has_card เป็นจริงพร้อมกันก่อนแสดงคำว่าเข้าได้",
+    "summary": "ใช้ and ตรวจว่าอายุถึง 18 และมีบัตรด้วย ก่อนแสดงคำว่าเข้าได้",
     "inputs": [],
     "values": {},
     "files": {},
@@ -755,7 +755,7 @@
   },
   "python101-conditions-04": {
     "mode": "walkthrough",
-    "summary": "ใช้ or ให้เงื่อนไขเป็นจริงเมื่อ is_owner เป็น True แม้ is_admin จะเป็น False",
+    "summary": "ใช้ or: ไม่ใช่ admin แต่เป็นเจ้าของ ก็แก้ไขได้",
     "inputs": [],
     "values": {},
     "files": {},
@@ -851,7 +851,7 @@
   },
   "python101-conditions-05": {
     "mode": "walkthrough",
-    "summary": "รับอายุจากผู้ใช้แล้วแบ่งเป็นเด็ก วัยรุ่น หรือผู้ใหญ่ด้วย if-elif-else",
+    "summary": "แบ่งอายุเป็นเด็ก วัยรุ่น หรือผู้ใหญ่ ด้วย if, elif และ else",
     "inputs": [
       "16"
     ],
@@ -925,7 +925,7 @@
   },
   "python101-conditions-06": {
     "mode": "walkthrough",
-    "summary": "รับคะแนนจากผู้ใช้แล้วไล่เงื่อนไขห้าชั้นเพื่อแสดงเกรด A ถึง F",
+    "summary": "ไล่เงื่อนไขจากคะแนนสูงลงต่ำ เพื่อให้เกรด A ถึง F",
     "inputs": [
       "75"
     ],
@@ -999,7 +999,7 @@
   },
   "python101-conditions-07": {
     "mode": "walkthrough",
-    "summary": "เทียบ username กับ password ที่กรอกเข้ามากับค่าที่กำหนดไว้ด้วย and แล้วเลือกข้อความตอบกลับ",
+    "summary": "เทียบ username และ password กับค่าที่กำหนดไว้ ต้องถูกทั้งคู่จึงเข้าระบบได้",
     "inputs": [
       "admin",
       "1234"
@@ -1098,7 +1098,7 @@
   },
   "python101-conditions-08": {
     "mode": "walkthrough",
-    "summary": "รับอุณหภูมิเป็นทศนิยมแล้วเลือกคำแนะนำการแต่งตัวจากช่วงต่ำกว่า 18 ต่ำกว่า 28 หรือมากกว่านั้น",
+    "summary": "แนะนำเสื้อผ้าตามอุณหภูมิ: ต่ำกว่า 18, 18 ถึงต่ำกว่า 28 หรือ 28 ขึ้นไป",
     "inputs": [
       "25"
     ],
@@ -1172,7 +1172,7 @@
   },
   "python101-data-structures-01": {
     "mode": "walkthrough",
-    "summary": "เพิ่ม 88 เข้า list scores ด้วย append แล้วอ่านสมาชิกตัวแรกและจำนวนสมาชิกที่เปลี่ยนไป",
+    "summary": "เพิ่ม 88 ด้วย append() แล้วอ่านค่าแรกและนับจำนวนค่าใน list",
     "inputs": [],
     "values": {},
     "files": {},
@@ -1255,7 +1255,7 @@
   },
   "python101-data-structures-03": {
     "mode": "console",
-    "summary": "อ่านสมาชิกตัวแรกของ tuple point ด้วยการระบุตำแหน่ง",
+    "summary": "อ่านค่าแรกของ tuple ด้วย index 0",
     "inputs": [],
     "values": {},
     "files": {},
@@ -1264,7 +1264,7 @@
   },
   "python101-data-structures-04": {
     "mode": "walkthrough",
-    "summary": "อ่านค่าจาก key ของ dict student แล้วเปลี่ยนค่าที่ key \"age\" จาก 16 เป็น 17",
+    "summary": "อ่านค่าจาก dictionary ด้วย key แล้วเปลี่ยน age จาก 16 เป็น 17",
     "inputs": [],
     "values": {},
     "files": {},
@@ -1365,17 +1365,17 @@
   },
   "python101-data-structures-06": {
     "mode": "console",
-    "summary": "สร้าง set จากค่าที่มี \"python\" ซ้ำกันสองครั้ง แล้วแสดงผลที่เหลือค่าไม่ซ้ำ",
+    "summary": "สร้าง set ที่มี \"python\" ซ้ำ แล้วเห็นว่าค่าซ้ำถูกตัดออกเอง",
     "inputs": [],
     "values": {},
     "files": {},
     "editable": [],
-    "context": "set เก็บสมาชิกไม่ซ้ำ แต่ลำดับที่แสดงอาจต่างกันตาม runtime",
+    "context": "set เก็บแต่ค่าที่ไม่ซ้ำ ลำดับที่แสดงอาจต่างกันในแต่ละครั้งที่รัน",
     "consoleOutput": "{'python', 'beginner'}\n"
   },
   "python101-data-structures-08": {
     "mode": "console",
-    "summary": "ตัดชิ้นส่วน list ด้วย numbers[1:4] และ numbers[:3] และอ่านสมาชิกตัวสุดท้ายด้วย numbers[-1]",
+    "summary": "ตัดช่วงของ list ด้วย [1:4] และ [:3] แล้วอ่านค่าสุดท้ายด้วย [-1]",
     "inputs": [],
     "values": {},
     "files": {},
@@ -1384,7 +1384,7 @@
   },
   "python101-data-structures-10": {
     "mode": "walkthrough",
-    "summary": "ใช้ append เพิ่ม \"Som\" เข้า list friends แล้วแสดงรายชื่อทั้งหมดที่เปลี่ยนไป",
+    "summary": "เพิ่ม \"Som\" ต่อท้าย list ด้วย append() แล้วแสดงรายชื่อทั้งหมด",
     "inputs": [],
     "values": {},
     "files": {},
@@ -1449,7 +1449,7 @@
   },
   "python101-data-structures-11": {
     "mode": "console",
-    "summary": "อ่านค่าที่ key \"title\" จาก dict book ที่มีสาม key",
+    "summary": "อ่านชื่อหนังสือจาก dictionary ด้วย key \"title\"",
     "inputs": [],
     "values": {},
     "files": {},
@@ -1458,7 +1458,7 @@
   },
   "python101-data-structures-12": {
     "mode": "walkthrough",
-    "summary": "วนรับคำจากผู้ใช้ 5 รอบเก็บเข้า list แล้วแปลงเป็น set เพื่อให้เหลือคำที่ไม่ซ้ำ",
+    "summary": "รับคำ 5 ครั้งเก็บใน list แล้วแปลงเป็น set ให้เหลือแต่คำที่ไม่ซ้ำ",
     "inputs": [
       "mali",
       "nok",
@@ -1510,7 +1510,7 @@
         "type": "text"
       }
     ],
-    "context": "แปลงคำซ้ำใน list เป็น set; ลำดับสมาชิกที่แสดงอาจต่างกันตาม runtime",
+    "context": "list เก็บคำซ้ำได้ ส่วน set ไม่เก็บซ้ำ ลำดับคำที่แสดงอาจต่างกันในแต่ละครั้งที่รัน",
     "trace": [
       {
         "line": 1,
@@ -1837,7 +1837,7 @@
   },
   "python101-data-structures-13": {
     "mode": "walkthrough",
-    "summary": "ค้นชื่อใน dict contacts ด้วย in ถ้าพบจะแสดงเบอร์ ถ้าไม่พบจะรับเบอร์ใหม่มาเพิ่มเข้า dict",
+    "summary": "ค้นชื่อใน dictionary ด้วย in ถ้าเจอแสดงเบอร์ ถ้าไม่เจอรับเบอร์ใหม่แล้วเพิ่มเข้าไป",
     "inputs": [
       "Mali"
     ],
@@ -1953,7 +1953,7 @@
   },
   "python101-errors-01": {
     "mode": "walkthrough",
-    "summary": "ใช้ try-except ดัก ValueError จาก int() เมื่อค่าที่กรอกไม่ใช่ตัวเลข",
+    "summary": "ใช้ try/except จับ ValueError เมื่อผู้ใช้กรอกสิ่งที่ไม่ใช่ตัวเลข",
     "inputs": [
       "16"
     ],
@@ -2008,7 +2008,7 @@
   },
   "python101-errors-02": {
     "mode": "walkthrough",
-    "summary": "ส่วน finally แสดงข้อความปิดท้ายทั้งกรณีที่แปลงค่าสำเร็จและกรณีที่เกิด ValueError",
+    "summary": "finally แสดงข้อความปิดท้ายทุกครั้ง ทั้งตอนแปลงสำเร็จและตอนเกิด ValueError",
     "inputs": [
       "3"
     ],
@@ -2063,7 +2063,7 @@
   },
   "python101-errors-04": {
     "mode": "walkthrough",
-    "summary": "รับตัวเลขใน try แล้วแสดงค่า หากแปลงไม่ได้จะเข้า except ValueError เพื่อแจ้งให้กรอกตัวเลข",
+    "summary": "รับตัวเลขใน try ถ้าแปลงไม่ได้จะเข้า except ValueError เพื่อบอกผู้ใช้",
     "inputs": [
       "3"
     ],
@@ -2118,7 +2118,7 @@
   },
   "python101-errors-05": {
     "mode": "walkthrough",
-    "summary": "เปิดอ่าน data.txt ใน try และดัก FileNotFoundError ไว้สำหรับกรณีที่ไม่พบไฟล์",
+    "summary": "ลองเปิด data.txt ใน try และจับ FileNotFoundError เมื่อไม่มีไฟล์",
     "inputs": [],
     "values": {},
     "files": {
@@ -2186,7 +2186,7 @@
   },
   "python101-errors-06": {
     "mode": "walkthrough",
-    "summary": "รับเลขสองค่าแล้วหาร โดยแยก except สำหรับ ValueError และ ZeroDivisionError",
+    "summary": "หารเลขสองค่า แล้วแยก except สำหรับ ValueError กับ ZeroDivisionError",
     "inputs": [
       "6",
       "3"
@@ -2274,7 +2274,7 @@
   },
   "python101-errors-07": {
     "mode": "walkthrough",
-    "summary": "วนรับเลขที่ทายในลูป while True ใช้ continue ข้ามรอบที่กรอกไม่เป็นตัวเลข และนับ attempts เฉพาะรอบที่แปลงค่าได้",
+    "summary": "เกมทายเลขที่ใช้ try และ continue ข้ามรอบที่กรอกไม่ใช่ตัวเลข จึงนับเฉพาะครั้งที่ทายจริง",
     "inputs": [
       "abc",
       "3",
@@ -2772,7 +2772,7 @@
   },
   "python101-files-01": {
     "mode": "walkthrough",
-    "summary": "เปิด note.txt ด้วยโหมด \"w\" ผ่าน with แล้วเขียนข้อความสองครั้งลงในไฟล์",
+    "summary": "เปิด note.txt ด้วยโหมด \"w\" แล้วเขียนข้อความสองบรรทัด",
     "inputs": [],
     "values": {},
     "files": {},
@@ -2847,12 +2847,12 @@
   },
   "python101-files-02": {
     "mode": "walkthrough",
-    "summary": "อ่านเนื้อหาทั้งไฟล์ note.txt ด้วย read() เก็บไว้ในตัวแปร content แล้วแสดงผล",
+    "summary": "อ่านทั้งไฟล์ด้วย read() เก็บใน content แล้วแสดงออกมา",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "with open(\"note.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"สวัสดี Python\\n\")\n    file.write(\"นี่คือไฟล์แรกของฉัน\")",
-    "context": "ไฟล์ note.txt ถูกสร้างจากตัวอย่าง “เขียนข้อความลงไฟล์ใหม่”",
+    "context": "ไฟล์ note.txt มาจากตัวอย่าง \"เขียนข้อความลงไฟล์ใหม่\"",
     "trace": [
       {
         "line": 1,
@@ -2939,12 +2939,12 @@
   },
   "python101-files-04": {
     "mode": "walkthrough",
-    "summary": "เปิด note.txt ด้วยโหมด \"a\" เพื่อเขียนบรรทัดใหม่ต่อท้ายโดยไม่ลบเนื้อหาเดิม",
+    "summary": "เปิดไฟล์ด้วยโหมด \"a\" แล้วเขียนบรรทัดใหม่ต่อท้าย โดยของเดิมไม่หาย",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "with open(\"note.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"สวัสดี Python\\n\")\n    file.write(\"นี่คือไฟล์แรกของฉัน\")",
-    "context": "เปิดต่อท้ายไฟล์ note.txt ที่สร้างจากตัวอย่าง “เขียนข้อความลงไฟล์ใหม่”",
+    "context": "เขียนต่อท้าย note.txt ที่สร้างจากตัวอย่าง \"เขียนข้อความลงไฟล์ใหม่\"",
     "trace": [
       {
         "line": 1,
@@ -2999,12 +2999,12 @@
   },
   "python101-files-05": {
     "mode": "walkthrough",
-    "summary": "วน for อ่าน note.txt ทีละบรรทัดแล้วแสดงผลโดยตัดตัวขึ้นบรรทัดใหม่ด้วย strip()",
+    "summary": "ไล่อ่านไฟล์ทีละบรรทัดด้วย for แล้วใช้ strip() ตัด \\n ท้ายบรรทัด",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "with open(\"note.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"สวัสดี Python\\n\")\n    file.write(\"นี่คือไฟล์แรกของฉัน\")\n\nwith open(\"note.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"\\nบรรทัดใหม่\")",
-    "context": "อ่านไฟล์ note.txt หลังตัวอย่าง “เขียนข้อความลงไฟล์ใหม่” เขียนไฟล์และ “เพิ่มข้อความต่อท้ายไฟล์” เพิ่มบรรทัด",
+    "context": "อ่าน note.txt หลังจากตัวอย่าง \"เขียนข้อความลงไฟล์ใหม่\" และ \"เพิ่มข้อความต่อท้ายไฟล์\"",
     "trace": [
       {
         "line": 1,
@@ -3198,7 +3198,7 @@
   },
   "python101-files-06": {
     "mode": "walkthrough",
-    "summary": "รับชื่อผู้ใช้จาก input แล้วเขียนลง user.txt ด้วยโหมด \"w\" พร้อมตัวขึ้นบรรทัดใหม่",
+    "summary": "รับชื่อผู้ใช้ แล้วเขียนลง user.txt ด้วยโหมด \"w\"",
     "inputs": [
       "Mali"
     ],
@@ -3297,7 +3297,7 @@
   },
   "python101-files-07": {
     "mode": "walkthrough",
-    "summary": "อ่านทุกบรรทัดของ user.txt ด้วย readlines() แล้วนับจำนวนบรรทัดด้วย len()",
+    "summary": "อ่านทุกบรรทัดด้วย readlines() แล้วนับจำนวนด้วย len()",
     "inputs": [],
     "values": {},
     "files": {
@@ -3396,7 +3396,7 @@
   },
   "python101-files-08": {
     "mode": "walkthrough",
-    "summary": "รับข้อความบันทึกจาก input แล้วเขียนต่อท้าย notes.txt ด้วยโหมด \"a\"",
+    "summary": "รับ note ใหม่ แล้วเขียนต่อท้าย notes.txt ด้วยโหมด \"a\"",
     "inputs": [
       "อ่านบท Functions"
     ],
@@ -3495,7 +3495,7 @@
   },
   "python101-files-09": {
     "mode": "walkthrough",
-    "summary": "วนรับคำสั่ง add, list หรือ quit เพื่อเขียนงานต่อท้าย todo.txt อ่านรายการที่มี และดัก FileNotFoundError เมื่อยังไม่มีไฟล์",
+    "summary": "todo app: add เขียนงานต่อท้ายไฟล์ list อ่านงานทั้งหมดโดยรับมือกรณียังไม่มีไฟล์ และ quit จบโปรแกรม",
     "inputs": [
       "list",
       "add",
@@ -4499,7 +4499,7 @@
   },
   "python101-functions-01": {
     "mode": "walkthrough",
-    "summary": "ประกาศฟังก์ชัน greet ที่ไม่รับพารามิเตอร์ แล้วเรียกใช้เพื่อแสดงคำว่าสวัสดี",
+    "summary": "สร้าง function greet แล้วเรียกใช้ คำสั่งข้างในจึงทำงานและแสดงคำว่าสวัสดี",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4532,7 +4532,7 @@
   },
   "python101-functions-03": {
     "mode": "walkthrough",
-    "summary": "ส่ง \"Mali\" เป็นอาร์กิวเมนต์ให้พารามิเตอร์ name ของฟังก์ชัน greet แล้วแสดงข้อความทักทาย",
+    "summary": "ส่ง \"Mali\" เข้าไปใน parameter name แล้ว function แสดงคำทักทายด้วยชื่อนั้น",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4572,7 +4572,7 @@
   },
   "python101-functions-04": {
     "mode": "walkthrough",
-    "summary": "ฟังก์ชัน add คืนค่าผลบวกกลับมาเก็บในตัวแปร result ก่อนนำไปแสดงผล",
+    "summary": "add ส่งผลบวกกลับด้วย return เก็บไว้ใน result ก่อนนำไปแสดง",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4638,7 +4638,7 @@
   },
   "python101-functions-05": {
     "mode": "walkthrough",
-    "summary": "เรียก greet ทั้งแบบไม่ส่งค่าซึ่งใช้ค่าเริ่มต้น \"friend\" และแบบส่ง \"Anan\" เข้าไป",
+    "summary": "เรียก greet แบบไม่ส่งค่า (ใช้ค่าเริ่มต้น friend) และแบบส่ง \"Anan\"",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4701,7 +4701,7 @@
   },
   "python101-functions-07": {
     "mode": "walkthrough",
-    "summary": "ตัวแปร age ถูกสร้างและใช้ภายในฟังก์ชัน show_age เท่านั้น",
+    "summary": "age ถูกสร้างและใช้อยู่แค่ใน function show_age",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4754,7 +4754,7 @@
   },
   "python101-functions-08": {
     "mode": "walkthrough",
-    "summary": "ฟังก์ชัน celsius_to_fahrenheit คืนค่าจากสูตรแปลงหน่วย เรียกด้วย 0 ได้ 32.0",
+    "summary": "function แปลงเซลเซียสเป็นฟาเรนไฮต์ เรียกด้วย 0 ได้ 32.0",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4794,7 +4794,7 @@
   },
   "python101-functions-09": {
     "mode": "walkthrough",
-    "summary": "ฟังก์ชัน rectangle_area รับความกว้างและความสูงสองค่าแล้วคืนผลคูณ เรียกด้วย 4 และ 5 ได้ 20",
+    "summary": "rectangle_area คืนค่ากว้างคูณสูง เรียกด้วย 4 และ 5 ได้ 20",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4840,7 +4840,7 @@
   },
   "python101-functions-10": {
     "mode": "walkthrough",
-    "summary": "ฟังก์ชัน is_even คืนค่าความจริงจากการหาร 2 ลงตัว เรียกด้วย 2 ได้ True และ 3 ได้ False",
+    "summary": "is_even ใช้ % ตรวจเศษจากการหาร 2 แล้วคืน True หรือ False",
     "inputs": [],
     "values": {},
     "files": {},
@@ -4903,7 +4903,7 @@
   },
   "python101-functions-12": {
     "mode": "walkthrough",
-    "summary": "แยกการคำนวณเป็นฟังก์ชัน add, subtract, multiply, divide แล้วเลือกเรียกฟังก์ชันตามเครื่องหมายที่ผู้ใช้กรอก",
+    "summary": "แยกการคำนวณเป็นสี่ function แล้วเลือกเรียกตามเครื่องหมายที่ผู้ใช้กรอก",
     "inputs": [
       "6",
       "+",
@@ -5129,7 +5129,7 @@
   },
   "python101-input-output-01": {
     "mode": "walkthrough",
-    "summary": "รับชื่อจาก input แล้วนำไปแสดงในข้อความทักทายด้วย f-string",
+    "summary": "ถามชื่อด้วย input() แล้วเอาชื่อนั้นไปทักทายด้วย f-string",
     "inputs": [
       "Mali"
     ],
@@ -5177,7 +5177,7 @@
   },
   "python101-input-output-02": {
     "mode": "walkthrough",
-    "summary": "ค่าที่ได้จาก input เป็นข้อความใน age_text ต้องแปลงด้วย int() ก่อนจึงนำไปบวก 1 ได้",
+    "summary": "input() ให้ข้อความ ต้องแปลงด้วย int() ก่อน จึงบวก 1 ได้",
     "inputs": [
       "16"
     ],
@@ -5249,7 +5249,7 @@
   },
   "python101-input-output-03": {
     "mode": "walkthrough",
-    "summary": "รับเลขสองค่าเป็นทศนิยมแล้วแสดงผลบวก ผลลบ ผลคูณ และผลหาร",
+    "summary": "รับเลขสองค่าเป็นทศนิยม แล้วแสดงผลบวก ลบ คูณ และหาร",
     "inputs": [
       "10",
       "2"
@@ -5384,7 +5384,7 @@
   },
   "python101-input-output-05": {
     "mode": "console",
-    "summary": "ใช้ :.2f แสดง price 199.987 เป็น 199.99 โดยค่าที่เก็บในตัวแปรไม่เปลี่ยน",
+    "summary": "ใช้ :.2f แสดง 199.987 เป็น 199.99 โดยค่าในตัวแปรไม่เปลี่ยน",
     "inputs": [],
     "values": {},
     "files": {},
@@ -5402,7 +5402,7 @@
   },
   "python101-input-output-07": {
     "mode": "walkthrough",
-    "summary": "รับชื่อและอายุจากผู้ใช้ แล้วแสดงอายุที่บวกเพิ่ม 10 ปีพร้อมชื่อ",
+    "summary": "รับชื่อกับอายุ แล้วแสดงอายุในอีก 10 ปีพร้อมชื่อ",
     "inputs": [
       "Mali",
       "16"
@@ -5483,7 +5483,7 @@
   },
   "python101-input-output-08": {
     "mode": "walkthrough",
-    "summary": "รับคะแนนสามค่าเป็นทศนิยม หาค่าเฉลี่ยเก็บใน average แล้วแสดงด้วยทศนิยมสองตำแหน่ง",
+    "summary": "รับคะแนนสามค่า หาค่าเฉลี่ย แล้วแสดงทศนิยมสองตำแหน่ง",
     "inputs": [
       "10",
       "20",
@@ -5636,7 +5636,7 @@
   },
   "python101-input-output-09": {
     "mode": "walkthrough",
-    "summary": "รับราคาและเปอร์เซ็นต์ส่วนลด คำนวณราคาสุทธิ แล้วแสดงด้วยทศนิยมสองตำแหน่ง",
+    "summary": "คิดจำนวนเงินที่ลดจากเปอร์เซ็นต์ แล้วหักออกจากราคาเดิม",
     "inputs": [
       "100",
       "10"
@@ -5746,7 +5746,7 @@
   },
   "python101-input-output-10": {
     "mode": "walkthrough",
-    "summary": "รับอุณหภูมิเซลเซียสจากผู้ใช้ แปลงเป็นฟาเรนไฮต์ แล้วแสดงทั้งสองค่าด้วยทศนิยมหนึ่งตำแหน่ง",
+    "summary": "แปลงอุณหภูมิเซลเซียสเป็นฟาเรนไฮต์ แล้วแสดงทั้งสองค่า",
     "inputs": [
       "25"
     ],
@@ -5818,7 +5818,7 @@
   },
   "python101-loops-01": {
     "mode": "walkthrough",
-    "summary": "วน for ด้วย range(1, 6) ให้ number รับค่า 1 ถึง 5 แล้วพิมพ์ทีละรอบ",
+    "summary": "for กับ range(1, 6) ให้ number เป็น 1 ถึง 5 แล้วแสดงทีละรอบ",
     "inputs": [],
     "values": {},
     "files": {},
@@ -5976,7 +5976,7 @@
   },
   "python101-loops-04": {
     "mode": "walkthrough",
-    "summary": "ลูป while จะวนรับรหัสผ่านใหม่ทับค่าเดิมจนกว่า password จะเท่ากับ \"python\"",
+    "summary": "while ถามรหัสผ่านซ้ำ เก็บทับค่าเดิม จนกว่าจะพิมพ์ \"python\"",
     "inputs": [
       "1234",
       "hello",
@@ -6136,7 +6136,7 @@
   },
   "python101-loops-07": {
     "mode": "walkthrough",
-    "summary": "ลูป for ตั้งแต่ 1 ถึง 9 ถูกหยุดด้วย break ในรอบที่ number เท่ากับ 5 ก่อนถึงคำสั่งพิมพ์",
+    "summary": "loop ตั้งใจวน 1 ถึง 9 แต่ break หยุดทันทีเมื่อถึง 5 จึงแสดงแค่ 1 ถึง 4",
     "inputs": [],
     "values": {},
     "files": {},
@@ -6346,7 +6346,7 @@
   },
   "python101-loops-08": {
     "mode": "walkthrough",
-    "summary": "continue ทำให้รอบที่ number เท่ากับ 3 ข้ามคำสั่งพิมพ์ไป แต่ลูปยังวนต่อถึง 5",
+    "summary": "continue ข้ามเฉพาะรอบที่เป็น 3 แต่ loop ยังวนต่อจนครบ 5",
     "inputs": [],
     "values": {},
     "files": {},
@@ -6569,7 +6569,7 @@
   },
   "python101-loops-09": {
     "mode": "walkthrough",
-    "summary": "วน for ไปทีละสมาชิกของลิสต์ fruits แล้วพิมพ์ข้อความพร้อมชื่อผลไม้ในรอบนั้น",
+    "summary": "for ไล่ของใน list ทีละชิ้น แล้วแสดงประโยคพร้อมชื่อผลไม้ในรอบนั้น",
     "inputs": [],
     "values": {},
     "files": {},
@@ -6754,7 +6754,7 @@
   },
   "python101-loops-11": {
     "mode": "walkthrough",
-    "summary": "ใช้ range(1, 21) วนพิมพ์เลข 1 ถึง 20 โดยไม่รวม 21",
+    "summary": "range(1, 21) ให้ 1 ถึง 20 เพราะเลขตัวหลังไม่ถูกนับ",
     "inputs": [],
     "values": {},
     "files": {},
@@ -7317,7 +7317,7 @@
   },
   "python101-loops-12": {
     "mode": "walkthrough",
-    "summary": "ใช้ range(2, 51, 2) เพิ่มค่าทีละ 2 จึงได้เฉพาะเลขคู่ตั้งแต่ 2 ถึง 50",
+    "summary": "range(2, 51, 2) ก้าวทีละ 2 จึงได้เฉพาะเลขคู่ 2 ถึง 50",
     "inputs": [],
     "values": {},
     "files": {},
@@ -8015,7 +8015,7 @@
   },
   "python101-loops-13": {
     "mode": "walkthrough",
-    "summary": "วนรับตัวเลข 5 รอบแล้วสะสมเข้าตัวแปร total ด้วย += ก่อนแสดงผลรวม",
+    "summary": "วนรับตัวเลข 5 ครั้ง สะสมเข้า total ด้วย += แล้วแสดงผลรวม",
     "inputs": [
       "3",
       "4",
@@ -8487,7 +8487,7 @@
   },
   "python101-loops-14": {
     "mode": "walkthrough",
-    "summary": "ลูป while True รับเลขที่ทาย เพิ่มค่า attempts ทุกรอบ และบอกน้อยไปหรือมากไปจนทายถูกแล้ว break",
+    "summary": "เกมทายเลข: วนรับคำตอบ นับจำนวนครั้ง บอกน้อยไปหรือมากไป จนทายถูกแล้ว break",
     "inputs": [
       "3",
       "9",
@@ -8974,18 +8974,18 @@
   },
   "python101-modules-01": {
     "mode": "console",
-    "summary": "นำเข้าโมดูล random แล้วใช้ randint(1, 10) สุ่มเลขจำนวนเต็มมาแสดงผล",
+    "summary": "import random แล้วใช้ randint(1, 10) สุ่มจำนวนเต็มมาแสดง",
     "inputs": [],
     "values": {},
     "files": {},
     "editable": [],
     "randomSeed": 42,
-    "context": "กำหนด seed เป็น 42 เพื่อให้ผลสุ่มของตัวอย่างนี้ทำซ้ำได้",
+    "context": "ตัวอย่างบนเว็บนี้ตั้ง seed ไว้ที่ 42 จึงได้เลขเดิมทุกครั้งที่กดเล่น ถ้ารันในเครื่องเอง เลขจะเปลี่ยนไปทุกครั้ง",
     "consoleOutput": "2\n"
   },
   "python101-modules-02": {
     "mode": "console",
-    "summary": "นำเข้า sqrt จากโมดูล math ด้วย from-import แล้วหาค่ารากที่สองของ 16",
+    "summary": "ดึง sqrt จาก module math มาหารากที่สองของ 16",
     "inputs": [],
     "values": {},
     "files": {},
@@ -8994,7 +8994,7 @@
   },
   "python101-modules-03": {
     "mode": "walkthrough",
-    "summary": "ไฟล์นี้ประกาศฟังก์ชัน add ไว้เท่านั้น เพื่อให้ไฟล์อื่นนำเข้าไปใช้",
+    "summary": "ไฟล์นี้มีแค่ function add เตรียมไว้ให้ไฟล์อื่น import ไปใช้",
     "inputs": [],
     "values": {},
     "files": {},
@@ -9011,7 +9011,7 @@
   },
   "python101-modules-04": {
     "mode": "console",
-    "summary": "นำเข้าฟังก์ชัน add จากไฟล์ helpers.py แล้วเรียกใช้ด้วยค่า 2 กับ 3",
+    "summary": "import function add จาก helpers.py แล้วเรียกด้วย 2 กับ 3",
     "inputs": [],
     "values": {},
     "files": {
@@ -9022,7 +9022,7 @@
   },
   "python101-modules-05": {
     "mode": "console",
-    "summary": "คำสั่ง terminal สำหรับติดตั้งไลบรารี requests ผ่าน pip ของ Python ที่ใช้งานอยู่",
+    "summary": "ติดตั้ง package requests ด้วย pip จาก terminal",
     "inputs": [],
     "values": {},
     "files": {},
@@ -9030,7 +9030,7 @@
   },
   "python101-modules-06": {
     "mode": "console",
-    "summary": "คำสั่ง terminal สำหรับสร้าง virtual environment ไว้ในโฟลเดอร์ .venv",
+    "summary": "สร้าง virtual environment ไว้ในโฟลเดอร์ .venv จาก terminal",
     "inputs": [],
     "values": {},
     "files": {},
@@ -9038,29 +9038,29 @@
   },
   "python101-modules-07": {
     "mode": "console",
-    "summary": "ใช้ random.randint(1, 100) สุ่มเลขจำนวนเต็มในช่วง 1 ถึง 100 แล้วแสดงผล",
+    "summary": "สุ่มจำนวนเต็ม 1 ถึง 100 ด้วย random.randint() แล้วแสดง",
     "inputs": [],
     "values": {},
     "files": {},
     "editable": [],
     "randomSeed": 42,
-    "context": "กำหนด seed เป็น 42 เพื่อให้ผลสุ่มของตัวอย่างนี้ทำซ้ำได้",
+    "context": "ตัวอย่างบนเว็บนี้ตั้ง seed ไว้ที่ 42 จึงได้เลขเดิมทุกครั้งที่กดเล่น ถ้ารันในเครื่องเอง เลขจะเปลี่ยนไปทุกครั้ง",
     "consoleOutput": "82\n"
   },
   "python101-modules-08": {
     "mode": "console",
-    "summary": "นำเข้า date จากโมดูล datetime แล้วใช้ date.today() แสดงวันที่ปัจจุบัน",
+    "summary": "ดึง date จาก datetime แล้วแสดงวันที่ของวันนี้",
     "inputs": [],
     "values": {},
     "files": {},
     "editable": [],
     "date": "2026-10-18",
-    "context": "ใช้วันที่จำลอง 2026-10-18 แทนวันที่ของเครื่อง เพื่อให้ผลลัพธ์คงที่",
+    "context": "ตัวอย่างบนเว็บนี้ใช้วันที่สมมติ 2026-10-18 ผลจึงเหมือนเดิมทุกครั้ง ถ้ารันในเครื่องเองจะได้วันที่จริง",
     "consoleOutput": "2026-10-18\n"
   },
   "python101-modules-09": {
     "mode": "walkthrough",
-    "summary": "ไฟล์นี้ประกาศฟังก์ชัน add_tax ที่คืนราคารวมภาษีไว้ให้ไฟล์อื่นนำเข้าไปใช้",
+    "summary": "ไฟล์ tax_tools.py มี function add_tax ที่คืนราคารวมภาษี ไว้ให้ไฟล์อื่น import",
     "inputs": [],
     "values": {},
     "files": {},
@@ -9077,7 +9077,7 @@
   },
   "python101-modules-10": {
     "mode": "console",
-    "summary": "นำเข้า add_tax จากไฟล์ tax_tools.py แล้วเรียกใช้ด้วยราคา 100 และภาษี 7 เปอร์เซ็นต์",
+    "summary": "import add_tax จาก tax_tools.py แล้วคิดราคา 100 บาทรวมภาษี 7%",
     "inputs": [],
     "values": {},
     "files": {
@@ -9088,7 +9088,7 @@
   },
   "python101-modules-11": {
     "mode": "walkthrough",
-    "summary": "ตรวจความยาวที่ผู้ใช้กรอกก่อน แล้ววนสุ่มตัวอักษรจาก string.ascii_letters กับ string.digits มาต่อกันเป็นรหัสผ่าน",
+    "summary": "ตรวจความยาวก่อน แล้วสุ่มตัวอักษรกับตัวเลขมาต่อกันจนได้รหัสผ่านตามความยาว",
     "inputs": [
       "8"
     ],
@@ -9105,7 +9105,7 @@
       }
     ],
     "randomSeed": 42,
-    "context": "กำหนด seed เป็น 42 เพื่อให้ผลสุ่มของตัวอย่างนี้ทำซ้ำได้",
+    "context": "ตัวอย่างบนเว็บนี้ตั้ง seed ไว้ที่ 42 จึงได้รหัสผ่านเดิมทุกครั้งที่กดเล่น ถ้ารันในเครื่องเอง ผลจะเปลี่ยนไปทุกครั้ง",
     "trace": [
       {
         "line": 1,
@@ -9715,7 +9715,7 @@
   },
   "python101-oop-01": {
     "mode": "walkthrough",
-    "summary": "สร้าง object สองตัวจาก class Student ที่มี __init__, show_info และ is_passed แล้วเรียกเมท็อดของแต่ละตัว",
+    "summary": "สร้างนักเรียนสองคนจาก class Student แล้วเรียก method ของแต่ละคน ได้ผลต่างกันตามข้อมูลของตัวเอง",
     "inputs": [],
     "values": {},
     "files": {},
@@ -10107,12 +10107,12 @@
   },
   "python101-oop-02": {
     "mode": "walkthrough",
-    "summary": "สร้าง object mali จาก class Student ด้วยชื่อ Mali และคะแนน 90 ต่อเนื่องจากตัวอย่างที่ประกาศ class ไว้",
+    "summary": "สร้าง object mali จาก class Student โดยชื่อ Mali และคะแนน 90 จะถูกเก็บไว้ใน object",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "class Student:\n    def __init__(self, name, score):\n        self.name = name\n        self.score = score\n\n    def show_info(self):\n        print(f\"{self.name} ได้ {self.score} คะแนน\")\n\n    def is_passed(self):\n        return self.score >= 50\n",
-    "context": "ใช้ class Student ที่ประกาศในตัวอย่าง “สร้าง class นักเรียนพร้อมเช็กว่าผ่านหรือไม่”",
+    "context": "ใช้ class Student จากตัวอย่าง \"สร้าง class นักเรียนพร้อมเช็กว่าผ่านหรือไม่\"",
     "trace": [
       {
         "line": 1,
@@ -10136,12 +10136,12 @@
   },
   "python101-oop-03": {
     "mode": "walkthrough",
-    "summary": "เรียกเมท็อด show_info ของ object mali เพื่อแสดงชื่อและคะแนนที่เก็บไว้",
+    "summary": "เรียก show_info ผ่าน mali ทำให้ self ใน method คือ mali",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "class Student:\n    def __init__(self, name, score):\n        self.name = name\n        self.score = score\n\n    def show_info(self):\n        print(f\"{self.name} ได้ {self.score} คะแนน\")\n\n    def is_passed(self):\n        return self.score >= 50\n\n\nmali = Student(\"Mali\", 90)",
-    "context": "ใช้ class Student และ object mali ที่สร้างในตัวอย่าง “สร้าง class นักเรียนพร้อมเช็กว่าผ่านหรือไม่”",
+    "context": "ใช้ class Student และ object mali จากตัวอย่าง \"สร้าง class นักเรียนพร้อมเช็กว่าผ่านหรือไม่\"",
     "trace": [
       {
         "line": 1,
@@ -10164,12 +10164,12 @@
   },
   "python101-oop-04": {
     "mode": "walkthrough",
-    "summary": "เรียกเมท็อด show_info ของ object anan เพื่อแสดงชื่อและคะแนนที่เก็บไว้",
+    "summary": "method เดียวกัน แต่เรียกผ่าน anan จึงได้ข้อมูลของ Anan",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "class Student:\n    def __init__(self, name, score):\n        self.name = name\n        self.score = score\n\n    def show_info(self):\n        print(f\"{self.name} ได้ {self.score} คะแนน\")\n\n    def is_passed(self):\n        return self.score >= 50\n\nanan = Student(\"Anan\", 45)",
-    "context": "ใช้ object anan ที่สร้างในตัวอย่าง “สร้าง class นักเรียนพร้อมเช็กว่าผ่านหรือไม่”",
+    "context": "ใช้ object anan จากตัวอย่าง \"สร้าง class นักเรียนพร้อมเช็กว่าผ่านหรือไม่\"",
     "trace": [
       {
         "line": 1,
@@ -10192,7 +10192,7 @@
   },
   "python101-oop-05": {
     "mode": "walkthrough",
-    "summary": "เรียก show_status ก่อนและหลัง mark_done เพื่อดูค่า self.completed ของ object เปลี่ยนจาก False เป็น True",
+    "summary": "เรียก show_status ก่อนและหลัง mark_done จะเห็นว่า method เปลี่ยนข้อมูลใน object ได้",
     "inputs": [],
     "values": {},
     "files": {},
@@ -10449,7 +10449,7 @@
   },
   "python101-oop-06": {
     "mode": "walkthrough",
-    "summary": "ประกาศ class Book ที่เก็บชื่อหนังสือและผู้เขียนไว้ใน __init__ โดยยังไม่สร้าง object",
+    "summary": "class Book เก็บชื่อหนังสือและผู้เขียน โค้ดนี้ยังไม่ได้สร้าง object",
     "inputs": [],
     "values": {},
     "files": {},
@@ -10480,7 +10480,7 @@
   },
   "python101-oop-07": {
     "mode": "walkthrough",
-    "summary": "ประกาศ class TodoItem ที่ตั้ง self.completed เป็น False และมีเมท็อด mark_done สำหรับเปลี่ยนเป็น True",
+    "summary": "class TodoItem ตั้ง completed เป็น False ตอนสร้าง และมี mark_done ไว้เปลี่ยนเป็น True",
     "inputs": [],
     "values": {},
     "files": {},
@@ -10518,12 +10518,12 @@
   },
   "python101-oop-08": {
     "mode": "walkthrough",
-    "summary": "พิมพ์ค่า todo.completed ก่อนและหลังเรียก mark_done เพื่อดูการเปลี่ยนค่าใน object",
+    "summary": "พิมพ์ completed ก่อนและหลังเรียก mark_done เห็นค่าเปลี่ยนจาก False เป็น True",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "class TodoItem:\n    def __init__(self, title):\n        self.title = title\n        self.completed = False\n\n    def mark_done(self):\n        self.completed = True",
-    "context": "ใช้ class TodoItem ที่ประกาศในตัวอย่าง “class รายการงานแบบย่อ”",
+    "context": "ใช้ class TodoItem จากตัวอย่าง \"class รายการงานแบบย่อ\"",
     "trace": [
       {
         "line": 1,
@@ -10599,12 +10599,12 @@
   },
   "python101-oop-09": {
     "mode": "walkthrough",
-    "summary": "สร้าง object จาก class Book แล้วอ่านค่า book.title และ book.author มาแสดง",
+    "summary": "สร้าง object จาก class Book แล้วอ่าน title และ author ออกมาแสดง",
     "inputs": [],
     "values": {},
     "editable": [],
     "setup": "class Book:\n    def __init__(self, title, author):\n        self.title = title\n        self.author = author",
-    "context": "ใช้ class Book ที่ประกาศในตัวอย่าง “สร้าง class หนังสือ”",
+    "context": "ใช้ class Book จากตัวอย่าง \"สร้าง class หนังสือ\"",
     "trace": [
       {
         "line": 1,
@@ -10662,7 +10662,7 @@
   },
   "python101-oop-10": {
     "mode": "walkthrough",
-    "summary": "เรียก deposit และ withdraw หลายครั้งกับ object BankAccount เพื่อดู self.balance เปลี่ยนไป และกรณีที่ถูกปฏิเสธเพราะยอดไม่พอหรือจำนวนเงินไม่มากกว่า 0",
+    "summary": "ฝากและถอนเงินหลายครั้งกับบัญชีเดียว ดูยอดเงินเปลี่ยน และดูกรณีที่ถูกปฏิเสธเพราะเงินไม่พอหรือยอดไม่ถูกต้อง",
     "inputs": [],
     "values": {},
     "files": {},
@@ -11136,7 +11136,7 @@
   },
   "python101-projects-01": {
     "mode": "walkthrough",
-    "summary": "เกมทายเลขที่สุ่ม secret ด้วย random.randint(1, 100) นับจำนวนครั้ง และใช้ try-except กับ continue ข้ามรอบที่กรอกไม่ใช่ตัวเลข",
+    "summary": "เกมทายเลข 1 ถึง 100 ที่นับจำนวนครั้ง และใช้ try กับ continue ข้ามรอบที่กรอกไม่ใช่ตัวเลข",
     "inputs": [
       "abc",
       "82"
@@ -11164,7 +11164,7 @@
       }
     ],
     "randomSeed": 42,
-    "context": "seed 42 ทำให้ secret ในตัวอย่างนี้เป็น 82; ชุดป้อนข้อมูลจึงจบเกมได้",
+    "context": "ตัวอย่างบนเว็บนี้ตั้ง seed ไว้ที่ 42 เลขลับจึงเป็น 82 ทุกครั้ง ชุดคำตอบตัวอย่างจึงเล่นจนจบเกมได้",
     "trace": [
       {
         "line": 1,
@@ -11503,7 +11503,7 @@
   },
   "python101-projects-02": {
     "mode": "walkthrough",
-    "summary": "รวมการคำนวณไว้ในฟังก์ชัน calculate ที่เลือกผลลัพธ์ตามเครื่องหมาย และคืนข้อความแจ้งเมื่อหารด้วยศูนย์หรือไม่รู้จักเครื่องหมาย",
+    "summary": "function calculate เลือกการคำนวณตามเครื่องหมาย และส่งข้อความกลับเมื่อหารด้วยศูนย์หรือไม่รู้จักเครื่องหมาย",
     "inputs": [
       "6",
       "+",
@@ -11680,7 +11680,7 @@
   },
   "python101-setup-01": {
     "mode": "console",
-    "summary": "คำสั่ง terminal ที่แสดงเวอร์ชันของ Python ที่ติดตั้งอยู่",
+    "summary": "เช็กใน terminal ว่าเครื่องมี Python เวอร์ชันไหน",
     "inputs": [],
     "values": {},
     "files": {},
@@ -11688,7 +11688,7 @@
   },
   "python101-setup-02": {
     "mode": "console",
-    "summary": "คำสั่ง terminal ที่แสดงเวอร์ชันผ่านชื่อคำสั่ง python3",
+    "summary": "เช็กเวอร์ชันผ่านคำสั่ง python3 สำหรับเครื่องที่ใช้ชื่อนี้",
     "inputs": [],
     "values": {},
     "files": {},
@@ -11696,7 +11696,7 @@
   },
   "python101-setup-03": {
     "mode": "console",
-    "summary": "ใช้ print สองบรรทัดแสดงข้อความภาษาอังกฤษและภาษาไทยออกทางหน้าจอ",
+    "summary": "print() สองครั้ง ได้ข้อความสองบรรทัด ทั้งภาษาอังกฤษและภาษาไทย",
     "inputs": [],
     "values": {},
     "files": {},
@@ -11705,7 +11705,7 @@
   },
   "python101-setup-04": {
     "mode": "console",
-    "summary": "คำสั่ง terminal ที่สั่งให้ Python รันไฟล์ hello.py",
+    "summary": "สั่ง Python รันไฟล์ hello.py จาก terminal",
     "inputs": [],
     "values": {},
     "files": {},
@@ -11713,7 +11713,7 @@
   },
   "python101-setup-05": {
     "mode": "console",
-    "summary": "คำสั่ง terminal ที่เปิดโหมดโต้ตอบของ Python สำหรับพิมพ์คำสั่งแล้วเห็นผลทันที",
+    "summary": "เปิด REPL เพื่อลองคำสั่ง Python ทีละบรรทัดและเห็นผลทันที",
     "inputs": [],
     "values": {},
     "files": {},
@@ -11721,7 +11721,7 @@
   },
   "python101-setup-07": {
     "mode": "console",
-    "summary": "ใช้ print สามบรรทัดแสดงชื่อ อายุ และสิ่งที่อยากสร้างด้วย Python",
+    "summary": "print() สามบรรทัดแสดงชื่อ อายุ และสิ่งที่อยากสร้างด้วย Python",
     "inputs": [],
     "values": {},
     "files": {},
@@ -11730,7 +11730,7 @@
   },
   "python101-setup-08": {
     "mode": "console",
-    "summary": "คำสั่ง terminal ที่สั่งให้ Python รันไฟล์ intro.py",
+    "summary": "รันไฟล์ intro.py จาก terminal แล้วดูผลทั้งสามบรรทัด",
     "inputs": [],
     "values": {},
     "files": {},
