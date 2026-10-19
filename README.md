@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/mascot/sparkling.webp" width="144" height="144" alt="Mashiro, the cat mascot, with sparkling eyes" />
+  <img src="public/mascot/anim/sparkling.webp" width="144" height="144" alt="Mashiro, the cat mascot, with sparkling eyes" />
 </p>
 <h1 align="center">ทีละบรรทัด (Teelabandat)</h1>
 <p align="center"><strong>Read the code until it makes sense, then change a value and see what happens</strong></p>
@@ -98,6 +98,6 @@ Editing notes and Humanizer provenance are in [docs/editorial](docs/editorial). 
 ---
 
 <p align="center">
-  <img src="public/mascot/nap.webp" width="104" height="104" alt="Mashiro napping in front of a laptop" /><br />
+  <img src="public/mascot/anim/nap.webp" width="104" height="104" alt="Mashiro napping in front of a laptop" /><br />
   <sub>Learn at your own pace</sub>
 </p>
