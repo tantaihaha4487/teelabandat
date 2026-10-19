@@ -920,18 +920,18 @@ img { max-width: 100%; }
 .prose blockquote > :first-child { margin-top: 0; }
 .prose blockquote > :last-child { margin-bottom: 0; }
 .prose table {
-  display: block;
   width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
   margin-block: 28px;
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid var(--md-outline-variant);
   border-radius: var(--shape-lg);
+  background: var(--md-surface-container-lowest);
+  overflow: hidden;
   font-size: 16px;
   line-height: 1.8;
 }
+.prose td, .prose th { overflow-wrap: anywhere; }
 .prose th { text-align: left; background: var(--md-surface-container-high); font-weight: 600; }
 .prose td, .prose th { padding: 12px 16px; border-bottom: 1px solid var(--md-outline-variant); }
 .prose tr:last-child td { border-bottom: 0; }
@@ -1146,6 +1146,8 @@ img { max-width: 100%; }
   .lesson-index-go { display: none; }
   .article-header h1 { font-size: clamp(30px, 8.5vw, 38px); }
   .prose { font-size: 17px; }
+  .prose table { font-size: 15px; }
+  .prose td, .prose th { padding: 10px 8px; }
   .prose pre:not(.code-walkthrough pre) { padding: 14px 16px; font-size: 15px; border-radius: var(--shape-md); }
   .lesson-pagination { grid-template-columns: 1fr; }
   .lesson-pagination > span:empty { display: none; }
