@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-20",
+  "provider": "Claude Opus 5.5 in-session, applying the installed Humanizer plugin skill",
+  "humanizerVersion": "3.1.0",
+  "providerNote": "The configured Claude remote (100.93.177.96) was offline in Tailscale. The user directed the pass to run in this session instead ('you can humanize yourself').",
+  "goal": "Rewrite lesson prose so a complete beginner can follow it: explain terms on first use, say why each step matters, remove orphaned output labels and AI-writing patterns, and add step diagrams where a sequence is easier to see than to read.",
+  "status": "applied-and-self-reviewed-not-committed",
+  "reviewedFiles": [
+    "src/content/lessons/python101/index.mdx",
+    "src/content/lessons/python101/setup.mdx",
+    "src/content/lessons/python101/basics.mdx",
+    "src/content/lessons/python101/input-output.mdx",
+    "src/content/lessons/python101/conditions.mdx",
+    "src/content/lessons/python101/loops.mdx",
+    "src/content/lessons/python101/data-structures.mdx",
+    "src/content/lessons/python101/functions.mdx",
+    "src/content/lessons/python101/files.mdx",
+    "src/content/lessons/python101/errors.mdx",
+    "src/content/lessons/python101/modules.mdx",
+    "src/content/lessons/python101/oop.mdx",
+    "src/content/lessons/python101/roadmap.mdx",
+    "src/content/lessons/python101/projects.mdx",
+    "src/content/lessons/git101/index.mdx",
+    "src/content/lessons/git101/setup.mdx",
+    "src/content/lessons/git101/basics.mdx",
+    "src/content/lessons/git101/repository.mdx",
+    "src/content/lessons/git101/staging-commits.mdx",
+    "src/content/lessons/git101/history.mdx",
+    "src/content/lessons/git101/branching.mdx",
+    "src/content/lessons/git101/merging.mdx",
+    "src/content/lessons/git101/collaboration.mdx",
+    "src/content/lessons/git101/remote.mdx",
+    "src/content/lessons/git101/undo.mdx",
+    "src/content/lessons/git101/roadmap.mdx",
+    "src/content/lessons/git101/projects.mdx",
+    "src/pages/index.astro"
+  ],
+  "unchanged": "Example code, outputs, option order, answer keys, exercise and challenge statements, existing diagram SVGs and their captions, and src/content/examples/*.json notes.",
+  "additions": {
+    "component": "src/components/Flow.astro (ordered-list step diagram, themed by M3 tokens, stacks vertically under 600px)",
+    "flowDiagrams": 13,
+    "tables": "Git basics terms, repository init/clone, history commands, undo commands with risk column, Git projects, file modes, list index positions",
+    "codeFences": "Traceback in python101/errors and conflict markers in git101/merging, both shown as text blocks"
+  },
+  "technicalReview": "Each lesson was rewritten against a dump of its own example code and outputs. One factual slip caught and fixed during review: python101/basics described the broken example as converting a number to text; it converts the text \"16\" to int.",
+  "knownDataIssue": "src/content/examples/python101.json entry python101-errors-02 (the finally example) carries the traceback from the next section as its output. The validator locks example outputs to the source, so the data was left as is; the lesson prose now says the panel belongs to the traceback section and repeats the traceback where it is discussed.",
+  "commands": {
+    "bun run validate": "pass: 27 lessons, 109 examples, 130 protected source blocks compared",
+    "bun run check": "0 errors, 0 warnings, 0 hints",
+    "bun run build": "34 pages built",
+    "bun run check:routes": "routes and anchors valid across 34 HTML files"
+  },
+  "browserChecks": "Flow diagram inspected at 1440px; no document overflow and no diagram overflow on 7 lessons at 320px and 390px.",
+  "skipped": "No independent second reviewer and no screen-reader pass.",
+  "dataPass": {
+    "files": [
+      "src/content/examples/python101.json",
+      "src/content/examples/git101.json",
+      "src/content/teaching/python101.json",
+      "src/content/teaching/git101.json",
+      "src/data/python-bank.json"
+    ],
+    "changed": {
+      "exampleNotes": 511,
+      "teachingSummaries": 109,
+      "teachingContexts": "all existing context strings",
+      "quizHintsAndReasoning": "171 strings across 43 questions; the other questions were already plain and kept"
+    },
+    "frozen": "code, outputs, errors, note line ranges and count, trace data, editable fields, quiz prompts, context, options, option order and correctIndex",
+    "method": "Each lesson's examples were dumped with numbered code and outputs, rewritten against that code, then applied by a script that rejects note-count mismatches, empty strings and dashes.",
+    "corrections": "Lesson prose aligned with the technically reviewed Git notes: git101/undo now says restore returns a file to its last staged version, and git101/history says git log lists commits of the current branch unless --all is given.",
+    "serializationCheck": "A first JSON round-trip rewrote float trace values (90.0 became 90) in teaching/python101.json; the file was rebuilt from HEAD with raw number text preserved and only summary/context strings copied in. Final diff touches prose lines only."
+  }
+}
