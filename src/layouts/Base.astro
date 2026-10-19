@@ -1,12 +1,14 @@
 ---
-import '../styles/global.css';
-import '../styles/motion.css';
 import '@fontsource/ibm-plex-sans-thai/400.css';
 import '@fontsource/ibm-plex-sans-thai/500.css';
 import '@fontsource/ibm-plex-sans-thai/600.css';
+import '@fontsource/ibm-plex-sans-thai/700.css';
 import '@fontsource/jetbrains-mono/400.css';
+import '../styles/global.css';
+import '../styles/motion.css';
 import Icon from '../components/Icon.astro';
 import Mascot from '../components/Mascot.astro';
+import Shape from '../components/Shape.astro';
 import { sections, sectionUrl } from '../lib/content';
 interface Props { title: string; description?: string; current?: string; wide?: boolean; }
 const { title, description = 'บทเรียน Python และ Git ภาษาไทย พร้อมคำอธิบายโค้ดทีละบรรทัด และแบบฝึกสำหรับผู้เริ่มต้น', current = '', wide = false } = Astro.props;
@@ -14,17 +16,72 @@ const nav = await sections();
 ---
 <!doctype html>
 <html lang="th">
-  <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#FAF6F0"/><meta name="description" content={description}/><title>{title} · ทีละบรรทัด</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"/></head>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"/>
+    <meta name="theme-color" content="#FBF7F1" media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content="#151218" media="(prefers-color-scheme: dark)"/>
+    <meta name="description" content={description}/>
+    <title>{title} · ทีละบรรทัด</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  </head>
   <body>
     <a class="skip-link" href="#main">ข้ามไปเนื้อหา</a>
-    <div class="reading-progress" aria-hidden="true"></div>
+    <div class="reading-progress" aria-hidden="true"><span class="reading-progress__wave"></span></div>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="ทีละบรรทัด หน้าหลัก"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>ทีละบรรทัด<small>อ่านโค้ดให้เข้าใจ</small></span></a>
-      <nav class="desktop-nav" aria-label="เมนูหลัก"><a href="/learn/" aria-current={current === 'learn' ? 'page' : undefined}>บทเรียนทั้งหมด</a>{nav.slice(0, 3).map(s => <a href={sectionUrl(s)} aria-current={current === s.id ? 'page' : undefined}>{s.label}</a>)}{nav.length > 3 && <a href="/learn/">หมวดอื่น ๆ</a>}</nav>
-      <a class="header-search" href="/search/" aria-label="ค้นหาบทเรียน"><Icon name="search" size={19}/><span>ค้นหา</span></a>
-      <details class="mobile-nav"><summary>เมนู <span aria-hidden="true">+</span></summary><nav aria-label="เมนูบนมือถือ"><a href="/learn/">บทเรียนทั้งหมด</a>{nav.map(s=><a href={sectionUrl(s)} aria-current={current === s.id ? 'page' : undefined}>{s.label}</a>)}</nav></details>
+      <div class="site-header__bar">
+        <a class="brand" href="/" aria-label="ทีละบรรทัด หน้าหลัก">
+          <span class="brand-mark" aria-hidden="true"><Shape kind="cookie" class="brand-mark__shape"/><span class="brand-mark__lines"><i></i><i></i><i></i></span></span>
+          <span class="brand-word">ทีละบรรทัด<small>อ่านโค้ดให้เข้าใจ</small></span>
+        </a>
+        <nav class="desktop-nav" aria-label="เมนูหลัก">
+          <a href="/learn/" aria-current={current === 'learn' ? 'page' : undefined}><span>บทเรียนทั้งหมด</span></a>
+          {nav.slice(0, 3).map(s => <a href={sectionUrl(s)} aria-current={current === s.id ? 'page' : undefined}><span>{s.label}</span></a>)}
+          {nav.length > 3 && <a href="/learn/"><span>หมวดอื่น ๆ</span></a>}
+        </nav>
+        <a class="header-search" href="/search/" aria-label="ค้นหาบทเรียน"><Icon name="search" size={20}/><span>ค้นหา</span></a>
+        <details class="mobile-nav">
+          <summary aria-label="เมนู"><span class="mobile-nav__icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="mobile-nav__label">เมนู</span></summary>
+          <nav aria-label="เมนูบนมือถือ">
+            <a href="/learn/" aria-current={current === 'learn' ? 'page' : undefined}>บทเรียนทั้งหมด</a>
+            {nav.map(s => <a href={sectionUrl(s)} aria-current={current === s.id ? 'page' : undefined}>{s.label}</a>)}
+            <a href="/search/">ค้นหา</a>
+          </nav>
+        </details>
+      </div>
     </header>
     <main id="main" class:list={['main-shell', { wide }]}><slot/></main>
-    <footer class="site-footer"><a class="footer-brand" href="/">ทีละบรรทัด<span>อ่าน ลองเขียน แล้วค่อยไปต่อ</span></a><nav aria-label="ท้ายหน้า"><a href="/learn/">เลือกบทเรียน</a><a href="/search/">ค้นหาเนื้อหา</a></nav><div class="footer-companion"><Mascot pose="nap" class="footer-mascot"/><div class="footer-copy"><p>เรียนได้ตามจังหวะของตัวเอง</p><p class="artist-credit">ภาพมาสคอตวาดโดย <a href="https://x.com/fuffi_fufi">@fuffi_fufi</a></p></div></div></footer>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <a class="footer-brand" href="/">ทีละบรรทัด<span>อ่าน ลองเขียน แล้วค่อยไปต่อ</span></a>
+        <nav aria-label="ท้ายหน้า"><a href="/learn/">เลือกบทเรียน</a><a href="/search/">ค้นหาเนื้อหา</a></nav>
+        <div class="footer-companion">
+          <span class="footer-mascot-wrap"><Shape kind="flower" class="footer-mascot-shape"/><Mascot pose="nap" class="footer-mascot"/></span>
+          <div class="footer-copy"><p>เรียนได้ตามจังหวะของตัวเอง</p><p class="artist-credit">ภาพมาสคอตวาดโดย <a href="https://x.com/fuffi_fufi">@fuffi_fufi</a></p></div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      import { bindTilt } from '../scripts/tilt';
+      bindTilt();
+      // Header tint once the page moves; opacity-only overlay, no layout work.
+      const header = document.querySelector('.site-header');
+      if (header) {
+        const sentinel = document.createElement('div');
+        sentinel.className = 'scroll-sentinel';
+        sentinel.setAttribute('aria-hidden', 'true');
+        document.body.prepend(sentinel);
+        new IntersectionObserver(([entry]) => header.classList.toggle('is-scrolled', !entry.isIntersecting)).observe(sentinel);
+      }
+      // Close the mobile sheet after choosing a link or pressing Escape.
+      const sheet = document.querySelector<HTMLDetailsElement>('.mobile-nav');
+      sheet?.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && sheet.open) { sheet.open = false; sheet.querySelector('summary')?.focus(); }
+      });
+      document.addEventListener('click', (event) => {
+        if (sheet?.open && !sheet.contains(event.target as Node)) sheet.open = false;
+      });
+    </script>
   </body>
 </html>

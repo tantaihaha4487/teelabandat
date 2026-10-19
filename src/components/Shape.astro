@@ -1,0 +1,26 @@
+---
+// M3 Expressive abstract shapes drawn as one radial-wave path. Decorative only.
+export type ShapeKind = 'cookie' | 'sunny' | 'clover' | 'flower' | 'burst' | 'scallop' | 'circle';
+interface Props { kind?: ShapeKind; class?: string; }
+const { kind = 'cookie', class: className } = Astro.props;
+const recipes: Record<ShapeKind, { lobes: number; depth: number; sharp: number }> = {
+  cookie: { lobes: 9, depth: 0.075, sharp: 1 },
+  sunny: { lobes: 12, depth: 0.07, sharp: 1 },
+  clover: { lobes: 4, depth: 0.2, sharp: 0.7 },
+  flower: { lobes: 8, depth: 0.13, sharp: 0.85 },
+  burst: { lobes: 10, depth: 0.12, sharp: 1.6 },
+  // the Swiftify hover edge: many shallow scallops whose peaks touch the item edge
+  scallop: { lobes: 18, depth: 0.045, sharp: 1 },
+  circle: { lobes: 1, depth: 0, sharp: 1 },
+};
+const { lobes, depth, sharp } = recipes[kind];
+const samples = 240;
+const points = Array.from({ length: samples }, (_, i) => {
+  const t = (i / samples) * Math.PI * 2;
+  const wave = Math.pow(0.5 + 0.5 * Math.cos(lobes * t), sharp);
+  const r = 50 * (1 - depth + depth * wave);
+  return `${(50 + r * Math.sin(t)).toFixed(2)} ${(50 - r * Math.cos(t)).toFixed(2)}`;
+});
+const d = `M${points.join('L')}Z`;
+---
+<svg class:list={['m3-shape', `m3-shape--${kind}`, className]} viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d={d}/></svg>

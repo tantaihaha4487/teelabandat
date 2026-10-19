@@ -1,20 +1,35 @@
 ---
 import Icon from './Icon.astro';
+import Shape from './Shape.astro';
 import { lessons, lessonUrl, sectionUrl, banks } from '../lib/content';
 import type { SectionData } from '../lib/types';
 interface Props { sections: SectionData[]; }
 const { sections } = Astro.props;
 const allLessons = await lessons();
 const allBanks = banks();
+const shapes = ['cookie', 'clover', 'flower', 'burst'] as const;
+const tones = ['primary', 'tertiary', 'secondary'] as const;
 ---
 <div class="section-index">
   {sections.map((section, i) => {
     const entries = allLessons.filter(l => l.data.section === section.id);
     const bank = allBanks.find(b => b.id === section.bank);
-    return <article class:list={['chapter-row', `chapter-${section.icon}`]}>
-      <div class="chapter-number" aria-hidden="true">{String(i+1).padStart(2,'0')}<Icon name={section.icon} size={32}/></div>
-      <div class="chapter-body"><p class="eyebrow">{section.label}<span>{section.kind === 'course' ? `${entries.length} บทความ` : `${bank?.questions.length || 0} ข้อ`}</span></p><h3><a href={sectionUrl(section)}>{section.title}</a></h3><p>{section.summary}</p><div class="chapter-links">{entries.filter(l=>!l.id.endsWith('/index')).slice(0,3).map(l=><a href={lessonUrl(l)}>{l.data.title.replace(/สำหรับผู้เริ่มต้น/g,'')} <span aria-hidden="true"><Icon name="external" size={14}/></span></a>)}{section.kind==='practice' && bank?.topics.slice(0,3).map(t=><a href={`${sectionUrl(section)}?topic=${t.id}`}>{t.title} <span aria-hidden="true"><Icon name="external" size={14}/></span></a>)}</div></div>
-      <a class="chapter-go" href={sectionUrl(section)} aria-label={`เปิด${section.title}`}><Icon name="arrow" size={27}/></a>
+    return <article class:list={['chapter-row', `tone-${tones[i % tones.length]}`]} data-tilt>
+      <div class="chapter-art" aria-hidden="true" data-tilt-target style={`view-transition-name: section-${section.id}`}>
+        <Shape kind="scallop" class="chapter-art__edge"/>
+        <Shape kind={shapes[i % shapes.length]} class="chapter-art__shape"/>
+        <Icon name={section.icon} size={34}/>
+      </div>
+      <div class="chapter-body">
+        <p class="chapter-meta"><span class="chapter-meta__number">{String(i + 1).padStart(2, '0')}</span><span>{section.label}</span><span class="chapter-meta__count">{section.kind === 'course' ? `${entries.length} บทความ` : `${bank?.questions.length || 0} ข้อ`}</span></p>
+        <h3><a class="chapter-link" href={sectionUrl(section)}>{section.title}</a></h3>
+        <p class="chapter-summary">{section.summary}</p>
+        <div class="chapter-links">
+          {entries.filter(l => !l.id.endsWith('/index')).slice(0, 3).map(l => <a class="chip" href={lessonUrl(l)}>{l.data.title.replace(/สำหรับผู้เริ่มต้น/g, '')}<Icon name="external" size={14} stroke={2}/></a>)}
+          {section.kind === 'practice' && bank?.topics.slice(0, 3).map(t => <a class="chip" href={`${sectionUrl(section)}?topic=${t.id}`}>{t.title}<Icon name="external" size={14} stroke={2}/></a>)}
+        </div>
+      </div>
+      <a class="chapter-go" href={sectionUrl(section)} aria-label={`เปิด${section.title}`}><Shape kind="cookie" class="chapter-go__shape"/><Icon name="arrow" size={24} stroke={2}/></a>
     </article>;
   })}
 </div>
